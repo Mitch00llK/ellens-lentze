@@ -35,7 +35,7 @@ function register_ellens_widget_category( $elements_manager ) {
 		]
 	);
 }
-add_action( 'elementor/elements/categories_registered', 'register_ellens_widget_category' );
+add_action( 'elementor/elements/categories_registered', 'register_ellens_widget_category', 1 );
 
 
 /**
