@@ -1,0 +1,17 @@
+:root {
+    /* Colors */
+    --ellens-sc-color-bg-card: rgba(0, 41, 86, 0.6);
+    /* Semi-transparent blue */
+    --ellens-sc-color-border-card: rgba(237, 245, 252, 0.2);
+    --ellens-sc-color-text-title: #ffffff;
+    --ellens-sc-color-text-desc: #edf5fc;
+    --ellens-sc-color-icon: #ef8a00;
+
+    /* Spacing */
+    --ellens-sc-spacing-p-card: 2rem;
+    --ellens-sc-spacing-gap-card: 1rem;
+
+    /* Z-Index */
+    --ellens-sc-z-image: 1;
+    --ellens-sc-z-card: 2;
+}
