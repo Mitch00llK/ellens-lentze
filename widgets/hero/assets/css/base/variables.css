@@ -3,12 +3,9 @@
     --ellens-hero-color-blue: #004590;
     --ellens-hero-color-orange: #ef8a00;
     --ellens-hero-color-white: #ffffff;
-    
-    /* Spacing */
-    --ellens-hero-spacing-card-padding: 76px 45px;
-    
-    /* Fonts - Assuming these are loaded globally, but defining fallbacks */
-    --ellens-hero-font-bankgothic: 'BankGothic Lt BT', sans-serif;
-    --ellens-hero-font-dm-serif: 'DM Serif Display', serif;
-    --ellens-hero-font-dm-sans: 'DM Sans', sans-serif;
+
+    /* Spacing - previously 76px 45px */
+    /* 76px is approx 4.75rem. 45px is approx 2.8rem */
+    /* Making it fluid: 4vw padding vertical, 2.5vw horizontal approx */
+    --ellens-hero-spacing-card-padding: 4vw 2.5vw;
 }

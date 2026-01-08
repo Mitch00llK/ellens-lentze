@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class Render_Functions {
 
-	public static function render( $widget ) {
+	public static function render_widget( $widget ) {
 		$settings = $widget->get_settings_for_display();
 
         $subtitle = $settings['subtitle'];

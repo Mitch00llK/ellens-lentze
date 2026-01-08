@@ -19,38 +19,13 @@ function register_ellens_hero_widget( $widgets_manager ) {
 }
 add_action( 'elementor/widgets/register', 'register_ellens_hero_widget' );
 
+
 /**
- * Register Styles.
+ * Register Assets Config.
  */
-function register_ellens_hero_styles() {
-    // Base
-	wp_register_style(
-		'ellens-hero-base',
-		plugins_url( 'widgets/hero/assets/css/base/variables.css', __FILE__ ),
-		[],
-		'1.0.0'
-	);
-    // Layout
-    wp_register_style(
-		'ellens-hero-layout',
-		plugins_url( 'widgets/hero/assets/css/layout/container.css', __FILE__ ),
-		[ 'ellens-hero-base' ],
-		'1.0.0'
-	);
-    // Content
-    wp_register_style(
-		'ellens-hero-content',
-		plugins_url( 'widgets/hero/assets/css/components/content.css', __FILE__ ),
-		[ 'ellens-hero-base' ],
-		'1.0.0'
-	);
-    // Responsive
-    wp_register_style(
-		'ellens-hero-responsive',
-		plugins_url( 'widgets/hero/assets/css/responsive/tablet.css', __FILE__ ),
-		[ 'ellens-hero-layout' ],
-		'1.0.0'
-	);
+function register_ellens_assets() {
+    require_once( __DIR__ . '/includes/assets/class-assets-config.php' );
+    \EllensLentze\Includes\Assets\Assets_Config::register();
 }
-add_action( 'wp_enqueue_scripts', 'register_ellens_hero_styles' );
+add_action( 'wp_enqueue_scripts', 'register_ellens_assets' );
 

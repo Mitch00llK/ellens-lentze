@@ -30,6 +30,15 @@ Use CSS custom properties, never hardcode values:
 - **Shadows**: `--shadow-{intensity}` (e.g., `--shadow-sm`)
 - **Z-index**: `--z-{layer}` (e.g., `--z-dropdown`, `--z-modal`)
 
+### Sizing from Figma (CRITICAL)
+- **IGNORE all pixel values from Figma** — these are design mockups only
+- Use fluid, responsive units EXCLUSIVELY: `rem`, `em`, `%`, `vw`, `vh`, `svw`, `svh`
+- Calculate sizing based on design intent, not Figma pixels
+- Example: Figma 40px → use `2.5rem` or `clamp(1.5rem, 5vw, 3rem)`
+- Use `clamp()` for fluid scaling across viewport sizes
+- Never use hardcoded pixel values in production CSS
+- Mobile-first approach: define small viewport sizes first, scale up
+
 ---
 
 ## File Structure (MANDATORY SEPARATION OF CONCERNS)
@@ -242,6 +251,8 @@ class Asset_Loader {
 - ✓ DRY principle followed
 - ✓ Functions modular and reusable
 - ✓ No custom typography controls
+- ✓ All sizing uses rem/em/%, not px
+- ✓ Figma pixel values ignored (fluid units used)
 
 ### WordPress & Elementor
 - ✓ All inputs sanitized
@@ -301,6 +312,8 @@ class Asset_Loader {
 - ❌ Duplicate code scattered
 - ❌ Unused code left in files
 - ❌ Custom typography controls
+- ❌ Pixel (px) values in CSS sizing
+- ❌ Figma pixel dimensions copied directly
 
 **SEO & Accessibility:**
 - ❌ Missing semantic HTML

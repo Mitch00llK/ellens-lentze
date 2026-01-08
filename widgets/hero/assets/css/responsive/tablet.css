@@ -1,10 +1,9 @@
 @media (max-width: 1024px) {
     .hero__card {
-        margin-left: 5%;
-        /* Reset offset */
-        width: 90%;
+        margin-left: 5vw;
+        /* 5% offset */
+        width: 90vw;
         /* Take mostly full width */
-        max-width: none;
         min-height: auto;
     }
 

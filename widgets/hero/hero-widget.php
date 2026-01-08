@@ -144,6 +144,6 @@ class Hero_Widget extends Widget_Base {
 	 */
 	protected function render() {
 		require_once __DIR__ . '/includes/render/render-functions.php';
-        \EllensLentze\Widgets\Hero\Includes\Render\Render_Functions::render( $this );
+        \EllensLentze\Widgets\Hero\Includes\Render\Render_Functions::render_widget( $this );
 	}
 }

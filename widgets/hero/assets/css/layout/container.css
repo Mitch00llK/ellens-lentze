@@ -2,8 +2,8 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    min-height: 600px;
-    /* Fallback min-height */
+    min-height: 80vh;
+    /* Relative viewport height */
 }
 
 .hero__bg-container {
@@ -29,12 +29,12 @@
 
 .hero__container {
     position: relative;
-    max-width: 1280px;
-    /* Standard container width approx */
+    max-width: 90vw;
+    /* Fluid container width */
     margin: 0 auto;
     height: 100%;
-    min-height: 600px;
-    /* Match section min-height or be flex */
+    min-height: 80vh;
+    /* Match section min-height */
     display: flex;
     align-items: center;
     z-index: 1;
@@ -44,14 +44,15 @@
 
 .hero__card {
     position: relative;
-    /* Design: Left 960px (on 1920). 960/1920 = 50% */
+    /* Design: Left 960px (on 1920) -> 50% */
     /* So card starts at 50% of the viewport/container roughly. */
     /* Using margin-left: auto might align it to right, but design is specific. */
     /* Let's try flexing it to the right half. */
     margin-left: 50%;
-    width: 50%;
-    max-width: 631px;
-    min-height: 551px;
+    width: 35vw;
+    /* Fluid width approx 33-35% of view */
+    min-height: 50vh;
+    /* Fluid height */
     pointer-events: auto;
     display: flex;
     flex-direction: column;
@@ -64,8 +65,8 @@
     width: 100%;
     height: 100%;
     background-color: var(--ellens-hero-color-blue);
-    border-radius: 8px;
-    /* Rounded corners from design */
+    border-radius: 0.5rem;
+    /* 8px -> 0.5rem */
     overflow: hidden;
     z-index: 0;
 }
@@ -88,8 +89,7 @@
 .hero__content {
     position: relative;
     z-index: 1;
-    padding: 76px 45px;
-    /* From design */
+    padding: var(--ellens-hero-spacing-card-padding);
     display: flex;
     flex-direction: column;
     justify-content: center;
