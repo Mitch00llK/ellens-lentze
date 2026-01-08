@@ -53,13 +53,15 @@ class Render_Functions {
                             ?>
                             <div <?php $widget->print_render_attribute_string( $item_key ); ?>>
                                 <<?php echo $link_tag; ?> class="services-cluster__card">
-                                    <?php if ( ! empty( $item['icon']['value'] ) ) : ?>
-                                        <div class="services-cluster__icon">
-                                            <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
-                                        </div>
-                                    <?php endif; ?>
-                                    
-                                    <h3 class="services-cluster__title"><?php echo esc_html( $item['title'] ); ?></h3>
+                                    <div class="services-cluster__header">
+                                        <?php if ( ! empty( $item['icon']['value'] ) ) : ?>
+                                            <div class="services-cluster__icon">
+                                                <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                                            </div>
+                                        <?php endif; ?>
+                                        
+                                        <h3 class="services-cluster__title"><?php echo esc_html( $item['title'] ); ?></h3>
+                                    </div>
                                     
                                     <?php if ( ! empty( $item['description'] ) ) : ?>
                                         <div class="services-cluster__description"><?php echo wp_kses_post( $item['description'] ); ?></div>
