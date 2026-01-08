@@ -30,7 +30,7 @@ function register_ellens_widget_category( $elements_manager ) {
 	$elements_manager->add_category(
 		'ellens-lentze',
 		[
-			'title' => esc_html__( 'Ellens & Lentze', 'ellens-lentze' ),
+			'title' => esc_html__( 'SocialLane Components', 'ellens-lentze' ),
 			'icon' => 'fa fa-plug',
 		]
 	);
