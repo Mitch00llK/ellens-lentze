@@ -1,0 +1,44 @@
+/* Wrapper / Section */
+.ellens-post-grid-wrapper {
+    background-color: var(--pg-color-bg);
+    padding: var(--pg-spacing-section) 0;
+    width: 100%;
+}
+
+/* Header */
+.ellens-post-grid-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1240px;
+    margin: 0 auto 3.75rem;
+    /* approx 60px bottom margin? Grid gap is 40px but header spacing usually more */
+    padding: 0 1.25rem;
+}
+
+.ellens-post-grid-header .section-title {
+    color: var(--pg-color-text-title);
+    /* Font styles should come from global H2 but ensuring color matches */
+}
+
+/* Header Button override if needed */
+.ellens-post-grid-header .ellens-btn {
+    border-color: var(--pg-color-text-title);
+    color: var(--pg-color-text-title);
+}
+
+.ellens-post-grid-header .ellens-btn:hover {
+    background-color: rgba(0, 69, 144, 0.1);
+}
+
+
+/* Grid Container */
+.ellens-post-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 cols desktop */
+    gap: var(--pg-spacing-grid-gap-row) var(--pg-spacing-grid-gap-col);
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}

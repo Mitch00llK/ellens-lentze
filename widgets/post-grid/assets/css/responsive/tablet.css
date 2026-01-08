@@ -1,0 +1,30 @@
+@media (max-width: 1024px) {
+    .ellens-post-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Header Stack */
+    .ellens-post-grid-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .ellens-post-grid-header .ellens-btn {
+        align-self: flex-start;
+    }
+
+    /* Grid Single Col */
+    .ellens-post-grid-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .ellens-post-grid-wrapper {
+        padding: 3rem 0;
+    }
+}

@@ -31,6 +31,9 @@ function register_ellens_hero_widget( $widgets_manager ) {
 
     require_once( __DIR__ . '/widgets/team-slider/team-slider-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\Team_Slider_Widget() );
+
+    require_once( __DIR__ . '/widgets/post-grid/ellens-post-grid.php' );
+	$widgets_manager->register( new \EllensLentze\Widgets\Post_Grid\Ellens_Post_Grid() );
 }
 add_action( 'elementor/widgets/register', 'register_ellens_hero_widget' );
 
