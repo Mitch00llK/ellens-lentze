@@ -57,6 +57,9 @@ function register_ellens_assets() {
     \EllensLentze\Includes\Assets\Assets_Config::register();
 }
 add_action( 'wp_enqueue_scripts', 'register_ellens_assets' );
+// Also register for Elementor frontend
+add_action( 'elementor/frontend/after_register_scripts', 'register_ellens_assets' );
+add_action( 'elementor/frontend/after_register_styles', 'register_ellens_assets' );
 
 /**
  * Register Custom Post Types.
