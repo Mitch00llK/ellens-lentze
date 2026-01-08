@@ -70,34 +70,5 @@ class Assets_Config {
             '1.0.0'
         );
 
-        /* Services Cluster Assets */
-        // Base
-        wp_register_style(
-            'ellens-sc-base',
-            plugins_url( 'widgets/services-cluster/assets/css/base/variables.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [],
-            '1.0.0'
-        );
-        // Layout
-        wp_register_style(
-            'ellens-sc-layout',
-            plugins_url( 'widgets/services-cluster/assets/css/layout/container.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-sc-base' ],
-            '1.0.0'
-        );
-        // Content
-        wp_register_style(
-            'ellens-sc-content',
-            plugins_url( 'widgets/services-cluster/assets/css/components/content.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-sc-base' ],
-            '1.0.0'
-        );
-        // Responsive
-        wp_register_style(
-            'ellens-sc-responsive',
-            plugins_url( 'widgets/services-cluster/assets/css/responsive/tablet.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-sc-layout' ],
-            '1.0.0'
-        );
     }
 }

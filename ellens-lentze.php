@@ -20,10 +20,22 @@ function register_ellens_hero_widget( $widgets_manager ) {
     require_once( __DIR__ . '/widgets/action-buttons/action-buttons-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\Action_Buttons_Widget() );
 
-    require_once( __DIR__ . '/widgets/services-cluster/services-cluster-widget.php' );
-	$widgets_manager->register( new \EllensLentze\Widgets\Services_Cluster_Widget() );
 }
 add_action( 'elementor/widgets/register', 'register_ellens_hero_widget' );
+
+/**
+ * Register SocialLane Components Category.
+ */
+function register_ellens_widget_category( $elements_manager ) {
+	$elements_manager->add_category(
+		'ellens-lentze',
+		[
+			'title' => esc_html__( 'SocialLane Components', 'ellens-lentze' ),
+			'icon'  => 'fa fa-plug',
+		]
+	);
+}
+add_action( 'elementor/elements/categories_registered', 'register_ellens_widget_category' );
 
 
 /**
