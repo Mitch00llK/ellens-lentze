@@ -27,4 +27,29 @@
     .ellens-post-grid-wrapper {
         padding: 3rem 0;
     }
+
+    /* Card Stacking on Mobile */
+    .post-card {
+        height: auto;
+        /* Allow growth */
+        min-height: auto;
+    }
+
+    .post-card-inner {
+        flex-direction: column-reverse;
+        /* Image Top, Content Bottom */
+    }
+
+    .post-content-column {
+        width: 100%;
+        flex: none;
+        padding: 2rem 1.5rem;
+    }
+
+    .post-image-column {
+        width: 100%;
+        flex: none;
+        height: 250px;
+        /* Fixed height for image area */
+    }
 }

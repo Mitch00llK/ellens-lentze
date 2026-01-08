@@ -35,10 +35,24 @@
 /* Grid Container */
 .ellens-post-grid-container {
     display: grid;
+    /* Default to 3 columns behavior */
     grid-template-columns: repeat(3, 1fr);
-    /* 3 cols desktop */
     gap: var(--pg-spacing-grid-gap-row) var(--pg-spacing-grid-gap-col);
     max-width: 1240px;
     margin: 0 auto;
     padding: 0 1.25rem;
+}
+
+/* Dynamic Column Modifiers */
+.ellens-grid-cols-1 {
+    grid-template-columns: 1fr;
+}
+
+.ellens-grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.ellens-grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+    /* Full width 1240px applies from default */
 }

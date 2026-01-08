@@ -60,7 +60,14 @@ class Render_Functions {
             </div>
 
             <!-- Grid -->
-            <div class="ellens-post-grid-container">
+            <?php
+            $post_count = $query->post_count;
+            $grid_class = 'ellens-post-grid-container';
+            if ( $post_count > 0 ) {
+                $grid_class .= ' ellens-grid-cols-' . min( $post_count, 3 ); // Cap at 3 for class logic
+            }
+            ?>
+            <div class="<?php echo esc_attr( $grid_class ); ?>">
                 <?php if ( $query->have_posts() ) : ?>
                     <?php while ( $query->have_posts() ) : $query->the_post(); 
                         $categories = get_the_category();
@@ -68,22 +75,11 @@ class Render_Functions {
                         $image_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
                     ?>
                         <div class="post-card">
-                            <div class="post-card-inner">
-                                <!-- Image Background -->
-                                <div class="post-image-bg">
-                                    <?php if ( $image_url ) : ?>
-                                        <img src="<?php echo esc_url( $image_url ); ?>" alt="<?php the_title_attribute(); ?>" loading="lazy">
-                                    <?php else : ?>
-                                        <div class="post-image-placeholder"></div>
-                                    <?php endif; ?>
-                                    <div class="post-overlay-gradient"></div>
-                                </div>
-
-                                <!-- Content Overlay -->
-                                <a href="<?php the_permalink(); ?>" class="post-card-content-link" aria-label="<?php the_title_attribute(); ?>">
-                                    <div class="post-content-overlay">
+                            <a href="<?php the_permalink(); ?>" class="post-card-link" aria-label="<?php the_title_attribute(); ?>">
+                                <div class="post-card-inner">
+                                    <!-- Left Column: Content -->
+                                    <div class="post-content-column">
                                         <span class="post-category"><?php echo esc_html( $cat_name ); ?></span>
-                                        
                                         <h3 class="post-title"><?php the_title(); ?></h3>
                                         
                                         <div class="post-read-more-btn ellens-btn">
@@ -91,8 +87,17 @@ class Render_Functions {
                                             <i class="fas fa-arrow-right" aria-hidden="true"></i>
                                         </div>
                                     </div>
-                                </a>
-                            </div>
+
+                                    <!-- Right Column: Image -->
+                                    <div class="post-image-column">
+                                        <?php if ( $image_url ) : ?>
+                                            <img src="<?php echo esc_url( $image_url ); ?>" alt="<?php the_title_attribute(); ?>" loading="lazy">
+                                        <?php else : ?>
+                                            <div class="post-image-placeholder"></div>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     <?php endwhile; wp_reset_postdata(); ?>
                 <?php else : ?>
