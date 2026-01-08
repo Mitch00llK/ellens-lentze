@@ -14,6 +14,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register Hero Widget and Assets.
  */
 function register_ellens_hero_widget( $widgets_manager ) {
+    // Register Team CPT
+    require_once( __DIR__ . '/includes/cpt/class-cpt-team.php' );
+    \EllensLentze\Includes\CPT\CPT_Team::register();
+
 	require_once( __DIR__ . '/widgets/hero/hero-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\Hero_Widget() );
 
@@ -28,6 +32,9 @@ function register_ellens_hero_widget( $widgets_manager ) {
 
     require_once( __DIR__ . '/widgets/services-cluster/services-cluster-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\Services_Cluster_Widget() );
+
+    require_once( __DIR__ . '/widgets/team-slider/team-slider-widget.php' );
+	$widgets_manager->register( new \EllensLentze\Widgets\Team_Slider_Widget() );
 }
 add_action( 'elementor/widgets/register', 'register_ellens_hero_widget' );
 

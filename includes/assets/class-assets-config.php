@@ -161,5 +161,43 @@ class Assets_Config {
             [ 'ellens-sc-layout' ],
             '1.0.0'
         );
+
+        /* Team Slider Assets */
+        // Base
+        wp_register_style(
+            'ellens-ts-base',
+            plugins_url( 'widgets/team-slider/assets/css/base/variables.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [],
+            '1.0.0'
+        );
+        // Layout
+        wp_register_style(
+            'ellens-ts-layout',
+            plugins_url( 'widgets/team-slider/assets/css/layout/container.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'ellens-ts-base' ],
+            '1.0.0'
+        );
+        // Component
+        wp_register_style(
+            'ellens-ts-component',
+            plugins_url( 'widgets/team-slider/assets/css/components/card.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'ellens-ts-base' ],
+            '1.0.0'
+        );
+        // Responsive
+        wp_register_style(
+            'ellens-ts-responsive',
+            plugins_url( 'widgets/team-slider/assets/css/responsive/tablet.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'ellens-ts-layout' ],
+            '1.0.0'
+        );
+         // Script
+         wp_register_script(
+            'ellens-ts-script',
+            plugins_url( 'widgets/team-slider/assets/js/team-slider.js', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'jquery', 'elementor-frontend' ],
+            '1.0.0',
+            true
+        );
     }
 }

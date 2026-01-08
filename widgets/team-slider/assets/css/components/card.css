@@ -1,0 +1,80 @@
+/* Component Styles */
+
+/* Header Text */
+.section-title {
+    font-family: var(--ts-font-header);
+    font-size: 3.2rem;
+    font-weight: 400;
+    color: var(--ts-color-text-primary);
+    margin: 0;
+}
+
+/* Button */
+.btn-about {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 24px;
+    border: 1px solid var(--ts-color-text-primary);
+    border-radius: 100px;
+    color: var(--ts-color-text-primary);
+    text-decoration: none;
+    font-family: var(--ts-font-body);
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.btn-about:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Card */
+.team-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.team-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.team-image-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.team-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Card Content Overlay is implied by design to be ON the card or below? 
+   Looking at Figma screenshot/code, it has absolute positioning. */
+.team-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 24px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    /* Fallback/enhancement */
+    /* Design might vary, implementing based on provided structure */
+}
+
+.team-name {
+    font-family: var(--ts-font-header);
+    font-size: 2.4rem;
+    color: var(--ts-color-text-primary);
+    margin: 0 0 4px;
+}
+
+.team-job {
+    font-family: var(--ts-font-body);
+    font-size: 1.4rem;
+    color: var(--ts-color-text-secondary);
+    margin: 0;
+}

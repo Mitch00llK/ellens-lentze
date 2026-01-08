@@ -1,0 +1,11 @@
+/* Base Variables */
+.ellens-team-slider-wrapper {
+    --ts-color-bg: var(--color-blue-800, #001c3a);
+    --ts-color-text-primary: #ffffff;
+    --ts-color-text-secondary: var(--color-orange-500, #ef8a00);
+    --ts-font-header: 'DM Serif Display', serif;
+    --ts-font-body: 'DM Sans', sans-serif;
+    --ts-card-width: 397px;
+    --ts-card-height: 474px;
+    --ts-spacing: 24px;
+}

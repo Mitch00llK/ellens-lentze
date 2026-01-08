@@ -1,0 +1,40 @@
+/* Layout */
+.ellens-team-slider-wrapper {
+    background-color: var(--ts-color-bg);
+    padding: 96px 0;
+    overflow: hidden;
+}
+
+.team-slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1240px;
+    /* Standard container width */
+    margin: 0 auto 56px;
+    padding: 0 20px;
+}
+
+.ellens-team-slider {
+    width: 100%;
+    padding-bottom: 50px;
+    /* Space for pagination */
+    overflow: visible;
+    /* Allow slides to overflow for partial view */
+}
+
+.swiper-slide {
+    width: var(--ts-card-width);
+    height: var(--ts-card-height);
+    transition: opacity 0.3s ease;
+}
+
+/* Pagination Styling */
+.swiper-pagination-bullet {
+    background: var(--color-blue-500, #0d3b66);
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--ts-color-text-secondary);
+}
