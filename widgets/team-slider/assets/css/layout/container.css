@@ -1,36 +1,52 @@
-/* Layout */
+/* Layout - Figma Matched */
 .ellens-team-slider-wrapper {
     background-color: var(--ts-color-bg);
-    padding: 96px 0;
+    padding: var(--ts-spacing-section) 0;
     overflow: hidden;
+    width: 100%;
 }
 
+/* Header Section */
 .team-slider-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1240px;
-    margin: 0 auto 56px;
-    padding: 0 20px;
+    margin: 0 auto var(--ts-spacing-header-bottom);
+    padding: 0 1.25rem;
 }
 
+/* Slider Container */
 .ellens-team-slider {
     width: 100%;
-    padding-bottom: 50px;
+    padding: 0 1.25rem 3.125rem;
 }
 
-/* Splide Slide Sizing */
+/* Slide Sizing */
 .ellens-team-slider .splide__slide {
     width: var(--ts-card-width);
     height: var(--ts-card-height);
 }
 
-/* Pagination Styling */
+/* Splide Track - Center the slides */
+.ellens-team-slider .splide__track {
+    overflow: visible;
+}
+
+/* Pagination */
+.ellens-team-slider .splide__pagination {
+    bottom: -2rem;
+}
+
 .ellens-team-slider .splide__pagination__page {
-    background: var(--color-blue-500, #0d3b66);
+    width: 0.75rem;
+    height: 0.75rem;
+    background: var(--ts-color-pagination);
     opacity: 1;
+    margin: 0 0.25rem;
 }
 
 .ellens-team-slider .splide__pagination__page.is-active {
-    background: var(--ts-color-text-secondary);
+    background: var(--ts-color-pagination-active);
+    transform: scale(1);
 }
