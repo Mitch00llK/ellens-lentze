@@ -22,6 +22,21 @@ function register_ellens_hero_widget( $widgets_manager ) {
 }
 add_action( 'elementor/widgets/register', 'register_ellens_hero_widget' );
 
+/**
+ * Register Custom Widget Category.
+ */
+function register_ellens_widget_category( $elements_manager ) {
+
+	$elements_manager->add_category(
+		'ellens-lentze',
+		[
+			'title' => esc_html__( 'Ellens & Lentze', 'ellens-lentze' ),
+			'icon' => 'fa fa-plug',
+		]
+	);
+}
+add_action( 'elementor/elements/categories_registered', 'register_ellens_widget_category' );
+
 
 /**
  * Register Assets Config.
