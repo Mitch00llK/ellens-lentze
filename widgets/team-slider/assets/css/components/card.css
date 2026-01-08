@@ -2,7 +2,7 @@
 
 /* Header Text */
 .section-title {
-    font-family: var(--ts-font-header);
+
     font-size: 3.2rem;
     font-weight: 400;
     color: var(--ts-color-text-primary);
@@ -19,7 +19,7 @@
     border-radius: 100px;
     color: var(--ts-color-text-primary);
     text-decoration: none;
-    font-family: var(--ts-font-body);
+
     font-size: 1.8rem;
     transition: all 0.3s ease;
 }
@@ -66,14 +66,14 @@
 }
 
 .team-name {
-    font-family: var(--ts-font-header);
+
     font-size: 2.4rem;
     color: var(--ts-color-text-primary);
     margin: 0 0 4px;
 }
 
 .team-job {
-    font-family: var(--ts-font-body);
+
     font-size: 1.4rem;
     color: var(--ts-color-text-secondary);
     margin: 0;

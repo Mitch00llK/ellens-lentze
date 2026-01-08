@@ -311,6 +311,7 @@ class Asset_Loader {
 - ❌ Hardcoded CSS values
 - ❌ Duplicate code scattered
 - ❌ Unused code left in files
+- ❌ No custom variable typography
 - ❌ Custom typography controls
 - ❌ Pixel (px) values in CSS sizing
 - ❌ Figma pixel dimensions copied directly
