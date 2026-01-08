@@ -16,6 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 function register_ellens_hero_widget( $widgets_manager ) {
 	require_once( __DIR__ . '/widgets/hero/hero-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\Hero_Widget() );
+
+    require_once( __DIR__ . '/widgets/action-buttons/action-buttons-widget.php' );
+	$widgets_manager->register( new \EllensLentze\Widgets\Action_Buttons_Widget() );
 }
 add_action( 'elementor/widgets/register', 'register_ellens_hero_widget' );
 

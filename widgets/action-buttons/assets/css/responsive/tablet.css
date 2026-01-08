@@ -1,0 +1,18 @@
+@media (max-width: 767px) {
+    .action-buttons__card {
+        padding: 2rem 1.5rem;
+    }
+
+    .action-buttons__list {
+        gap: 0.75rem;
+    }
+
+    .action-buttons__item {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        width: 100%;
+        /* Full width buttons on mobile? Or wrap */
+        /* Design 4103-668 mobile view not explicitly shown but safer to keep wrap or scroll */
+        justify-content: space-between;
+    }
+}
