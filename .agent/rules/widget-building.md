@@ -60,6 +60,7 @@ includes/
 - Use dependency injection over globals
 - Maximum 300 lines per file
 - Namespace properly: `namespace PluginName\Widgets`
+- Buttons must use /assets/css/globals/buttons.css
 
 ### CSS Organization
 ```

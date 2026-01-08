@@ -46,7 +46,7 @@ class Render_Functions {
         $widget->add_render_attribute( 'description', 'class', 'hero__description' );
         
         // Button Attributes
-        $widget->add_render_attribute( 'button', 'class', 'hero__button' );
+        $widget->add_render_attribute( 'button', 'class', [ 'hero__button', 'ellens-btn' ] );
         if ( ! empty( $button_url['url'] ) ) {
 			$widget->add_link_attributes( 'button', $button_url );
 		}
