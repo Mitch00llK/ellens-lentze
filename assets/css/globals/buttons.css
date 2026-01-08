@@ -1,5 +1,4 @@
-/* Global Buttons */
-
+/* Global Buttons - BEM Structure */
 .ellens-btn {
     display: inline-flex;
     align-items: center;
@@ -8,9 +7,8 @@
     border: 1px solid currentColor;
     border-radius: 100px;
     color: inherit;
-    /* Inherit color from parent or utility class */
     text-decoration: none;
-    font-size: 1.8rem;
+    font-size: 1rem;
     line-height: normal;
     transition: all 0.3s ease;
     background: transparent;
@@ -22,14 +20,31 @@
     opacity: 0.9;
 }
 
-/* Primary Button (Solid) - Example for future use */
-.ellens-btn-primary {
+/* Modifiers */
+.ellens-btn--primary {
     background-color: var(--color-orange-500, #ef8a00);
     border-color: var(--color-orange-500, #ef8a00);
     color: #ffffff;
 }
 
-.ellens-btn-primary:hover {
+.ellens-btn--primary:hover {
     background-color: var(--color-orange-600, #d67a00);
     opacity: 1;
+}
+
+.ellens-btn--secondary {
+    background-color: transparent;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.ellens-btn--secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Icon helper */
+.ellens-btn__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }

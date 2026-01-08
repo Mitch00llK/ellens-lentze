@@ -37,28 +37,17 @@
     padding: 0;
 }
 
-/* Button */
+/* Button - inheriting from .ellens-btn */
 .hero__button {
-    display: inline-flex;
-    align-items: center;
+    /* Layout specific */
     gap: 0.75rem;
     padding: 0.75rem 1.5rem;
-
     font-size: 1.125rem;
-    /* 18px */
-    line-height: 1.5;
     font-weight: 400;
     letter-spacing: 0.01em;
-
     color: var(--ellens-hero-color-white);
-    background-color: transparent;
     border: 1px solid var(--ellens-hero-color-white);
-    border-radius: 999px;
-    /* Pill shape */
-
-    text-decoration: none;
-    transition: all 0.3s ease;
-    cursor: pointer;
+    /* Width override if needed */
     width: fit-content;
 }
 
