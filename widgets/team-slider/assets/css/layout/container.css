@@ -33,20 +33,40 @@
     overflow: visible;
 }
 
-/* Pagination */
+/* Pagination - Figma Matched */
 .ellens-team-slider .splide__pagination {
-    bottom: -2rem;
+    position: relative;
+    bottom: 0;
+    margin-top: 2.5rem;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.ellens-team-slider .splide__pagination li {
+    list-style: none;
+    line-height: 0;
 }
 
 .ellens-team-slider .splide__pagination__page {
-    width: 0.75rem;
-    height: 0.75rem;
+    width: 0.875rem;
+    height: 0.875rem;
+    border-radius: 50%;
     background: var(--ts-color-pagination);
+    border: none;
     opacity: 1;
-    margin: 0 0.25rem;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.ellens-team-slider .splide__pagination__page:hover {
+    background: var(--ts-color-pagination-active);
 }
 
 .ellens-team-slider .splide__pagination__page.is-active {
     background: var(--ts-color-pagination-active);
-    transform: scale(1);
+    transform: none;
 }

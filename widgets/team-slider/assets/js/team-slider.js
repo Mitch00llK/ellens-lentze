@@ -25,7 +25,7 @@
 
             var splide = new Splide(this, {
                 type: 'loop',
-                perPage: 6,
+                perPage: 5,
                 perMove: 1,
                 focus: 'center',
                 gap: '24px',
