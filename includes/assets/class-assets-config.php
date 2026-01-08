@@ -8,6 +8,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Assets_Config {
 
     public static function register() {
+         // Global Assets
+         wp_register_style(
+            'ellens-global-buttons',
+            plugins_url( 'assets/css/globals/buttons.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [],
+            '1.0.0'
+        );
+
          // Base
         wp_register_style(
             'ellens-hero-base',
@@ -174,7 +182,7 @@ class Assets_Config {
         wp_register_style(
             'ellens-ts-layout',
             plugins_url( 'widgets/team-slider/assets/css/layout/container.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-ts-base' ],
+            [ 'ellens-ts-base', 'ellens-global-buttons' ],
             '1.0.0'
         );
         // Component
@@ -195,7 +203,7 @@ class Assets_Config {
          wp_register_script(
             'ellens-ts-script',
             plugins_url( 'widgets/team-slider/assets/js/team-slider.js', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'jquery', 'elementor-frontend' ],
+            [ 'jquery', 'elementor-frontend', 'swiper' ],
             '1.0.0',
             true
         );

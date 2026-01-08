@@ -312,6 +312,7 @@ class Asset_Loader {
 - ❌ Duplicate code scattered
 - ❌ Unused code left in files
 - ❌ No custom variable typography
+- ❌ No font sizes, no font line height
 - ❌ Custom typography controls
 - ❌ Pixel (px) values in CSS sizing
 - ❌ Figma pixel dimensions copied directly

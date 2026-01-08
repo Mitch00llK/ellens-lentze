@@ -53,7 +53,7 @@ class Render_Functions {
             <!-- Header Section -->
             <div class="team-slider-header">
                 <h2 class="section-title"><?php esc_html_e( 'Het team van Ellens & Lentze', 'ellens-lentze' ); ?></h2>
-                <a href="/over-ons" class="btn-about">
+                <a href="/over-ons" class="ellens-btn">
                     <?php esc_html_e( 'Over ons', 'ellens-lentze' ); ?>
                     <i class="fa fa-arrow-right"></i>
                 </a>

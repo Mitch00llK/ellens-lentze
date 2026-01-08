@@ -10,23 +10,7 @@
 }
 
 /* Button */
-.btn-about {
-    display: inline-flex;
-    align-items: center;
-    gap: 16px;
-    padding: 8px 24px;
-    border: 1px solid var(--ts-color-text-primary);
-    border-radius: 100px;
-    color: var(--ts-color-text-primary);
-    text-decoration: none;
-
-    font-size: 1.8rem;
-    transition: all 0.3s ease;
-}
-
-.btn-about:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
+/* Uses global .ellens-btn class */
 
 /* Card */
 .team-card {
