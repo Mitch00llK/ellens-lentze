@@ -29,7 +29,7 @@ class Action_Buttons_Widget extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'general' ];
+		return [ 'ellens-lentze' ];
 	}
 
 	public function get_keywords() {

@@ -1,0 +1,84 @@
+.services-cluster {
+    position: relative;
+    width: 100%;
+    min-height: 800px;
+    /* Force height for absolute positioning on desktop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0;
+}
+
+.services-cluster__container {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    /* Fallback */
+}
+
+/* Central Image Wrapper */
+.services-cluster__visuals {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45vw;
+    height: 60vh;
+    max-width: 600px;
+    z-index: var(--ellens-sc-z-image);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.services-cluster__mask-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Masking will be applied via inline style or separate class if mask image is provided */
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+}
+
+/* Service Cards Container - using absolute positioning for the cluster effect */
+.services-cluster__cards {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: var(--ellens-sc-z-card);
+}
+
+.services-cluster__card-wrapper {
+    position: absolute;
+    width: 300px;
+    /* Fixed width for cards roughly */
+    max-width: 90vw;
+}
+
+/* Positioning logic will be generic classes or nth-child */
+.services-cluster__card-wrapper:nth-child(1) {
+    top: 10%;
+    left: 10%;
+}
+
+.services-cluster__card-wrapper:nth-child(2) {
+    top: 10%;
+    right: 10%;
+}
+
+.services-cluster__card-wrapper:nth-child(3) {
+    bottom: 10%;
+    left: 15%;
+}
+
+.services-cluster__card-wrapper:nth-child(4) {
+    bottom: 10%;
+    right: 15%;
+}
