@@ -8,7 +8,7 @@
 .action-buttons__card {
     background-color: var(--ellens-ab-color-bg);
     border-radius: var(--ellens-ab-radius-card);
-    padding: var(--ellens-ab-spacing-container-padding);
+    padding: 4rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;

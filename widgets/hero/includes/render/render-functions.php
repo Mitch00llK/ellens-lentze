@@ -29,13 +29,9 @@ class Render_Functions {
 
         // Graphic Overlay
         if ( ! empty( $settings['graphic_overlay']['url'] ) ) {
-            // Check if SVG
-            $ext = pathinfo($settings['graphic_overlay']['url'], PATHINFO_EXTENSION);
-            if( $ext === 'svg' ) {
-                 $graphic_html = \Elementor\Utils::get_image_html( $settings, 'graphic_overlay', 'graphic_overlay', [ 'class' => 'hero__card-pattern' ] );
-            } else {
-                 $graphic_html = \Elementor\Group_Control_Image_Size::get_attachment_image_html( $settings, 'full', 'graphic_overlay' );
-            }
+            // Standard Elementor Image Render works for SVGs too (outputting img tag)
+            $widget->add_render_attribute( 'graphic_overlay', 'class', [ 'hero__card-pattern', 'ellens-hero-svg-overlay' ] );
+             $graphic_html = \Elementor\Group_Control_Image_Size::get_attachment_image_html( $settings, 'full', 'graphic_overlay' );
         } else {
             $graphic_html = '';
         }
@@ -66,10 +62,15 @@ class Render_Functions {
             </div>
 
             <div class="hero__container">
+                <?php 
+                $show_card = isset( $settings['show_card_container'] ) ? $settings['show_card_container'] : 'yes';
+                if ( 'yes' === $show_card ) : 
+                ?>
                 <div class="hero__card">
                      <div class="hero__card-bg">
                         <?php if ( ! empty( $graphic_html ) ) echo $graphic_html; ?>
                      </div>
+                     
                      <div class="hero__content">
                         <?php if ( ! empty( $subtitle ) ) : ?>
                             <span <?php $widget->print_render_attribute_string( 'subtitle' ); ?>><?php echo esc_html( $subtitle ); ?></span>
@@ -91,6 +92,7 @@ class Render_Functions {
                         <?php endif; ?>
                      </div>
                 </div>
+                <?php endif; ?>
             </div>
 
 		</section>

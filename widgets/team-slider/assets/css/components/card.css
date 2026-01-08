@@ -51,7 +51,7 @@
     left: 0;
     width: 100%;
     padding: var(--ts-spacing-card-padding);
-    background: linear-gradient(to top, rgba(0, 28, 58, 0.9) 0%, rgba(0, 28, 58, 0.6) 60%, transparent 100%);
+    background: #002956 !important;
     z-index: 2;
 }
 
@@ -85,6 +85,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--ts-color-bg);
+    color: #fff;
     z-index: 3;
 }

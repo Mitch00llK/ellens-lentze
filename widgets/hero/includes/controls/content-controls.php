@@ -20,6 +20,18 @@ class Content_Controls {
 		);
 
         $widget->add_control(
+			'show_card_container',
+			[
+				'label' => esc_html__( 'Show Card Container', 'ellens-lentze' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'ellens-lentze' ),
+				'label_off' => esc_html__( 'Hide', 'ellens-lentze' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+			]
+		);
+
+        $widget->add_control(
 			'subtitle',
 			[
 				'label' => esc_html__( 'Subtitle', 'ellens-lentze' ),
