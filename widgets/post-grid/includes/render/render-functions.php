@@ -64,37 +64,35 @@ class Render_Functions {
                 <?php if ( $query->have_posts() ) : ?>
                     <?php while ( $query->have_posts() ) : $query->the_post(); 
                         $categories = get_the_category();
-                        $cat_name = ! empty( $categories ) ? $categories[0]->name : 'Actueel'; // Default fallback
+                        $cat_name = ! empty( $categories ) ? $categories[0]->name : 'Actueel';
                         $image_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
                     ?>
                         <div class="post-card">
-                            <a href="<?php the_permalink(); ?>" class="post-card-link" aria-label="<?php the_title_attribute(); ?>">
-                                <div class="post-card-inner">
-                                    <div class="post-image-wrapper">
-                                        <?php if ( $image_url ) : ?>
-                                            <img src="<?php echo esc_url( $image_url ); ?>" alt="<?php the_title_attribute(); ?>" loading="lazy">
-                                        <?php else : ?>
-                                            <div class="post-image-placeholder"></div>
-                                        <?php endif; ?>
-                                        
-                                        <!-- Category Tag (Absolute) -->
-                                        <div class="post-category-tag">
-                                            <?php echo esc_html( $cat_name ); ?>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="post-info">
-                                        <h3 class="post-title"><?php the_title(); ?></h3>
-                                        <div class="post-excerpt">
-                                            <?php echo wp_trim_words( get_the_excerpt(), 20, '...' ); ?>
-                                        </div>
-                                        
-                                        <span class="post-arrow">
-                                            <i class="fas fa-arrow-right"></i>
-                                        </span>
-                                    </div>
+                            <div class="post-card-inner">
+                                <!-- Image Background -->
+                                <div class="post-image-bg">
+                                    <?php if ( $image_url ) : ?>
+                                        <img src="<?php echo esc_url( $image_url ); ?>" alt="<?php the_title_attribute(); ?>" loading="lazy">
+                                    <?php else : ?>
+                                        <div class="post-image-placeholder"></div>
+                                    <?php endif; ?>
+                                    <div class="post-overlay-gradient"></div>
                                 </div>
-                            </a>
+
+                                <!-- Content Overlay -->
+                                <a href="<?php the_permalink(); ?>" class="post-card-content-link" aria-label="<?php the_title_attribute(); ?>">
+                                    <div class="post-content-overlay">
+                                        <span class="post-category"><?php echo esc_html( $cat_name ); ?></span>
+                                        
+                                        <h3 class="post-title"><?php the_title(); ?></h3>
+                                        
+                                        <div class="post-read-more-btn ellens-btn">
+                                            <?php esc_html_e( 'Lees meer', 'ellens-lentze' ); ?>
+                                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     <?php endwhile; wp_reset_postdata(); ?>
                 <?php else : ?>
