@@ -22,6 +22,9 @@ function register_ellens_hero_widget( $widgets_manager ) {
 
     require_once( __DIR__ . '/widgets/usp-grid/usp-grid-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\USP_Grid_Widget() );
+
+    require_once( __DIR__ . '/widgets/services-cluster/services-cluster-widget.php' );
+	$widgets_manager->register( new \EllensLentze\Widgets\Services_Cluster_Widget() );
 }
 add_action( 'elementor/widgets/register', 'register_ellens_hero_widget' );
 
