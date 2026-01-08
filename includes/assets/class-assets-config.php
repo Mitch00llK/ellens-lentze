@@ -99,5 +99,35 @@ class Assets_Config {
             [ 'ellens-usp-layout' ],
             '1.0.0'
         );
+
+        /* Image Text Block Assets */
+        // Base
+        wp_register_style(
+            'ellens-itb-base',
+            plugins_url( 'widgets/image-text-block/assets/css/base/variables.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [],
+            '1.0.0'
+        );
+        // Layout
+        wp_register_style(
+            'ellens-itb-layout',
+            plugins_url( 'widgets/image-text-block/assets/css/layout/container.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'ellens-itb-base' ],
+            '1.0.0'
+        );
+        // Content
+        wp_register_style(
+            'ellens-itb-content',
+            plugins_url( 'widgets/image-text-block/assets/css/components/content.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'ellens-itb-base' ],
+            '1.0.0'
+        );
+        // Responsive
+        wp_register_style(
+            'ellens-itb-responsive',
+            plugins_url( 'widgets/image-text-block/assets/css/responsive/tablet.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'ellens-itb-layout' ],
+            '1.0.0'
+        );
     }
 }

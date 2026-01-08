@@ -1,0 +1,86 @@
+/* Image Wrapper */
+.image-text-block__image-wrapper {
+    flex: 1 1 50%;
+    position: relative;
+    min-height: 300px;
+    overflow: hidden;
+}
+
+.image-text-block__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Content Wrapper */
+.image-text-block__content-wrapper {
+    flex: 1 1 50%;
+    padding: var(--ellens-itb-spacing-padding-content);
+    background-color: var(--ellens-itb-color-bg-content);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--ellens-itb-spacing-gap-content);
+}
+
+/* Typography (Inherited Fonts) */
+.image-text-block__title {
+    color: var(--ellens-itb-color-text-title);
+    font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+    /* 28px -> 40px */
+    line-height: 1.2;
+    margin: 0;
+}
+
+.image-text-block__description {
+    color: var(--ellens-itb-color-text-desc);
+    font-size: clamp(1rem, 1.125vw, 1.125rem);
+    /* 16px -> 18px */
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Buttons */
+.image-text-block__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ellens-itb-spacing-gap-buttons);
+    margin-top: 1rem;
+}
+
+.image-text-block__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+/* Primary Button Style */
+.image-text-block__button--primary {
+    border: 1px solid var(--ellens-itb-color-btn-primary);
+    color: var(--ellens-itb-color-btn-primary);
+    background: transparent;
+}
+
+.image-text-block__button--primary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Secondary Button Style */
+.image-text-block__button--secondary {
+    background-color: #ffffff;
+    color: var(--ellens-itb-color-btn-secondary);
+    border: 1px solid #ffffff;
+}
+
+.image-text-block__button--secondary:hover {
+    background-color: #f0f0f0;
+    border-color: #f0f0f0;
+}
