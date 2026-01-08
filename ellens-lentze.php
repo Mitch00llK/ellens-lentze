@@ -14,10 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register Hero Widget and Assets.
  */
 function register_ellens_hero_widget( $widgets_manager ) {
-    // Register Team CPT
-    require_once( __DIR__ . '/includes/cpt/class-cpt-team.php' );
-    \EllensLentze\Includes\CPT\CPT_Team::register();
-
 	require_once( __DIR__ . '/widgets/hero/hero-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\Hero_Widget() );
 
@@ -61,4 +57,13 @@ function register_ellens_assets() {
     \EllensLentze\Includes\Assets\Assets_Config::register();
 }
 add_action( 'wp_enqueue_scripts', 'register_ellens_assets' );
+
+/**
+ * Register Custom Post Types.
+ */
+function register_ellens_cpt() {
+    require_once( __DIR__ . '/includes/cpt/class-cpt-team.php' );
+    \EllensLentze\Includes\CPT\CPT_Team::register();
+}
+add_action( 'init', 'register_ellens_cpt' );
 
