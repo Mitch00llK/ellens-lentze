@@ -1,0 +1,46 @@
+@media (max-width: 1024px) {
+    .hero__card {
+        margin-left: 5%;
+        /* Reset offset */
+        width: 90%;
+        /* Take mostly full width */
+        max-width: none;
+        min-height: auto;
+    }
+
+    .hero__title {
+        font-size: 48px;
+        line-height: 1.1;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero {
+        min-height: auto;
+    }
+
+    .hero__container {
+        padding: 40px 20px;
+        flex-direction: column;
+    }
+
+    .hero__card {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+        /* Space from top if image is visible above, or just spacing */
+    }
+
+    .hero__content {
+        padding: 40px 24px;
+    }
+
+    .hero__title {
+        font-size: 36px;
+    }
+
+    .hero__subtitle {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+}

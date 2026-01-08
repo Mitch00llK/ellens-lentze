@@ -1,0 +1,106 @@
+<?php
+namespace EllensLentze\Widgets\Hero\Includes\Controls;
+
+use \Elementor\Controls_Manager;
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+class Content_Controls {
+
+	public static function register( $widget ) {
+
+		$widget->start_controls_section(
+			'section_content',
+			[
+				'label' => esc_html__( 'Content', 'ellens-lentze' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+        $widget->add_control(
+			'subtitle',
+			[
+				'label' => esc_html__( 'Subtitle', 'ellens-lentze' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => esc_html__( 'ELLENS & LENTZE', 'ellens-lentze' ),
+				'placeholder' => esc_html__( 'Type your subtitle here', 'ellens-lentze' ),
+                'label_block' => true,
+			]
+		);
+
+		$widget->add_control(
+			'title',
+			[
+				'label' => esc_html__( 'Title', 'ellens-lentze' ),
+				'type' => Controls_Manager::TEXTAREA,
+				'default' => esc_html__( 'Wij zijn er voor alle belangrijke gebeurtenissen in uw leven.', 'ellens-lentze' ),
+				'placeholder' => esc_html__( 'Type your title here', 'ellens-lentze' ),
+			]
+		);
+
+        $widget->add_control(
+			'description',
+			[
+				'label' => esc_html__( 'Description', 'ellens-lentze' ),
+				'type' => Controls_Manager::WYSIWYG,
+				'default' => esc_html__( 'Wij zijn er voor alle belangrijke gebeurtenissen in uw leven.', 'ellens-lentze' ),
+				'placeholder' => esc_html__( 'Type your description here', 'ellens-lentze' ),
+			]
+		);
+
+        $widget->add_control(
+			'link_text',
+			[
+				'label' => esc_html__( 'Link Text', 'ellens-lentze' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => esc_html__( 'Onze expertises', 'ellens-lentze' ),
+			]
+		);
+
+        $widget->add_control(
+			'link_url',
+			[
+				'label' => esc_html__( 'Link URL', 'ellens-lentze' ),
+				'type' => Controls_Manager::URL,
+				'placeholder' => esc_html__( 'https://your-link.com', 'ellens-lentze' ),
+				'default' => [
+					'url' => '#',
+				],
+			]
+		);
+
+		$widget->end_controls_section();
+
+        $widget->start_controls_section(
+			'section_images',
+			[
+				'label' => esc_html__( 'Images', 'ellens-lentze' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+        $widget->add_control(
+			'image',
+			[
+				'label' => esc_html__( 'Background Image', 'ellens-lentze' ),
+				'type' => Controls_Manager::MEDIA,
+				'default' => [
+					'url' => \Elementor\Utils::get_placeholder_image_src(),
+				],
+			]
+		);
+
+        $widget->add_control(
+			'graphic_overlay',
+			[
+				'label' => esc_html__( 'Graphic Overlay', 'ellens-lentze' ),
+				'type' => Controls_Manager::MEDIA,
+                'description' => esc_html__( 'Upload the SVG graphic overlay.', 'ellens-lentze' ),
+			]
+		);
+
+        $widget->end_controls_section();
+	}
+}

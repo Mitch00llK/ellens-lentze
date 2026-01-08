@@ -1,0 +1,14 @@
+:root {
+    /* Colors */
+    --ellens-hero-color-blue: #004590;
+    --ellens-hero-color-orange: #ef8a00;
+    --ellens-hero-color-white: #ffffff;
+    
+    /* Spacing */
+    --ellens-hero-spacing-card-padding: 76px 45px;
+    
+    /* Fonts - Assuming these are loaded globally, but defining fallbacks */
+    --ellens-hero-font-bankgothic: 'BankGothic Lt BT', sans-serif;
+    --ellens-hero-font-dm-serif: 'DM Serif Display', serif;
+    --ellens-hero-font-dm-sans: 'DM Sans', sans-serif;
+}

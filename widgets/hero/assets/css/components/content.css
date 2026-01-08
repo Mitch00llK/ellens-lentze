@@ -1,0 +1,77 @@
+/* Subtitle */
+.hero__subtitle {
+    font-family: var(--ellens-hero-font-bankgothic);
+    font-size: 20px;
+    line-height: 36px;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: var(--ellens-hero-color-orange);
+    margin-bottom: 32px;
+    display: block;
+}
+
+/* Title */
+.hero__title {
+    font-family: var(--ellens-hero-font-dm-serif);
+    font-size: 64px;
+    line-height: 58px;
+    /* Tight line height */
+    letter-spacing: 1.28px;
+    /* Tracking */
+    color: var(--ellens-hero-color-white);
+    margin: 0;
+    margin-bottom: 24px;
+    font-weight: 400;
+}
+
+/* Description */
+.hero__description {
+    font-family: var(--ellens-hero-font-dm-sans);
+    font-size: 18px;
+    line-height: 32px;
+    letter-spacing: 0.36px;
+    /* Tracking 2% of 18px */
+    color: var(--ellens-hero-color-white);
+    margin-bottom: 36px;
+}
+
+.hero__description p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Button */
+.hero__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+
+    font-family: var(--ellens-hero-font-dm-sans);
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: 0.18px;
+    /* 1% */
+
+    color: var(--ellens-hero-color-white);
+    background-color: transparent;
+    border: 1px solid var(--ellens-hero-color-white);
+    border-radius: 999px;
+    /* Pill shape */
+
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.hero__button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hero__button-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
