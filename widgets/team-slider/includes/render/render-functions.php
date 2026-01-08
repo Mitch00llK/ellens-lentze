@@ -27,26 +27,9 @@ class Render_Functions {
         }
 
         // Slider Attributes
-        $widget->add_render_attribute( 'slider', 'class', 'swiper ellens-team-slider' );
-        
         $slider_settings = [
             'autoplay' => 'yes' === $settings['autoplay'] ? [ 'delay' => $settings['autoplay_speed'] ] : false,
-            'loop' => true,
-            'slidesPerView' => 'auto',
-            'centeredSlides' => true,
-            'spaceBetween' => 24,
-            'pagination' => [
-                'el' => '.swiper-pagination',
-                'clickable' => true,
-            ],
-            'breakpoints' => [
-                768 => [
-                    'spaceBetween' => 36,
-                ],
-            ],
         ];
-
-        $widget->add_render_attribute( 'slider', 'data-settings', wp_json_encode( $slider_settings ) );
 
 		?>
 		<div class="ellens-team-slider-wrapper">
@@ -59,31 +42,32 @@ class Render_Functions {
                 </a>
             </div>
 
-            <!-- Slider -->
-            <div <?php echo $widget->get_render_attribute_string( 'slider' ); ?>>
-                <div class="swiper-wrapper">
-                    <?php while ( $team_query->have_posts() ) : $team_query->the_post(); 
-                        $job_title = get_post_meta( get_the_ID(), '_ellens_team_function', true );
-                        $image_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
-                    ?>
-                        <div class="swiper-slide team-card">
-                            <div class="team-card-inner">
-                                <?php if ( $image_url ) : ?>
-                                    <div class="team-image-wrapper">
-                                        <img src="<?php echo esc_url( $image_url ); ?>" alt="<?php the_title_attribute(); ?>" loading="lazy">
-                                    </div>
-                                <?php endif; ?>
-                                <div class="team-info">
-                                    <h3 class="team-name"><?php the_title(); ?></h3>
-                                    <?php if ( $job_title ) : ?>
-                                        <p class="team-job"><?php echo esc_html( $job_title ); ?></p>
+            <!-- Slider (Splide structure) -->
+            <div class="splide ellens-team-slider" data-settings='<?php echo wp_json_encode( $slider_settings ); ?>'>
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <?php while ( $team_query->have_posts() ) : $team_query->the_post(); 
+                            $job_title = get_post_meta( get_the_ID(), '_ellens_team_function', true );
+                            $image_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+                        ?>
+                            <li class="splide__slide team-card">
+                                <div class="team-card-inner">
+                                    <?php if ( $image_url ) : ?>
+                                        <div class="team-image-wrapper">
+                                            <img src="<?php echo esc_url( $image_url ); ?>" alt="<?php the_title_attribute(); ?>" loading="lazy">
+                                        </div>
                                     <?php endif; ?>
+                                    <div class="team-info">
+                                        <h3 class="team-name"><?php the_title(); ?></h3>
+                                        <?php if ( $job_title ) : ?>
+                                            <p class="team-job"><?php echo esc_html( $job_title ); ?></p>
+                                        <?php endif; ?>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    <?php endwhile; wp_reset_postdata(); ?>
+                            </li>
+                        <?php endwhile; wp_reset_postdata(); ?>
+                    </ul>
                 </div>
-                <div class="swiper-pagination"></div>
             </div>
 		</div>
 		<?php
