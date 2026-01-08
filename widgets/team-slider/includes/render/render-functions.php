@@ -62,11 +62,11 @@ class Render_Functions {
                                         <?php if ( $job_title ) : ?>
                                             <p class="team-job"><?php echo esc_html( $job_title ); ?></p>
                                         <?php endif; ?>
+                                        <!-- Arrow Button -->
+                                        <a href="<?php the_permalink(); ?>" class="team-arrow" aria-label="<?php esc_attr_e( 'View profile', 'ellens-lentze' ); ?>">
+                                            <i class="fa fa-arrow-right"></i>
+                                        </a>
                                     </div>
-                                    <!-- Arrow Button -->
-                                    <a href="<?php the_permalink(); ?>" class="team-arrow" aria-label="<?php esc_attr_e( 'View profile', 'ellens-lentze' ); ?>">
-                                        <i class="fa fa-arrow-right"></i>
-                                    </a>
                                 </div>
                             </li>
                         <?php endwhile; wp_reset_postdata(); ?>
