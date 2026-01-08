@@ -21,10 +21,6 @@
 
 /* Button - Inherits from .ellens-btn */
 .action-buttons__item {
-    gap: 0.5rem;
-    padding: var(--ellens-ab-spacing-button-padding);
-    font-size: 1.125rem;
-    letter-spacing: 0.01em;
     color: var(--ellens-ab-color-white);
     border: 1px solid var(--ellens-ab-color-white);
     z-index: 1;

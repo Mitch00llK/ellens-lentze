@@ -50,10 +50,7 @@
 }
 
 .image-text-block__button {
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    font-size: 1.125rem;
-    line-height: 1.5;
+    /* Base styles handled by .ellens-btn */
 }
 
 /* Primary Button Style overrides */
