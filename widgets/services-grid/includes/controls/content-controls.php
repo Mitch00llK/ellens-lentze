@@ -38,10 +38,11 @@ class Content_Controls {
         $repeater->add_control(
 			'card_icon',
 			[
-				'label' => esc_html__( 'Icon/Image', 'ellens-lentze' ),
-				'type' => Controls_Manager::MEDIA,
+				'label' => esc_html__( 'Icon', 'ellens-lentze' ),
+				'type' => Controls_Manager::ICONS,
 				'default' => [
-					'url' => \Elementor\Utils::get_placeholder_image_src(),
+					'value' => 'fas fa-star',
+					'library' => 'fa-solid',
 				],
 			]
 		);

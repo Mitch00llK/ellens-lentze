@@ -3,11 +3,11 @@
     padding: var(--ellens-sg-spacing-card-padding);
     border-radius: 8px;
     display: flex;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
     text-decoration: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 100%;
     min-height: 100%;
     /* Ensure visual consistency */
@@ -17,8 +17,7 @@
 }
 
 .ellens-service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    /* Hover animations removed */
 }
 
 .ellens-service-card__icon {
@@ -29,11 +28,19 @@
 }
 
 .ellens-service-card__icon img,
-.ellens-service-card__icon svg {
+.ellens-service-card__icon svg,
+.ellens-service-card__icon i {
     width: 100%;
     height: 100%;
     object-fit: contain;
     fill: currentColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ellens-service-card__icon i {
+    font-size: 2rem;
 }
 
 .ellens-service-card__content {
@@ -81,13 +88,12 @@
     justify-content: center;
     color: #fff;
     font-size: 1.25rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .ellens-service-card:hover .ellens-service-card__arrow {
     background-color: #0056b3;
-    /* Slightly lighter on hover */
-    transform: translateX(5px);
+    /* Transform animation removed */
 }
 
 .ellens-service-card__bg-graphic {

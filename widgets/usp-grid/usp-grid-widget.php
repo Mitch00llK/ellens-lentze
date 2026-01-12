@@ -37,7 +37,7 @@ class USP_Grid_Widget extends Widget_Base {
 	}
 
     public function get_style_depends() {
-        return [ 'ellens-usp-base', 'ellens-usp-layout', 'ellens-usp-content', 'ellens-usp-responsive' ];
+        return [ 'font-awesome-5', 'ellens-usp-base', 'ellens-usp-layout', 'ellens-usp-content', 'ellens-usp-responsive' ];
     }
 
 	protected function register_controls() {

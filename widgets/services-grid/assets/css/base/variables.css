@@ -10,7 +10,4 @@
     --ellens-sg-spacing-card-gap: clamp(1rem, 2vw, 1.5rem);
     --ellens-sg-spacing-card-padding: clamp(1.5rem, 2vw, 2rem);
 
-    /* Typography */
-    --ellens-sg-font-family-serif: "DM Serif Display", serif;
-    --ellens-sg-font-family-sans: "DM Sans", sans-serif;
 }

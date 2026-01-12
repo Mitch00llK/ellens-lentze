@@ -8,6 +8,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Assets_Config {
 
     public static function register() {
+         // FontAwesome
+         wp_register_style(
+            'font-awesome-5',
+            'https://use.fontawesome.com/releases/v5.15.4/css/all.css',
+            [],
+            '5.15.4'
+        );
+
          // Global Assets
          wp_register_style(
             'ellens-global-buttons',
