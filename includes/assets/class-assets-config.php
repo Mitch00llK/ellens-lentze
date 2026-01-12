@@ -255,5 +255,28 @@ class Assets_Config {
             [ 'ellens-pg-layout' ],
             '1.0.0'
         );
+
+        /* Services Grid Assets */
+        // Base
+        wp_register_style(
+            'ellens-sg-base',
+            plugins_url( 'widgets/services-grid/assets/css/base/variables.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [],
+            '1.0.0'
+        );
+        // Layout
+        wp_register_style(
+            'ellens-sg-layout',
+            plugins_url( 'widgets/services-grid/assets/css/layout/layout.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'ellens-sg-base', 'ellens-global-buttons' ],
+            '1.0.0'
+        );
+        // Component
+        wp_register_style(
+            'ellens-sg-component',
+            plugins_url( 'widgets/services-grid/assets/css/components/card.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'ellens-sg-base' ],
+            '1.0.0'
+        );
     }
 }

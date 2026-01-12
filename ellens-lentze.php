@@ -34,6 +34,9 @@ function register_ellens_hero_widget( $widgets_manager ) {
 
     require_once( __DIR__ . '/widgets/post-grid/ellens-post-grid.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\Post_Grid\Ellens_Post_Grid() );
+
+    require_once( __DIR__ . '/widgets/services-grid/ellens-services-grid.php' );
+	$widgets_manager->register( new \EllensLentze\Widgets\Services_Grid_Widget() );
 }
 add_action( 'elementor/widgets/register', 'register_ellens_hero_widget' );
 

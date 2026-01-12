@@ -2,6 +2,7 @@
 namespace EllensLentze\Widgets\Image_Text_Block\Includes\Controls;
 
 use \Elementor\Controls_Manager;
+use \Elementor\Group_Control_Typography;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -43,6 +44,15 @@ class Style_Controls {
 			]
 		);
 
+        $widget->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'title_typography',
+                'label' => esc_html__( 'Title Typography', 'ellens-lentze' ),
+				'selector' => '{{WRAPPER}} .image-text-block__title',
+			]
+		);
+
         $widget->add_control(
 			'desc_color',
 			[
@@ -52,6 +62,17 @@ class Style_Controls {
 					'{{WRAPPER}} .image-text-block__description' => 'color: {{VALUE}};',
 				],
                 'default' => '#ffffff',
+			]
+		);
+
+
+
+        $widget->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'desc_typography',
+                'label' => esc_html__( 'Description Typography', 'ellens-lentze' ),
+				'selector' => '{{WRAPPER}} .image-text-block__description',
 			]
 		);
 

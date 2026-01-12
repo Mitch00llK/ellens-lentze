@@ -1,15 +1,8 @@
 @media (max-width: 1024px) {
     .hero__card {
         margin-left: 5vw;
-        /* 5% offset */
         width: 90vw;
-        /* Take mostly full width */
         min-height: auto;
-    }
-
-    .hero__title {
-        font-size: 48px;
-        line-height: 1.1;
     }
 }
 
@@ -19,27 +12,17 @@
     }
 
     .hero__container {
-        padding: 40px 20px;
+        padding: 2.5rem 1.25rem;
         flex-direction: column;
     }
 
     .hero__card {
         width: 100%;
         margin-left: 0;
-        margin-top: 20px;
-        /* Space from top if image is visible above, or just spacing */
+        margin-top: 1.25rem;
     }
 
     .hero__content {
-        padding: 40px 24px;
-    }
-
-    .hero__title {
-        font-size: 36px;
-    }
-
-    .hero__subtitle {
-        font-size: 16px;
-        margin-bottom: 20px;
+        padding: 2.5rem 1.5rem;
     }
 }

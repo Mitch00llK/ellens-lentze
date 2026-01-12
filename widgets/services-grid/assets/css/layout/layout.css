@@ -1,0 +1,42 @@
+.ellens-services-grid {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    padding: var(--spacing-md, 2rem) 0;
+}
+
+.ellens-services-grid__title {
+    font-family: var(--ellens-sg-font-family-serif);
+    font-size: clamp(2rem, 5vw, 3rem);
+    /* 32px -> 48px responsive */
+    line-height: 1.1;
+    color: var(--ellens-sg-color-text-title);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    max-width: 800px;
+}
+
+.ellens-services-grid__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--ellens-sg-spacing-card-gap);
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .ellens-services-grid__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .ellens-services-grid__container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(324px, auto);
+        /* Minimum height based on design */
+    }
+
+    .ellens-service-card--featured {
+        grid-row: span 2;
+    }
+}

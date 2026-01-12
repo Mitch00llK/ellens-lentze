@@ -2,6 +2,7 @@
 namespace EllensLentze\Widgets\Services_Cluster\Includes\Controls;
 
 use \Elementor\Controls_Manager;
+use \Elementor\Group_Control_Typography;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -55,6 +56,15 @@ class Style_Controls {
 			]
 		);
 
+        $widget->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'title_typography',
+                'label' => esc_html__( 'Title Typography', 'ellens-lentze' ),
+				'selector' => '{{WRAPPER}} .services-cluster__title',
+			]
+		);
+
         $widget->add_control(
 			'desc_color',
 			[
@@ -64,6 +74,15 @@ class Style_Controls {
 					'{{WRAPPER}} .services-cluster__description' => 'color: {{VALUE}};',
 				],
                 'default' => '#edf5fc',
+			]
+		);
+
+        $widget->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'desc_typography',
+                'label' => esc_html__( 'Description Typography', 'ellens-lentze' ),
+				'selector' => '{{WRAPPER}} .services-cluster__description',
 			]
 		);
 

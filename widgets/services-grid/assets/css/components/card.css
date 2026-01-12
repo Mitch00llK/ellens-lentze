@@ -1,0 +1,117 @@
+.ellens-service-card {
+    background-color: var(--ellens-sg-color-bg);
+    padding: var(--ellens-sg-spacing-card-padding);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    min-height: 100%;
+    /* Ensure visual consistency */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.ellens-service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.ellens-service-card__icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.5rem;
+    color: var(--ellens-sg-color-icon);
+}
+
+.ellens-service-card__icon img,
+.ellens-service-card__icon svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    fill: currentColor;
+}
+
+.ellens-service-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-grow: 1;
+    /* Pushes action button to bottom */
+    width: 100%;
+}
+
+.ellens-service-card__title {
+    font-family: var(--ellens-sg-font-family-serif);
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    /* 24px */
+    font-weight: 400;
+    line-height: 1.2;
+    color: #fff;
+    margin: 0;
+}
+
+.ellens-service-card__description {
+    font-family: var(--ellens-sg-font-family-sans);
+    font-size: 1.125rem;
+    /* 18px */
+    line-height: 1.6;
+    color: var(--ellens-sg-color-text-primary);
+    opacity: 0.9;
+}
+
+.ellens-service-card__action {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.ellens-service-card__arrow {
+    width: 56px;
+    height: 56px;
+    background-color: var(--ellens-sg-color-button-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.25rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.ellens-service-card:hover .ellens-service-card__arrow {
+    background-color: #0056b3;
+    /* Slightly lighter on hover */
+    transform: translateX(5px);
+}
+
+.ellens-service-card__bg-graphic {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+    height: auto;
+    pointer-events: none;
+    z-index: 0;
+    /* Behind content but in card */
+    opacity: 0.8;
+}
+
+.ellens-service-card__bg-graphic img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Ensure content sits above the graphic */
+.ellens-service-card__content,
+.ellens-service-card__icon,
+.ellens-service-card__action {
+    position: relative;
+    z-index: 1;
+}

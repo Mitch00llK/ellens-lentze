@@ -77,7 +77,7 @@
     object-fit: scale-down;
     mix-blend-mode: overlay;
     opacity: 1;
-    transform: translateX(90px);
+    transform: translateX(5.625rem);
 }
 
 .hero__content {

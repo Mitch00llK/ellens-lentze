@@ -2,6 +2,7 @@
 namespace EllensLentze\Widgets\Action_Buttons\Includes\Controls;
 
 use \Elementor\Controls_Manager;
+use \Elementor\Group_Control_Typography;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -43,6 +44,14 @@ class Style_Controls {
 			]
 		);
 
+        $widget->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'title_typography',
+				'selector' => '{{WRAPPER}} .action-buttons__title',
+			]
+		);
+
         $widget->add_control(
 			'text_color_desc',
 			[
@@ -52,6 +61,14 @@ class Style_Controls {
 					'{{WRAPPER}} .action-buttons__description' => 'color: {{VALUE}};',
 				],
                 'default' => '#edf5fc',
+			]
+		);
+
+        $widget->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'description_typography',
+				'selector' => '{{WRAPPER}} .action-buttons__description',
 			]
 		);
 
@@ -98,6 +115,26 @@ class Style_Controls {
 					'{{WRAPPER}} .action-buttons__item:hover' => 'background-color: {{VALUE}};',
 				],
                 'default' => 'rgba(255, 255, 255, 0.1)',
+			]
+		);
+
+        $widget->add_group_control(
+			Group_Control_Typography::get_type(),
+			[
+				'name' => 'button_typography',
+				'selector' => '{{WRAPPER}} .action-buttons__item',
+			]
+		);
+
+        $widget->add_responsive_control(
+			'button_padding',
+			[
+				'label' => esc_html__( 'Padding', 'ellens-lentze' ),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => [ 'px', 'em', 'rem' ],
+				'selectors' => [
+					'{{WRAPPER}} .action-buttons__item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
 			]
 		);
 

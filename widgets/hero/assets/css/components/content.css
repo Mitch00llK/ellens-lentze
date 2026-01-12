@@ -1,31 +1,17 @@
 /* Subtitle */
 .hero__subtitle {
-
-    line-height: 1.5;
-    letter-spacing: 0;
-    text-transform: uppercase;
-    color: var(--ellens-hero-color-orange);
-    margin-bottom: 2rem;
     display: block;
+    margin-bottom: 2rem;
 }
 
 /* Title */
 .hero__title {
-    line-height: 1.1;
-    letter-spacing: 0.02em;
-    color: var(--ellens-hero-color-white);
     margin: 0;
     margin-bottom: 1.5rem;
-    font-weight: 400;
 }
 
 /* Description */
 .hero__description {
-    font-size: clamp(1rem, 1.1vw, 1.25rem);
-    /* 16px -> 20px responsive */
-    line-height: 1.6;
-    letter-spacing: 0.02em;
-    color: var(--ellens-hero-color-white);
     margin-bottom: 2.25rem;
 }
 

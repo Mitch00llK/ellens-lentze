@@ -26,20 +26,37 @@ class Render_Functions {
             return;
         }
 
-        // Slider Attributes
+        // Slider attributes
         $slider_settings = [
             'autoplay' => 'yes' === $settings['autoplay'] ? [ 'delay' => $settings['autoplay_speed'] ] : false,
         ];
+
+        // Dynamic content
+        $section_title = $settings['section_title'];
+        $button_text   = $settings['button_text'];
+        $button_link   = $settings['button_link']['url'];
+        
+        // Link attributes
+        $btn_link_attrs = '';
+        if ( ! empty( $button_link ) ) {
+            $widget->add_link_attributes( 'button_link', $settings['button_link'] );
+            $widget->add_render_attribute( 'button_link', 'class', 'ellens-btn' );
+        }
 
 		?>
 		<div class="ellens-team-slider-wrapper">
             <!-- Header Section -->
             <div class="team-slider-header">
-                <h2 class="section-title"><?php esc_html_e( 'Het team van Ellens & Lentze', 'ellens-lentze' ); ?></h2>
-                <a href="/over-ons" class="ellens-btn">
-                    <?php esc_html_e( 'Over ons', 'ellens-lentze' ); ?>
-                    <i class="fa fa-arrow-right"></i>
-                </a>
+                <?php if ( ! empty( $section_title ) ) : ?>
+                    <h2 class="section-title"><?php echo esc_html( $section_title ); ?></h2>
+                <?php endif; ?>
+
+                <?php if ( ! empty( $button_text ) && ! empty( $button_link ) ) : ?>
+                    <a <?php $widget->print_render_attribute_string( 'button_link' ); ?>>
+                        <?php echo esc_html( $button_text ); ?>
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                <?php endif; ?>
             </div>
 
             <!-- Slider (Splide structure) -->
@@ -64,7 +81,7 @@ class Render_Functions {
                                         <?php endif; ?>
                                         <!-- Arrow Button -->
                                         <a href="<?php the_permalink(); ?>" class="team-arrow" aria-label="<?php esc_attr_e( 'View profile', 'ellens-lentze' ); ?>">
-                                            <i class="fa fa-arrow-right"></i>
+                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                         </a>
                                     </div>
                                 </div>

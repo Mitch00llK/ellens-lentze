@@ -38,11 +38,11 @@ class Render_Functions {
                 
                 <div <?php $widget->print_render_attribute_string( 'header' ); ?>>
                     <?php if ( ! empty( $title ) ) : ?>
-                        <h2 <?php $widget->print_render_attribute_string( 'title' ); ?>><?php echo $title; ?></h2>
+                        <h2 <?php $widget->print_render_attribute_string( 'title' ); ?>><?php echo wp_kses_post( $title ); ?></h2>
                     <?php endif; ?>
 
                     <?php if ( ! empty( $description ) ) : ?>
-                        <div <?php $widget->print_render_attribute_string( 'description' ); ?>><?php echo $description; ?></div>
+                        <div <?php $widget->print_render_attribute_string( 'description' ); ?>><?php echo wp_kses_post( $description ); ?></div>
                     <?php endif; ?>
                 </div>
 

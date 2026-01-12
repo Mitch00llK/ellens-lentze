@@ -21,8 +21,7 @@ class Render_Functions {
         
         // Background Image
         if ( ! empty( $settings['image']['url'] ) ) {
-			$widget->add_render_attribute( 'image_wrapper', 'class', 'hero__bg-image-wrapper' );
-            $image_html =   \Elementor\Group_Control_Image_Size::get_attachment_image_html( $settings, 'full', 'image' );
+            $image_html = Group_Control_Image_Size::get_attachment_image_html( $settings, 'full', 'image' );
 		} else {
             $image_html = '';
         }
@@ -31,9 +30,8 @@ class Render_Functions {
         if ( ! empty( $settings['graphic_overlay']['url'] ) ) {
             $overlay_url = esc_url( $settings['graphic_overlay']['url'] );
             $overlay_alt = \Elementor\Control_Media::get_image_alt( $settings['graphic_overlay'] );
-            // Manually build image tag to ensure class is added
              $graphic_html = sprintf( 
-                 '<img src="%s" class="hero__card-pattern ellens-hero-svg-overlay" alt="%s">',
+                 '<img src="%s" class="hero__card-pattern ellens-hero-svg-overlay" alt="%s" aria-hidden="true">',
                  $overlay_url,
                  esc_attr( $overlay_alt )
             );
@@ -56,14 +54,11 @@ class Render_Functions {
 		<section <?php $widget->print_render_attribute_string( 'wrapper' ); ?>>
             
             <div class="hero__bg-container">
-                 <?php // If image_html is not standard img logic (Elementor output includes wrapper often), we might just output it. 
-                       // Actually getting raw URL for background-image is often better for cover, but 
-                       // for standard SEO img element:
-                       if ( ! empty( $image_html ) ) : ?>
-                           <div class="hero__bg-image-wrapper">
-                                <?php echo $image_html; ?>
-                           </div>
-                       <?php endif; ?>
+                 <?php if ( ! empty( $image_html ) ) : ?>
+                     <div class="hero__bg-image-wrapper">
+                          <?php echo $image_html; ?>
+                     </div>
+                 <?php endif; ?>
             </div>
 
             <div class="hero__container">
@@ -82,17 +77,21 @@ class Render_Functions {
                         <?php endif; ?>
 
                         <?php if ( ! empty( $title ) ) : ?>
-                            <h2 <?php $widget->print_render_attribute_string( 'title' ); ?>><?php echo $title; // Term 'Title' allows standard HTML ?></h2>
+                            <h2 <?php $widget->print_render_attribute_string( 'title' ); ?>><?php echo wp_kses_post( $title ); ?></h2>
                         <?php endif; ?>
 
                         <?php if ( ! empty( $description ) ) : ?>
-                            <div <?php $widget->print_render_attribute_string( 'description' ); ?>><?php echo $description; // WYSIWYG output ?></div>
+                            <div <?php $widget->print_render_attribute_string( 'description' ); ?>><?php echo wp_kses_post( $description ); ?></div>
                         <?php endif; ?>
 
                         <?php if ( ! empty( $button_text ) ) : ?>
                             <a <?php $widget->print_render_attribute_string( 'button' ); ?>>
                                 <?php echo esc_html( $button_text ); ?>
-                                <span class="hero__button-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                <span class="hero__button-icon" aria-hidden="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
                             </a>
                         <?php endif; ?>
                      </div>
