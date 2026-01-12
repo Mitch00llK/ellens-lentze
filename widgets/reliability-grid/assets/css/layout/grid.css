@@ -1,0 +1,35 @@
+@import '../../../../assets/css/globals/variables.css';
+
+.ellens-rg {
+    padding: var(--ellens-rg-section-py) 0;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.ellens-rg-title {
+    text-align: center;
+    margin-bottom: var(--ellens-rg-spacing-grid-gap);
+    font-family: var(--font-family-serif);
+    font-size: 2rem;
+    /* 32px */
+}
+
+.ellens-rg-container {
+    display: grid;
+    grid-template-columns: 1fr var(--ellens-rg-image-width) 1fr;
+    gap: var(--ellens-rg-spacing-grid-gap);
+    align-items: center;
+}
+
+.ellens-rg-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ellens-rg-spacing-grid-gap);
+}
+
+.ellens-rg-image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}

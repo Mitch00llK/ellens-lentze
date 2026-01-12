@@ -70,3 +70,28 @@ class FormHandler {
     this.form.addEventListener('submit', (e) => this.handleSubmit(e));
   }
 }
+CSS Token Centralisatie (VERPLICHT)
+ALLE design tokens moeten in één bestand staan:
+assets/css/globals/variables.css  ← ENIGE LOCATIE
+Verificatie:
+
+✓ GEEN variabele bestanden in assets/css/base/
+✓ GEEN variabele bestanden in assets/css/components/
+✓ GEEN lokale variabelen in component CSS
+✓ ALLE tokens gedefinieerd in globals/variables.css
+✓ Alle bestanden importeren globals/variables.css
+✓ GEEN duplicate token definitions
+
+Fout patroon (NIET DOEN):
+assets/css/
+├── base/
+│   └── variables.css           ❌ FOUT!
+├── components/
+│   ├── button-vars.css         ❌ FOUT!
+│   └── card-colors.css         ❌ FOUT!
+└── colors/
+    └── palette.css             ❌ FOUT!
+Correct patroon (MOET DOEN):
+assets/css/
+└── globals/
+    └── variables.css           ✓ CORRECT! ENIGE LOCATIE

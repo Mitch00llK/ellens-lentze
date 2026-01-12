@@ -1,0 +1,28 @@
+.dis-content__block {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.dis-content__title {
+    font-family: var(--dis-font-family-serif);
+    font-size: 32px;
+    line-height: 1.2;
+    letter-spacing: 0.64px;
+    margin: 0;
+}
+
+.dis-content__text {
+    font-family: var(--dis-font-family-sans);
+    font-size: 18px;
+    line-height: 1.8;
+    letter-spacing: 0.18px;
+}
+
+.dis-content__text p {
+    margin-bottom: 24px;
+}
+
+.dis-content__text p:last-child {
+    margin-bottom: 0;
+}

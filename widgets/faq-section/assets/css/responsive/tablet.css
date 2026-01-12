@@ -1,0 +1,34 @@
+@media (max-width: 1400px) {
+    .faq-container {
+        padding: 0 100px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .faq-container {
+        flex-direction: column;
+        padding: 0 40px;
+    }
+
+    .faq-content {
+        width: 100%;
+    }
+
+    .faq-accordion {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .faq-container {
+        padding: 0 20px;
+    }
+
+    .faq-content__title {
+        font-size: 28px;
+    }
+
+    .faq-accordion__title {
+        font-size: 20px;
+    }
+}

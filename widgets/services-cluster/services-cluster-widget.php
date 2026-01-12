@@ -37,7 +37,7 @@ class Services_Cluster_Widget extends Widget_Base {
 	}
 
     public function get_style_depends() {
-        return [ 'ellens-sc-base', 'ellens-sc-layout', 'ellens-sc-content', 'ellens-sc-responsive' ];
+        return [ 'ellens-global-variables', 'ellens-sc-layout', 'ellens-sc-content', 'ellens-sc-responsive' ];
     }
 
 	protected function register_controls() {

@@ -1,0 +1,27 @@
+@media (max-width: 1024px) {
+    .ellens-rg-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .ellens-rg-column--center {
+        order: -1;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .ellens-rg {
+        padding: 4rem 1.5rem;
+    }
+
+    .ellens-rg-title {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .ellens-rg-column {
+        gap: 2rem;
+    }
+}

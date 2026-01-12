@@ -1,0 +1,63 @@
+.dis-card {
+    background-color: rgba(237, 245, 252, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.dis-card__image {
+    width: 100%;
+}
+
+.dis-card__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.dis-card__cta {
+    padding: 24px;
+    background-color: #002b4d;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.dis-card__title {
+    font-family: var(--dis-font-family-serif);
+    font-size: 24px;
+    line-height: 1.2;
+    margin: 0;
+    color: #fff;
+}
+
+.dis-card__description {
+    font-family: var(--dis-font-family-sans);
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.dis-card__usps {
+    list-style: none;
+    padding: 24px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dis-card__usp-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--dis-font-family-sans);
+    font-size: 16px;
+    color: #fff;
+}
+
+.dis-card__usp-item i {
+    color: var(--dis-color-orange);
+    font-size: 14px;
+}

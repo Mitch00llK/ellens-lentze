@@ -37,7 +37,7 @@ class Image_Text_Block_Widget extends Widget_Base {
 	}
 
     public function get_style_depends() {
-        return [ 'ellens-itb-base', 'ellens-itb-layout', 'ellens-itb-content', 'ellens-itb-responsive' ];
+        return [ 'ellens-global-variables', 'ellens-itb-layout', 'ellens-itb-content', 'ellens-itb-responsive' ];
     }
 
 	protected function register_controls() {
