@@ -29,9 +29,14 @@ class Render_Functions {
 
         // Graphic Overlay
         if ( ! empty( $settings['graphic_overlay']['url'] ) ) {
-            // Standard Elementor Image Render works for SVGs too (outputting img tag)
-            $widget->add_render_attribute( 'graphic_overlay', 'class', [ 'hero__card-pattern', 'ellens-hero-svg-overlay' ] );
-             $graphic_html = \Elementor\Group_Control_Image_Size::get_attachment_image_html( $settings, 'full', 'graphic_overlay' );
+            $overlay_url = esc_url( $settings['graphic_overlay']['url'] );
+            $overlay_alt = \Elementor\Control_Media::get_image_alt( $settings['graphic_overlay'] );
+            // Manually build image tag to ensure class is added
+             $graphic_html = sprintf( 
+                 '<img src="%s" class="hero__card-pattern ellens-hero-svg-overlay" alt="%s">',
+                 $overlay_url,
+                 esc_attr( $overlay_alt )
+            );
         } else {
             $graphic_html = '';
         }
