@@ -85,3 +85,12 @@ function register_ellens_cpt() {
 }
 add_action( 'init', 'register_ellens_cpt' );
 
+/**
+ * Initialize Elementor Kit Integration.
+ */
+function init_ellens_kit_integration() {
+    require_once( __DIR__ . '/includes/services/class-elementor-kit-integration.php' );
+    \EllensLentze\Includes\Services\Elementor_Kit_Integration::init();
+}
+add_action( 'plugins_loaded', 'init_ellens_kit_integration' );
+

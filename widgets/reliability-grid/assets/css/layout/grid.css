@@ -9,6 +9,7 @@
     margin-bottom: var(--ellens-rg-spacing-grid-gap);
     font-family: var(--font-family-serif);
     font-size: 2rem;
+    color: var(--color-white);
     /* 32px */
 }
 
