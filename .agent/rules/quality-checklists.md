@@ -56,7 +56,16 @@ Accessibility & SEO
 ✓ JSON-LD schema
 ✓ Alt text op images
 
+
+GitHub Workflow
+
+✓ Feature branch gebruikt (geen direct commit op main)
+✓ Branch naamgeving correct (feature/..., fix/...)
+✓ Code gepusht naar remote branch
+✓ Pull Request/Merge flow gevolgd
+
 Documentation
+
 
 ✓ PHPDoc voor classes/methods
 ✓ Elementor hooks gedocumenteerd

@@ -39,8 +39,6 @@ class Reliability_Grid_Widget extends Widget_Base {
     public function get_style_depends() {
         return [ 
             'font-awesome-5', 
-            'ellens-global-variables', 
-            'ellens-global-buttons',
             'ellens-rg-layout', 
             'ellens-rg-feature', 
             'ellens-rg-responsive' 

@@ -37,6 +37,15 @@ function register_ellens_hero_widget( $widgets_manager ) {
 
     require_once( __DIR__ . '/widgets/services-grid/ellens-services-grid.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\Services_Grid_Widget() );
+
+    require_once( __DIR__ . '/widgets/detailed-info-section/detailed-info-section-widget.php' );
+	$widgets_manager->register( new \EllensLentze\Widgets\Detailed_Info_Section_Widget() );
+
+    require_once( __DIR__ . '/widgets/faq-section/faq-section-widget.php' );
+	$widgets_manager->register( new \EllensLentze\Widgets\FAQ_Section_Widget() );
+
+    require_once( __DIR__ . '/widgets/reliability-grid/reliability-grid-widget.php' );
+	$widgets_manager->register( new \EllensLentze\Widgets\Reliability_Grid_Widget() );
 }
 add_action( 'elementor/widgets/register', 'register_ellens_hero_widget' );
 

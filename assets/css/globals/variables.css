@@ -1,14 +1,19 @@
 :root {
     /* --- Global Tokens --- */
 
-    /* Colors */
+    /* Colors (Strict Palette) */
     --color-primary: #004590;
-    --color-secondary: #ef8a00;
-    --color-white: #ffffff;
-    --color-light-blue: #edf5fc;
-    --color-dark-blue: #002956;
-    --color-gray-100: #f8f9fa;
-    --color-gray-200: #e9ecef;
+    --color-secondary: #EF8A00;
+    --color-dark-blue: #002752;
+    --color-light-blue: #F2F7FC;
+    --color-white: #FCFCFC;
+    --color-neutral-dark: #171717;
+    --color-neutral-light: #F7F8FA;
+
+    /* Legacy/Mapped Aliases (Deprecated) */
+    --color-gray-100: var(--color-neutral-light);
+    --color-gray-200: var(--color-neutral-light);
+    /* Fallback */
 
     /* Legacy/Base Blue Tones */
     --color-blue-50: #e5ecf4;
@@ -16,16 +21,13 @@
     --color-blue-500: #004590;
     --color-blue-700: #002956;
 
-    /* Typography */
-    --font-family-serif: 'DM Serif Display', serif;
-    --font-family-sans: 'DM Sans', sans-serif;
-
-    /* Typography Overrides (for legacy support) */
-    --font-primary: var(--font-family-serif);
-    --font-secondary: var(--font-family-sans);
-
     /* Global Spacing */
     --spacing-md: 2rem;
+
+    /* Typography */
+    --font-family-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-family-serif: Georgia, 'Times New Roman', serif;
+    --font-family-mono: 'Courier New', Courier, monospace;
 
     /* --- Component Variables --- */
 
@@ -136,4 +138,15 @@
     --ts-spacing-card-padding: 1.5rem;
     --ts-spacing-container: 21.25rem;
     --ts-border-radius: 0.5rem;
+
+    /* Reliability Grid */
+    --ellens-rg-color-title: var(--color-dark-blue);
+    --ellens-rg-color-icon: var(--color-secondary);
+    --ellens-rg-color-feature-title: var(--color-dark-blue);
+    --ellens-rg-color-feature-subtitle: var(--color-primary);
+    --ellens-rg-color-feature-desc: var(--color-primary);
+    --ellens-rg-spacing-section-py: 5rem;
+    --ellens-rg-spacing-grid-gap: 2rem;
+    --ellens-rg-spacing-feature-gap: 1rem;
+    --ellens-rg-image-width: 25rem;
 }

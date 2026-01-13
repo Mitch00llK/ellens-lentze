@@ -1,7 +1,5 @@
-@import '../../../../assets/css/globals/variables.css';
-
 .ellens-rg {
-    padding: var(--ellens-rg-section-py) 0;
+    padding: var(--ellens-rg-spacing-section-py) 0;
     max-width: 1440px;
     margin: 0 auto;
 }

@@ -91,7 +91,7 @@ class Style_Controls {
 			[
 				'label' => esc_html__( 'Subtitle Color', 'ellens-lentze' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => 'var(--ellens-rg-color-feature-desc)',
+				'default' => 'var(--ellens-rg-color-feature-subtitle)',
 				'selectors' => [
 					'{{WRAPPER}} .ellens-rg-feature__subtitle' => 'color: {{VALUE}};',
 				],

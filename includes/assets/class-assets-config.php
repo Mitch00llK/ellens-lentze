@@ -235,12 +235,66 @@ class Assets_Config {
             [ 'ellens-global-variables' ],
             '1.0.0'
         );
+
+        /* Detailed Info Section Assets */
+        // Layout
+        wp_register_style(
+            'ellens-dis-layout',
+            plugins_url( 'widgets/detailed-info-section/assets/css/layout/container.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'ellens-global-variables', 'ellens-global-buttons' ],
+            '1.0.0'
+        );
+        // Card
+        wp_register_style(
+            'ellens-dis-card',
+            plugins_url( 'widgets/detailed-info-section/assets/css/components/card.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'ellens-global-variables' ],
+            '1.0.0'
+        );
+        // Content
+        wp_register_style(
+            'ellens-dis-content',
+            plugins_url( 'widgets/detailed-info-section/assets/css/components/content.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'ellens-global-variables' ],
+            '1.0.0'
+        );
+        // Responsive
+        wp_register_style(
+            'ellens-dis-responsive',
+            plugins_url( 'widgets/detailed-info-section/assets/css/responsive/tablet.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'ellens-dis-layout' ],
+            '1.0.0'
+        );
+
+        /* FAQ Section Assets */
+        // Layout
+        wp_register_style(
+            'ellens-faq-layout',
+            plugins_url( 'widgets/faq-section/assets/css/layout/container.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'ellens-global-variables', 'ellens-global-buttons' ],
+            '1.0.0'
+        );
+        // Accordion
+        wp_register_style(
+            'ellens-faq-accordion',
+            plugins_url( 'widgets/faq-section/assets/css/components/accordion.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'ellens-global-variables' ],
+            '1.0.0'
+        );
+        // Script
+        wp_register_script(
+            'ellens-faq-js',
+            plugins_url( 'widgets/faq-section/assets/js/faq-accordion.js', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [],
+            '1.0.0',
+            true
+        );
         /* Reliability Grid Assets */
         // Layout
         wp_register_style(
             'ellens-rg-layout',
             plugins_url( 'widgets/reliability-grid/assets/css/layout/grid.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-global-variables' ],
+            [ 'ellens-global-variables', 'ellens-global-buttons' ],
             '1.0.0'
         );
         // Feature

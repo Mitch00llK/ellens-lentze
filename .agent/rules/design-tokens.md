@@ -21,27 +21,19 @@ Performance — Efficiënter cachen en laden
 
 Token Naamgeving Structuur
 css--{category}-{property}-{value}
-Categorie: Colors
-css/* Primair kleurschema */
---color-primary-50: #f0f4ff;
---color-primary-100: #e0e9ff;
---color-primary-500: #4f46e5;
---color-primary-900: #1e1b4b;
 
-/* Secundair kleurschema */
---color-secondary-500: #8b5cf6;
---color-secondary-900: #3b0764;
+Categorie: Colors (STRICT - ONLY THESE COLORS PERMITTED)
+Reference: [Figma Design System](https://www.figma.com/design/0MVVbfmzBHoD5wVTeD6C2u/Ellens-en-Lentze?node-id=4304-962&t=k37vJFH53gE3ajyl-4)
 
-/* Neutraal kleurschema */
---color-neutral-50: #f9fafb;
---color-neutral-500: #6b7280;
---color-neutral-900: #111827;
+css/* Mandatory Palette */
+--color-primary: #004590;      /* Blue */
+--color-secondary: #EF8A00;    /* Orange */
+--color-dark-blue: #002752;    /* Dark Blue */
+--color-light-blue: #F2F7FC;   /* Light Blue */
+--color-white: #FCFCFC;        /* Off-White */
+--color-neutral-dark: #171717; /* Dark Gray/Black */
+--color-neutral-light: #F7F8FA;/* Light Gray */
 
-/* Semantisch */
---color-success: #10b981;
---color-warning: #f59e0b;
---color-error: #ef4444;
---color-info: #3b82f6;
 Categorie: Spacing
 css--spacing-xs: 0.25rem;   /* 4px */
 --spacing-sm: 0.5rem;    /* 8px */
