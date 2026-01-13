@@ -42,21 +42,54 @@ css--spacing-xs: 0.25rem;   /* 4px */
 --spacing-xl: 2rem;      /* 32px */
 --spacing-2xl: 3rem;     /* 48px */
 --spacing-3xl: 4rem;     /* 64px */
-Categorie: Typography
+
+
+Categorie: Typography (STRICT)
+Reference: [Figma Design System](https://www.figma.com/design/0MVVbfmzBHoD5wVTeD6C2u/Ellens-en-Lentze?node-id=4304-1009&t=k37vJFH53gE3ajyl-4)
+
 css/* Font families */
---font-family-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
---font-family-serif: 'Georgia', serif;
---font-family-mono: 'Courier New', monospace;
+--font-family-serif: 'DM Serif Display', serif;
+--font-family-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-/* Letter spacing */
---letter-spacing-tight: -0.02em;
---letter-spacing-normal: 0;
---letter-spacing-wide: 0.05em;
+/* Headings (Strict) */
+--h1-font-family: var(--font-family-serif);
+--h1-font-size: 64px;
+--h1-line-height: 58px;
+--h1-letter-spacing: 2px;
+--h1-font-weight: 400;
 
-/* Line height */
---line-height-tight: 1.2;
---line-height-normal: 1.5;
---line-height-relaxed: 1.75;
+--h2-font-family: var(--font-family-serif);
+--h2-font-size: 32px;
+--h2-line-height: 32px;
+--h2-letter-spacing: 0.64px;
+--h2-font-weight: 400;
+
+--h3-font-family: var(--font-family-serif);
+--h3-font-size: 24px;
+--h3-line-height: 36px;
+--h3-letter-spacing: 2px;
+--h3-font-weight: 400;
+
+--h4-font-family: var(--font-family-serif);
+--h4-font-size: 20px;
+--h4-line-height: 36px;
+--h4-letter-spacing: 2px;
+--h4-font-weight: 400;
+
+/* Body & UI (Strict) */
+--body-font-family: var(--font-family-sans);
+--body-font-size: 18px;
+--body-line-height: 32px;
+--body-letter-spacing: 1px;
+--body-font-weight: 400;
+
+--button-font-family: var(--font-family-sans);
+--button-font-size: 16px;
+--button-line-height: 32px;
+--button-letter-spacing: 0px;
+--button-font-weight: 400;
+
+
 Categorie: Borders
 css--border-radius-sm: 0.25rem;
 --border-radius-md: 0.5rem;

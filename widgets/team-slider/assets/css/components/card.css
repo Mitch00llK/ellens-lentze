@@ -18,7 +18,7 @@
     position: relative;
     border-radius: var(--ts-border-radius);
     overflow: hidden;
-    background: #1a3a5c;
+    background: var(--color-dark-blue);
     /* Subtle fallback */
 }
 
@@ -51,7 +51,7 @@
     left: 0;
     width: 100%;
     padding: var(--ts-spacing-card-padding);
-    background: #002956 !important;
+    background: var(--color-dark-blue) !important;
     z-index: 2;
 }
 
@@ -85,6 +85,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: var(--color-white);
     z-index: 3;
 }

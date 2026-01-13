@@ -58,7 +58,7 @@
     /* 24px */
     font-weight: 400;
     line-height: 1.2;
-    color: #fff;
+    color: var(--color-white);
     margin: 0;
 }
 
@@ -86,13 +86,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: var(--color-white);
     font-size: 1.25rem;
     transition: background-color 0.3s ease;
 }
 
 .ellens-service-card:hover .ellens-service-card__arrow {
-    background-color: #0056b3;
+    background-color: var(--color-dark-blue);
     /* Transform animation removed */
 }
 

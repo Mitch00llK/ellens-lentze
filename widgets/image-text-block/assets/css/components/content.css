@@ -61,12 +61,12 @@
 
 /* Secondary Button Style overrides */
 .image-text-block__button--secondary {
-    background-color: #ffffff;
+    background-color: var(--color-white);
     color: var(--ellens-itb-color-btn-secondary);
-    border: 1px solid #ffffff;
+    border: 1px solid var(--color-white);
 }
 
 .image-text-block__button--secondary:hover {
-    background-color: #f0f0f0;
-    border-color: #f0f0f0;
+    background-color: var(--color-neutral-light);
+    border-color: var(--color-neutral-light);
 }

@@ -15,19 +15,57 @@
     --color-gray-200: var(--color-neutral-light);
     /* Fallback */
 
-    /* Legacy/Base Blue Tones */
-    --color-blue-50: #e5ecf4;
-    --color-blue-100: #ccdae9;
-    --color-blue-500: #004590;
-    --color-blue-700: #002956;
+    /* Legacy/Base Blue Tones (Deprecated - Map to strict) */
+    --color-blue-50: var(--color-light-blue);
+    --color-blue-100: var(--color-light-blue);
+    --color-blue-500: var(--color-primary);
+    --color-blue-700: var(--color-dark-blue);
 
     /* Global Spacing */
     --spacing-md: 2rem;
 
     /* Typography */
-    --font-family-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    --font-family-serif: Georgia, 'Times New Roman', serif;
+    --font-family-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-family-serif: 'DM Serif Display', Georgia, 'Times New Roman', serif;
     --font-family-mono: 'Courier New', Courier, monospace;
+
+    /* Headings (Strict) */
+    --h1-font-family: var(--font-family-serif);
+    --h1-font-size: 64px;
+    --h1-line-height: 58px;
+    --h1-letter-spacing: 2px;
+    --h1-font-weight: 400;
+
+    --h2-font-family: var(--font-family-serif);
+    --h2-font-size: 32px;
+    --h2-line-height: 32px;
+    --h2-letter-spacing: 0.64px;
+    --h2-font-weight: 400;
+
+    --h3-font-family: var(--font-family-serif);
+    --h3-font-size: 24px;
+    --h3-line-height: 36px;
+    --h3-letter-spacing: 2px;
+    --h3-font-weight: 400;
+
+    --h4-font-family: var(--font-family-serif);
+    --h4-font-size: 20px;
+    --h4-line-height: 36px;
+    --h4-letter-spacing: 2px;
+    --h4-font-weight: 400;
+
+    /* Body & UI (Strict) */
+    --body-font-family: var(--font-family-sans);
+    --body-font-size: 18px;
+    --body-line-height: 32px;
+    --body-letter-spacing: 1px;
+    --body-font-weight: 400;
+
+    --button-font-family: var(--font-family-sans);
+    --button-font-size: 16px;
+    --button-line-height: 32px;
+    --button-letter-spacing: 0px;
+    --button-font-weight: 400;
 
     /* --- Component Variables --- */
 
@@ -65,8 +103,7 @@
     --ellens-sg-color-text-primary: var(--color-light-blue);
     --ellens-sg-color-text-title: var(--color-white);
     --ellens-sg-color-button-bg: var(--color-primary);
-    --ellens-sg-color-icon: #f6921e;
-    /* Specific Figma color */
+    --ellens-sg-color-icon: var(--color-secondary);
     --ellens-sg-spacing-card-gap: clamp(1rem, 2vw, 1.5rem);
     --ellens-sg-spacing-card-padding: clamp(1.5rem, 2vw, 2rem);
     --ellens-sg-font-family-serif: var(--font-family-serif);
@@ -85,9 +122,10 @@
     --faq-spacing-section-py: 96px;
     --faq-spacing-container-px: 340px;
     --faq-spacing-gap: 71px;
-    --faq-color-blue-100: var(--color-blue-100);
+    --faq-color-blue-100: var(--color-light-blue);
     --faq-color-blue-500: var(--color-primary);
-    --faq-color-acc-bg: rgba(237, 245, 252, 0.5);
+    --faq-color-acc-bg: rgba(242, 247, 252, 0.5);
+    /* #F2F7FC with opacity */
     --faq-font-family-serif: var(--font-family-serif);
     --faq-font-family-sans: var(--font-family-sans);
 
@@ -97,14 +135,16 @@
     --dis-spacing-gap: 71px;
     --dis-color-light-blue: var(--color-light-blue);
     --dis-color-orange: var(--color-secondary);
-    --dis-color-dark-bg: #001a33;
-    --dis-color-white: #fefefe;
+    --dis-color-dark-bg: var(--color-dark-blue);
+    --dis-color-white: var(--color-white);
     --dis-font-family-serif: var(--font-family-serif);
     --dis-font-family-sans: var(--font-family-sans);
 
     /* Services Cluster */
-    --ellens-sc-color-bg-card: rgba(0, 41, 86, 0.6);
-    --ellens-sc-color-border-card: rgba(237, 245, 252, 0.2);
+    --ellens-sc-color-bg-card: rgba(0, 39, 82, 0.6);
+    /* #002752 with opacity */
+    --ellens-sc-color-border-card: rgba(242, 247, 252, 0.2);
+    /* #F2F7FC with opacity */
     --ellens-sc-color-text-title: var(--color-white);
     --ellens-sc-color-text-desc: var(--color-light-blue);
     --ellens-sc-color-icon: var(--color-secondary);
@@ -114,9 +154,9 @@
     --ellens-sc-z-card: 2;
 
     /* Post Grid */
-    --pg-color-bg: var(--color-blue-100);
-    --pg-color-text-title: var(--color-blue-500);
-    --pg-color-text-desc: var(--color-blue-500);
+    --pg-color-bg: var(--color-light-blue);
+    --pg-color-text-title: var(--color-primary);
+    --pg-color-text-desc: var(--color-primary);
     --pg-color-orange: var(--color-secondary);
     --pg-color-white: var(--color-white);
     --pg-spacing-section: 5rem;
@@ -125,10 +165,10 @@
     --pg-card-radius: 0.5rem;
 
     /* Team Slider */
-    --ts-color-bg: #001c3a;
+    --ts-color-bg: var(--color-dark-blue);
     --ts-color-text-primary: var(--color-white);
     --ts-color-text-secondary: var(--color-secondary);
-    --ts-color-pagination: #0d3b66;
+    --ts-color-pagination: var(--color-primary);
     --ts-color-pagination-active: var(--color-secondary);
     --ts-card-width: 24.8125rem;
     --ts-card-height: 29.625rem;

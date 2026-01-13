@@ -1,5 +1,5 @@
 .dis-card {
-    background-color: rgba(237, 245, 252, 0.05);
+    background-color: rgba(242, 247, 252, 0.05);
     border-radius: 8px;
     overflow: hidden;
     display: flex;
@@ -18,7 +18,7 @@
 
 .dis-card__cta {
     padding: 24px;
-    background-color: #002b4d;
+    background-color: var(--color-dark-blue);
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -29,7 +29,7 @@
     font-size: 24px;
     line-height: 1.2;
     margin: 0;
-    color: #fff;
+    color: var(--color-white);
 }
 
 .dis-card__description {
@@ -54,7 +54,7 @@
     gap: 8px;
     font-family: var(--dis-font-family-sans);
     font-size: 16px;
-    color: #fff;
+    color: var(--color-white);
 }
 
 .dis-card__usp-item i {
