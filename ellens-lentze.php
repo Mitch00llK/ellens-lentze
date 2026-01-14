@@ -44,6 +44,9 @@ function register_ellens_hero_widget( $widgets_manager ) {
     require_once( __DIR__ . '/widgets/faq-section/faq-section-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\FAQ_Section_Widget() );
 
+    require_once( __DIR__ . '/widgets/sidebar-faq/sidebar-faq-widget.php' );
+	$widgets_manager->register( new \EllensLentze\Widgets\Sidebar_FAQ_Widget() );
+
     require_once( __DIR__ . '/widgets/reliability-grid/reliability-grid-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\Reliability_Grid_Widget() );
 
@@ -52,6 +55,9 @@ function register_ellens_hero_widget( $widgets_manager ) {
 
     require_once( __DIR__ . '/widgets/footer/footer-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\Footer_Widget() );
+
+    require_once( __DIR__ . '/widgets/news-overview/news-overview-widget.php' );
+	$widgets_manager->register( new \EllensLentze\Widgets\News_Overview\Widget_News_Overview() );
 }
 add_action( 'elementor/widgets/register', 'register_ellens_hero_widget' );
 

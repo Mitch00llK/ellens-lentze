@@ -9,3 +9,4 @@
 @import '../../../../assets/css/globals/variables.css';
 @import './layout/layout.css';
 @import './components/card.css';
+@import './responsive/responsive.css';

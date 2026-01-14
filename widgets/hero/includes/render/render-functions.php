@@ -16,6 +16,8 @@ class Render_Functions {
 
         if ( 'full_width_blue' === $layout ) {
             self::render_layout_full_width_blue( $widget, $settings );
+        } elseif ( 'image_overlap_card' === $layout ) {
+            self::render_layout_image_overlap_card( $widget, $settings );
         } else {
             self::render_layout_default( $widget, $settings );
         }
@@ -43,7 +45,7 @@ class Render_Functions {
             $overlay_url = esc_url( $settings['graphic_overlay']['url'] );
             $overlay_alt = \Elementor\Control_Media::get_image_alt( $settings['graphic_overlay'] );
              $graphic_html = sprintf( 
-                 '<img src="%s" class="hero__card-pattern ellens-hero-svg-overlay" alt="%s" aria-hidden="true">',
+                 '<img src="%s" class="hero__card-pattern hero__svg-overlay" alt="%s" aria-hidden="true">',
                  $overlay_url,
                  esc_attr( $overlay_alt )
             );
@@ -167,6 +169,78 @@ class Render_Functions {
                     
                     <!-- No button in this specific layout based on Figma, but description can contain links -->
                  </div>
+            </div>
+
+        </section>
+        <?php
+    }
+
+    /**
+     * Render Image Overlap Card Layout.
+     * 
+     * @since 1.1.0
+     */
+    public static function render_layout_image_overlap_card( $widget, $settings ) {
+        $subtitle = $settings['subtitle'];
+        $title = $settings['title'];
+        $description = $settings['description'];
+        
+        // Background Image
+        if ( ! empty( $settings['image']['url'] ) ) {
+            $image_html = Group_Control_Image_Size::get_attachment_image_html( $settings, 'full', 'image' );
+		} else {
+            $image_html = '';
+        }
+
+        // Graphic Overlay
+        if ( ! empty( $settings['graphic_overlay']['url'] ) ) {
+            $overlay_url = esc_url( $settings['graphic_overlay']['url'] );
+            $overlay_alt = \Elementor\Control_Media::get_image_alt( $settings['graphic_overlay'] );
+             $graphic_html = sprintf( 
+                 '<img src="%s" class="hero-ioc__pattern" alt="%s" aria-hidden="true">',
+                 $overlay_url,
+                 esc_attr( $overlay_alt )
+            );
+        } else {
+            $graphic_html = '';
+        }
+
+        $widget->add_render_attribute( 'wrapper', 'class', [ 'hero', 'hero--template-ioc' ] );
+        $widget->add_render_attribute( 'title', 'class', 'hero-ioc__title' );
+        $widget->add_render_attribute( 'subtitle', 'class', 'hero-ioc__subtitle' );
+        $widget->add_render_attribute( 'description', 'class', 'hero-ioc__description' );
+
+        ?>
+        <section <?php $widget->print_render_attribute_string( 'wrapper' ); ?>>
+            
+            <div class="hero-ioc__bg-container">
+                 <?php if ( ! empty( $image_html ) ) : ?>
+                     <div class="hero-ioc__bg-image-wrapper">
+                          <?php echo $image_html; ?>
+                     </div>
+                 <?php endif; ?>
+            </div>
+
+            <div class="hero-ioc__card">
+                <div class="hero-ioc__card-bg">
+                    <?php if ( ! empty( $graphic_html ) ) echo $graphic_html; ?>
+                </div>
+                
+                <div class="hero-ioc__content">
+                    <?php if ( ! empty( $subtitle ) ) : ?>
+                        <p <?php $widget->print_render_attribute_string( 'subtitle' ); ?>><?php echo esc_html( $subtitle ); ?></p>
+                    <?php endif; ?>
+
+                    <?php if ( ! empty( $title ) ) : ?>
+                        <div class="hero-ioc__title-wrapper">
+                            <h1 <?php $widget->print_render_attribute_string( 'title' ); ?>><?php echo wp_kses_post( $title ); ?></h1>
+                        </div>
+                    <?php endif; ?>
+                    
+                    <?php if ( ! empty( $description ) ) : ?>
+                         <div <?php $widget->print_render_attribute_string( 'description' ); ?>><?php echo wp_kses_post( $description ); ?></div>
+                    <?php endif; ?>
+                </div>
             </div>
 
         </section>

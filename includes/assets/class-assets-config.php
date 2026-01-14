@@ -139,6 +139,15 @@ class Assets_Config {
             [ 'ellens-global-variables', 'ellens-global-buttons' ],
             '1.0.0'
         );
+
+        /* Sidebar FAQ Widget Assets (Consolidated) */
+        wp_register_style(
+            'ellens-sidebar-faq-v2',
+            plugins_url( 'widgets/sidebar-faq/assets/css/sidebar-faq.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'ellens-global-variables', 'ellens-global-buttons' ],
+            '1.0.0'
+        );
+
         // FAQ Script
         wp_register_script(
             'ellens-faq-section',
@@ -177,6 +186,22 @@ class Assets_Config {
             plugins_url( 'widgets/footer/assets/css/footer.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
             [ 'ellens-global-variables', 'ellens-global-buttons' ],
             '1.0.0'
+        );
+
+        /* News Overview Widget Assets */
+        wp_register_style(
+            'news-overview-style',
+            plugins_url( 'widgets/news-overview/assets/css/news-overview.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'ellens-global-variables', 'ellens-global-buttons', 'font-awesome-5' ],
+            '1.0.0'
+        );
+
+        wp_register_script(
+            'news-overview-script',
+            plugins_url( 'widgets/news-overview/assets/js/news-overview.js', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [], // No specific deps other than DOM
+            '1.0.0',
+            true
         );
     }
 }

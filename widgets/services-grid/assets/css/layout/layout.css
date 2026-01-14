@@ -8,16 +8,16 @@
 .ellens-services-grid__title {
     font-family: var(--font-family-serif);
     font-size: var(--h3-font-size);
-    line-height: 1.1;
-    color: var(--card-text-primary);
-    margin-bottom: clamp(2rem, 4vw, 3rem);
+    line-height: var(--h3-line-height);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-2xl);
     text-align: left;
 }
 
 .ellens-services-grid__container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--card-gap);
+    gap: var(--spacing-lg);
     width: 100%;
 }
 

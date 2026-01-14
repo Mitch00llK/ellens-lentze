@@ -1,0 +1,91 @@
+/* Reusing classes from detailed-info-section (dis-card) but ensuring they work here if scoped or copied */
+/* Since I used `dis-card` classes in PHP, I should verify if I rely on the detailed-info-section CSS or duplicate it here */
+/* I will duplicate it here to ensure independence as per standard widget architecture */
+
+.dis-card {
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    /* Changed from blue-700/default */
+}
+
+.dis-card__image {
+    width: 100%;
+    height: auto;
+    /* Allow auto height or hide if empty */
+    /* height: 300px; Remove fixed height to act more like a content block if image used */
+}
+
+.dis-card__image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin-bottom: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+}
+
+.dis-card__cta {
+    padding: 0;
+    /* Removed padding for text-block feel */
+    background-color: transparent;
+    /* Transparent bg */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.dis-card__title {
+    font-family: var(--font-family-serif);
+    font-size: var(--h2-font-size);
+    /* 32px matches Figma */
+    line-height: 1;
+    /* Tight line height */
+    margin: 0;
+    color: var(--color-white);
+}
+
+.dis-card__description {
+    font-family: var(--font-family-sans);
+    font-size: var(--body-font-size);
+    line-height: 1.6;
+    margin: 0;
+    color: var(--color-white);
+    /* White text */
+}
+
+.dis-card__usps {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.dis-card__usp-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-family: var(--font-family-sans);
+    font-size: var(--body-font-size);
+    color: var(--color-white);
+    font-weight: 700;
+    /* Bold for links/USPs */
+    text-decoration: underline;
+    /* Match Figma link style */
+    text-underline-offset: var(--spacing-xs);
+}
+
+.dis-card__usp-item i {
+    display: none;
+    /* Hide check icon if we want to look like links, or keep if user wants checkmarks. Figma showed links. */
+}
+
+/* If the user uses the Button control, style it */
+.dis-card__button {
+    margin-top: var(--spacing-md);
+    align-self: flex-start;
+}

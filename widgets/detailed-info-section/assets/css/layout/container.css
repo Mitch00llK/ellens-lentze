@@ -1,7 +1,6 @@
 .dis-section {
     padding: var(--section-spacing-py) 0;
     width: 100%;
-    color: var(--color-light-blue);
 }
 
 .dis-container {

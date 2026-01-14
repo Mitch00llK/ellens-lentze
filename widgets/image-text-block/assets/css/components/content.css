@@ -16,17 +16,17 @@
 /* Content Wrapper */
 .image-text-block__content-wrapper {
     flex: 1 1 50%;
-    padding: var(--card-padding-large);
+    padding: var(--spacing-xl);
     background-color: var(--color-blue-700);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: var(--card-gap);
+    gap: var(--spacing-lg);
 }
 
 /* Typography (Inherited Fonts) */
 .image-text-block__title {
-    color: var(--card-text-primary);
+    color: var(--color-white);
     font-family: var(--h2-font-family);
     font-size: var(--h2-font-size);
     line-height: var(--h2-line-height);
@@ -34,10 +34,10 @@
 }
 
 .image-text-block__description {
-    color: var(--card-text-primary);
-    font-size: clamp(1rem, 1.125vw, 1.125rem);
+    color: var(--color-white);
+    font-size: var(--body-font-size);
     /* 16px -> 18px */
-    line-height: 1.6;
+    line-height: var(--body-line-height);
     margin: 0;
 }
 
@@ -45,8 +45,8 @@
 .image-text-block__actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
 }
 
 

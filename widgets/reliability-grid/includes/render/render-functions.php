@@ -21,30 +21,30 @@ class Render_Functions {
 		$right_features = array_slice( $features, 2 );
 		?>
 
-		<div class="ellens-rg">
+		<div class="feature-grid">
 			<?php if ( ! empty( $settings['main_title'] ) ) : ?>
-				<h2 class="ellens-rg-title"><?php echo esc_html( $settings['main_title'] ); ?></h2>
+				<h2 class="feature-grid__title"><?php echo esc_html( $settings['main_title'] ); ?></h2>
 			<?php endif; ?>
 
-			<div class="ellens-rg-container">
+			<div class="feature-grid__container">
 				<!-- Left Features -->
-				<div class="ellens-rg-column ellens-rg-column--left">
+				<div class="feature-grid__column feature-grid__column--left">
 					<?php foreach ( $left_features as $index => $item ) : ?>
 						<?php self::render_feature_item( $item ); ?>
 					<?php endforeach; ?>
 				</div>
 
 				<!-- Center Image -->
-				<div class="ellens-rg-column ellens-rg-column--center">
+				<div class="feature-grid__column feature-grid__column--center">
 					<?php if ( ! empty( $settings['center_image']['url'] ) ) : ?>
-						<div class="ellens-rg-image-wrapper">
+						<div class="feature-grid__image-wrapper">
 							<?php echo \Elementor\Group_Control_Image_Size::get_attachment_image_html( $settings, 'center_image', 'center_image' ); ?>
 						</div>
 					<?php endif; ?>
 				</div>
 
 				<!-- Right Features -->
-				<div class="ellens-rg-column ellens-rg-column--right">
+				<div class="feature-grid__column feature-grid__column--right">
 					<?php foreach ( $right_features as $index => $item ) : ?>
 						<?php self::render_feature_item( $item ); ?>
 					<?php endforeach; ?>
@@ -57,19 +57,19 @@ class Render_Functions {
 
 	private static function render_feature_item( $item ) {
 		?>
-		<div class="ellens-rg-feature elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>">
-			<div class="ellens-rg-feature__icon">
+		<div class="feature-grid__item elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>">
+			<div class="feature-grid__item-icon">
 				<?php Icons_Manager::render_icon( $item['feature_icon'], [ 'aria-hidden' => 'true' ] ); ?>
 			</div>
-			<div class="ellens-rg-feature__content">
-				<h3 class="ellens-rg-feature__title">
-					<span class="ellens-rg-feature__title-text"><?php echo esc_html( $item['feature_title'] ); ?></span>
+			<div class="feature-grid__item-content">
+				<h3 class="feature-grid__item-title">
+					<span class="feature-grid__item-title-text"><?php echo esc_html( $item['feature_title'] ); ?></span>
 					<?php if ( ! empty( $item['feature_subtitle'] ) ) : ?>
-						<span class="ellens-rg-feature__subtitle"><?php echo esc_html( $item['feature_subtitle'] ); ?></span>
+						<span class="feature-grid__item-subtitle"><?php echo esc_html( $item['feature_subtitle'] ); ?></span>
 					<?php endif; ?>
 				</h3>
 				<?php if ( ! empty( $item['feature_description'] ) ) : ?>
-					<p class="ellens-rg-feature__desc"><?php echo esc_html( $item['feature_description'] ); ?></p>
+					<p class="feature-grid__item-desc"><?php echo esc_html( $item['feature_description'] ); ?></p>
 				<?php endif; ?>
 			</div>
 		</div>

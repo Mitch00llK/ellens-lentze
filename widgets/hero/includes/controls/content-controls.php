@@ -27,6 +27,7 @@ class Content_Controls {
                 'options' => [
                     'default'         => esc_html__( 'Floating Card (Default)', 'ellens-lentze' ),
                     'full_width_blue' => esc_html__( 'Full Width Blue', 'ellens-lentze' ),
+                    'image_overlap_card' => esc_html__( 'Image Overlap Card', 'ellens-lentze' ),
                 ],
             ]
         );

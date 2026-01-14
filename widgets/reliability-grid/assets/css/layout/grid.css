@@ -1,34 +1,33 @@
-.ellens-rg {
+.feature-grid {
     padding: var(--section-spacing-py) var(--container-padding-desktop);
     max-width: var(--container-max-width);
     margin: 0 auto;
 }
 
-.ellens-rg-title {
+.feature-grid__title {
     text-align: center;
     margin-bottom: var(--section-spacing-gap);
     font-family: var(--font-family-serif);
-    font-size: 2rem;
+    font-size: var(--h2-font-size);
     color: var(--color-white);
-    /* 32px */
 }
 
-.ellens-rg-container {
+.feature-grid__container {
     display: grid;
     grid-template-columns: 1fr 25rem 1fr;
     gap: var(--section-spacing-gap);
     align-items: center;
 }
 
-.ellens-rg-column {
+.feature-grid__column {
     display: flex;
     flex-direction: column;
     gap: var(--section-spacing-gap);
 }
 
-.ellens-rg-image-wrapper img {
+.feature-grid__image-wrapper img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-xl);
 }

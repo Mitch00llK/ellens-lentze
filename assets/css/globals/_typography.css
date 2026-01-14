@@ -7,6 +7,24 @@
     --font-family-serif: 'DM Serif Display', Georgia, 'Times New Roman', serif;
     --font-family-mono: 'Courier New', Courier, monospace;
 
+    /* Font Weights */
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Text Transforms */
+    --text-transform-uppercase: uppercase;
+    --text-transform-capitalize: capitalize;
+    --text-transform-none: none;
+
+    /* Utility Sizes */
+    --font-size-xs: 0.875rem;
+    /* 14px */
+    --line-height-xs: 1.5;
+
     /* Headings (Strict) */
     --h1-font-family: var(--font-family-serif);
     --h1-font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
@@ -51,4 +69,9 @@
     /* 16px */
     --button-line-height: 1.5;
     --button-font-weight: 400;
+
+    --faq-font-family: var(--font-family-serif);
+    --faq-font-size: 1.5rem;
+    --faq-line-height: 2.25rem;
+    --faq-font-weight: 400;
 }
