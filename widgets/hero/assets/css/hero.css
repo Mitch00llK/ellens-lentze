@@ -1,0 +1,21 @@
+/**
+ * Hero Widget Styles
+ *
+ * Main import file that consolidates all hero widget CSS.
+ * Imports global design tokens and widget-specific styles.
+ *
+ * @since 1.0.0
+ */
+
+/* Global design tokens */
+@import '../../../../assets/css/globals/variables.css';
+
+/* Layout styles */
+@import './layout/container.css';
+@import './layout/template-full-width.css';
+
+/* Component styles */
+@import './components/content.css';
+
+/* Responsive styles */
+@import './responsive/tablet.css';

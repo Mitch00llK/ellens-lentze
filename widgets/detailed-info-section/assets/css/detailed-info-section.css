@@ -1,0 +1,13 @@
+/**
+ * Detailed Info Section Widget Styles
+ *
+ * Main import file that consolidates all detailed info section widget CSS.
+ *
+ * @since 1.0.0
+ */
+
+@import '../../../../assets/css/globals/variables.css';
+@import './layout/container.css';
+@import './components/content.css';
+@import './components/card.css';
+@import './responsive/tablet.css';

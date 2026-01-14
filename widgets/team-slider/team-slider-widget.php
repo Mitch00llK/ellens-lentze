@@ -37,11 +37,11 @@ class Team_Slider_Widget extends Widget_Base {
 	}
 
     public function get_style_depends() {
-        return [ 'ellens-global-variables', 'ellens-ts-layout', 'ellens-ts-component', 'ellens-ts-responsive' ];
+        return [ 'ellens-team-slider' ];
     }
 
     public function get_script_depends() {
-        return [ 'ellens-ts-script' ];
+        return [ 'ellens-team-slider' ];
     }
 
 	protected function register_controls() {

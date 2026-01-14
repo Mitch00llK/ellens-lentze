@@ -111,7 +111,7 @@ class Hero_Widget extends Widget_Base {
      * @return array Widget scripts dependencies.
      */
     public function get_style_depends() {
-        return [ 'ellens-global-variables', 'ellens-hero-layout', 'ellens-hero-content', 'ellens-hero-responsive', 'ellens-hero-template-full-width' ];
+        return [ 'ellens-hero' ];
     }
 
 	/**

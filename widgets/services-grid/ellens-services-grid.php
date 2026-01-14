@@ -82,7 +82,7 @@ class Services_Grid_Widget extends Widget_Base {
 	}
 
     public function get_style_depends() {
-		return [ 'font-awesome-5', 'ellens-global-variables', 'ellens-sg-layout', 'ellens-sg-component' ];
+		return [ 'ellens-services-grid' ];
 	}
 
 	/**

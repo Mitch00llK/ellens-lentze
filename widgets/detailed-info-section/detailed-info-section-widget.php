@@ -37,14 +37,7 @@ class Detailed_Info_Section_Widget extends Widget_Base {
 	}
 
     public function get_style_depends() {
-        return [ 
-            'font-awesome-5', 
-            'ellens-global-variables', 
-            'ellens-dis-layout', 
-            'ellens-dis-card', 
-            'ellens-dis-content', 
-            'ellens-dis-responsive' 
-        ];
+        return [ 'ellens-detailed-info-section' ];
     }
 
 	protected function register_controls() {
