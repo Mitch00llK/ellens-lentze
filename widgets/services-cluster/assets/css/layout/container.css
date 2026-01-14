@@ -12,7 +12,8 @@
 .services-cluster__container {
     position: relative;
     width: 100%;
-    max-width: 1440px;
+    max-width: var(--container-max-width);
+    padding: 0 var(--container-padding-desktop);
     min-height: 800px;
     margin: 0 auto;
     flex-grow: 1;

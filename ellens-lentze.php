@@ -49,6 +49,9 @@ function register_ellens_hero_widget( $widgets_manager ) {
 
     require_once( __DIR__ . '/widgets/menu/menu-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\Menu\Menu_Widget() );
+
+    require_once( __DIR__ . '/widgets/footer/footer-widget.php' );
+	$widgets_manager->register( new \EllensLentze\Widgets\Footer_Widget() );
 }
 add_action( 'elementor/widgets/register', 'register_ellens_hero_widget' );
 

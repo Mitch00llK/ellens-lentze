@@ -3,17 +3,15 @@
     margin-right: auto;
     margin-left: auto;
     position: relative;
-    padding: var(--spacing-md);
 }
 
 .ellens-services-grid__title {
     font-family: var(--font-family-serif);
-    font-size: clamp(2rem, 5vw, 3rem);
-    /* 32px -> 48px responsive */
+    font-size: var(--h3-font-size);
     line-height: 1.1;
     color: var(--card-text-primary);
     margin-bottom: clamp(2rem, 4vw, 3rem);
-    max-width: 800px;
+    text-align: left;
 }
 
 .ellens-services-grid__container {
@@ -33,7 +31,7 @@
     .ellens-services-grid__container {
         grid-template-columns: repeat(3, 1fr);
         grid-auto-rows: minmax(324px, auto);
-        padding: var(--spacing-md);
+        /* padding: var(--spacing-md); */
     }
 
     .ellens-service-card--featured {

@@ -1,26 +1,26 @@
 .dis-content__block {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: var(--spacing-lg);
 }
 
 .dis-content__title {
-    font-family: var(--dis-font-family-serif);
-    font-size: 32px;
-    line-height: 1.2;
-    letter-spacing: 0.64px;
+    font-family: var(--font-family-serif);
+    font-size: var(--h2-font-size);
+    line-height: var(--h2-line-height);
+    letter-spacing: var(--h2-letter-spacing);
     margin: 0;
 }
 
 .dis-content__text {
-    font-family: var(--dis-font-family-sans);
-    font-size: 18px;
-    line-height: 1.8;
-    letter-spacing: 0.18px;
+    font-family: var(--font-family-sans);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    letter-spacing: var(--body-letter-spacing);
 }
 
 .dis-content__text p {
-    margin-bottom: 24px;
+    margin-bottom: var(--spacing-lg);
 }
 
 .dis-content__text p:last-child {
