@@ -46,6 +46,27 @@ class Render_Functions {
 								'services-cluster__card-wrapper',
 								'elementor-repeater-item-' . $item['_id'],
 							] );
+
+                            // Build inline positioning style
+                            $position_styles = [];
+                            
+                            // Horizontal positioning
+                            $h_anchor = ! empty( $item['horizontal_anchor'] ) ? $item['horizontal_anchor'] : 'left';
+                            $h_value  = ! empty( $item['horizontal_value']['size'] ) ? $item['horizontal_value']['size'] : 10;
+                            $h_unit   = ! empty( $item['horizontal_value']['unit'] ) ? $item['horizontal_value']['unit'] : '%';
+                            $position_styles[] = 'left: auto';
+                            $position_styles[] = 'right: auto';
+                            $position_styles[] = esc_attr( $h_anchor ) . ': ' . esc_attr( $h_value ) . esc_attr( $h_unit );
+                            
+                            // Vertical positioning
+                            $v_anchor = ! empty( $item['vertical_anchor'] ) ? $item['vertical_anchor'] : 'top';
+                            $v_value  = ! empty( $item['vertical_value']['size'] ) ? $item['vertical_value']['size'] : 10;
+                            $v_unit   = ! empty( $item['vertical_value']['unit'] ) ? $item['vertical_value']['unit'] : '%';
+                            $position_styles[] = 'top: auto';
+                            $position_styles[] = 'bottom: auto';
+                            $position_styles[] = esc_attr( $v_anchor ) . ': ' . esc_attr( $v_value ) . esc_attr( $v_unit );
+
+                            $widget->add_render_attribute( $item_key, 'style', implode( '; ', $position_styles ) );
                             
                             // Card Link
                             $link_tag = 'div';

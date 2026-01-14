@@ -138,9 +138,6 @@ class Content_Controls {
 					'unit' => '%',
 					'size' => 10,
 				],
-				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}}' => 'left: auto; right: auto; {{horizontal_anchor.VALUE}}: {{SIZE}}{{UNIT}};',
-				],
 			]
 		);
 
@@ -187,9 +184,6 @@ class Content_Controls {
 				'default' => [
 					'unit' => '%',
 					'size' => 10,
-				],
-				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}}' => 'top: auto; bottom: auto; {{vertical_anchor.VALUE}}: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
