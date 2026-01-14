@@ -56,11 +56,7 @@ class Render_Functions {
                             ?>
                             <a <?php $widget->print_render_attribute_string( $link_key ); ?>>
                                 <?php echo esc_html( $item['text'] ); ?>
-                                <?php if ( ! empty( $item['icon']['value'] ) ) : ?>
-                                    <span class="action-buttons__icon">
-                                        <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
-                                    </span>
-                                <?php endif; ?>
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
                             </a>
                             <?php
                         }

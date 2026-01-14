@@ -63,17 +63,7 @@ class Content_Controls {
 			]
 		);
         
-        $repeater->add_control(
-			'icon',
-			[
-				'label' => esc_html__( 'Icon', 'ellens-lentze' ),
-				'type' => Controls_Manager::ICONS,
-				'default' => [
-					'value' => 'fas fa-arrow-right',
-					'library' => 'fa-solid',
-				],
-			]
-		);
+        // Icon control removed to enforce standardization
 
 		$widget->add_control(
 			'buttons',
@@ -85,17 +75,14 @@ class Content_Controls {
 					[
 						'text' => esc_html__( 'Samenleven', 'ellens-lentze' ),
                         'link' => [ 'url' => '#' ],
-                        'icon' => [ 'value' => 'fas fa-arrow-right', 'library' => 'fa-solid' ],
 					],
 					[
 						'text' => esc_html__( 'Wonen', 'ellens-lentze' ),
                         'link' => [ 'url' => '#' ],
-                        'icon' => [ 'value' => 'fas fa-arrow-right', 'library' => 'fa-solid' ],
 					],
                     [
 						'text' => esc_html__( 'Nalaten', 'ellens-lentze' ),
                         'link' => [ 'url' => '#' ],
-                        'icon' => [ 'value' => 'fas fa-arrow-right', 'library' => 'fa-solid' ],
 					],
 				],
 				'title_field' => '{{{ text }}}',

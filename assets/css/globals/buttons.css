@@ -83,8 +83,8 @@
 }
 
 .btn--light {
-    background-color: var(--color-primary-50);
-    border: 1px solid var(--color-primary-50);
+    background-color: var(--color-blue-50);
+    border: 1px solid var(--color-blue-50);
     color: var(--color-primary);
     padding: var(--spacing-button-md);
 }

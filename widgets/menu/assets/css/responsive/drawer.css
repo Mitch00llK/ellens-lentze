@@ -76,7 +76,7 @@
 .menu__mobile-sub-link {
     font-family: var(--font-family-sans);
     font-size: 1.125rem;
-    color: var(--color-neutral-500);
+    color: var(--color-black-500);
     text-decoration: none;
 }
 

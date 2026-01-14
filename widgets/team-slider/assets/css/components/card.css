@@ -51,7 +51,7 @@
     left: 0;
     width: 100%;
     padding: var(--card-padding-small);
-    background: var(--color-primary-70) !important;
+    background: var(--color-blue-700) !important;
     z-index: 2;
 }
 
