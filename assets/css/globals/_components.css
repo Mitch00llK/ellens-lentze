@@ -1,0 +1,124 @@
+/**
+ * Component Tokens
+ * 
+ * Widget-specific variables that leverage global tokens.
+ */
+:root {
+    /* Hero Section */
+    --ellens-hero-color-blue: var(--color-primary);
+    --ellens-hero-color-orange: var(--color-secondary);
+    --ellens-hero-color-white: var(--color-white);
+    --ellens-hero-spacing-card-padding: 4vw 2.5vw;
+    --border-radius-full: 30px;
+
+    /* Action Buttons */
+    --ellens-ab-color-bg: var(--color-dark-blue);
+    --ellens-ab-color-text-light: var(--color-light-blue);
+    --ellens-ab-color-white: var(--color-white);
+    --ellens-ab-spacing-container-padding: 3vw 2.5vw;
+    --ellens-ab-spacing-gap-content: 1.5rem;
+    --ellens-ab-spacing-gap-buttons: 1.5rem;
+    --ellens-ab-spacing-button-padding: 0.5rem 1.5rem;
+    --ellens-ab-radius-card: 0.5rem;
+    --ellens-ab-radius-button: 6.25rem;
+
+    /* Image Text Block */
+    --ellens-itb-color-bg-content: var(--color-dark-blue);
+    --ellens-itb-color-text-title: var(--color-white);
+    --ellens-itb-color-text-desc: var(--color-white);
+    --ellens-itb-color-btn-primary: var(--color-white);
+    --ellens-itb-color-btn-secondary: var(--color-dark-blue);
+    --ellens-itb-spacing-block-radius: 0.5rem;
+    --ellens-itb-spacing-padding-content: 3rem;
+    --ellens-itb-spacing-gap-content: 1.5rem;
+    --ellens-itb-spacing-gap-buttons: 1rem;
+    --ellens-itb-image-width: 50%;
+
+    /* Services Grid */
+    --ellens-sg-color-bg: var(--color-dark-blue);
+    --ellens-sg-color-text-primary: var(--color-light-blue);
+    --ellens-sg-color-text-title: var(--color-white);
+    --ellens-sg-color-button-bg: var(--color-primary);
+    --ellens-sg-color-icon: var(--color-secondary);
+    --ellens-sg-spacing-card-gap: clamp(1rem, 2vw, 1.5rem);
+    --ellens-sg-spacing-card-padding: clamp(1.5rem, 2vw, 2rem);
+    --ellens-sg-font-family-serif: var(--font-family-serif);
+    --ellens-sg-font-family-sans: var(--font-family-sans);
+
+    /* USP Grid */
+    --ellens-usp-color-icon: var(--color-secondary);
+    --ellens-usp-color-title: var(--color-light-blue);
+    --ellens-usp-color-desc: var(--color-light-blue);
+    --ellens-usp-spacing-container-py: 5.5rem;
+    --ellens-usp-spacing-grid-gap: clamp(1rem, 1.5vw, 1.5rem);
+    --ellens-usp-spacing-item-p: 1.5rem 1rem 1.5rem 0;
+    --ellens-usp-spacing-content-gap: 1rem;
+
+    /* FAQ Section */
+    --faq-spacing-section-py: 6rem;
+    --faq-spacing-gap: 4.5rem;
+    --faq-color-bg: var(--color-light-blue);
+    --faq-color-blue-500: var(--color-primary);
+    --faq-color-acc-bg: rgba(242, 247, 252, 0.5);
+    --faq-font-family-serif: var(--font-family-serif);
+    --faq-font-family-sans: var(--font-family-sans);
+
+    /* Detailed Info Section */
+    --dis-spacing-section-py: 80px;
+    --dis-spacing-container-px: 340px;
+    --dis-spacing-gap: 71px;
+    --dis-color-light-blue: var(--color-light-blue);
+    --dis-color-orange: var(--color-secondary);
+    --dis-color-dark-bg: var(--color-dark-blue);
+    --dis-color-white: var(--color-white);
+    --dis-font-family-serif: var(--font-family-serif);
+    --dis-font-family-sans: var(--font-family-sans);
+
+    /* Services Cluster */
+    --ellens-sc-color-bg-card: rgba(0, 39, 82, 0.6);
+    --ellens-sc-color-border-card: rgba(242, 247, 252, 0.2);
+    --ellens-sc-color-text-title: var(--color-white);
+    --ellens-sc-color-text-desc: var(--color-light-blue);
+    --ellens-sc-color-icon: var(--color-secondary);
+    --ellens-sc-spacing-p-card: 2rem;
+    --ellens-sc-spacing-gap-card: 1rem;
+    --ellens-sc-z-image: 1;
+    --ellens-sc-z-card: 2;
+
+    /* Post Grid */
+    --pg-color-bg: var(--color-light-blue);
+    --pg-color-text-title: var(--color-primary);
+    --pg-color-text-desc: var(--color-primary);
+    --pg-color-orange: var(--color-secondary);
+    --pg-color-white: var(--color-white);
+    --pg-spacing-section: 5rem;
+    --pg-spacing-grid-gap-row: 2.5rem;
+    --pg-spacing-grid-gap-col: 2.25rem;
+    --pg-card-radius: 0.5rem;
+
+    /* Team Slider */
+    --ts-color-bg: var(--color-dark-blue);
+    --ts-color-text-primary: var(--color-white);
+    --ts-color-text-secondary: var(--color-secondary);
+    --ts-color-pagination: var(--color-primary);
+    --ts-color-pagination-active: var(--color-secondary);
+    --ts-card-width: 24.8125rem;
+    --ts-card-height: 29.625rem;
+    --ts-spacing-section: 6rem;
+    --ts-spacing-header-bottom: 3.5rem;
+    --ts-spacing-slide-gap: 1.5rem;
+    --ts-spacing-card-padding: 1.5rem;
+    --ts-spacing-container: 21.25rem;
+    --ts-border-radius: 0.5rem;
+
+    /* Reliability Grid */
+    --ellens-rg-color-title: var(--color-dark-blue);
+    --ellens-rg-color-icon: var(--color-secondary);
+    --ellens-rg-color-feature-title: var(--color-dark-blue);
+    --ellens-rg-color-feature-subtitle: var(--color-primary);
+    --ellens-rg-color-feature-desc: var(--color-primary);
+    --ellens-rg-spacing-section-py: 5rem;
+    --ellens-rg-spacing-grid-gap: 2rem;
+    --ellens-rg-spacing-feature-gap: 1rem;
+    --ellens-rg-image-width: 25rem;
+}
