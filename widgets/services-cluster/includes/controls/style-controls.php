@@ -56,6 +56,27 @@ class Style_Controls {
 			]
 		);
 
+
+        $widget->add_control(
+			'cluster_title_color',
+			[
+				'label' => esc_html__( 'Cluster Title Color', 'ellens-lentze' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .services-cluster__main-title' => 'color: {{VALUE}};',
+				],
+                'default' => '#ffffff',
+			]
+		);
+
+        $widget->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'cluster_title_typography',
+                'label' => esc_html__( 'Cluster Title Typography', 'ellens-lentze' ),
+				'selector' => '{{WRAPPER}} .services-cluster__main-title',
+			]
+		);
         $widget->add_group_control(
 			\Elementor\Group_Control_Typography::get_type(),
 			[

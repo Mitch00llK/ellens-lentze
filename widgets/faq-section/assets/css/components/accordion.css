@@ -4,7 +4,7 @@
     line-height: var(--h2-line-height);
     letter-spacing: var(--h2-letter-spacing);
     font-weight: var(--h2-font-weight);
-    color: var(--faq-color-blue-500);
+    color: var(--color-primary);
     margin: 0;
 }
 
@@ -13,7 +13,7 @@
     font-size: var(--body-font-size);
     line-height: var(--body-line-height);
     letter-spacing: var(--body-letter-spacing);
-    color: var(--faq-color-blue-500);
+    color: var(--color-primary);
 }
 
 .faq-accordion__item {
@@ -29,7 +29,7 @@
     align-items: center;
     gap: var(--spacing-sm);
     padding: var(--spacing-md);
-    background-color: var(--faq-color-acc-bg);
+    background-color: rgba(242, 247, 252, 0.5);
     border: none;
     border-radius: var(--border-radius-md);
     cursor: pointer;
@@ -47,7 +47,7 @@
     line-height: var(--h3-line-height);
     letter-spacing: var(--h3-letter-spacing);
     font-weight: var(--h3-font-weight);
-    color: var(--faq-color-blue-500);
+    color: var(--color-primary);
     margin: 0;
     display: block;
     /* Ensure it behaves as a block for text */
@@ -70,7 +70,7 @@
 }
 
 .faq-accordion__icon {
-    color: var(--faq-color-blue-500);
+    color: var(--color-primary);
     transition: transform var(--transition-normal);
     font-size: 1.25rem;
     flex-shrink: 0;
@@ -91,5 +91,5 @@
     font-family: var(--body-font-family);
     font-size: var(--body-font-size);
     line-height: var(--body-line-height);
-    color: var(--faq-color-blue-500);
+    color: var(--color-primary);
 }

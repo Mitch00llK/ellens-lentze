@@ -1,5 +1,10 @@
 /* Title */
 .action-buttons__title {
+    font-family: var(--h2-font-family);
+    font-size: var(--h2-font-size);
+    line-height: var(--h2-line-height);
+    letter-spacing: var(--h2-letter-spacing);
+    font-weight: var(--h2-font-weight);
     margin: 0;
 }
 
@@ -10,8 +15,8 @@
 
 /* Button - Inherits from .ellens-btn */
 .action-buttons__item {
-    color: var(--ellens-ab-color-white);
-    border: 1px solid var(--ellens-ab-color-white);
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
     z-index: 1;
 }
 

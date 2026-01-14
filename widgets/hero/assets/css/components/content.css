@@ -2,11 +2,9 @@
 .hero__subtitle {
     display: block;
     margin-bottom: var(--spacing-xl);
-    /* 2rem -> xl */
     color: var(--color-secondary);
-    /* Ensure subtitle uses secondary color often */
-    font-family: var(--h3-font-family);
-    font-weight: 500;
+    font-family: var(--h1-font-family);
+    font-weight: var(--h1-font-weight);
 }
 
 /* Title */

@@ -41,6 +41,36 @@ class Content_Controls {
 			]
 		);
 
+        $widget->add_control(
+			'cluster_title',
+			[
+				'label' => esc_html__( 'Cluster Title', 'ellens-lentze' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => esc_html__( 'Waar wij goed in zijn', 'ellens-lentze' ),
+                'separator' => 'before',
+			]
+		);
+
+        $widget->add_control(
+			'cluster_title_tag',
+			[
+				'label' => esc_html__( 'Title HTML Tag', 'ellens-lentze' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'h1' => 'H1',
+					'h2' => 'H2',
+					'h3' => 'H3',
+					'h4' => 'H4',
+					'h5' => 'H5',
+					'h6' => 'H6',
+					'div' => 'div',
+					'span' => 'span',
+					'p' => 'p',
+				],
+				'default' => 'h2',
+			]
+		);
+
         $widget->end_controls_section();
 
         /* Services Section (Repeater) */
@@ -134,10 +164,7 @@ class Content_Controls {
 					'%'  => [ 'min' => -50, 'max' => 150 ],
                     'vw' => [ 'min' => -50, 'max' => 150 ],
 				],
-				'default' => [
-					'unit' => '%',
-					'size' => 10,
-				],
+
 			]
 		);
 
@@ -181,10 +208,7 @@ class Content_Controls {
 					'%'  => [ 'min' => -50, 'max' => 150 ],
                     'vh' => [ 'min' => -50, 'max' => 150 ],
 				],
-				'default' => [
-					'unit' => '%',
-					'size' => 10,
-				],
+
 			]
 		);
 

@@ -36,6 +36,14 @@
     --h4-letter-spacing: 2px;
     --h4-font-weight: 400;
 
+    /* tag */
+
+    --tag-font-family: var(--font-family-sans);
+    --tag-font-size: clamp(1rem, 1vw + 0.8rem, 1.125rem);
+    --tag-line-height: 1.6;
+    --tag-letter-spacing: 1px;
+    --tag-font-weight: 300;
+
     /* Body & UI (Strict) */
     --body-font-family: var(--font-family-sans);
     --body-font-size: clamp(1rem, 1vw + 0.8rem, 1.125rem);
