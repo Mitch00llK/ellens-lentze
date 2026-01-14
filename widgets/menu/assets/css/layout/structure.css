@@ -1,0 +1,52 @@
+/* Menu Layout Structure */
+
+.menu-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1.5rem 2.5rem;
+    background: #fff;
+    gap: 2rem;
+    position: relative;
+}
+
+/* Sections */
+.menu__logo {
+    flex-shrink: 0;
+    max-width: 280px;
+}
+
+.menu__logo img {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
+}
+
+.menu__utilities {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.menu__nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu__nav-list {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu__actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+}

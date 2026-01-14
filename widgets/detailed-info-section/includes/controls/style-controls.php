@@ -98,7 +98,7 @@ class Style_Controls {
 				'label' => esc_html__( 'Button Color', 'ellens-lentze' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .ellens-btn' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .btn' => 'background-color: {{VALUE}};',
 				],
 			]
 		);

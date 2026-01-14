@@ -63,17 +63,7 @@ class Content_Controls {
 			]
 		);
         
-        $repeater->add_control(
-			'icon',
-			[
-				'label' => esc_html__( 'Icon', 'ellens-lentze' ),
-				'type' => Controls_Manager::ICONS,
-				'default' => [
-					'value' => 'fas fa-arrow-right',
-					'library' => 'fa-solid',
-				],
-			]
-		);
+        // Icon control removed to enforce standardization
 
 		$widget->add_control(
 			'buttons',

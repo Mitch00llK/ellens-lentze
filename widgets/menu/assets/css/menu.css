@@ -1,0 +1,14 @@
+/* Menu Widget Styles - Main entry point */
+
+/* Global design tokens */
+@import '../../../../assets/css/globals/variables.css';
+
+/* Layout */
+@import './layout/structure.css';
+
+/* Components */
+@import './components/navigation.css';
+@import './components/controls.css';
+
+/* Responsive */
+@import './responsive/drawer.css';

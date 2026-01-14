@@ -1,0 +1,83 @@
+/* Menu Navigation Component */
+
+/* Nav Link */
+.menu__nav-link {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-family: var(--font-family-sans);
+    font-size: 1.125rem;
+    /* 18px */
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.menu__nav-link:hover {
+    color: var(--color-secondary);
+}
+
+/* Dropdown Support */
+.menu__nav-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.menu__nav-item--has-children .menu__nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.menu__dropdown-icon {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.menu__nav-item:hover .menu__dropdown-icon {
+    transform: rotate(180deg);
+}
+
+/* Sub-menu (Desktop) */
+.menu__sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #ffffff;
+    min-width: 220px;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-xl);
+    /* Sleek shadow */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 100;
+}
+
+.menu__nav-item:hover .menu__sub-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.menu__sub-menu-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-family: var(--font-family-sans);
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu__sub-menu-link:hover {
+    background-color: var(--color-blue-50);
+    color: var(--color-secondary);
+}

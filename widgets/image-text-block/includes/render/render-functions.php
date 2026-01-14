@@ -45,9 +45,9 @@ class Render_Functions {
                         <!-- Primary Button -->
                         <?php if ( ! empty( $settings['btn_primary_text'] ) ) : 
                             $btn_primary_style = isset( $settings['btn_primary_style'] ) ? $settings['btn_primary_style'] : 'primary';
-                            $btn_primary_class = 'ellens-btn--' . $btn_primary_style;
+                            $btn_primary_class = 'btn--' . $btn_primary_style;
                             $widget->add_link_attributes( 'btn_primary', $settings['btn_primary_link'] );
-                            $widget->add_render_attribute( 'btn_primary', 'class', [ 'image-text-block__button', 'ellens-btn', $btn_primary_class ] );
+                            $widget->add_render_attribute( 'btn_primary', 'class', [ 'image-text-block__button', 'btn', $btn_primary_class ] );
                         ?>
                             <a <?php $widget->print_render_attribute_string( 'btn_primary' ); ?>>
                                 <?php echo esc_html( $settings['btn_primary_text'] ); ?>
@@ -58,9 +58,9 @@ class Render_Functions {
                         <!-- Secondary Button -->
                         <?php if ( 'yes' === $settings['show_btn_secondary'] && ! empty( $settings['btn_secondary_text'] ) ) : 
                             $btn_secondary_style = isset( $settings['btn_secondary_style'] ) ? $settings['btn_secondary_style'] : 'secondary';
-                            $btn_secondary_class = 'ellens-btn--' . $btn_secondary_style;
+                            $btn_secondary_class = 'btn--' . $btn_secondary_style;
                             $widget->add_link_attributes( 'btn_secondary', $settings['btn_secondary_link'] );
-                            $widget->add_render_attribute( 'btn_secondary', 'class', [ 'image-text-block__button', 'ellens-btn', $btn_secondary_class ] );
+                            $widget->add_render_attribute( 'btn_secondary', 'class', [ 'image-text-block__button', 'btn', $btn_secondary_class ] );
                         ?>
                             <a <?php $widget->print_render_attribute_string( 'btn_secondary' ); ?>>
                                 <?php echo esc_html( $settings['btn_secondary_text'] ); ?>

@@ -1,0 +1,89 @@
+/* Menu Controls Component (Buttons, Search, Lang) */
+
+/* Utility Buttons (Phone/Email) */
+.menu__utility-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-blue-50);
+    border: 1px solid var(--color-blue-700);
+    border-radius: 9999px;
+    /* Pill */
+    padding: 0.25rem 1rem;
+    text-decoration: none;
+    color: var(--color-primary);
+    font-family: var(--font-family-sans);
+    font-size: 1rem;
+    line-height: normal;
+    transition: all 0.3s ease;
+}
+
+.menu__utility-btn:hover {
+    background-color: var(--color-white);
+    border-color: var(--color-blue-500);
+}
+
+.menu__utility-btn i,
+.menu__utility-btn svg {
+    font-size: 0.875rem;
+    width: 1em;
+    height: 1em;
+    object-fit: contain;
+    fill: currentColor;
+}
+
+/* Search Button */
+.menu__search-btn {
+    background: transparent;
+    border: 1px solid var(--color-blue-700);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu__search-btn:hover {
+    background-color: var(--color-blue-50);
+    border-color: var(--color-primary);
+}
+
+/* Language Switcher */
+.menu__lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: var(--color-white);
+    border: 1px solid var(--color-blue-700);
+    border-radius: 9999px;
+    padding: 0.25rem 0.5rem;
+}
+
+.menu__lang-btn {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-family: var(--font-family-sans);
+    font-size: 0.875rem;
+    color: var(--color-black-500);
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+}
+
+.menu__lang-btn.is-active {
+    background-color: var(--color-blue-50);
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.menu__lang-btn:hover:not(.is-active) {
+    background-color: var(--color-black-50);
+}

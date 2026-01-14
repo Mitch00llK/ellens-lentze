@@ -22,12 +22,12 @@
 }
 
 /* Header Button override if needed */
-.ellens-post-grid-header .ellens-btn {
+.ellens-post-grid-header .btn {
     border-color: var(--color-primary);
     color: var(--color-primary);
 }
 
-.ellens-post-grid-header .ellens-btn:hover {
+.ellens-post-grid-header .btn:hover {
     background-color: rgba(0, 69, 144, 0.1);
 }
 

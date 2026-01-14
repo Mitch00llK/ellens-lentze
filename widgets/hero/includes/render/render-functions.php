@@ -58,8 +58,8 @@ class Render_Functions {
         
         // Button Attributes
         $button_style = isset( $settings['button_style'] ) ? $settings['button_style'] : 'primary';
-        $button_class = 'ellens-btn--' . $button_style;
-        $widget->add_render_attribute( 'button', 'class', [ 'hero__button', 'ellens-btn', $button_class ] );
+        $button_class = 'btn--' . $button_style;
+        $widget->add_render_attribute( 'button', 'class', [ 'hero__button', 'btn', $button_class ] );
         if ( ! empty( $button_url['url'] ) ) {
 			$widget->add_link_attributes( 'button', $button_url );
 		}
@@ -102,9 +102,7 @@ class Render_Functions {
                             <a <?php $widget->print_render_attribute_string( 'button' ); ?>>
                                 <?php echo esc_html( $button_text ); ?>
                                 <span class="hero__button-icon" aria-hidden="true">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                        <path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
+                                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
                                 </span>
                             </a>
                         <?php endif; ?>

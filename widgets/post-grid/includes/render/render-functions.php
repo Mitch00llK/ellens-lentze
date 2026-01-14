@@ -37,8 +37,8 @@ class Render_Functions {
         
         if ( ! empty( $btn_text ) ) {
             $button_style = isset( $settings['button_style'] ) ? $settings['button_style'] : 'primary';
-            $button_class = 'ellens-btn--' . $button_style;
-            $widget->add_render_attribute( 'header_btn', 'class', [ 'ellens-btn', $button_class, 'post-grid-header-btn' ] );
+            $button_class = 'btn--' . $button_style;
+            $widget->add_render_attribute( 'header_btn', 'class', [ 'btn', $button_class, 'post-grid-header-btn' ] );
             if ( ! empty( $btn_link['url'] ) ) {
                 $widget->add_link_attributes( 'header_btn', $btn_link );
             }
@@ -86,9 +86,9 @@ class Render_Functions {
                                         
                                         <?php
                                         $card_btn_style = isset( $settings['card_button_style'] ) ? $settings['card_button_style'] : 'light';
-                                        $card_btn_class = 'ellens-btn--' . $card_btn_style;
+                                        $card_btn_class = 'btn--' . $card_btn_style;
                                         ?>
-                                        <div class="post-read-more-btn ellens-btn <?php echo esc_attr( $card_btn_class ); ?>">
+                                        <div class="post-read-more-btn btn <?php echo esc_attr( $card_btn_class ); ?>">
                                             <?php esc_html_e( 'Lees meer', 'ellens-lentze' ); ?>
                                             <i class="fas fa-arrow-right" aria-hidden="true"></i>
                                         </div>

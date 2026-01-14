@@ -1,5 +1,5 @@
 .ellens-service-card {
-    background-color: var(--card-bg-primary);
+    background-color: var(--color-blue-700) !important;
     padding: var(--card-padding);
     border-radius: 8px;
     display: flex;

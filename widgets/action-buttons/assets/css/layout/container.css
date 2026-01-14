@@ -1,12 +1,9 @@
 .action-buttons {
     width: 100%;
-    /* Design has container padding top 88px, bottom 0, px 340px */
-    /* This implies it's a section, but as a widget we assume it's placed inside a section. */
-    /* We will style the card itself. */
 }
 
 .action-buttons__card {
-    background-color: var(--color-primary-70);
+    background-color: var(--color-blue-700);
     border-radius: var(--card-radius);
     padding: 4rem;
     display: flex;

@@ -52,15 +52,11 @@ class Render_Functions {
                         foreach ( $settings['buttons'] as $item ) {
                              $link_key = 'link_' . $item['_id'];
                              $widget->add_link_attributes( $link_key, $item['link'] );
-                             $widget->add_render_attribute( $link_key, 'class', [ 'action-buttons__item', 'ellens-btn' ] );
+                             $widget->add_render_attribute( $link_key, 'class', [ 'action-buttons__item', 'btn', 'btn--outline' ] );
                             ?>
                             <a <?php $widget->print_render_attribute_string( $link_key ); ?>>
                                 <?php echo esc_html( $item['text'] ); ?>
-                                <?php if ( ! empty( $item['icon']['value'] ) ) : ?>
-                                    <span class="action-buttons__icon">
-                                        <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
-                                    </span>
-                                <?php endif; ?>
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
                             </a>
                             <?php
                         }
