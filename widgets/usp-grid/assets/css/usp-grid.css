@@ -1,0 +1,12 @@
+/**
+ * USP Grid Widget Styles
+ *
+ * Main import file that consolidates all USP grid widget CSS.
+ *
+ * @since 1.0.0
+ */
+
+@import '../../../../assets/css/globals/variables.css';
+@import './layout/container.css';
+@import './components/content.css';
+@import './responsive/tablet.css';

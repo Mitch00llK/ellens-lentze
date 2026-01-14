@@ -37,7 +37,7 @@ class Action_Buttons_Widget extends Widget_Base {
 	}
 
     public function get_style_depends() {
-        return [ 'font-awesome-5', 'ellens-global-variables', 'ellens-ab-layout', 'ellens-ab-content', 'ellens-ab-responsive' ];
+        return [ 'ellens-action-buttons' ];
     }
 
 	protected function register_controls() {

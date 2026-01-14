@@ -1,0 +1,12 @@
+/**
+ * Post Grid Widget Styles
+ *
+ * Main import file that consolidates all post grid widget CSS.
+ *
+ * @since 1.0.0
+ */
+
+@import '../../../../assets/css/globals/variables.css';
+@import './layout/container.css';
+@import './components/card.css';
+@import './responsive/tablet.css';

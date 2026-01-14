@@ -1,0 +1,12 @@
+/**
+ * FAQ Section Widget Styles
+ *
+ * Main import file that consolidates all FAQ section widget CSS.
+ *
+ * @since 1.0.0
+ */
+
+@import '../../../../assets/css/globals/variables.css';
+@import './layout/container.css';
+@import './components/accordion.css';
+@import './responsive/tablet.css';

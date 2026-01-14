@@ -59,14 +59,14 @@ class FAQ_Section_Widget extends Widget_Base {
 	 * Get style dependencies.
 	 */
 	public function get_style_depends() {
-		return [ 'font-awesome-5', 'ellens-global-variables', 'ellens-faq-layout', 'ellens-faq-accordion', 'ellens-faq-responsive' ];
+		return [ 'ellens-faq-section' ];
 	}
 
 	/**
 	 * Get script dependencies.
 	 */
 	public function get_script_depends() {
-		return [ 'ellens-faq-js' ];
+		return [ 'ellens-faq-section' ];
 	}
 
 	/**

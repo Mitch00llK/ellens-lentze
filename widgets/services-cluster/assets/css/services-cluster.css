@@ -1,0 +1,12 @@
+/**
+ * Services Cluster Widget Styles
+ *
+ * Main import file that consolidates all services cluster widget CSS.
+ *
+ * @since 1.0.0
+ */
+
+@import '../../../../assets/css/globals/variables.css';
+@import './layout/container.css';
+@import './components/content.css';
+@import './responsive/tablet.css';

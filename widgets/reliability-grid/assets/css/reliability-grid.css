@@ -1,0 +1,12 @@
+/**
+ * Reliability Grid Widget Styles
+ *
+ * Main import file that consolidates all reliability grid widget CSS.
+ *
+ * @since 1.0.0
+ */
+
+@import '../../../../assets/css/globals/variables.css';
+@import './layout/grid.css';
+@import './components/feature.css';
+@import './responsive/tablet.css';

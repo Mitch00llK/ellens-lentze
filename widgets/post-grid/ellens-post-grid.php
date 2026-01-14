@@ -30,12 +30,7 @@ class Ellens_Post_Grid extends Widget_Base {
 	}
 
 	public function get_style_depends() {
-		return [ 
-            'ellens-global-variables',
-            'ellens-pg-layout',
-            'ellens-pg-component', // Card
-            'ellens-pg-responsive'
-        ];
+		return [ 'ellens-post-grid' ];
 	}
 
 	protected function register_controls() {
