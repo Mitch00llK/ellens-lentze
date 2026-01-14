@@ -154,5 +154,21 @@ class Assets_Config {
             [ 'ellens-global-variables', 'ellens-global-buttons' ],
             '1.0.0'
         );
+
+        /* Menu Widget Assets */
+        wp_register_style(
+            'menu-styles',
+            plugins_url( 'widgets/menu/assets/css/menu.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'ellens-global-variables', 'ellens-global-buttons', 'font-awesome-5' ],
+            '1.0.0'
+        );
+
+        wp_register_script(
+            'menu-handler',
+            plugins_url( 'widgets/menu/assets/js/menu-handler.js', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'elementor-frontend' ], 
+            '1.0.0',
+            true
+        );
     }
 }

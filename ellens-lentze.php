@@ -46,6 +46,9 @@ function register_ellens_hero_widget( $widgets_manager ) {
 
     require_once( __DIR__ . '/widgets/reliability-grid/reliability-grid-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\Reliability_Grid_Widget() );
+
+    require_once( __DIR__ . '/widgets/menu/menu-widget.php' );
+	$widgets_manager->register( new \EllensLentze\Widgets\Menu\Menu_Widget() );
 }
 add_action( 'elementor/widgets/register', 'register_ellens_hero_widget' );
 
