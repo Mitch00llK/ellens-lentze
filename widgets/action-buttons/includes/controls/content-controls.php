@@ -85,14 +85,17 @@ class Content_Controls {
 					[
 						'text' => esc_html__( 'Samenleven', 'ellens-lentze' ),
                         'link' => [ 'url' => '#' ],
+                        'icon' => [ 'value' => 'fas fa-arrow-right', 'library' => 'fa-solid' ],
 					],
 					[
 						'text' => esc_html__( 'Wonen', 'ellens-lentze' ),
                         'link' => [ 'url' => '#' ],
+                        'icon' => [ 'value' => 'fas fa-arrow-right', 'library' => 'fa-solid' ],
 					],
                     [
 						'text' => esc_html__( 'Nalaten', 'ellens-lentze' ),
                         'link' => [ 'url' => '#' ],
+                        'icon' => [ 'value' => 'fas fa-arrow-right', 'library' => 'fa-solid' ],
 					],
 				],
 				'title_field' => '{{{ text }}}',

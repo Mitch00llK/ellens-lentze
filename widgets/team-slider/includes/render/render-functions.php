@@ -40,7 +40,7 @@ class Render_Functions {
         $btn_link_attrs = '';
         if ( ! empty( $button_link ) ) {
             $widget->add_link_attributes( 'button_link', $settings['button_link'] );
-            $widget->add_render_attribute( 'button_link', 'class', 'ellens-btn' );
+            $widget->add_render_attribute( 'button_link', 'class', 'btn' );
         }
 
 		?>
@@ -53,9 +53,9 @@ class Render_Functions {
 
                 <?php if ( ! empty( $button_text ) && ! empty( $button_link ) ) :
                     $button_style = isset( $settings['button_style'] ) ? $settings['button_style'] : 'primary';
-                    $button_class = 'ellens-btn--' . $button_style;
+                    $button_class = 'btn--' . $button_style;
                 ?>
-                    <a href="<?php echo esc_url( $button_link ); ?>" class="team-slider__button ellens-btn <?php echo esc_attr( $button_class ); ?>">
+                    <a href="<?php echo esc_url( $button_link ); ?>" class="team-slider__button btn <?php echo esc_attr( $button_class ); ?>">
                         <?php echo esc_html( $button_text ); ?>
                         <i class="fas fa-arrow-right" aria-hidden="true"></i>
                     </a>
@@ -84,7 +84,7 @@ class Render_Functions {
                                         <?php endif; ?>
                                         <!-- Arrow Button -->
                                         <a href="<?php the_permalink(); ?>" class="team-arrow" aria-label="<?php esc_attr_e( 'View profile', 'ellens-lentze' ); ?>">
-                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
                                         </a>
                                     </div>
                                 </div>

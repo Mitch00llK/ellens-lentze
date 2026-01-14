@@ -60,7 +60,7 @@ class Render_Services_Grid {
                         </div>
                         <div class="ellens-service-card__action">
                              <div class="ellens-service-card__arrow">
-                                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
                             </div>
                         </div>
                     </<?php echo $link_tag; ?>>

@@ -41,7 +41,7 @@
     margin: 0;
 }
 
-/* Buttons - Inherits from .ellens-btn */
+/* Buttons - Inherits from .btn */
 .image-text-block__actions {
     display: flex;
     flex-wrap: wrap;

@@ -1,5 +1,5 @@
 /* Global Buttons - BEM Structure */
-.ellens-btn {
+.btn {
     display: inline-flex;
     align-items: center;
     gap: 16px;
@@ -14,61 +14,61 @@
     cursor: pointer;
 }
 
-.ellens-btn:hover {
+.btn:hover {
     background: rgba(255, 255, 255, 0.1);
     opacity: 0.9;
 }
 
 /* Modifiers */
-.ellens-btn--primary {
+.btn--primary {
     background-color: var(--color-primary);
     border: 1px solid var(--color-white);
     color: var(--color-white);
     padding: var(--spacing-button-md);
 }
 
-.ellens-btn--primary:hover {
+.btn--primary:hover {
     background-color: var(--color-dark-blue);
     border-color: var(--color-dark-blue);
     color: var(--color-white);
     opacity: 1;
 }
 
-.ellens-btn--secondary {
+.btn--secondary {
     background-color: var(--color-secondary);
     border: 1px solid var(--color-secondary);
     color: var(--color-white);
     padding: var(--spacing-button-md);
 }
 
-.ellens-btn--secondary:hover {
+.btn--secondary:hover {
     background-color: var(--color-dark-blue);
     border-color: var(--color-dark-blue);
     color: var(--color-white);
     opacity: 1;
 }
 
-.ellens-btn--ghost {
+.btn--ghost {
     background-color: transparent;
     border: none;
     color: var(--color-primary);
     padding: var(--spacing-button-md);
 }
 
-.ellens-btn--ghost:hover {
+.btn--ghost:hover {
     background-color: rgba(0, 69, 144, 0.1);
     color: var(--color-dark-blue);
     opacity: 1;
 }
 
-.ellens-btn--outline {
+.btn--outline {
     background-color: transparent;
     border: 1px solid var(--color-white);
     color: var(--color-white);
     padding: var(--spacing-button-md);
 }
 
-.ellens-btn--outline:hover {
+.btn--outline:hover {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
     color: var(--color-white);
@@ -76,20 +76,20 @@
 }
 
 /* Icon helper */
-.ellens-btn__icon {
+.btn__icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
 }
 
-.ellens-btn--light {
+.btn--light {
     background-color: var(--color-primary-50);
     border: 1px solid var(--color-primary-50);
     color: var(--color-primary);
     padding: var(--spacing-button-md);
 }
 
-.ellens-btn--light:hover {
+.btn--light:hover {
     background-color: var(--color-white);
     border-color: var(--color-white);
     color: var(--color-primary);

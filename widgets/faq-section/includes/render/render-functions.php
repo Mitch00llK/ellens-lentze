@@ -30,9 +30,9 @@ class Render_Functions {
 
 					<?php if ( ! empty( $settings['btn_text'] ) && ! empty( $settings['btn_link']['url'] ) ) : 
 						$button_style = isset( $settings['button_style'] ) ? $settings['button_style'] : 'primary';
-						$button_class = 'ellens-btn--' . $button_style;
+						$button_class = 'btn--' . $button_style;
 						$widget->add_link_attributes( 'button', $settings['btn_link'] );
-						$widget->add_render_attribute( 'button', 'class', [ 'faq-content__button', 'ellens-btn', $button_class ] );
+						$widget->add_render_attribute( 'button', 'class', [ 'faq-content__button', 'btn', $button_class ] );
 					?>
 						<a <?php $widget->print_render_attribute_string( 'button' ); ?>>
 							<?php echo esc_html( $settings['btn_text'] ); ?>

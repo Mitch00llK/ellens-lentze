@@ -52,7 +52,7 @@ class Render_Functions {
                         foreach ( $settings['buttons'] as $item ) {
                              $link_key = 'link_' . $item['_id'];
                              $widget->add_link_attributes( $link_key, $item['link'] );
-                             $widget->add_render_attribute( $link_key, 'class', [ 'action-buttons__item', 'ellens-btn' ] );
+                             $widget->add_render_attribute( $link_key, 'class', [ 'action-buttons__item', 'btn', 'btn--outline' ] );
                             ?>
                             <a <?php $widget->print_render_attribute_string( $link_key ); ?>>
                                 <?php echo esc_html( $item['text'] ); ?>
