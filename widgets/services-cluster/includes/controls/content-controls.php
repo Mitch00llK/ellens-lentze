@@ -139,7 +139,7 @@ class Content_Controls {
 					'size' => 10,
 				],
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}}' => '{{horizontal_anchor.VALUE}}: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} {{CURRENT_ITEM}}' => 'left: auto; right: auto; {{horizontal_anchor.VALUE}}: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -189,7 +189,7 @@ class Content_Controls {
 					'size' => 10,
 				],
 				'selectors' => [
-					'{{WRAPPER}} {{CURRENT_ITEM}}' => '{{vertical_anchor.VALUE}}: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} {{CURRENT_ITEM}}' => 'top: auto; bottom: auto; {{vertical_anchor.VALUE}}: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
