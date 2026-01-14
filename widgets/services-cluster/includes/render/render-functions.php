@@ -42,7 +42,10 @@ class Render_Functions {
                     if ( $settings['items'] ) {
                         foreach ( $settings['items'] as $index => $item ) {
                             $item_key = 'item_' . $index;
-                            $widget->add_render_attribute( $item_key, 'class', 'services-cluster__card-wrapper' );
+                            $widget->add_render_attribute( $item_key, 'class', [
+								'services-cluster__card-wrapper',
+								'elementor-repeater-item-' . $item['_id'],
+							] );
                             
                             // Card Link
                             $link_tag = 'div';
@@ -60,7 +63,7 @@ class Render_Functions {
                                             </div>
                                         <?php endif; ?>
                                         
-                                        <h3 class="services-cluster__title"><?php echo esc_html( $item['title'] ); ?></h3>
+                                        <span class="services-cluster__title"><?php echo esc_html( $item['title'] ); ?></span>
                                     </div>
                                     
                                     <?php if ( ! empty( $item['description'] ) ) : ?>

@@ -62,23 +62,4 @@
     max-width: 90vw;
 }
 
-/* Positioning logic will be generic classes or nth-child */
-.services-cluster__card-wrapper:nth-child(1) {
-    top: 10%;
-    left: 10%;
-}
-
-.services-cluster__card-wrapper:nth-child(2) {
-    top: 10%;
-    right: 10%;
-}
-
-.services-cluster__card-wrapper:nth-child(3) {
-    bottom: 10%;
-    left: 15%;
-}
-
-.services-cluster__card-wrapper:nth-child(4) {
-    bottom: 10%;
-    right: 15%;
-}
+/* Positioning logic is user-controlled via Elementor */

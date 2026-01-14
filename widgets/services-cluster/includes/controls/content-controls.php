@@ -94,6 +94,106 @@ class Content_Controls {
 			]
 		);
 
+        $repeater->add_control(
+			'hr_position',
+			[
+				'label' => esc_html__( 'Horizontal Position', 'ellens-lentze' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+        $repeater->add_control(
+			'horizontal_anchor',
+			[
+				'label' => esc_html__( 'Horizontal Anchor', 'ellens-lentze' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => esc_html__( 'Left', 'ellens-lentze' ),
+						'icon' => 'eicon-h-align-left',
+					],
+					'right' => [
+						'title' => esc_html__( 'Right', 'ellens-lentze' ),
+						'icon' => 'eicon-h-align-right',
+					],
+				],
+				'default' => 'left',
+				'toggle' => false,
+			]
+		);
+
+        $repeater->add_responsive_control(
+			'horizontal_value',
+			[
+				'label' => esc_html__( 'Horizontal Distance', 'ellens-lentze' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'vw', 'rem' ],
+				'range' => [
+					'px' => [ 'min' => -500, 'max' => 1000 ],
+					'%'  => [ 'min' => -50, 'max' => 150 ],
+                    'vw' => [ 'min' => -50, 'max' => 150 ],
+				],
+				'default' => [
+					'unit' => '%',
+					'size' => 10,
+				],
+				'selectors' => [
+					'{{WRAPPER}} {{CURRENT_ITEM}}' => '{{horizontal_anchor.VALUE}}: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+        $repeater->add_control(
+			'vr_position',
+			[
+				'label' => esc_html__( 'Vertical Position', 'ellens-lentze' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+        $repeater->add_control(
+			'vertical_anchor',
+			[
+				'label' => esc_html__( 'Vertical Anchor', 'ellens-lentze' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'top' => [
+						'title' => esc_html__( 'Top', 'ellens-lentze' ),
+						'icon' => 'eicon-v-align-top',
+					],
+					'bottom' => [
+						'title' => esc_html__( 'Bottom', 'ellens-lentze' ),
+						'icon' => 'eicon-v-align-bottom',
+					],
+				],
+				'default' => 'top',
+				'toggle' => false,
+			]
+		);
+
+        $repeater->add_responsive_control(
+			'vertical_value',
+			[
+				'label' => esc_html__( 'Vertical Distance', 'ellens-lentze' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'vh', 'rem' ],
+				'range' => [
+					'px' => [ 'min' => -500, 'max' => 1000 ],
+					'%'  => [ 'min' => -50, 'max' => 150 ],
+                    'vh' => [ 'min' => -50, 'max' => 150 ],
+				],
+				'default' => [
+					'unit' => '%',
+					'size' => 10,
+				],
+				'selectors' => [
+					'{{WRAPPER}} {{CURRENT_ITEM}}' => '{{vertical_anchor.VALUE}}: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
         $widget->add_control(
 			'items',
 			[

@@ -33,10 +33,11 @@
 }
 
 .services-cluster__title {
-    font-size: 1.25rem;
-    margin: 0;
+    font-family: var(--h3-font-family);
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-line-height);
+    font-weight: var(--h3-font-weight);
     color: var(--ellens-sc-color-text-title);
-    line-height: 1.3;
 }
 
 .services-cluster__description {
