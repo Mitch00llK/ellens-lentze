@@ -1,0 +1,17 @@
+# Agent folder
+.agent/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project specific
+node_modules/
+vendor/
+*.log
