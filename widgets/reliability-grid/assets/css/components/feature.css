@@ -1,13 +1,13 @@
 .ellens-rg-feature {
     display: flex;
     flex-direction: column;
-    gap: var(--ellens-rg-spacing-feature-gap);
+    gap: 1rem;
 }
 
 .ellens-rg-feature__icon {
     font-size: 3rem;
     /* 48px from Figma */
-    color: var(--ellens-rg-color-icon);
+    color: var(--icon-color-primary);
 }
 
 .ellens-rg-feature__icon i {
@@ -17,7 +17,7 @@
 .ellens-rg-feature__icon svg {
     width: 48px;
     height: 48px;
-    fill: var(--ellens-rg-color-icon);
+    fill: var(--icon-color-primary);
 }
 
 .ellens-rg-feature__content {
@@ -52,5 +52,5 @@
     /* 18px */
     line-height: 1.77;
     /* 32px / 18px */
-    color: var(--ellens-rg-color-feature-desc);
+    color: var(--color-primary);
 }

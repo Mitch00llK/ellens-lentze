@@ -1,0 +1,54 @@
+/**
+ * Global Semantic Tokens (UI Components)
+ * 
+ * Defines high-level semantic variables for UI patterns.
+ * Usage: Use these instead of hardcoded values or widget-specific variables.
+ * 
+ * Structure:
+ * - Sections
+ * - Cards
+ * - Interactive (Buttons/Inputs)
+ * - Typography Contexts
+ */
+:root {
+    /* --- Sections --- */
+    --section-spacing-py: 5rem;
+    /* 80px approx */
+    --section-spacing-py-large: 6rem;
+    /* 96px */
+    --section-spacing-py-small: 3rem;
+    --section-spacing-gap: 2rem;
+
+    /* --- Cards --- */
+    --card-bg-primary: var(--color-dark-blue);
+    /* Dark Blue backgrounds */
+    --card-bg-secondary: var(--color-light-blue);
+    /* Light Blue backgrounds */
+    --card-bg-glass: rgba(0, 39, 82, 0.6);
+    /* Glassmorphism background */
+
+    --card-border-glass: rgba(242, 247, 252, 0.2);
+    --card-border-subtle: rgba(0, 0, 0, 0.05);
+
+    --card-text-primary: var(--color-white);
+    /* For dark cards */
+    --card-text-secondary: var(--color-light-blue);
+    /* Secondary text on dark */
+    --card-text-inverse: var(--color-primary);
+    /* Text on light cards */
+
+    --card-padding: 2rem;
+    --card-padding-small: 1.5rem;
+    --card-padding-large: 3rem;
+
+    --card-radius: 0.5rem;
+    --card-gap: 1.5rem;
+
+    /* --- Icons --- */
+    --icon-color-primary: var(--color-secondary);
+    /* Usually orange */
+    --icon-size-md: 1.5rem;
+
+    /* --- Interactive --- */
+    --transition-default: 0.3s ease;
+}

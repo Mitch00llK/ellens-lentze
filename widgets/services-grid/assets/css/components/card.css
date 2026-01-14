@@ -1,6 +1,6 @@
 .ellens-service-card {
-    background-color: var(--ellens-sg-color-bg);
-    padding: var(--ellens-sg-spacing-card-padding);
+    background-color: var(--card-bg-primary);
+    padding: var(--card-padding);
     border-radius: 8px;
     display: flex;
     display: flex;
@@ -16,15 +16,13 @@
     cursor: pointer;
 }
 
-.ellens-service-card:hover {
-    /* Hover animations removed */
-}
+
 
 .ellens-service-card__icon {
     width: 48px;
     height: 48px;
     margin-bottom: 0.5rem;
-    color: var(--ellens-sg-color-icon);
+    color: var(--icon-color-primary);
 }
 
 .ellens-service-card__icon img,
@@ -53,7 +51,7 @@
 }
 
 .ellens-service-card__title {
-    font-family: var(--ellens-sg-font-family-serif);
+    font-family: var(--font-family-serif);
     font-size: clamp(1.25rem, 2vw, 1.5rem);
     /* 24px */
     font-weight: 400;
@@ -63,11 +61,11 @@
 }
 
 .ellens-service-card__description {
-    font-family: var(--ellens-sg-font-family-sans);
+    font-family: var(--font-family-sans);
     font-size: 1.125rem;
     /* 18px */
     line-height: 1.6;
-    color: var(--ellens-sg-color-text-primary);
+    color: var(--card-text-secondary);
     opacity: 0.9;
 }
 
@@ -81,7 +79,7 @@
 .ellens-service-card__arrow {
     width: 56px;
     height: 56px;
-    background-color: var(--ellens-sg-color-button-bg);
+    background-color: var(--color-primary);
     border-radius: 50%;
     display: flex;
     align-items: center;

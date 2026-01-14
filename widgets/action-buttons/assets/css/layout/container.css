@@ -7,7 +7,7 @@
 
 .action-buttons__card {
     background-color: var(--color-primary-70);
-    border-radius: var(--ellens-ab-radius-card);
+    border-radius: var(--card-radius);
     padding: 4rem;
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@
     display: flex;
     flex-wrap: wrap;
     /* Allow wrapping */
-    gap: var(--ellens-ab-spacing-gap-buttons);
+    gap: 1.5rem;
     align-items: center;
     width: 100%;
 }

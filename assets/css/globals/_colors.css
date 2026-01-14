@@ -1,0 +1,39 @@
+/**
+ * Color Tokens
+ */
+:root {
+    /* Colors (Strict Palette) */
+    --color-primary: rgba(0, 28, 58, 1);
+    --color-secondary: rgba(239, 138, 0, 1);
+    --color-dark-blue: rgba(0, 28, 58, 1);
+    --color-light-blue: rgba(204, 218, 233, 1);
+    --color-white: rgba(252, 252, 252, 1);
+    --color-neutral-dark: rgba(23, 23, 23, 1);
+    --color-neutral-light: #F7F8FA;
+
+    /* Primary Blue Variants */
+    --color-primary-100: rgba(0, 69, 144, 1);
+    --color-primary-80: rgba(0, 69, 144, 0.8);
+    --color-primary-60: rgba(0, 69, 144, 0.6);
+    --color-primary-70: rgba(0, 41, 86, 1);
+    --color-primary-50: rgba(229, 236, 244, 1);
+    --color-primary-40: rgba(0, 69, 144, 0.4);
+    --color-primary-20: rgba(0, 69, 144, 0.2);
+    --color-primary-10: rgba(0, 69, 144, 0.1);
+
+    /* Secondary Orange Variants */
+    --color-secondary-100: #EF8A00;
+    --color-secondary-80: rgba(239, 138, 0, 0.8);
+    --color-secondary-60: rgba(239, 138, 0, 0.6);
+    --color-secondary-40: rgba(239, 138, 0, 0.4);
+    --color-secondary-20: rgba(239, 138, 0, 0.2);
+    --color-secondary-10: rgba(239, 138, 0, 0.1);
+
+    /* Neutral Dark Variants */
+    --color-neutral-dark-100: #171717;
+    --color-neutral-dark-80: rgba(23, 23, 23, 0.8);
+    --color-neutral-dark-60: rgba(23, 23, 23, 0.6);
+    --color-neutral-dark-40: rgba(23, 23, 23, 0.4);
+    --color-neutral-dark-20: rgba(23, 23, 23, 0.2);
+    --color-neutral-dark-10: rgba(23, 23, 23, 0.1);
+}

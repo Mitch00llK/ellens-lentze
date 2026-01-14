@@ -41,6 +41,36 @@ class Content_Controls {
 			]
 		);
 
+        $widget->add_control(
+			'cluster_title',
+			[
+				'label' => esc_html__( 'Cluster Title', 'ellens-lentze' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => esc_html__( 'Waar wij goed in zijn', 'ellens-lentze' ),
+                'separator' => 'before',
+			]
+		);
+
+        $widget->add_control(
+			'cluster_title_tag',
+			[
+				'label' => esc_html__( 'Title HTML Tag', 'ellens-lentze' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'h1' => 'H1',
+					'h2' => 'H2',
+					'h3' => 'H3',
+					'h4' => 'H4',
+					'h5' => 'H5',
+					'h6' => 'H6',
+					'div' => 'div',
+					'span' => 'span',
+					'p' => 'p',
+				],
+				'default' => 'h2',
+			]
+		);
+
         $widget->end_controls_section();
 
         /* Services Section (Repeater) */
@@ -91,6 +121,94 @@ class Content_Controls {
 				'label' => esc_html__( 'Link', 'ellens-lentze' ),
 				'type' => Controls_Manager::URL,
 				'placeholder' => esc_html__( 'https://your-link.com', 'ellens-lentze' ),
+			]
+		);
+
+        $repeater->add_control(
+			'hr_position',
+			[
+				'label' => esc_html__( 'Horizontal Position', 'ellens-lentze' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+        $repeater->add_control(
+			'horizontal_anchor',
+			[
+				'label' => esc_html__( 'Horizontal Anchor', 'ellens-lentze' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => esc_html__( 'Left', 'ellens-lentze' ),
+						'icon' => 'eicon-h-align-left',
+					],
+					'right' => [
+						'title' => esc_html__( 'Right', 'ellens-lentze' ),
+						'icon' => 'eicon-h-align-right',
+					],
+				],
+				'default' => 'left',
+				'toggle' => false,
+			]
+		);
+
+        $repeater->add_responsive_control(
+			'horizontal_value',
+			[
+				'label' => esc_html__( 'Horizontal Distance', 'ellens-lentze' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'vw', 'rem' ],
+				'range' => [
+					'px' => [ 'min' => -500, 'max' => 1000 ],
+					'%'  => [ 'min' => -50, 'max' => 150 ],
+                    'vw' => [ 'min' => -50, 'max' => 150 ],
+				],
+
+			]
+		);
+
+        $repeater->add_control(
+			'vr_position',
+			[
+				'label' => esc_html__( 'Vertical Position', 'ellens-lentze' ),
+				'type' => Controls_Manager::HEADING,
+				'separator' => 'before',
+			]
+		);
+
+        $repeater->add_control(
+			'vertical_anchor',
+			[
+				'label' => esc_html__( 'Vertical Anchor', 'ellens-lentze' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'top' => [
+						'title' => esc_html__( 'Top', 'ellens-lentze' ),
+						'icon' => 'eicon-v-align-top',
+					],
+					'bottom' => [
+						'title' => esc_html__( 'Bottom', 'ellens-lentze' ),
+						'icon' => 'eicon-v-align-bottom',
+					],
+				],
+				'default' => 'top',
+				'toggle' => false,
+			]
+		);
+
+        $repeater->add_responsive_control(
+			'vertical_value',
+			[
+				'label' => esc_html__( 'Vertical Distance', 'ellens-lentze' ),
+				'type' => Controls_Manager::SLIDER,
+				'size_units' => [ 'px', '%', 'vh', 'rem' ],
+				'range' => [
+					'px' => [ 'min' => -500, 'max' => 1000 ],
+					'%'  => [ 'min' => -50, 'max' => 150 ],
+                    'vh' => [ 'min' => -50, 'max' => 150 ],
+				],
+
 			]
 		);
 

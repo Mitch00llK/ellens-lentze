@@ -8,7 +8,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    border-radius: var(--ellens-itb-spacing-block-radius);
+    border-radius: var(--card-radius);
     overflow: hidden;
     min-height: 480px;
     /* Based on design height */

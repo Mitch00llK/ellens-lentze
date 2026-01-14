@@ -1,12 +1,12 @@
 .usp-grid {
     width: 100%;
-    padding: var(--ellens-usp-spacing-container-py) 0;
+    padding: var(--section-spacing-py) 0;
 }
 
 .usp-grid__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--ellens-usp-spacing-grid-gap);
+    gap: var(--card-gap);
     width: 100%;
     align-items: flex-start;
 }
@@ -15,7 +15,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: var(--ellens-usp-spacing-item-p);
-    gap: var(--ellens-usp-spacing-content-gap);
+    padding: var(--card-padding);
+    gap: 1rem;
     height: 100%;
 }

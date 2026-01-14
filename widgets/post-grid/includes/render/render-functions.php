@@ -84,7 +84,11 @@ class Render_Functions {
                                         <span class="post-category"><?php echo esc_html( $cat_name ); ?></span>
                                         <h3 class="post-title"><?php the_title(); ?></h3>
                                         
-                                        <div class="post-read-more-btn ellens-btn">
+                                        <?php
+                                        $card_btn_style = isset( $settings['card_button_style'] ) ? $settings['card_button_style'] : 'light';
+                                        $card_btn_class = 'ellens-btn--' . $card_btn_style;
+                                        ?>
+                                        <div class="post-read-more-btn ellens-btn <?php echo esc_attr( $card_btn_class ); ?>">
                                             <?php esc_html_e( 'Lees meer', 'ellens-lentze' ); ?>
                                             <i class="fas fa-arrow-right" aria-hidden="true"></i>
                                         </div>

@@ -1,12 +1,12 @@
 .ellens-rg {
-    padding: var(--ellens-rg-spacing-section-py) 0;
+    padding: var(--section-spacing-py) 0;
     max-width: 1440px;
     margin: 0 auto;
 }
 
 .ellens-rg-title {
     text-align: center;
-    margin-bottom: var(--ellens-rg-spacing-grid-gap);
+    margin-bottom: var(--section-spacing-gap);
     font-family: var(--font-family-serif);
     font-size: 2rem;
     color: var(--color-white);
@@ -15,15 +15,15 @@
 
 .ellens-rg-container {
     display: grid;
-    grid-template-columns: 1fr var(--ellens-rg-image-width) 1fr;
-    gap: var(--ellens-rg-spacing-grid-gap);
+    grid-template-columns: 1fr 25rem 1fr;
+    gap: var(--section-spacing-gap);
     align-items: center;
 }
 
 .ellens-rg-column {
     display: flex;
     flex-direction: column;
-    gap: var(--ellens-rg-spacing-grid-gap);
+    gap: var(--section-spacing-gap);
 }
 
 .ellens-rg-image-wrapper img {

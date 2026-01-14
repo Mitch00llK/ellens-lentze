@@ -7,11 +7,11 @@
 }
 
 .ellens-services-grid__title {
-    font-family: var(--ellens-sg-font-family-serif);
+    font-family: var(--font-family-serif);
     font-size: clamp(2rem, 5vw, 3rem);
     /* 32px -> 48px responsive */
     line-height: 1.1;
-    color: var(--ellens-sg-color-text-title);
+    color: var(--card-text-primary);
     margin-bottom: clamp(2rem, 4vw, 3rem);
     max-width: 800px;
 }
@@ -19,7 +19,7 @@
 .ellens-services-grid__container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--ellens-sg-spacing-card-gap);
+    gap: var(--card-gap);
     width: 100%;
 }
 

@@ -28,7 +28,7 @@ class Style_Controls {
 			[
 				'label' => esc_html__( 'Color', 'ellens-lentze' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => 'var(--ellens-rg-color-title)',
+				'default' => 'var(--color-dark-blue)',
 				'selectors' => [
 					'{{WRAPPER}} .ellens-rg-title' => 'color: {{VALUE}};',
 				],
@@ -58,7 +58,7 @@ class Style_Controls {
 			[
 				'label' => esc_html__( 'Icon Color', 'ellens-lentze' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => 'var(--ellens-rg-color-icon)',
+				'default' => 'var(--icon-color-primary)',
 				'selectors' => [
 					'{{WRAPPER}} .ellens-rg-feature__icon i' => 'color: {{VALUE}};',
 					'{{WRAPPER}} .ellens-rg-feature__icon svg' => 'fill: {{VALUE}};',
@@ -71,7 +71,7 @@ class Style_Controls {
 			[
 				'label' => esc_html__( 'Title Color', 'ellens-lentze' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => 'var(--ellens-rg-color-feature-title)',
+				'default' => 'var(--color-dark-blue)',
 				'selectors' => [
 					'{{WRAPPER}} .ellens-rg-feature__title-text' => 'color: {{VALUE}};',
 				],
@@ -91,7 +91,7 @@ class Style_Controls {
 			[
 				'label' => esc_html__( 'Subtitle Color', 'ellens-lentze' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => 'var(--ellens-rg-color-feature-subtitle)',
+				'default' => 'var(--color-primary)',
 				'selectors' => [
 					'{{WRAPPER}} .ellens-rg-feature__subtitle' => 'color: {{VALUE}};',
 				],
@@ -111,7 +111,7 @@ class Style_Controls {
 			[
 				'label' => esc_html__( 'Description Color', 'ellens-lentze' ),
 				'type' => Controls_Manager::COLOR,
-				'default' => 'var(--ellens-rg-color-feature-desc)',
+				'default' => 'var(--color-primary)',
 				'selectors' => [
 					'{{WRAPPER}} .ellens-rg-feature__desc' => 'color: {{VALUE}};',
 				],

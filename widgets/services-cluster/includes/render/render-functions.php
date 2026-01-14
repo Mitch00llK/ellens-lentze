@@ -26,6 +26,16 @@ class Render_Functions {
 		<div <?php $widget->print_render_attribute_string( 'wrapper' ); ?>>
             <div <?php $widget->print_render_attribute_string( 'container' ); ?>>
                 
+                <!-- Cluster Title -->
+                <?php if ( ! empty( $settings['cluster_title'] ) ) : ?>
+                    <div class="services-cluster__title-wrapper">
+                        <?php
+                        $title_tag = \Elementor\Utils::validate_html_tag( $settings['cluster_title_tag'] );
+                        printf( '<%1$s class="services-cluster__main-title">%2$s</%1$s>', $title_tag, esc_html( $settings['cluster_title'] ) );
+                        ?>
+                    </div>
+                <?php endif; ?>
+
                 <!-- Central Visuals -->
                 <div class="services-cluster__visuals">
                     <?php if ( ! empty( $settings['center_image']['url'] ) ) : ?>
@@ -42,7 +52,19 @@ class Render_Functions {
                     if ( $settings['items'] ) {
                         foreach ( $settings['items'] as $index => $item ) {
                             $item_key = 'item_' . $index;
-                            $widget->add_render_attribute( $item_key, 'class', 'services-cluster__card-wrapper' );
+                            $descriptive_classes = [
+                                'services-cluster__card-wrapper',
+                                'services-cluster__card-wrapper--index-' . ($index + 1),
+                                'elementor-repeater-item-' . $item['_id'],
+                            ];
+
+                            if ( ! empty( $item['title'] ) ) {
+                                $descriptive_classes[] = 'services-cluster__card-wrapper--' . sanitize_title( $item['title'] );
+                            }
+
+                            $widget->add_render_attribute( $item_key, 'class', $descriptive_classes );
+
+
                             
                             // Card Link
                             $link_tag = 'div';
@@ -60,7 +82,7 @@ class Render_Functions {
                                             </div>
                                         <?php endif; ?>
                                         
-                                        <h3 class="services-cluster__title"><?php echo esc_html( $item['title'] ); ?></h3>
+                                        <span class="services-cluster__title"><?php echo esc_html( $item['title'] ); ?></span>
                                     </div>
                                     
                                     <?php if ( ! empty( $item['description'] ) ) : ?>

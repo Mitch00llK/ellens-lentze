@@ -68,6 +68,33 @@ class Content_Controls {
 
 		$widget->end_controls_section();
 
+        // Section Cards
+		$widget->start_controls_section(
+			'section_cards',
+			[
+				'label' => esc_html__( 'Cards', 'ellens-lentze' ),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+        $widget->add_control(
+			'card_button_style',
+			[
+				'label' => esc_html__( 'Button Style', 'ellens-lentze' ),
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'default' => 'light',
+				'options' => [
+					'primary' => esc_html__( 'Primary (Blue)', 'ellens-lentze' ),
+					'secondary' => esc_html__( 'Secondary (Orange)', 'ellens-lentze' ),
+					'ghost' => esc_html__( 'Ghost', 'ellens-lentze' ),
+					'outline' => esc_html__( 'Outline', 'ellens-lentze' ),
+                    'light' => esc_html__( 'Light (Default)', 'ellens-lentze' ),
+				],
+			]
+		);
+
+		$widget->end_controls_section();
+
         // Query Settings
 		$widget->start_controls_section(
 			'section_query',

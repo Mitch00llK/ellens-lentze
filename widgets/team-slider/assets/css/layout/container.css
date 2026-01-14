@@ -1,7 +1,7 @@
 /* Layout - Figma Matched */
 .ellens-team-slider-wrapper {
-    background-color: var(--ts-color-bg);
-    padding: var(--ts-spacing-section) 0;
+    background-color: var(--color-dark-blue);
+    padding: var(--section-spacing-py-large) 0;
     overflow: hidden;
     width: 100%;
 }
@@ -12,9 +12,18 @@
     justify-content: space-between;
     align-items: center;
     max-width: 1240px;
-    margin: 0 auto var(--ts-spacing-header-bottom);
+    margin: 0 auto 3.5rem;
     padding: 0 1.25rem;
 }
+
+
+.section-title {
+    font-family: var(--h2-font-family);
+    font-size: var(--h2-font-size);
+    font-weight: var(--h2-font-weight);
+    line-height: var(--h2-line-height);
+}
+
 
 /* Slider Container */
 .ellens-team-slider {
@@ -24,8 +33,8 @@
 
 /* Slide Sizing */
 .ellens-team-slider .splide__slide {
-    width: var(--ts-card-width);
-    height: var(--ts-card-height);
+    width: 24.8125rem;
+    height: 29.625rem;
 }
 
 /* Splide Track - Center the slides */
@@ -38,10 +47,17 @@
     position: relative;
     bottom: 0;
     margin-top: 2.5rem;
-    padding: 0;
+    padding: 0 1.25rem;
+    /* Match header padding */
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    /* Align left */
     gap: 0.5rem;
+    max-width: 1240px;
+    /* Match header max-width */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .ellens-team-slider .splide__pagination li {
@@ -53,7 +69,7 @@
     width: 0.875rem;
     height: 0.875rem;
     border-radius: 50%;
-    background: var(--ts-color-pagination);
+    background: var(--color-primary-100);
     border: none;
     opacity: 1;
     padding: 0;
@@ -63,10 +79,10 @@
 }
 
 .ellens-team-slider .splide__pagination__page:hover {
-    background: var(--ts-color-pagination-active);
+    background: var(--color-primary-100);
 }
 
 .ellens-team-slider .splide__pagination__page.is-active {
-    background: var(--ts-color-pagination-active);
+    background: var(--color-secondary-100);
     transform: none;
 }

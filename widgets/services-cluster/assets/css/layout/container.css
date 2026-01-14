@@ -13,10 +13,14 @@
     position: relative;
     width: 100%;
     max-width: 1440px;
+    min-height: 800px;
     margin: 0 auto;
-    height: 100%;
+    flex-grow: 1;
+    /* Allow it to fill the flex parent */
     display: flex;
-    /* Fallback */
+    justify-content: center;
+    align-items: center;
+    /* Center content */
 }
 
 /* Central Image Wrapper */
@@ -28,7 +32,8 @@
     width: 45vw;
     height: 60vh;
     max-width: 600px;
-    z-index: var(--ellens-sc-z-image);
+    z-index: 1;
+    /* z-index-image */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,36 +54,45 @@
 
 /* Service Cards Container - using absolute positioning for the cluster effect */
 .services-cluster__cards {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    position: relative;
-    z-index: var(--ellens-sc-z-card);
+    z-index: 2;
+    /* z-index-card */
+    pointer-events: none;
+    /* Allow clicking through to visuals if needed, though usually cards are the interactables. Let's keep pointer-events auto for cards themselves. */
+}
+
+.services-cluster__cards>* {
+    pointer-events: auto;
 }
 
 .services-cluster__card-wrapper {
     position: absolute;
-    width: 300px;
+    width: 350px;
     /* Fixed width for cards roughly */
-    max-width: 90vw;
+    max-width: 100vw;
 }
 
-/* Positioning logic will be generic classes or nth-child */
-.services-cluster__card-wrapper:nth-child(1) {
-    top: 10%;
-    left: 10%;
+.services-cluster__card-wrapper--index-1 {
+    position: absolute;
+    top: 24%;
+    left: 6%;
 }
 
-.services-cluster__card-wrapper:nth-child(2) {
-    top: 10%;
-    right: 10%;
+.services-cluster__card-wrapper--index-2 {
+    top: 30%;
+    right: 5%;
 }
 
-.services-cluster__card-wrapper:nth-child(3) {
-    bottom: 10%;
-    left: 15%;
+.services-cluster__card-wrapper--index-3 {
+    bottom: 5%;
+    left: 8%;
 }
 
-.services-cluster__card-wrapper:nth-child(4) {
-    bottom: 10%;
-    right: 15%;
+.services-cluster__card-wrapper--index-4 {
+    bottom: 4%;
+    right: 12%;
 }

@@ -1,7 +1,7 @@
 .faq-section {
-    background-color: var(--faq-color-bg);
+    background-color: var(--color-light-blue);
     width: 100%;
-    padding: var(--faq-spacing-section-py) 0;
+    padding: var(--section-spacing-py-large) 0;
 }
 
 .faq-container {
@@ -10,7 +10,7 @@
     margin: 0 auto;
     padding: 0 var(--spacing-md);
     display: flex;
-    gap: var(--faq-spacing-gap);
+    gap: 4.5rem;
     align-items: flex-start;
 }
 

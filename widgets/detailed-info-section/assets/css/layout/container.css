@@ -1,13 +1,13 @@
 .dis-section {
-    padding: var(--dis-spacing-section-py) 0;
+    padding: var(--section-spacing-py) 0;
     width: 100%;
-    color: var(--dis-color-light-blue);
+    color: var(--color-light-blue);
 }
 
 .dis-container {
     max-width: 100%;
     display: flex;
-    gap: var(--dis-spacing-gap);
+    gap: 4.5rem;
     align-items: flex-start;
 }
 
