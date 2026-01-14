@@ -36,7 +36,9 @@ class Render_Functions {
         $widget->add_render_attribute( 'wrapper', 'class', 'ellens-post-grid-wrapper' );
         
         if ( ! empty( $btn_text ) ) {
-            $widget->add_render_attribute( 'header_btn', 'class', [ 'ellens-btn', 'ellens-btn--primary', 'post-grid-header-btn' ] );
+            $button_style = isset( $settings['button_style'] ) ? $settings['button_style'] : 'primary';
+            $button_class = 'ellens-btn--' . $button_style;
+            $widget->add_render_attribute( 'header_btn', 'class', [ 'ellens-btn', $button_class, 'post-grid-header-btn' ] );
             if ( ! empty( $btn_link['url'] ) ) {
                 $widget->add_link_attributes( 'header_btn', $btn_link );
             }

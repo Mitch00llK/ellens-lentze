@@ -10,10 +10,6 @@
         width: 100%;
     }
 
-    .image-text-block__image-wrapper {
-        min-height: 300px;
-    }
-
     .image-text-block__content-wrapper {
         padding: 2rem 1.5rem;
     }

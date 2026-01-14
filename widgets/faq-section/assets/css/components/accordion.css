@@ -1,17 +1,18 @@
 .faq-content__title {
-    font-family: var(--faq-font-family-serif);
-    font-size: 32px;
-    line-height: 1.2;
-    letter-spacing: 0.64px;
+    font-family: var(--h2-font-family);
+    font-size: var(--h2-font-size);
+    line-height: var(--h2-line-height);
+    letter-spacing: var(--h2-letter-spacing);
+    font-weight: var(--h2-font-weight);
     color: var(--faq-color-blue-500);
     margin: 0;
 }
 
 .faq-content__description {
-    font-family: var(--faq-font-family-sans);
-    font-size: 18px;
-    line-height: 1.8;
-    letter-spacing: 0.18px;
+    font-family: var(--body-font-family);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    letter-spacing: var(--body-letter-spacing);
     color: var(--faq-color-blue-500);
 }
 
@@ -22,16 +23,18 @@
 
 .faq-accordion__header {
     width: 100%;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
     background-color: var(--faq-color-acc-bg);
     border: none;
-    border-radius: 8px;
+    border-radius: var(--border-radius-md);
     cursor: pointer;
     text-align: left;
-    transition: background-color 0.3s ease;
+    transition: background-color var(--transition-normal);
 }
 
 .faq-accordion__header:hover {
@@ -39,15 +42,39 @@
 }
 
 .faq-accordion__title {
-    font-family: var(--faq-font-family-serif);
-    font-size: 24px;
-    line-height: 1.2;
+    font-family: var(--h3-font-family);
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-line-height);
+    letter-spacing: var(--h3-letter-spacing);
+    font-weight: var(--h3-font-weight);
     color: var(--faq-color-blue-500);
+    margin: 0;
+    display: block;
+    /* Ensure it behaves as a block for text */
+    flex: 1;
+    min-width: 0;
+    /* Unblocks flex shrink */
+    width: 100%;
+    /* Ensure it tries to fill */
+    max-width: 100%;
+
+    /* Aggressive wrapping */
+    white-space: normal;
+    overflow-wrap: break-word;
+    /* Standard */
+    word-wrap: break-word;
+    /* Legacy */
+    word-break: break-word;
+    /* Webkit */
+    hyphens: auto;
 }
 
 .faq-accordion__icon {
     color: var(--faq-color-blue-500);
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-normal);
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    /* Prevent icon from squishing */
 }
 
 .faq-accordion__item.is-active .faq-accordion__icon {
@@ -60,9 +87,9 @@
 }
 
 .faq-accordion__inner {
-    padding: 24px;
-    font-family: var(--faq-font-family-sans);
-    font-size: 18px;
-    line-height: 1.6;
+    padding: 1.5rem;
+    font-family: var(--body-font-family);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
     color: var(--faq-color-blue-500);
 }

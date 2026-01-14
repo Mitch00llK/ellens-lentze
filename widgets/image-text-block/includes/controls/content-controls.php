@@ -103,6 +103,21 @@ class Content_Controls {
 			]
 		);
 
+        $widget->add_control(
+			'btn_primary_style',
+			[
+				'label' => esc_html__( 'Primary Button Style', 'ellens-lentze' ),
+				'type' => Controls_Manager::SELECT,
+				'default' => 'primary',
+				'options' => [
+					'primary' => esc_html__( 'Primary (Blue)', 'ellens-lentze' ),
+					'secondary' => esc_html__( 'Secondary (Orange)', 'ellens-lentze' ),
+					'ghost' => esc_html__( 'Ghost', 'ellens-lentze' ),
+					'outline' => esc_html__( 'Outline', 'ellens-lentze' ),
+				],
+			]
+		);
+
         /* Secondary Button (Optional) */
         $widget->add_control(
 			'show_btn_secondary',
@@ -128,7 +143,7 @@ class Content_Controls {
 			]
 		);
 
-        $widget->add_control(
+		$widget->add_control(
 			'btn_secondary_link',
 			[
 				'label' => esc_html__( 'Secondary Button Link', 'ellens-lentze' ),
@@ -136,6 +151,24 @@ class Content_Controls {
 				'placeholder' => esc_html__( 'https://your-link.com', 'ellens-lentze' ),
                 'default' => [
 					'url' => '#',
+				],
+                'condition' => [
+					'show_btn_secondary' => 'yes',
+				],
+			]
+		);
+
+        $widget->add_control(
+			'btn_secondary_style',
+			[
+				'label' => esc_html__( 'Secondary Button Style', 'ellens-lentze' ),
+				'type' => Controls_Manager::SELECT,
+				'default' => 'secondary',
+				'options' => [
+					'primary' => esc_html__( 'Primary (Blue)', 'ellens-lentze' ),
+					'secondary' => esc_html__( 'Secondary (Orange)', 'ellens-lentze' ),
+					'ghost' => esc_html__( 'Ghost', 'ellens-lentze' ),
+					'outline' => esc_html__( 'Outline', 'ellens-lentze' ),
 				],
                 'condition' => [
 					'show_btn_secondary' => 'yes',

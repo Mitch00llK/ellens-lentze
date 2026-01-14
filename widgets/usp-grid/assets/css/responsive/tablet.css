@@ -1,6 +1,7 @@
 @media (max-width: 1024px) {
     .usp-grid__container {
         grid-template-columns: repeat(2, 1fr);
+        padding: var(--spacing-md);
     }
 }
 

@@ -51,7 +51,7 @@
     left: 0;
     width: 100%;
     padding: var(--ts-spacing-card-padding);
-    background: var(--color-dark-blue) !important;
+    background: var(--color-primary-70) !important;
     z-index: 2;
 }
 

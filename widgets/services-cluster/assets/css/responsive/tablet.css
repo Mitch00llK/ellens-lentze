@@ -21,6 +21,7 @@
         height: 400px;
         /* approx */
         margin-bottom: 2rem;
+        display: none;
     }
 
     .services-cluster__cards {
@@ -29,6 +30,7 @@
         flex-direction: column;
         gap: 1.5rem;
         align-items: center;
+        padding: var(--spacing-md);
     }
 
     .services-cluster__card-wrapper {

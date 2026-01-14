@@ -55,6 +55,14 @@ class Assets_Config {
             '1.0.0'
         );
 
+        // Template: Full Width Blue
+        wp_register_style(
+            'ellens-hero-template-full-width',
+            plugins_url( 'widgets/hero/assets/css/layout/template-full-width.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'ellens-global-variables' ],
+            '1.0.0'
+        );
+
         /* Action Buttons Assets */
         // Layout
         wp_register_style(
@@ -279,6 +287,13 @@ class Assets_Config {
             'ellens-faq-accordion',
             plugins_url( 'widgets/faq-section/assets/css/components/accordion.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
             [ 'ellens-global-variables' ],
+            '1.0.0'
+        );
+        // Responsive
+        wp_register_style(
+            'ellens-faq-responsive',
+            plugins_url( 'widgets/faq-section/assets/css/responsive/tablet.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'ellens-faq-layout', 'ellens-faq-accordion' ],
             '1.0.0'
         );
         // Script

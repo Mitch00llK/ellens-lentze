@@ -14,4 +14,8 @@
         /* Design 4103-668 mobile view not explicitly shown but safer to keep wrap or scroll */
         justify-content: space-between;
     }
+
+    .action-buttons {
+        padding: var(--spacing-md);
+    }
 }

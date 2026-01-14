@@ -1,17 +1,25 @@
 @media (max-width: 1400px) {
     .faq-container {
-        padding: 0 100px;
+        padding: 0 var(--spacing-lg);
     }
 }
 
 @media (max-width: 1024px) {
+    .faq-section {
+        padding: 4rem 0;
+        /* darker padding on tablet */
+    }
+
     .faq-container {
         flex-direction: column;
-        padding: 0 40px;
+        gap: 3rem;
+        /* Padding handled by global spacing or layout */
     }
 
     .faq-content {
         width: 100%;
+        text-align: left;
+        /* Keep left alignment */
     }
 
     .faq-accordion {
@@ -20,15 +28,17 @@
 }
 
 @media (max-width: 768px) {
+    .faq-section {
+        padding: 3rem 0;
+    }
+
     .faq-container {
-        padding: 0 20px;
+        padding: 0 var(--spacing-md);
+        gap: 2rem;
     }
 
-    .faq-content__title {
-        font-size: 28px;
-    }
-
-    .faq-accordion__title {
-        font-size: 20px;
-    }
+    /* Font size adjustments if strict tokens feel too big on mobile, 
+       though strict tokens should handle this via strict variables, 
+       we can trust them or make minor tweaks here if needed. 
+       Usually strict tokens are best left alone for consistency. */
 }

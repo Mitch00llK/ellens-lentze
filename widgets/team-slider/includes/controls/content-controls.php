@@ -51,7 +51,22 @@ class Content_Controls {
 				'type' => Controls_Manager::URL,
 				'placeholder' => esc_html__( 'https://your-link.com', 'ellens-lentze' ),
 				'default' => [
-					'url' => '/over-ons',
+					'url' => '',
+				],
+			]
+		);
+
+        $widget->add_control(
+			'button_style',
+			[
+				'label' => esc_html__( 'Button Style', 'ellens-lentze' ),
+				'type' => Controls_Manager::SELECT,
+				'default' => 'primary',
+				'options' => [
+					'primary' => esc_html__( 'Primary (Blue)', 'ellens-lentze' ),
+					'secondary' => esc_html__( 'Secondary (Orange)', 'ellens-lentze' ),
+					'ghost' => esc_html__( 'Ghost', 'ellens-lentze' ),
+					'outline' => esc_html__( 'Outline', 'ellens-lentze' ),
 				],
 			]
 		);

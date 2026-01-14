@@ -6,7 +6,7 @@
 }
 
 .action-buttons__card {
-    background-color: var(--ellens-ab-color-bg);
+    background-color: var(--color-primary-70);
     border-radius: var(--ellens-ab-radius-card);
     padding: 4rem;
     display: flex;

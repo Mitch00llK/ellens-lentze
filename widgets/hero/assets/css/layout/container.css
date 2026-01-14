@@ -29,7 +29,7 @@
 
 .hero__container {
     position: relative;
-    max-width: 90vw;
+    max-width: 100vw;
     /* Fluid container width */
     margin: 0 auto;
     height: 100%;
@@ -62,8 +62,7 @@
     width: 100%;
     height: 100%;
     background-color: var(--ellens-hero-color-blue);
-    border-radius: 0.5rem;
-    /* 8px -> 0.5rem */
+    border-radius: var(--border-radius-md);
     overflow: hidden;
     z-index: 0;
 }

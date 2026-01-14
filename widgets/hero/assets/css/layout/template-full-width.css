@@ -1,0 +1,124 @@
+/* 
+ * Full Width Blue Template Styles
+ * Strict adherence to Figma design (Node 4184-1683)
+ */
+
+.hero--template-full-width {
+    position: relative;
+    width: 100%;
+    min-height: 440px;
+    /* Fixed height from Figma */
+    background-color: var(--color-primary-100) !Important;
+    /* #004590 */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+/* Background Layer */
+.hero-fw__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-fw__pattern-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: overlay;
+    /* Standard pattern blend */
+    opacity: 0.2;
+    /* Subtle visibility */
+}
+
+.hero-fw__pattern {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Content Container */
+.hero-fw__container {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    /* Standard container max-width */
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 var(--spacing-md);
+    display: flex;
+    align-items: center;
+}
+
+.hero-fw__content {
+    max-width: 645px;
+    /* Exact width from Figma */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+/* Typography (Strict) */
+.hero-fw__subtitle {
+    font-family: 'BankGothic Lt BT', sans-serif;
+    /* Special font from design */
+    /* Fallback if BankGothic not loaded: sans-serif */
+    font-size: 20px;
+    line-height: 36px;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    /* #EF8A00 */
+    margin: 0;
+}
+
+.hero-fw__title {
+    font-family: var(--h1-font-family);
+    font-size: var(--h1-font-size);
+    /* 64px on desktop via clamp */
+    line-height: var(--h1-line-height);
+    letter-spacing: var(--h1-letter-spacing);
+    color: var(--color-white);
+    margin: 0;
+}
+
+.hero-fw__description {
+    font-family: var(--body-font-family);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    letter-spacing: var(--body-letter-spacing);
+    color: var(--color-white);
+}
+
+.hero-fw__description p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .hero--template-full-width {
+        min-height: auto;
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .hero-fw__container {
+        padding: 0 var(--spacing-lg);
+    }
+
+    .hero-fw__content {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-fw__container {
+        padding: 0 var(--spacing-md);
+    }
+}

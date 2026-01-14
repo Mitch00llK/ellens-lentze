@@ -2,8 +2,8 @@
 .image-text-block__image-wrapper {
     flex: 1 1 50%;
     position: relative;
-    min-height: 300px;
     overflow: hidden;
+    height: 30rem;
 }
 
 .image-text-block__image-wrapper img {
@@ -17,7 +17,7 @@
 .image-text-block__content-wrapper {
     flex: 1 1 50%;
     padding: var(--ellens-itb-spacing-padding-content);
-    background-color: var(--ellens-itb-color-bg-content);
+    background-color: var(--color-primary-70);
     display: flex;
     flex-direction: column;
     justify-content: center;

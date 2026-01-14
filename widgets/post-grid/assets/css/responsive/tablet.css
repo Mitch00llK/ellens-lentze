@@ -21,7 +21,7 @@
     /* Grid Single Col */
     .ellens-post-grid-container {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: var(--spacing-md);
     }
 
     .ellens-post-grid-wrapper {

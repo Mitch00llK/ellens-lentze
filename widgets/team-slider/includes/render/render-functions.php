@@ -51,10 +51,13 @@ class Render_Functions {
                     <h2 class="section-title"><?php echo esc_html( $section_title ); ?></h2>
                 <?php endif; ?>
 
-                <?php if ( ! empty( $button_text ) && ! empty( $button_link ) ) : ?>
-                    <a <?php $widget->print_render_attribute_string( 'button_link' ); ?>>
+                <?php if ( ! empty( $button_text ) && ! empty( $button_link ) ) :
+                    $button_style = isset( $settings['button_style'] ) ? $settings['button_style'] : 'primary';
+                    $button_class = 'ellens-btn--' . $button_style;
+                ?>
+                    <a href="<?php echo esc_url( $button_link ); ?>" class="team-slider__button ellens-btn <?php echo esc_attr( $button_class ); ?>">
                         <?php echo esc_html( $button_text ); ?>
-                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
                     </a>
                 <?php endif; ?>
             </div>

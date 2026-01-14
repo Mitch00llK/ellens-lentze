@@ -1,6 +1,7 @@
 .image-text-block {
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-md);
 }
 
 .image-text-block__container {

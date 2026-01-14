@@ -2,27 +2,73 @@
     /* --- Global Tokens --- */
 
     /* Colors (Strict Palette) */
-    --color-primary: #004590;
-    --color-secondary: #EF8A00;
-    --color-dark-blue: #002752;
-    --color-light-blue: #F2F7FC;
-    --color-white: #FCFCFC;
-    --color-neutral-dark: #171717;
+    --color-primary: rgba(0, 28, 58, 1);
+    --color-secondary: rgba(239, 138, 0, 1);
+    --color-dark-blue: rgba(0, 28, 58, 1);
+    --color-light-blue: rgba(242, 247, 252, 1);
+    --color-white: rgba(252, 252, 252, 1);
+    --color-neutral-dark: rgba(23, 23, 23, 1);
     --color-neutral-light: #F7F8FA;
 
-    /* Legacy/Mapped Aliases (Deprecated) */
-    --color-gray-100: var(--color-neutral-light);
-    --color-gray-200: var(--color-neutral-light);
-    /* Fallback */
+    /* Primary Blue Variants */
+    --color-primary-100: rgba(0, 69, 144, 1);
+    /* 100% opacity */
+    --color-primary-80: rgba(0, 69, 144, 0.8);
+    /* 80% opacity */
+    --color-primary-60: rgba(0, 69, 144, 0.6);
+    /* 70% opacity */
+    --color-primary-70: rgba(0, 41, 86, 1);
+    /* 60% opacity */
+    --color-primary-40: rgba(0, 69, 144, 0.4);
+    /* 40% opacity */
+    --color-primary-20: rgba(0, 69, 144, 0.2);
+    /* 20% opacity */
+    --color-primary-10: rgba(0, 69, 144, 0.1);
+    /* 10% opacity */
 
-    /* Legacy/Base Blue Tones (Deprecated - Map to strict) */
-    --color-blue-50: var(--color-light-blue);
-    --color-blue-100: var(--color-light-blue);
-    --color-blue-500: var(--color-primary);
-    --color-blue-700: var(--color-dark-blue);
+    /* Secondary Orange Variants */
+    --color-secondary-100: #EF8A00;
+    /* 100% opacity */
+    --color-secondary-80: rgba(239, 138, 0, 0.8);
+    /* 80% opacity */
+    --color-secondary-60: rgba(239, 138, 0, 0.6);
+    /* 60% opacity */
+    --color-secondary-40: rgba(239, 138, 0, 0.4);
+    /* 40% opacity */
+    --color-secondary-20: rgba(239, 138, 0, 0.2);
+    /* 20% opacity */
+    --color-secondary-10: rgba(239, 138, 0, 0.1);
+    /* 10% opacity */
 
-    /* Global Spacing */
-    --spacing-md: 2rem;
+    /* Neutral Dark Variants */
+    --color-neutral-dark-100: #171717;
+    /* 100% opacity */
+    --color-neutral-dark-80: rgba(23, 23, 23, 0.8);
+    /* 80% opacity */
+    --color-neutral-dark-60: rgba(23, 23, 23, 0.6);
+    /* 60% opacity */
+    --color-neutral-dark-40: rgba(23, 23, 23, 0.4);
+    /* 40% opacity */
+    --color-neutral-dark-20: rgba(23, 23, 23, 0.2);
+    /* 20% opacity */
+    --color-neutral-dark-10: rgba(23, 23, 23, 0.1);
+    /* 10% opacity */
+
+    /* Global Spacing (Strict) */
+    --spacing-xs: 0.25rem;
+    /* 4px */
+    --spacing-sm: 0.5rem;
+    /* 8px */
+    --spacing-md: 1rem;
+    /* 16px */
+    --spacing-lg: 1.5rem;
+    /* 24px */
+    --spacing-xl: 2rem;
+    /* 32px */
+    --spacing-2xl: 3rem;
+    /* 48px */
+    --spacing-3xl: 4rem;
+    /* 64px */
 
     /* Typography */
     --font-family-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -31,39 +77,45 @@
 
     /* Headings (Strict) */
     --h1-font-family: var(--font-family-serif);
-    --h1-font-size: 64px;
-    --h1-line-height: 58px;
+    --h1-font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
+    /* 40px -> 64px */
+    --h1-line-height: 1.1;
     --h1-letter-spacing: 2px;
     --h1-font-weight: 400;
 
     --h2-font-family: var(--font-family-serif);
-    --h2-font-size: 32px;
-    --h2-line-height: 32px;
+    --h2-font-size: clamp(1.75rem, 3vw + 1rem, 2rem);
+    /* 28px -> 32px */
+    --h2-line-height: 1.2;
     --h2-letter-spacing: 0.64px;
     --h2-font-weight: 400;
 
     --h3-font-family: var(--font-family-serif);
-    --h3-font-size: 24px;
-    --h3-line-height: 36px;
+    --h3-font-size: clamp(1.25rem, 2vw + 1rem, 1.5rem);
+    /* 20px -> 24px */
+    --h3-line-height: 1.4;
     --h3-letter-spacing: 2px;
     --h3-font-weight: 400;
 
     --h4-font-family: var(--font-family-serif);
-    --h4-font-size: 20px;
-    --h4-line-height: 36px;
+    --h4-font-size: clamp(1.125rem, 1.5vw + 0.8rem, 1.25rem);
+    /* 18px -> 20px */
+    --h4-line-height: 1.5;
     --h4-letter-spacing: 2px;
     --h4-font-weight: 400;
 
     /* Body & UI (Strict) */
     --body-font-family: var(--font-family-sans);
-    --body-font-size: 18px;
-    --body-line-height: 32px;
+    --body-font-size: clamp(1rem, 1vw + 0.8rem, 1.125rem);
+    /* 16px -> 18px */
+    --body-line-height: 1.6;
     --body-letter-spacing: 1px;
-    --body-font-weight: 400;
+    --body-font-weight: 300;
 
     --button-font-family: var(--font-family-sans);
-    --button-font-size: 16px;
-    --button-line-height: 32px;
+    --button-font-size: 1rem;
+    /* 16px */
+    --button-line-height: 1.5;
     --button-letter-spacing: 0px;
     --button-font-weight: 400;
 
@@ -74,6 +126,7 @@
     --ellens-hero-color-orange: var(--color-secondary);
     --ellens-hero-color-white: var(--color-white);
     --ellens-hero-spacing-card-padding: 4vw 2.5vw;
+    --border-radius-full: 30px;
 
     /* Action Buttons */
     --ellens-ab-color-bg: var(--color-dark-blue);
@@ -119,10 +172,9 @@
     --ellens-usp-spacing-content-gap: 1rem;
 
     /* FAQ Section */
-    --faq-spacing-section-py: 96px;
-    --faq-spacing-container-px: 340px;
-    --faq-spacing-gap: 71px;
-    --faq-color-blue-100: var(--color-light-blue);
+    --faq-spacing-section-py: 6rem;
+    --faq-spacing-gap: 4.5rem;
+    --faq-color-bg: var(--color-light-blue);
     --faq-color-blue-500: var(--color-primary);
     --faq-color-acc-bg: rgba(242, 247, 252, 0.5);
     /* #F2F7FC with opacity */

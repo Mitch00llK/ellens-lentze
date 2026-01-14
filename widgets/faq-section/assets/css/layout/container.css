@@ -1,11 +1,14 @@
 .faq-section {
-    background-color: var(--faq-color-blue-100);
+    background-color: var(--faq-color-bg);
     width: 100%;
+    padding: var(--faq-spacing-section-py) 0;
 }
 
 .faq-container {
-    max-width: 100%;
+    max-width: 1400px;
+    /* Reasonable max-width */
     margin: 0 auto;
+    padding: 0 var(--spacing-md);
     display: flex;
     gap: var(--faq-spacing-gap);
     align-items: flex-start;
@@ -16,12 +19,12 @@
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 1.5rem;
 }
 
 .faq-accordion {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 1rem;
 }

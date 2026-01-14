@@ -18,7 +18,18 @@ class Content_Controls {
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
-
+        $widget->add_control(
+            'layout_template',
+            [
+                'label'   => esc_html__( 'Layout Template', 'ellens-lentze' ),
+                'type'    => Controls_Manager::SELECT,
+                'default' => 'default',
+                'options' => [
+                    'default'         => esc_html__( 'Floating Card (Default)', 'ellens-lentze' ),
+                    'full_width_blue' => esc_html__( 'Full Width Blue', 'ellens-lentze' ),
+                ],
+            ]
+        );
         $widget->add_control(
 			'show_card_container',
 			[
@@ -79,6 +90,21 @@ class Content_Controls {
 				'placeholder' => esc_html__( 'https://your-link.com', 'ellens-lentze' ),
 				'default' => [
 					'url' => '#',
+				],
+			]
+		);
+
+        $widget->add_control(
+			'button_style',
+			[
+				'label' => esc_html__( 'Button Style', 'ellens-lentze' ),
+				'type' => Controls_Manager::SELECT,
+				'default' => 'primary',
+				'options' => [
+					'primary' => esc_html__( 'Primary (Blue)', 'ellens-lentze' ),
+					'secondary' => esc_html__( 'Secondary (Orange)', 'ellens-lentze' ),
+					'ghost' => esc_html__( 'Ghost', 'ellens-lentze' ),
+					'outline' => esc_html__( 'Outline', 'ellens-lentze' ),
 				],
 			]
 		);
