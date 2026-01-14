@@ -1,28 +1,27 @@
 @media (max-width: 1400px) {
     .dis-container {
-        padding: 0 100px;
+        padding: 0 var(--container-padding-desktop);
     }
 }
 
 @media (max-width: 1024px) {
     .dis-container {
         flex-direction: column;
-        padding: 0 40px;
+        padding: 0 var(--container-padding-desktop);
     }
 
     .dis-sidebar {
         width: 100%;
     }
 
-    .dis-spacing-section-py: 60px;
 }
 
 @media (max-width: 768px) {
     .dis-container {
-        padding: 0 20px;
+        padding: 0 var(--container-padding-mobile);
     }
 
     .dis-content__title {
-        font-size: 28px;
+        font-size: 1.75rem;
     }
 }

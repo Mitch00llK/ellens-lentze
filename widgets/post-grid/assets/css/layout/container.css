@@ -10,10 +10,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1240px;
+    max-width: var(--container-max-width);
     margin: 0 auto 3.75rem;
     /* approx 60px bottom margin? Grid gap is 40px but header spacing usually more */
-    padding: 0 1.25rem;
+    padding: 0 var(--container-padding-desktop);
 }
 
 .ellens-post-grid-header .section-title {
@@ -37,10 +37,9 @@
     display: grid;
     /* Default to 3 columns behavior */
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem 2.25rem;
-    max-width: 1240px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
-    padding: 0 1.25rem;
+    gap: 1rem;
 }
 
 /* Dynamic Column Modifiers */

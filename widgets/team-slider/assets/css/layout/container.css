@@ -11,9 +11,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1240px;
+    max-width: var(--container-max-width);
     margin: 0 auto 3.5rem;
-    padding: 0 1.25rem;
+    padding: 0 var(--container-padding-desktop);
 }
 
 
@@ -28,7 +28,7 @@
 /* Slider Container */
 .ellens-team-slider {
     width: 100%;
-    padding: 0 1.25rem 3.125rem;
+    padding: 0 var(--container-padding-desktop) 3.125rem;
 }
 
 /* Slide Sizing */
@@ -53,7 +53,7 @@
     justify-content: flex-start;
     /* Align left */
     gap: 0.5rem;
-    max-width: 1240px;
+    max-width: var(--container-max-width);
     /* Match header max-width */
     width: 100%;
     margin-left: auto;

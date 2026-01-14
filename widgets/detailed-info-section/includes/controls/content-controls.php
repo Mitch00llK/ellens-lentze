@@ -112,6 +112,21 @@ class Content_Controls {
 			]
 		);
 
+        $widget->add_control(
+            'button_style',
+            [
+                'label'   => esc_html__( 'Button Style', 'ellens-lentze' ),
+                'type'    => Controls_Manager::SELECT,
+                'default' => 'btn--primary',
+                'options' => [
+                    'btn--primary'   => esc_html__( 'Primary', 'ellens-lentze' ),
+                    'btn--secondary' => esc_html__( 'Secondary', 'ellens-lentze' ),
+                    'btn--ghost'     => esc_html__( 'Ghost', 'ellens-lentze' ),
+                    'btn--outline'   => esc_html__( 'Outline', 'ellens-lentze' ),
+                ],
+            ]
+        );
+
         $usp_repeater = new Repeater();
 
         $usp_repeater->add_control(

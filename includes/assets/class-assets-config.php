@@ -170,5 +170,13 @@ class Assets_Config {
             '1.0.0',
             true
         );
+
+        /* Footer Widget Assets */
+        wp_register_style(
+            'ellens-footer',
+            plugins_url( 'widgets/footer/assets/css/footer.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'ellens-global-variables', 'ellens-global-buttons' ],
+            '1.0.0'
+        );
     }
 }

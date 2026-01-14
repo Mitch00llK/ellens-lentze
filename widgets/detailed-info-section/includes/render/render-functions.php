@@ -53,7 +53,8 @@ class Render_Functions {
                             
                             <?php if ( ! empty( $settings['card_btn_text'] ) ) : 
                                 $widget->add_link_attributes( 'button', $settings['card_btn_link'] );
-                                $widget->add_render_attribute( 'button', 'class', [ 'dis-card__button', 'btn', 'btn--primary' ] );
+                                $button_style = isset( $settings['button_style'] ) ? $settings['button_style'] : 'btn--primary';
+                                $widget->add_render_attribute( 'button', 'class', [ 'dis-card__button', 'btn', $button_style ] );
                             ?>
                                 <a <?php $widget->print_render_attribute_string( 'button' ); ?>>
                                     <?php echo esc_html( $settings['card_btn_text'] ); ?>
