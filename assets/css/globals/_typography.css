@@ -39,7 +39,7 @@
     --h2-font-weight: 400;
 
     --h3-font-family: var(--font-family-serif);
-    --h3-font-size: clamp(1.25rem, 2vw + 1rem, 1.5rem);
+    --h3-font-size: clamp(1rem, 2vw + 1rem, 1.25rem);
     /* 20px -> 24px */
     --h3-line-height: 1.4;
     --h3-font-weight: 400;
@@ -74,4 +74,11 @@
     --faq-font-size: 1.5rem;
     --faq-line-height: 2.25rem;
     --faq-font-weight: 400;
+
+    /* Nav */
+
+    --nav-font-family: var(--font-family-sans);
+    --nav-font-size: 1rem;
+    --nav-line-height: 1.5;
+    --nav-font-weight: 400;
 }

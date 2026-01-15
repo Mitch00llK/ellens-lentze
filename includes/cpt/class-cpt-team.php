@@ -43,14 +43,15 @@ class CPT_Team {
 			'publicly_queryable' => true,
 			'show_ui'            => true,
 			'show_in_menu'       => true,
+			'show_in_rest'       => true, // Required for Elementor Editor
 			'query_var'          => true,
 			'rewrite'            => [ 'slug' => 'team' ],
 			'capability_type'    => 'post',
-			'has_archive'        => false,
+			'has_archive'        => true,
 			'hierarchical'       => false,
 			'menu_position'      => null,
 			'menu_icon'          => 'dashicons-groups',
-			'supports'           => [ 'title', 'thumbnail' ], // Title = Name, Thumbnail = Photo
+			'supports'           => [ 'title', 'thumbnail', 'editor', 'elementor', 'featured-image' ], // Title = Name, Thumbnail = Photo
 		];
 
 		register_post_type( 'ellens_team', $args );
@@ -85,6 +86,9 @@ class CPT_Team {
     public static function render_meta_box( $post ) {
         // Retrieve current value
         $function = get_post_meta( $post->ID, '_ellens_team_function', true );
+        $email    = get_post_meta( $post->ID, '_ellens_team_email', true );
+        $phone    = get_post_meta( $post->ID, '_ellens_team_phone', true );
+        $linkedin = get_post_meta( $post->ID, '_ellens_team_linkedin', true );
 
         // Nonce field for security
         wp_nonce_field( 'ellens_team_save_meta', 'ellens_team_meta_nonce' );
@@ -93,6 +97,18 @@ class CPT_Team {
         <p>
             <label for="ellens_team_function"><?php esc_html_e( 'Job Title / Function', 'ellens-lentze' ); ?></label>
             <input type="text" id="ellens_team_function" name="ellens_team_function" value="<?php echo esc_attr( $function ); ?>" style="width:100%;" placeholder="<?php esc_attr_e( 'e.g. Notaris & registermediator', 'ellens-lentze' ); ?>">
+        </p>
+        <p>
+            <label for="ellens_team_email"><?php esc_html_e( 'Email Address', 'ellens-lentze' ); ?></label>
+            <input type="email" id="ellens_team_email" name="ellens_team_email" value="<?php echo esc_attr( $email ); ?>" style="width:100%;" placeholder="<?php esc_attr_e( 'e.g. info@ellenslentze.nl', 'ellens-lentze' ); ?>">
+        </p>
+        <p>
+            <label for="ellens_team_phone"><?php esc_html_e( 'Phone Number', 'ellens-lentze' ); ?></label>
+            <input type="text" id="ellens_team_phone" name="ellens_team_phone" value="<?php echo esc_attr( $phone ); ?>" style="width:100%;" placeholder="<?php esc_attr_e( 'e.g. 070 364 48 30', 'ellens-lentze' ); ?>">
+        </p>
+        <p>
+            <label for="ellens_team_linkedin"><?php esc_html_e( 'LinkedIn URL', 'ellens-lentze' ); ?></label>
+            <input type="url" id="ellens_team_linkedin" name="ellens_team_linkedin" value="<?php echo esc_attr( $linkedin ); ?>" style="width:100%;" placeholder="<?php esc_attr_e( 'e.g. https://linkedin.com/in/...', 'ellens-lentze' ); ?>">
         </p>
         <?php
     }
@@ -122,6 +138,15 @@ class CPT_Team {
         // Save fields
         if ( isset( $_POST['ellens_team_function'] ) ) {
             update_post_meta( $post_id, '_ellens_team_function', sanitize_text_field( $_POST['ellens_team_function'] ) );
+        }
+        if ( isset( $_POST['ellens_team_email'] ) ) {
+            update_post_meta( $post_id, '_ellens_team_email', sanitize_email( $_POST['ellens_team_email'] ) );
+        }
+        if ( isset( $_POST['ellens_team_phone'] ) ) {
+            update_post_meta( $post_id, '_ellens_team_phone', sanitize_text_field( $_POST['ellens_team_phone'] ) );
+        }
+        if ( isset( $_POST['ellens_team_linkedin'] ) ) {
+            update_post_meta( $post_id, '_ellens_team_linkedin', esc_url_raw( $_POST['ellens_team_linkedin'] ) );
         }
     }
 }

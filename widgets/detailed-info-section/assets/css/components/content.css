@@ -2,6 +2,11 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
+    color: var(--color-white);
+    font-family: var(--font-family-sans);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    letter-spacing: var(--body-letter-spacing);
 }
 
 .dis-content__title {
@@ -22,7 +27,7 @@
 }
 
 .dis-content__text h2 {
-    font-family: var(--font-family-serif);
+    font-family: var(--font-family-serif) !important;
     font-size: var(--h2-font-size);
     line-height: var(--h2-line-height);
     letter-spacing: var(--h2-letter-spacing);
@@ -30,7 +35,7 @@
 }
 
 .dis-content__text h3 {
-    font-family: var(--font-family-serif);
+    font-family: var(--font-family-serif) !important;
     font-size: var(--h3-font-size);
     line-height: var(--h3-line-height);
     letter-spacing: var(--h3-letter-spacing);
@@ -38,7 +43,7 @@
 }
 
 .dis-content__text h4 {
-    font-family: var(--font-family-serif);
+    font-family: var(--font-family-serif) !important;
     font-size: var(--h4-font-size);
     line-height: var(--h4-line-height);
     letter-spacing: var(--h4-letter-spacing);
@@ -55,5 +60,52 @@
 }
 
 .dis-content__text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Post content */
+
+.dis-content__post-content {
+    font-family: var(--font-family-sans);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    letter-spacing: var(--body-letter-spacing);
+    color: var(--color-white);
+}
+
+.dis-content__post-content h2 {
+    font-family: var(--font-family-serif) !important;
+    font-size: var(--h2-font-size);
+    line-height: var(--h2-line-height);
+    letter-spacing: var(--h2-letter-spacing);
+    color: var(--color-white);
+}
+
+.dis-content__post-content h3 {
+    font-family: var(--font-family-serif) !important;
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-line-height);
+    letter-spacing: var(--h3-letter-spacing);
+    color: var(--color-white);
+}
+
+.dis-content__post-content h4 {
+    font-family: var(--font-family-serif) !important;
+    font-size: var(--h4-font-size);
+    line-height: var(--h4-line-height);
+    letter-spacing: var(--h4-letter-spacing);
+    color: var(--color-white);
+}
+
+.dis-content__post-content p {
+    margin-bottom: var(--spacing-lg);
+}
+
+.dis-content__post-content a {
+    color: var(--color-secondary);
+    text-decoration: underline;
+}
+
+.dis-content__post-content p:last-child {
     margin-bottom: 0;
 }

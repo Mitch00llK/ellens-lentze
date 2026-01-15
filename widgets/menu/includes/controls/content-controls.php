@@ -55,6 +55,49 @@ class Content_Controls {
 		);
 
 		$widget->end_controls_section();
+        
+        // Search Section
+        $widget->start_controls_section(
+			'section_search',
+			[
+				'label' => esc_html__( 'Search', 'ellens-lentze' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+        $widget->add_control(
+			'search_enabled',
+			[
+				'label' => esc_html__( 'Enable Search', 'ellens-lentze' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'ellens-lentze' ),
+				'label_off' => esc_html__( 'Hide', 'ellens-lentze' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+			]
+		);
+
+        $post_types = get_post_types( [ 'public' => true ], 'objects' );
+        $post_type_options = [];
+        foreach ( $post_types as $post_type ) {
+            $post_type_options[ $post_type->name ] = $post_type->label;
+        }
+
+        $widget->add_control(
+			'search_post_types',
+			[
+				'label' => esc_html__( 'Search Post Types', 'ellens-lentze' ),
+				'type' => Controls_Manager::SELECT2,
+				'options' => $post_type_options,
+				'multiple' => true,
+				'default' => [ 'post', 'page' ],
+                'condition' => [
+                    'search_enabled' => 'yes',
+                ],
+			]
+		);
+
+        $widget->end_controls_section();
 
         // Utility Buttons (Phone, Email)
         $widget->start_controls_section(

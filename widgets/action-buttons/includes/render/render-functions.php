@@ -24,7 +24,7 @@ class Render_Functions {
              $pattern_html = '';
         }
 
-        $widget->add_render_attribute( 'wrapper', 'class', 'action-buttons' );
+        $widget->add_render_attribute( 'wrapper', 'class', 'action-buttons p-md pt-2xl' );
         $widget->add_render_attribute( 'card', 'class', 'action-buttons__card' );
         $widget->add_render_attribute( 'header', 'class', 'action-buttons__header' );
         $widget->add_render_attribute( 'title', 'class', 'action-buttons__title' );

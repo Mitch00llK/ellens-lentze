@@ -1,5 +1,7 @@
 /* Menu Widget Styles - Main entry point */
 
+@import 'components/search.css';
+
 /* Global design tokens */
 @import '../../../../assets/css/globals/variables.css';
 
@@ -12,3 +14,4 @@
 
 /* Responsive */
 @import './responsive/drawer.css';
+@import './responsive/mobile-header.css';

@@ -12,7 +12,7 @@ class Render_Functions {
 	public static function render_widget( $widget ) {
 		$settings = $widget->get_settings_for_display();
 
-        $widget->add_render_attribute( 'wrapper', 'class', 'image-text-block' );
+        $widget->add_render_attribute( 'wrapper', 'class', 'image-text-block pt-2xl pb-2xl pl-md pr-md' );
         $widget->add_render_attribute( 'container', 'class', 'image-text-block__container' );
 
         // Layout Switch

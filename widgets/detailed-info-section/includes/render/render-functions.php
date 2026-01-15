@@ -18,7 +18,19 @@ class Render_Functions {
                 
                 <!-- Main Content Area -->
                 <div class="dis-content">
-                    <?php if ( ! empty( $settings['content_blocks'] ) ) : ?>
+                    <?php 
+                    $content_source = isset( $settings['content_source'] ) ? $settings['content_source'] : 'manual';
+                    
+                    if ( 'current_post' === $content_source ) : ?>
+                        <div class="dis-content__block dis-content__post-content">
+                            <?php 
+                            // Use get_post_field to ensure we get the content of the current post loop/preview
+                            // simpler than get_the_content() inside some widget contexts
+                            $content = get_post_field( 'post_content', get_the_ID() );
+                            echo apply_filters( 'the_content', $content ); 
+                            ?>
+                        </div>
+                    <?php elseif ( ! empty( $settings['content_blocks'] ) ) : ?>
                         <?php foreach ( $settings['content_blocks'] as $block ) : ?>
                             <div class="dis-content__block">
                                 <?php if ( ! empty( $block['block_title'] ) ) : ?>
@@ -44,22 +56,58 @@ class Render_Functions {
 
                         <!-- CTA Box -->
                         <div class="dis-card__cta">
-                            <?php if ( ! empty( $settings['card_title'] ) ) : ?>
-                                <h3 class="dis-card__title"><?php echo esc_html( $settings['card_title'] ); ?></h3>
-                            <?php endif; ?>
-                            <?php if ( ! empty( $settings['card_description'] ) ) : ?>
-                                <p class="dis-card__description"><?php echo esc_html( $settings['card_description'] ); ?></p>
-                            <?php endif; ?>
+                            <?php 
+                            $card_type = isset( $settings['card_type'] ) ? $settings['card_type'] : 'cta';
                             
-                            <?php if ( ! empty( $settings['card_btn_text'] ) ) : 
-                                $widget->add_link_attributes( 'button', $settings['card_btn_link'] );
-                                $button_style = isset( $settings['button_style'] ) ? $settings['button_style'] : 'btn--primary';
-                                $widget->add_render_attribute( 'button', 'class', [ 'dis-card__button', 'btn', $button_style ] );
-                            ?>
-                                <a <?php $widget->print_render_attribute_string( 'button' ); ?>>
-                                    <?php echo esc_html( $settings['card_btn_text'] ); ?>
-                                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                                </a>
+                            if ( 'contact' === $card_type ) : ?>
+                                <!-- Contact Card Content -->
+                                <?php if ( ! empty( $settings['card_title'] ) ) : ?>
+                                    <h3 class="dis-card__title dis-card__title--contact"><?php echo esc_html( $settings['card_title'] ); ?></h3>
+                                <?php endif; ?>
+
+                                <?php if ( ! empty( $settings['contact_items'] ) ) : ?>
+                                    <div class="dis-card__contact-list">
+                                        <?php foreach ( $settings['contact_items'] as $item ) : ?>
+                                            <div class="dis-contact-item">
+                                                <?php if ( ! empty( $item['icon'] ) ) : ?>
+                                                    <span class="dis-contact-item__icon">
+                                                        <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                                                    </span>
+                                                <?php endif; ?>
+                                                
+                                                <?php if ( ! empty( $item['link']['url'] ) ) : ?>
+                                                    <a href="<?php echo esc_url( $item['link']['url'] ); ?>" class="dis-contact-item__text dis-contact-item__link" <?php echo $widget->get_render_attribute_string( 'contact_link' ); ?>>
+                                                        <?php echo esc_html( $item['text'] ); ?>
+                                                    </a>
+                                                <?php else : ?>
+                                                    <span class="dis-contact-item__text">
+                                                        <?php echo esc_html( $item['text'] ); ?>
+                                                    </span>
+                                                <?php endif; ?>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                <?php endif; ?>
+
+                            <?php else : ?>
+                                <!-- Standard CTA Content -->
+                                <?php if ( ! empty( $settings['card_title'] ) ) : ?>
+                                    <h3 class="dis-card__title"><?php echo esc_html( $settings['card_title'] ); ?></h3>
+                                <?php endif; ?>
+                                <?php if ( ! empty( $settings['card_description'] ) ) : ?>
+                                    <p class="dis-card__description"><?php echo esc_html( $settings['card_description'] ); ?></p>
+                                <?php endif; ?>
+                                
+                                <?php if ( ! empty( $settings['card_btn_text'] ) ) : 
+                                    $widget->add_link_attributes( 'button', $settings['card_btn_link'] );
+                                    $button_style = isset( $settings['button_style'] ) ? $settings['button_style'] : 'btn--primary';
+                                    $widget->add_render_attribute( 'button', 'class', [ 'dis-card__button', 'btn', $button_style ] );
+                                ?>
+                                    <a <?php $widget->print_render_attribute_string( 'button' ); ?>>
+                                        <?php echo esc_html( $settings['card_btn_text'] ); ?>
+                                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                    </a>
+                                <?php endif; ?>
                             <?php endif; ?>
                         </div>
 

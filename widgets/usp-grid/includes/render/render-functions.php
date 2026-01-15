@@ -12,7 +12,7 @@ class Render_Functions {
 	public static function render_widget( $widget ) {
 		$settings = $widget->get_settings_for_display();
 
-        $widget->add_render_attribute( 'wrapper', 'class', 'usp-grid' );
+        $widget->add_render_attribute( 'wrapper', 'class', 'usp-grid py-2xl' );
         $widget->add_render_attribute( 'container', 'class', 'usp-grid__container' );
 
 		?>

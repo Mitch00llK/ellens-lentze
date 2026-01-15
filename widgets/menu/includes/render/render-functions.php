@@ -94,24 +94,43 @@ class Render_Functions {
                             </li>
                         <?php endforeach; ?>
                     <?php endif; ?>
-
-                     <!-- Portal Link (Appended) -->
-                    <?php if ( ! empty( $settings['portal_link_text'] ) ) : ?>
-                         <li class="menu__nav-item menu__nav-item--portal">
-                            <a href="<?php echo esc_url( $settings['portal_link_url']['url'] ); ?>" class="menu__nav-link">
-                                <?php echo esc_html( $settings['portal_link_text'] ); ?>
-                            </a>
-                        </li>
-                    <?php endif; ?>
                 </ul>
             </nav>
 
             <!-- 4. Right Actions (Search, Lang) -->
             <div class="menu__actions">
-                <!-- Search (Static for now) -->
-                <button class="menu__search-btn" aria-label="Search">
-                    <i class="fas fa-search"></i>
-                </button>
+                <!-- Search -->
+                 <?php if ( 'yes' === $settings['search_enabled'] ) : ?>
+                    <button class="menu__search-btn js-menu-search-toggle" aria-label="<?php echo esc_attr__( 'Search', 'ellens-lentze' ); ?>">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    
+                    <div class="menu__search-overlay">
+                        <button class="menu__search-close js-menu-search-close" aria-label="<?php echo esc_attr__( 'Close Search', 'ellens-lentze' ); ?>">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <div class="menu__search-container">
+                            <form role="search" method="get" class="menu__search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                                <label>
+                                    <span class="screen-reader-text"><?php echo esc_html__( 'Search for:', 'ellens-lentze' ); ?></span>
+                                    <input type="search" class="menu__search-field" placeholder="<?php echo esc_attr__( 'Search', 'ellens-lentze' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+                                </label>
+                                
+                                <!-- Post Types -->
+                                <?php if ( ! empty( $settings['search_post_types'] ) ) : ?>
+                                    <?php foreach ( $settings['search_post_types'] as $pt ) : ?>
+                                        <input type="hidden" name="post_type[]" value="<?php echo esc_attr( $pt ); ?>" />
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+
+                                <button type="submit" class="menu__search-submit">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </form>
+                            <div class="menu__search-results"></div>
+                        </div>
+                    </div>
+                 <?php endif; ?>
 
                 <!-- Language Switcher -->
                  <?php if ( 'yes' === $settings['show_language_switcher'] ) : ?>

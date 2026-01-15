@@ -8,10 +8,8 @@
     }
 
     .action-buttons__item {
-        padding: 0.5rem 1rem;
+        padding: var(--spacing-md);
         width: 100%;
-        /* Full width buttons on mobile? Or wrap */
-        /* Design 4103-668 mobile view not explicitly shown but safer to keep wrap or scroll */
         justify-content: space-between;
     }
 

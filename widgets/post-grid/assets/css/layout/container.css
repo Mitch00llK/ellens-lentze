@@ -13,7 +13,6 @@
     max-width: var(--container-max-width);
     margin: 0 auto 3.75rem;
     /* approx 60px bottom margin? Grid gap is 40px but header spacing usually more */
-    padding: 0 var(--container-padding-desktop);
 }
 
 .ellens-post-grid-header .section-title {

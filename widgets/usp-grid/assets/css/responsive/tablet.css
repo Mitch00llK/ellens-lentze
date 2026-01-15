@@ -10,8 +10,4 @@
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-
-    .usp-grid {
-        padding: 3rem 0;
-    }
 }

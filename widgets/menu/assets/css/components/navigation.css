@@ -4,10 +4,10 @@
 .menu__nav-link {
     text-decoration: none;
     color: var(--color-primary);
-    font-family: var(--font-family-sans);
-    font-size: 1.125rem;
+    font-family: var(--nav-font-family);
+    font-size: var(--nav-font-size);
     /* 18px */
-    font-weight: 400;
+    font-weight: var(--nav-font-weight);
     transition: color 0.3s ease;
 }
 

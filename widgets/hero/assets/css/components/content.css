@@ -13,6 +13,8 @@
     margin-bottom: var(--spacing-lg);
     font-size: var(--h1-font-size);
     font-family: var(--h1-font-family);
+    line-height: var(--h1-line-height);
+    font-weight: var(--h1-font-weight);
     color: var(--color-primary);
 }
 

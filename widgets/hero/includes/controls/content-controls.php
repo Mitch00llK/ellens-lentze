@@ -51,6 +51,9 @@ class Content_Controls {
 				'default' => esc_html__( 'ELLENS & LENTZE', 'ellens-lentze' ),
 				'placeholder' => esc_html__( 'Type your subtitle here', 'ellens-lentze' ),
                 'label_block' => true,
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
@@ -61,6 +64,9 @@ class Content_Controls {
 				'type' => Controls_Manager::TEXTAREA,
 				'default' => esc_html__( 'Wij zijn er voor alle belangrijke gebeurtenissen in uw leven.', 'ellens-lentze' ),
 				'placeholder' => esc_html__( 'Type your title here', 'ellens-lentze' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
@@ -71,6 +77,9 @@ class Content_Controls {
 				'type' => Controls_Manager::WYSIWYG,
 				'default' => esc_html__( 'Wij zijn er voor alle belangrijke gebeurtenissen in uw leven.', 'ellens-lentze' ),
 				'placeholder' => esc_html__( 'Type your description here', 'ellens-lentze' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
@@ -80,6 +89,9 @@ class Content_Controls {
 				'label' => esc_html__( 'Link Text', 'ellens-lentze' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => esc_html__( 'Onze expertises', 'ellens-lentze' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
@@ -91,6 +103,9 @@ class Content_Controls {
 				'placeholder' => esc_html__( 'https://your-link.com', 'ellens-lentze' ),
 				'default' => [
 					'url' => '#',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);
@@ -128,6 +143,9 @@ class Content_Controls {
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
 				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
@@ -137,6 +155,9 @@ class Content_Controls {
 				'label' => esc_html__( 'Graphic Overlay', 'ellens-lentze' ),
 				'type' => Controls_Manager::MEDIA,
                 'description' => esc_html__( 'Upload the SVG graphic overlay.', 'ellens-lentze' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 

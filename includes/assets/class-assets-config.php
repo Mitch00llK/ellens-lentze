@@ -16,11 +16,19 @@ class Assets_Config {
             '5.15.4'
         );
 
+         // Reset CSS (Override Elementor Defaults)
+         wp_register_style(
+            'ellens-reset-css',
+            plugins_url( 'assets/css/globals/reset.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'elementor-frontend' ],
+            '1.0.0'
+        );
+
          // Global Assets
          wp_register_style(
             'ellens-global-variables',
             plugins_url( 'assets/css/globals/variables.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [],
+            [ 'ellens-reset-css' ],
             '1.0.0'
         );
 
@@ -106,6 +114,14 @@ class Assets_Config {
             [ 'jquery', 'splide-core' ],
             '1.0.0',
             true
+        );
+
+        /* Team Grid Widget Assets (Consolidated) */
+        wp_register_style(
+            'ellens-team-grid',
+            plugins_url( 'widgets/team-grid/assets/css/team-grid.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'ellens-global-variables', 'ellens-global-buttons', 'font-awesome-5' ],
+            '1.0.0'
         );
 
         /* Post Grid Widget Assets (Consolidated) */
