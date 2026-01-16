@@ -158,10 +158,46 @@ class EllensMenuHandler extends elementorModules.frontend.handlers.Base {
         if (!isOpen) {
             this.elements.$icon.removeClass('fa-bars').addClass('fa-times');
             document.body.style.overflow = 'hidden'; // Lock Body
+            
+            // Trigger stagger animation on menu items
+            this.animateMenuItems();
         } else {
             this.elements.$icon.removeClass('fa-times').addClass('fa-bars');
             document.body.style.overflow = ''; // Unlock Body
+            
+            // Reset animation state
+            this.resetMenuItemsAnimation();
         }
+    }
+
+    animateMenuItems() {
+        // Remove any existing animation classes
+        this.elements.$drawer.find('.menu__mobile-item').removeClass('animate-in');
+        this.elements.$drawer.find('.menu__lang-switcher--mobile').removeClass('animate-in');
+        
+        // Small delay to ensure drawer is visible, then trigger animation
+        setTimeout(() => {
+            // Animate menu items
+            this.elements.$drawer.find('.menu__mobile-item').each((index, item) => {
+                setTimeout(() => {
+                    jQuery(item).addClass('animate-in');
+                }, index * 50); // 50ms delay between each item
+            });
+            
+            // Animate language switcher after menu items (with additional delay)
+            const menuItemCount = this.elements.$drawer.find('.menu__mobile-item').length;
+            const languageSwitcherDelay = menuItemCount * 50 + 100; // After all items + 100ms
+            
+            setTimeout(() => {
+                this.elements.$drawer.find('.menu__lang-switcher--mobile').addClass('animate-in');
+            }, languageSwitcherDelay);
+        }, 50);
+    }
+
+    resetMenuItemsAnimation() {
+        // Remove animation classes when closing
+        this.elements.$drawer.find('.menu__mobile-item').removeClass('animate-in');
+        this.elements.$drawer.find('.menu__lang-switcher--mobile').removeClass('animate-in');
     }
 
     openSearch(event) {
