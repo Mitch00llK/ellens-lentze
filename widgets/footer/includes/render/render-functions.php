@@ -21,7 +21,7 @@ class Render_Functions {
         $cols = [ 'col2', 'col3', 'col4' ];
 
 		?>
-		<footer class="footer">
+		<footer class="footer mt-3xl ">
             <div class="footer__container">
                 
                 <!-- COL 1: Brand & Contact -->

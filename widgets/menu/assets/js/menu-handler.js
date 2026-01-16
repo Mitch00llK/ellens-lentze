@@ -12,6 +12,10 @@ class EllensMenuHandler extends elementorModules.frontend.handlers.Base {
                 searchField: '.menu__search-field',
                 searchResults: '.menu__search-results',
                 searchForm: '.menu__search-form',
+                mobileItemWithChildren: '.menu__mobile-item--has-children',
+                mobileLink: '.menu__mobile-link',
+                mobileToggle: '.menu__mobile-toggle',
+                mobileSubMenu: '.menu__mobile-sub-menu',
             },
         };
     }
@@ -29,11 +33,16 @@ class EllensMenuHandler extends elementorModules.frontend.handlers.Base {
             $searchField: this.$element.find(selectors.searchField),
             $searchResults: this.$element.find(selectors.searchResults),
             $searchForm: this.$element.find(selectors.searchForm),
+            $mobileItemsWithChildren: this.$element.find(selectors.mobileItemWithChildren),
         };
     }
 
     bindEvents() {
         this.elements.$toggle.on('click', this.onToggleClick.bind(this));
+
+        // Handle mobile menu toggle buttons (chevron) for items with children
+        // Use event delegation on the wrapper to ensure it works even when drawer is hidden
+        this.elements.$wrapper.on('click', '.menu__mobile-toggle', this.onMobileToggleClick.bind(this));
 
         if (this.elements.$searchToggle.length) {
             // Main Toggle Button (Search <-> Close)
@@ -46,17 +55,17 @@ class EllensMenuHandler extends elementorModules.frontend.handlers.Base {
             this.elements.$searchField.on('input', this.debounce(this.onSearchInput.bind(this), 300));
 
             // Close on Escape key
-            $(document).on('keydown', (e) => {
+            jQuery(document).on('keydown', (e) => {
                 if (e.key === 'Escape' && this.elements.$searchOverlay.hasClass('is-active')) {
                     this.closeSearch();
                 }
             });
 
             // Close when clicking outside (optional but good UX)
-            $(document).on('click', (e) => {
+            jQuery(document).on('click', (e) => {
                 if (this.elements.$searchOverlay.hasClass('is-active') &&
-                    !$(e.target).closest(this.elements.$searchOverlay).length &&
-                    !$(e.target).closest(this.elements.$searchToggle).length) {
+                    !jQuery(e.target).closest(this.elements.$searchOverlay).length &&
+                    !jQuery(e.target).closest(this.elements.$searchToggle).length) {
                     this.closeSearch();
                 }
             });
@@ -97,10 +106,10 @@ class EllensMenuHandler extends elementorModules.frontend.handlers.Base {
         // Collect post types from hidden inputs
         const postTypes = [];
         this.elements.$searchForm.find('input[name="post_type[]"]').each(function () {
-            postTypes.push($(this).val());
+            postTypes.push(jQuery(this).val());
         });
 
-        $.ajax({
+        jQuery.ajax({
             url: elementorFrontend.config.urls.ajax,
             method: 'GET',
             data: {
@@ -182,6 +191,29 @@ class EllensMenuHandler extends elementorModules.frontend.handlers.Base {
         $icon.removeClass('fa-times').addClass('fa-search');
 
         // document.body.style.overflow = ''; 
+    }
+
+    onMobileToggleClick(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        
+        const $button = jQuery(event.currentTarget);
+        const $item = $button.closest('.menu__mobile-item--has-children');
+        
+        // Toggle the submenu
+        const isOpen = $item.hasClass('is-open');
+        
+        if (isOpen) {
+            $item.removeClass('is-open');
+            $button.attr('aria-expanded', 'false');
+        } else {
+            // Close other open items (accordion behavior)
+            this.elements.$mobileItemsWithChildren.not($item).removeClass('is-open')
+                .find('.menu__mobile-toggle').attr('aria-expanded', 'false');
+            
+            $item.addClass('is-open');
+            $button.attr('aria-expanded', 'true');
+        }
     }
 }
 

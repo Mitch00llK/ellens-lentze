@@ -154,6 +154,21 @@ class Render_Functions {
             <!-- Mobile Drawer -->
             <div class="menu__drawer">
                 <div class="menu__drawer-inner">
+                    <!-- Mobile Logo (Same position as mobile header) -->
+                    <div class="menu__logo menu__logo--mobile">
+                        <?php
+                        if ( ! empty( $settings['logo_image']['url'] ) ) {
+                            $logo_html = Group_Control_Image_Size::get_attachment_image_html( $settings, 'full', 'logo_image' );
+                            $logo_link = $settings['logo_link']['url'];
+                            if ( ! empty( $logo_link ) ) {
+                                echo '<a href="' . esc_url( $logo_link ) . '">' . $logo_html . '</a>';
+                            } else {
+                                echo $logo_html;
+                            }
+                        }
+                        ?>
+                    </div>
+
                     <!-- Mobile Nav -->
                     <nav class="menu__mobile-nav">
                         <ul class="menu__mobile-list">
@@ -169,12 +184,16 @@ class Render_Functions {
                                     $has_children = isset( $hierarchy[ $item->ID ] );
                                 ?>
                                     <li class="menu__mobile-item <?php echo $has_children ? 'menu__mobile-item--has-children' : ''; ?>">
-                                        <a href="<?php echo esc_url( $item->url ); ?>" class="menu__mobile-link">
-                                            <?php echo esc_html( $item->title ); ?>
+                                        <div class="menu__mobile-link-wrapper">
+                                            <a href="<?php echo esc_url( $item->url ); ?>" class="menu__mobile-link">
+                                                <?php echo esc_html( $item->title ); ?>
+                                            </a>
                                             <?php if ( $has_children ) : ?>
-                                                <i class="fas fa-chevron-down menu__mobile-dropdown-icon"></i>
+                                                <button type="button" class="menu__mobile-toggle" aria-label="<?php echo esc_attr__( 'Toggle submenu', 'ellens-lentze' ); ?>" aria-expanded="false">
+                                                    <i class="fas fa-chevron-down menu__mobile-dropdown-icon"></i>
+                                                </button>
                                             <?php endif; ?>
-                                        </a>
+                                        </div>
                                         <?php if ( $has_children ) : ?>
                                             <ul class="menu__mobile-sub-menu">
                                                 <?php foreach ( $hierarchy[ $item->ID ] as $child ) : ?>
@@ -215,19 +234,19 @@ class Render_Functions {
                                 </a>
                             <?php endforeach; ?>
                         <?php endif; ?>
-
-                        <!-- Mobile Language Switcher -->
-                         <?php if ( 'yes' === $settings['show_language_switcher'] ) : ?>
-                            <div class="menu__lang-switcher menu__lang-switcher--mobile">
-                                <button class="menu__lang-btn <?php echo ( 'nl' === $settings['current_lang'] ) ? 'is-active' : ''; ?>">
-                                     <span class="menu__flag">🇳🇱</span> NL
-                                </button>
-                                <button class="menu__lang-btn <?php echo ( 'en' === $settings['current_lang'] ) ? 'is-active' : ''; ?>">
-                                     <span class="menu__flag">🇬🇧</span> EN
-                                </button>
-                            </div>
-                         <?php endif; ?>
                     </div>
+
+                    <!-- Mobile Language Switcher - Bottom of Menu -->
+                    <?php if ( 'yes' === $settings['show_language_switcher'] ) : ?>
+                        <div class="menu__lang-switcher menu__lang-switcher--mobile">
+                            <button class="menu__lang-btn <?php echo ( 'nl' === $settings['current_lang'] ) ? 'is-active' : ''; ?>">
+                                 <span class="menu__flag">🇳🇱</span> NL
+                            </button>
+                            <button class="menu__lang-btn <?php echo ( 'en' === $settings['current_lang'] ) ? 'is-active' : ''; ?>">
+                                 <span class="menu__flag">🇬🇧</span> EN
+                            </button>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
 

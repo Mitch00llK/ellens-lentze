@@ -4,10 +4,12 @@
         /* Stack vertically */
     }
 
-    .image-text-block__image-wrapper,
     .image-text-block__content-wrapper {
         flex: 1 1 auto;
         width: 100%;
+    }
+
+    .image-text-block__image-wrapper {
         height: 20rem;
     }
 

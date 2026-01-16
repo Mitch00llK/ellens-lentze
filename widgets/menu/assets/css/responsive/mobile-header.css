@@ -9,13 +9,11 @@
     }
 
     .menu__logo {
-        flex-grow: 1;
-        /* Space out */
         margin-right: auto;
     }
 
     .menu__logo img {
-        height: 32px;
+        height: 52px;
         /* Smaller logo */
     }
 

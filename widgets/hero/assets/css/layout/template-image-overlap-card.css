@@ -8,9 +8,10 @@
     position: relative;
     width: 100%;
     min-height: 600px;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     align-items: center;
+    margin-bottom: calc(var(--spacing-3xl) + 50px);
 }
 
 /* Background Image Area */
@@ -34,15 +35,27 @@
     object-fit: cover;
 }
 
+/* Container for Card */
+.hero-ioc__container {
+    position: relative;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    width: 100%;
+    /* Responsive padding: min 16px, scales with viewport, max 40px */
+    z-index: 100;
+}
+
 /* Overlapping Card */
 .hero-ioc__card {
     position: absolute;
-    left: 15%;
-    bottom: var(--spacing-3xl);
-    top: auto;
-    width: 631px;
-    max-width: 90%;
-    z-index: 10;
+    left: clamp(var(--spacing-md), 2.5vw, var(--container-padding-desktop));
+    /* Responsive left positioning matching container padding */
+    bottom: calc(var(--spacing-3xl) * -1);
+    bottom: -40vh;
+    width: clamp(280px, 49vw, 631px);
+    /* Responsive width: min 280px, scales with viewport (49vw), max 631px */
+    max-width: calc(100% - (clamp(var(--spacing-md), 2.5vw, var(--container-padding-desktop)) * 2));
+    z-index: 100;
     background-color: var(--color-blue-500);
     border-radius: var(--border-radius-md);
 }
@@ -114,15 +127,23 @@
 }
 
 /* Responsive */
+/* Tablet and below */
 @media (max-width: 1024px) {
     .hero--template-ioc {
         min-height: auto;
         flex-direction: column;
+        margin-bottom: 0;
+        /* Reset margin on tablet/mobile */
     }
 
     .hero-ioc__bg-container {
         position: relative;
-        height: 400px;
+        height: 250px;
+    }
+
+    .hero-ioc__container {
+        position: relative;
+        /* padding: 0 var(--container-padding-mobile); */
     }
 
     .hero-ioc__card {
@@ -131,13 +152,39 @@
         bottom: auto;
         width: 100%;
         max-width: 100%;
-        margin-top: -3rem;
-        padding: 0 var(--container-padding-mobile);
         border-radius: 0;
     }
 
     .hero-ioc__card-bg {
         border-radius: var(--border-radius-md);
         /* Keep radius if floating */
+    }
+}
+
+/* Large tablets - adjust card width */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-ioc__card {
+        width: clamp(400px, 60vw, 550px);
+        /* Slightly larger on large tablets */
+    }
+}
+
+/* Small tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+    .hero-ioc__card {
+        width: clamp(320px, 85vw, 500px);
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .hero-ioc__card {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .hero-ioc__content {
+        padding: var(--spacing-xl) var(--spacing-lg);
+        /* Reduced padding on mobile */
     }
 }

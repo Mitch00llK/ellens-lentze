@@ -12,7 +12,7 @@ class Render_Services_Grid {
 	public static function render( $settings ) {
 		// Output the widget styling
 		?>
-		<div class="ellens-services-grid">
+		<div class="ellens-services-grid pt-3xl pb-3xl">
             <?php if ( ! empty( $settings['section_title'] ) ) : ?>
                 <h2 class="ellens-services-grid__title"><?php echo esc_html( $settings['section_title'] ); ?></h2>
             <?php endif; ?>

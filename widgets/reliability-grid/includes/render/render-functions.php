@@ -21,7 +21,7 @@ class Render_Functions {
 		$right_features = array_slice( $features, 2 );
 		?>
 
-		<div class="feature-grid">
+		<div class="feature-grid p-md">
 			<?php if ( ! empty( $settings['main_title'] ) ) : ?>
 				<h2 class="feature-grid__title"><?php echo esc_html( $settings['main_title'] ); ?></h2>
 			<?php endif; ?>

@@ -205,7 +205,7 @@ class Render_Functions {
             $graphic_html = '';
         }
 
-        $widget->add_render_attribute( 'wrapper', 'class', [ 'hero', 'hero--template-ioc' ] );
+        $widget->add_render_attribute( 'wrapper', 'class', [ 'hero', 'hero--template-ioc mb-xl' ] );
         $widget->add_render_attribute( 'title', 'class', 'hero-ioc__title' );
         $widget->add_render_attribute( 'subtitle', 'class', 'hero-ioc__subtitle' );
         $widget->add_render_attribute( 'description', 'class', 'hero-ioc__description' );
@@ -221,25 +221,27 @@ class Render_Functions {
                  <?php endif; ?>
             </div>
 
-            <div class="hero-ioc__card">
-                <div class="hero-ioc__card-bg">
-                    <?php if ( ! empty( $graphic_html ) ) echo $graphic_html; ?>
-                </div>
-                
-                <div class="hero-ioc__content">
-                    <?php if ( ! empty( $subtitle ) ) : ?>
-                        <p <?php $widget->print_render_attribute_string( 'subtitle' ); ?>><?php echo esc_html( $subtitle ); ?></p>
-                    <?php endif; ?>
-
-                    <?php if ( ! empty( $title ) ) : ?>
-                        <div class="hero-ioc__title-wrapper">
-                            <h1 <?php $widget->print_render_attribute_string( 'title' ); ?>><?php echo wp_kses_post( $title ); ?></h1>
-                        </div>
-                    <?php endif; ?>
+            <div class="hero-ioc__container">
+                <div class="hero-ioc__card">
+                    <div class="hero-ioc__card-bg">
+                        <?php if ( ! empty( $graphic_html ) ) echo $graphic_html; ?>
+                    </div>
                     
-                    <?php if ( ! empty( $description ) ) : ?>
-                         <div <?php $widget->print_render_attribute_string( 'description' ); ?>><?php echo wp_kses_post( $description ); ?></div>
-                    <?php endif; ?>
+                    <div class="hero-ioc__content">
+                        <?php if ( ! empty( $subtitle ) ) : ?>
+                            <p <?php $widget->print_render_attribute_string( 'subtitle' ); ?>><?php echo esc_html( $subtitle ); ?></p>
+                        <?php endif; ?>
+
+                        <?php if ( ! empty( $title ) ) : ?>
+                            <div class="hero-ioc__title-wrapper">
+                                <h1 <?php $widget->print_render_attribute_string( 'title' ); ?>><?php echo wp_kses_post( $title ); ?></h1>
+                            </div>
+                        <?php endif; ?>
+                        
+                        <?php if ( ! empty( $description ) ) : ?>
+                             <div <?php $widget->print_render_attribute_string( 'description' ); ?>><?php echo wp_kses_post( $description ); ?></div>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
 
