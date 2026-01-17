@@ -18,6 +18,8 @@ class Render_Functions {
             self::render_layout_full_width_blue( $widget, $settings );
         } elseif ( 'image_overlap_card' === $layout ) {
             self::render_layout_image_overlap_card( $widget, $settings );
+        } elseif ( 'contact_form' === $layout ) {
+            self::render_layout_contact_form( $widget, $settings );
         } else {
             self::render_layout_default( $widget, $settings );
         }
@@ -241,6 +243,117 @@ class Render_Functions {
                         <?php if ( ! empty( $description ) ) : ?>
                              <div <?php $widget->print_render_attribute_string( 'description' ); ?>><?php echo wp_kses_post( $description ); ?></div>
                         <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <?php
+    }
+
+    /**
+     * Render Contact Form Layout.
+     * 
+     * Two-column layout with contact information on left and form on right.
+     * 
+     * @since 1.1.0
+     */
+    public static function render_layout_contact_form( $widget, $settings ) {
+        $subtitle = $settings['subtitle'];
+        $title = $settings['title'];
+        $description = $settings['description'];
+        
+        // Contact Information
+        $contact_address = isset( $settings['contact_address'] ) ? $settings['contact_address'] : '';
+        $contact_email = isset( $settings['contact_email'] ) ? $settings['contact_email'] : '';
+        $contact_phone = isset( $settings['contact_phone'] ) ? $settings['contact_phone'] : '';
+        
+        // Form Settings
+        $form_heading = isset( $settings['form_heading'] ) ? $settings['form_heading'] : '';
+        $gravity_form_shortcode = isset( $settings['gravity_form_shortcode'] ) ? $settings['gravity_form_shortcode'] : '';
+        
+        // Graphic Overlay (Building Pattern)
+        if ( ! empty( $settings['graphic_overlay']['url'] ) ) {
+            $overlay_url = esc_url( $settings['graphic_overlay']['url'] );
+            $overlay_alt = \Elementor\Control_Media::get_image_alt( $settings['graphic_overlay'] );
+             $graphic_html = sprintf( 
+                 '<img src="%s" class="hero-cf__pattern" alt="%s" aria-hidden="true">',
+                 $overlay_url,
+                 esc_attr( $overlay_alt )
+            );
+        } else {
+            $graphic_html = '';
+        }
+
+        $widget->add_render_attribute( 'wrapper', 'class', [ 'hero', 'hero--template-contact-form' ] );
+        $widget->add_render_attribute( 'title', 'class', 'hero-cf__title' );
+        $widget->add_render_attribute( 'subtitle', 'class', 'hero-cf__subtitle' );
+        $widget->add_render_attribute( 'description', 'class', 'hero-cf__description' );
+
+        ?>
+        <section <?php $widget->print_render_attribute_string( 'wrapper' ); ?>>
+            
+            <div class="hero-cf__container">
+                <!-- Left Column: Contact Information -->
+                <div class="hero-cf__left">
+                    <div class="hero-cf__bg">
+                         <div class="hero-cf__pattern-container">
+                             <?php if ( ! empty( $graphic_html ) ) echo $graphic_html; ?>
+                         </div>
+                    </div>
+                    
+                    <div class="hero-cf__content">
+                        <?php if ( ! empty( $subtitle ) ) : ?>
+                            <p <?php $widget->print_render_attribute_string( 'subtitle' ); ?>><?php echo esc_html( $subtitle ); ?></p>
+                        <?php endif; ?>
+
+                        <?php if ( ! empty( $title ) ) : ?>
+                            <h1 <?php $widget->print_render_attribute_string( 'title' ); ?>><?php echo wp_kses_post( $title ); ?></h1>
+                        <?php endif; ?>
+
+                        <?php if ( ! empty( $description ) ) : ?>
+                             <div <?php $widget->print_render_attribute_string( 'description' ); ?>><?php echo wp_kses_post( $description ); ?></div>
+                        <?php endif; ?>
+                        
+                        <div class="hero-cf__contact-info">
+                            <?php if ( ! empty( $contact_address ) ) : ?>
+                                <div class="hero-cf__contact-item">
+                                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                    <p><?php echo esc_html( $contact_address ); ?></p>
+                                </div>
+                            <?php endif; ?>
+                            
+                            <?php if ( ! empty( $contact_email ) ) : ?>
+                                <div class="hero-cf__contact-item">
+                                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                                    <a href="mailto:<?php echo esc_attr( $contact_email ); ?>"><?php echo esc_html( $contact_email ); ?></a>
+                                </div>
+                            <?php endif; ?>
+                            
+                            <?php if ( ! empty( $contact_phone ) ) : ?>
+                                <div class="hero-cf__contact-item">
+                                    <i class="fas fa-phone" aria-hidden="true"></i>
+                                    <a href="tel:<?php echo esc_attr( str_replace( ' ', '', $contact_phone ) ); ?>"><?php echo esc_html( $contact_phone ); ?></a>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Contact Form -->
+                <div class="hero-cf__right">
+                    <div class="hero-cf__form-card">
+                        <?php if ( ! empty( $form_heading ) ) : ?>
+                            <h3 class="hero-cf__form-heading"><?php echo esc_html( $form_heading ); ?></h3>
+                        <?php endif; ?>
+                        
+                        <div class="hero-cf__form">
+                            <?php 
+                            if ( ! empty( $gravity_form_shortcode ) ) {
+                                echo do_shortcode( $gravity_form_shortcode );
+                            }
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>

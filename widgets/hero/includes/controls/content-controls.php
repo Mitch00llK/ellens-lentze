@@ -28,6 +28,7 @@ class Content_Controls {
                     'default'         => esc_html__( 'Floating Card (Default)', 'ellens-lentze' ),
                     'full_width_blue' => esc_html__( 'Full Width Blue', 'ellens-lentze' ),
                     'image_overlap_card' => esc_html__( 'Image Overlap Card', 'ellens-lentze' ),
+                    'contact_form'    => esc_html__( 'Contact Form', 'ellens-lentze' ),
                 ],
             ]
         );
@@ -160,6 +161,70 @@ class Content_Controls {
 				],
 			]
 		);
+
+        $widget->end_controls_section();
+
+        // Contact Form Fields Section
+        $widget->start_controls_section(
+            'section_contact_form',
+            [
+                'label' => esc_html__( 'Contact Form', 'ellens-lentze' ),
+                'tab' => Controls_Manager::TAB_CONTENT,
+                'condition' => [
+                    'layout_template' => 'contact_form',
+                ],
+            ]
+        );
+
+        $widget->add_control(
+            'form_heading',
+            [
+                'label' => esc_html__( 'Form Heading', 'ellens-lentze' ),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__( 'Vragen of opmerkingen?', 'ellens-lentze' ),
+                'label_block' => true,
+            ]
+        );
+
+        $widget->add_control(
+            'gravity_form_shortcode',
+            [
+                'label' => esc_html__( 'Gravity Forms Shortcode', 'ellens-lentze' ),
+                'type' => Controls_Manager::TEXT,
+                'default' => '[gravityform id="1" title="false" description="false"]',
+                'placeholder' => '[gravityform id="1" title="false" description="false"]',
+                'description' => esc_html__( 'Enter your Gravity Forms shortcode. Example: [gravityform id="1" title="false" description="false"]', 'ellens-lentze' ),
+                'label_block' => true,
+            ]
+        );
+
+        $widget->add_control(
+            'contact_address',
+            [
+                'label' => esc_html__( 'Address', 'ellens-lentze' ),
+                'type' => Controls_Manager::TEXTAREA,
+                'default' => esc_html__( 'Parkstraat 94, 2514 JH Den Haag', 'ellens-lentze' ),
+                'label_block' => true,
+            ]
+        );
+
+        $widget->add_control(
+            'contact_email',
+            [
+                'label' => esc_html__( 'Email', 'ellens-lentze' ),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__( 'notaris@ellenslentze.nl', 'ellens-lentze' ),
+            ]
+        );
+
+        $widget->add_control(
+            'contact_phone',
+            [
+                'label' => esc_html__( 'Phone', 'ellens-lentze' ),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__( '070 364 48 30', 'ellens-lentze' ),
+            ]
+        );
 
         $widget->end_controls_section();
 	}
