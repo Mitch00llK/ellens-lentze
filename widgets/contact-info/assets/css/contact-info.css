@@ -1,7 +1,7 @@
 /**
- * Hero Widget Styles
+ * Contact Info Widget Styles
  *
- * Main import file that consolidates all hero widget CSS.
+ * Main import file that consolidates all contact info widget CSS.
  * Imports global design tokens and widget-specific styles.
  *
  * @since 1.0.0
@@ -11,12 +11,10 @@
 @import '../../../../assets/css/globals/variables.css';
 
 /* Layout styles */
-@import './layout/container.css';
-@import './layout/template-full-width.css';
-@import './layout/template-image-overlap-card.css';
+@import './layout/layout.css';
 
 /* Component styles */
 @import './components/content.css';
 
 /* Responsive styles */
-@import './responsive/tablet.css';
+@import './responsive/responsive.css';

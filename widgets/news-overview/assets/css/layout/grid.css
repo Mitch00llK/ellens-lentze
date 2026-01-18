@@ -3,7 +3,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-3xl);
 }
 
 .news-overview__grid {

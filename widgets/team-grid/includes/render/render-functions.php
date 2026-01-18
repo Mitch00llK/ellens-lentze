@@ -29,10 +29,9 @@ class Render_Functions {
         // Content
         $section_title = $settings['section_title'];
         $description   = $settings['section_description'];
-        $columns       = $settings['grid_columns'];
 
 		?>
-		<div class="ellens-team-grid-wrapper">
+		<div class="ellens-team-grid-wrapper p-md pt-3xl pb-3xl">
             <!-- Header Section -->
             <div class="team-grid-header">
                 <?php if ( ! empty( $section_title ) ) : ?>
@@ -45,7 +44,7 @@ class Render_Functions {
             </div>
 
             <!-- Grid -->
-            <div class="team-grid" style="--grid-columns: <?php echo esc_attr( $columns ); ?>">
+            <div class="team-grid">
                 <?php while ( $team_query->have_posts() ) : $team_query->the_post(); 
                     $job_title = get_post_meta( get_the_ID(), '_ellens_team_function', true );
                     $image_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );

@@ -61,6 +61,9 @@ function register_ellens_hero_widget( $widgets_manager ) {
 
     require_once( __DIR__ . '/widgets/news-overview/news-overview-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\News_Overview\Widget_News_Overview() );
+
+    require_once( __DIR__ . '/widgets/contact-info/contact-info-widget.php' );
+	$widgets_manager->register( new \EllensLentze\Widgets\Contact_Info_Widget() );
 }
 add_action( 'elementor/widgets/register', 'register_ellens_hero_widget' );
 

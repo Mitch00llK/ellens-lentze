@@ -4,6 +4,7 @@
 .menu__utility-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     background-color: var(--color-blue-50);
     border: 1px solid var(--color-blue-700);
@@ -16,6 +17,8 @@
     font-size: 1rem;
     line-height: normal;
     transition: all 0.3s ease;
+    box-sizing: border-box;
+    /* Ensure padding is included in width/height */
 }
 
 .menu__utility-btn:hover {
@@ -86,4 +89,59 @@
 
 .menu__lang-btn:hover:not(.is-active) {
     background-color: var(--color-black-50);
+}
+
+/* Hide labels in buttons when screen is smaller than 1678px */
+@media (max-width: 1677px) {
+    /* Hide text labels in utility buttons (phone/email), show only icons */
+    .menu__utility-btn span {
+        display: none;
+    }
+
+    .menu__utility-btn {
+        /* Make button perfectly round when icon-only */
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+        min-height: 40px !important;
+        max-width: 40px !important;
+        max-height: 40px !important;
+        padding: 0 !important;
+        border-radius: 50% !important;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        /* Ensure border is included in dimensions */
+    }
+
+    .menu__utility-btn i,
+    .menu__utility-btn svg {
+        font-size: 1rem;
+        width: 1em;
+        height: 1em;
+        /* Ensure icons are properly sized */
+    }
+
+    /* Hide text labels in language buttons (keep flags) */
+    /* Hide text nodes by setting font-size to 0, then restore for flag span */
+    .menu__lang-btn {
+        font-size: 0;
+        line-height: 0;
+        padding: 0.25rem;
+        /* Adjust padding when text is hidden */
+        min-width: auto;
+    }
+
+    .menu__lang-btn .menu__flag {
+        font-size: 1.25rem;
+        /* Restore flag size */
+        line-height: normal;
+        display: inline-block;
+    }
+
+    /* Make language switcher more compact */
+    .menu__lang-switcher {
+        padding: 0.25rem;
+        gap: 0.125rem;
+    }
 }

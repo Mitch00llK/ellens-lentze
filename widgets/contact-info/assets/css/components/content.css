@@ -1,0 +1,189 @@
+/**
+ * Contact Info Component Styles
+ *
+ * Component-specific styles for contact info items.
+ *
+ * @since 1.0.0
+ */
+
+/* Heading */
+.contact-info__heading {
+    margin: 0;
+    font-family: var(--font-family-serif);
+    font-size: 2rem;
+    /* 32px */
+    font-weight: 400;
+    line-height: 1;
+    /* 32px line-height on 32px font-size */
+    letter-spacing: 0.64px;
+    color: var(--color-light-blue-500);
+}
+
+/* Description */
+.contact-info__description,
+.contact-info__description p {
+    margin: 0;
+    font-family: var(--font-family-sans);
+    font-size: 1.125rem;
+    /* 18px */
+    font-weight: 400;
+    line-height: 1.77;
+    /* 32px line-height on 18px font-size is ~1.77 */
+    letter-spacing: 0.18px;
+    color: var(--color-white-500);
+}
+
+/* Contact Items */
+.contact-info__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    color: var(--color-light-blue-500);
+    width: 608px;
+    /* Fixed width from Figma */
+    max-width: 100%;
+}
+
+.contact-info__item i {
+    font-family: "Font Awesome 7 Free", "Font Awesome 5 Free", sans-serif;
+    /* Fallback */
+    font-size: 1rem;
+    /* 16px */
+    font-weight: 400;
+    color: var(--color-orange-500);
+    flex-shrink: 0;
+    text-align: left;
+    margin-top: 0.25rem;
+    /* Optical alignment */
+}
+
+.contact-info__item span,
+.contact-info__item a {
+    font-family: var(--font-family-sans);
+    font-size: 1.125rem;
+    /* 18px */
+    font-weight: 400;
+    line-height: 1.77;
+    /* 32/18 */
+    letter-spacing: 0.18px;
+    color: var(--color-light-blue-500);
+    margin: 0;
+    text-decoration: none;
+    flex-grow: 1;
+}
+
+.contact-info__item a:hover {
+    color: var(--color-orange-500);
+    text-decoration: underline;
+}
+
+/* Opening Hours Container */
+.contact-info__hours-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid var(--color-blue-400);
+    border-radius: 8px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    /* 16px 24px */
+    width: 100%;
+}
+
+.contact-info__hours-title {
+    margin: 0;
+    font-family: var(--font-family-serif);
+    font-size: 1.25rem;
+    /* 20px */
+    font-weight: 400;
+    line-height: 1.8;
+    /* 36px */
+    letter-spacing: 0.4px;
+    color: var(--color-white-500);
+}
+
+.contact-info__hours-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.5rem;
+    /* Optical separation from title */
+}
+
+.contact-info__hours-item {
+    display: flex;
+    justify-content: flex-start;
+    /* Or space-between if width permits */
+    gap: 1.5rem;
+    /* Just enough space */
+    color: var(--color-white-500);
+    font-family: var(--font-family-sans);
+    font-size: 1.125rem;
+    /* 18px */
+    font-weight: 400;
+    line-height: 1.77;
+    /* 32px */
+}
+
+.contact-info__day {
+    flex: 0 0 100px;
+    /* Fixed width for alignment */
+}
+
+.contact-info__time {
+    flex-grow: 1;
+}
+
+.contact-info__hours-footer,
+.contact-info__hours-footer p {
+    margin-top: 1rem;
+    font-family: var(--font-family-sans);
+    font-size: 1.125rem;
+    /* 18px */
+    font-weight: 400;
+    line-height: 1.77;
+    /* 32px */
+    letter-spacing: 0.18px;
+    color: var(--color-white-500);
+}
+
+/* Financial Details */
+.contact-info__financial {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    width: 596px;
+    /* Fixed width from Figma */
+    max-width: 100%;
+}
+
+.contact-info__financial-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.contact-info__financial-label {
+    font-family: var(--font-family-serif);
+    font-size: 1.25rem;
+    /* 20px */
+    font-weight: 400;
+    line-height: 1.8;
+    /* 36px */
+    letter-spacing: 0.4px;
+    color: var(--color-white-500);
+    margin: 0;
+}
+
+.contact-info__financial-value,
+.contact-info__financial-value p {
+    font-family: var(--font-family-sans);
+    font-size: 1.125rem;
+    /* 18px */
+    font-weight: 400;
+    line-height: 1.77;
+    /* 32px */
+    letter-spacing: 0.18px;
+    color: var(--color-white-500);
+    margin: 0;
+}

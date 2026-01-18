@@ -1,20 +1,7 @@
 /* Responsive Styles for Team Grid */
 
-/* Tablet (max-width: 1024px) */
-@media (max-width: 1024px) {
-    .team-grid {
-        /* Force 2 cols on tablet */
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-}
-
 /* Mobile (max-width: 767px) */
 @media (max-width: 767px) {
-    .team-grid {
-        /* Force 1 col on mobile */
-        grid-template-columns: 1fr !important;
-    }
-
     /* Adjust Card Styles for Mobile if needed */
     .team-grid .team-card {
         min-height: auto;
@@ -27,3 +14,6 @@
         /* Slightly smaller title */
     }
 }
+
+/* Note: Column count is now controlled via Elementor responsive controls */
+/* Desktop, Tablet, and Mobile column counts are set in the widget settings */

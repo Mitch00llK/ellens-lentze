@@ -59,6 +59,13 @@ class CPT_Team {
         // Register Meta Box
         add_action( 'add_meta_boxes', [ __CLASS__, 'add_meta_boxes' ] );
         add_action( 'save_post', [ __CLASS__, 'save_meta_box' ] );
+
+        // Ensure Elementor recognizes the archive location
+        // Flush rewrite rules if this is the first time registering
+        if ( ! get_option( 'ellens_team_rewrite_rules_flushed' ) ) {
+            flush_rewrite_rules();
+            update_option( 'ellens_team_rewrite_rules_flushed', true );
+        }
 	}
 
     /**

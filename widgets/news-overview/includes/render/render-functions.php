@@ -45,7 +45,7 @@ class Render_Functions {
         $query = new \WP_Query( $args );
 
         // Wrapper
-        $widget->add_render_attribute( 'wrapper', 'class', 'news-overview' );
+        $widget->add_render_attribute( 'wrapper', 'class', 'news-overview p-md pt-3xl pb-3xl gap-2xl d-flex flex-column' );
 		?>
 		<div <?php $widget->print_render_attribute_string( 'wrapper' ); ?>>
             

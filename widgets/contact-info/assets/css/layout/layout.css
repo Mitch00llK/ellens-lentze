@@ -1,0 +1,46 @@
+/**
+ * Contact Info Layout Styles
+ *
+ * Layout-specific styles for the contact info widget.
+ *
+ * @since 1.0.0
+ */
+
+.contact-info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: center;  Removed as it applies to children now */
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    position: relative;
+}
+
+.contact-info__primary {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: 1.5rem 0rem 0.875rem 0rem;
+    /* pt-24px pb-14px */
+    border-radius: 8px;
+    overflow: hidden;
+    width: 70%;
+}
+
+.contact-info__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.contact-info__items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    flex-shrink: 0;
+}

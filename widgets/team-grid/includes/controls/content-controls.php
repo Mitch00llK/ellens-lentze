@@ -51,18 +51,23 @@ class Content_Controls {
 			]
 		);
 
-        $widget->add_control(
+        $widget->add_responsive_control(
 			'grid_columns',
 			[
 				'label' => esc_html__( 'Columns', 'ellens-lentze' ),
 				'type' => Controls_Manager::SELECT,
 				'default' => 3,
+				'tablet_default' => 2,
+				'mobile_default' => 1,
 				'options' => [
                     1 => '1',
                     2 => '2',
                     3 => '3',
                     4 => '4',
                 ],
+				'selectors' => [
+					'{{WRAPPER}} .team-grid' => 'grid-template-columns: repeat({{VALUE}}, 1fr);',
+				],
 			]
 		);
 
