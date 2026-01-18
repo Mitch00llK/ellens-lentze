@@ -32,21 +32,6 @@ class Content_Controls {
             ]
         );
         $widget->add_control(
-            'enable_contact_form',
-            [
-                'label' => esc_html__( 'Enable Contact Form', 'ellens-lentze' ),
-                'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__( 'Yes', 'ellens-lentze' ),
-                'label_off' => esc_html__( 'No', 'ellens-lentze' ),
-                'return_value' => 'yes',
-                'default' => 'no',
-                'condition' => [
-                    'layout_template' => 'full_width_blue',
-                ],
-                'description' => esc_html__( 'Adds a 50% width contact form on the right side that overflows into the container below.', 'ellens-lentze' ),
-            ]
-        );
-        $widget->add_control(
 			'show_card_container',
 			[
 				'label' => esc_html__( 'Show Card Container', 'ellens-lentze' ),
@@ -178,7 +163,65 @@ class Content_Controls {
 			]
 		);
 
-		$widget->end_controls_section();
+        $widget->end_controls_section();
+
+        // Contact Form Section (for Floating Card layout)
+        $widget->start_controls_section(
+			'section_contact_form',
+			[
+				'label' => esc_html__( 'Contact Form', 'ellens-lentze' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
+				'condition' => [
+					'layout_template' => 'default',
+				],
+			]
+		);
+
+        $widget->add_control(
+			'enable_contact_form',
+			[
+				'label' => esc_html__( 'Enable Contact Form', 'ellens-lentze' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'ellens-lentze' ),
+				'label_off' => esc_html__( 'No', 'ellens-lentze' ),
+				'return_value' => 'yes',
+				'default' => 'no',
+				'description' => esc_html__( 'Add a contact form below the card content.', 'ellens-lentze' ),
+			]
+		);
+
+        $widget->add_control(
+			'form_heading',
+			[
+				'label' => esc_html__( 'Form Heading', 'ellens-lentze' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => esc_html__( 'Vragen of opmerkingen?', 'ellens-lentze' ),
+				'placeholder' => esc_html__( 'Vragen of opmerkingen?', 'ellens-lentze' ),
+				'label_block' => true,
+				'condition' => [
+					'layout_template' => 'default',
+					'enable_contact_form' => 'yes',
+				],
+			]
+		);
+
+        $widget->add_control(
+			'gravity_form_shortcode',
+			[
+				'label' => esc_html__( 'Gravity Forms Shortcode', 'ellens-lentze' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => '[gravityform id="1" title="false" description="false"]',
+				'placeholder' => '[gravityform id="1" title="false" description="false"]',
+				'description' => esc_html__( 'Enter your Gravity Forms shortcode. Example: [gravityform id="1" title="false" description="false"]', 'ellens-lentze' ),
+				'label_block' => true,
+				'condition' => [
+					'layout_template' => 'default',
+					'enable_contact_form' => 'yes',
+				],
+			]
+		);
+
+        $widget->end_controls_section();
 
         $widget->start_controls_section(
 			'section_images',
@@ -213,44 +256,6 @@ class Content_Controls {
 				],
 			]
 		);
-
-        $widget->end_controls_section();
-
-        // Contact Form Fields Section
-        $widget->start_controls_section(
-            'section_contact_form',
-            [
-                'label' => esc_html__( 'Contact Form', 'ellens-lentze' ),
-                'tab' => Controls_Manager::TAB_CONTENT,
-                'condition' => [
-                    'layout_template' => 'full_width_blue',
-                    'enable_contact_form' => 'yes',
-                ],
-            ]
-        );
-
-        $widget->add_control(
-            'form_heading',
-            [
-                'label' => esc_html__( 'Form Heading', 'ellens-lentze' ),
-                'type' => Controls_Manager::TEXT,
-                'default' => esc_html__( 'Vragen of opmerkingen?', 'ellens-lentze' ),
-                'label_block' => true,
-            ]
-        );
-
-        $widget->add_control(
-            'gravity_form_shortcode',
-            [
-                'label' => esc_html__( 'Gravity Forms Shortcode', 'ellens-lentze' ),
-                'type' => Controls_Manager::TEXT,
-                'default' => '[gravityform id="1" title="false" description="false"]',
-                'placeholder' => '[gravityform id="1" title="false" description="false"]',
-                'description' => esc_html__( 'Enter your Gravity Forms shortcode. Example: [gravityform id="1" title="false" description="false"]', 'ellens-lentze' ),
-                'label_block' => true,
-            ]
-        );
-
 
         $widget->end_controls_section();
 	}

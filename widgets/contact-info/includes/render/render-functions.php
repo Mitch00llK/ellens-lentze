@@ -18,14 +18,14 @@ class Render_Functions {
 		$email   = isset( $settings['email'] ) ? $settings['email'] : '';
 		$phone   = isset( $settings['phone'] ) ? $settings['phone'] : '';
 
-		$widget->add_render_attribute( 'wrapper', 'class', 'contact-info d-flex flex-row flex-wrap items-start gap-md w-full' );
-		$widget->add_render_attribute( 'primary', 'class', 'contact-info__primary d-flex flex-column gap-md' );
-		$widget->add_render_attribute( 'header', 'class', 'contact-info__header d-flex flex-column items-start gap-md w-full flex-shrink-0' );
+		$widget->add_render_attribute( 'wrapper', 'class', 'contact-info d-flex flex-row flex-wrap items-start gap-md w-full p-md my-2xl' );
+		$widget->add_render_attribute( 'primary', 'class', 'contact-info__primary d-flex flex-column gap-xl w-50' );
+		$widget->add_render_attribute( 'header', 'class', 'contact-info__header max-w-80 d-flex flex-column items-start gap-xl w-full flex-shrink-0' );
 		$widget->add_render_attribute( 'heading', 'class', 'contact-info__heading m-0' );
 		$widget->add_render_attribute( 'description', 'class', 'contact-info__description m-0' );
 		$widget->add_render_attribute( 'items', 'class', 'contact-info__items d-flex flex-column items-start gap-sm flex-shrink-0' );
 		$widget->add_render_attribute( 'item', 'class', 'contact-info__item d-flex items-start gap-sm max-w-full' );
-		$widget->add_render_attribute( 'hours-container', 'class', 'contact-info__hours-container d-flex flex-column justify-center w-full' );
+		$widget->add_render_attribute( 'hours-container', 'class', 'contact-info__hours-container d-flex flex-column justify-center max-w-80' );
 		$widget->add_render_attribute( 'hours-title', 'class', 'contact-info__hours-title m-0' );
 		$widget->add_render_attribute( 'hours-list', 'class', 'contact-info__hours-list d-flex flex-column w-full' );
 		$widget->add_render_attribute( 'hours-item', 'class', 'contact-info__hours-item d-flex justify-start' );
@@ -87,12 +87,12 @@ class Render_Functions {
 								<?php endforeach; ?>
 							</div>
 						<?php endif; ?>
+					</div>
+				<?php endif; ?>
 
-						<?php if ( ! empty( $settings['opening_hours_footer'] ) ) : ?>
-							<div class="contact-info__hours-footer">
-								<?php echo wp_kses_post( wpautop( $settings['opening_hours_footer'] ) ); ?>
-							</div>
-						<?php endif; ?>
+				<?php if ( ! empty( $settings['opening_hours_footer'] ) ) : ?>
+					<div class="contact-info__hours-footer">
+						<?php echo wp_kses_post( wpautop( $settings['opening_hours_footer'] ) ); ?>
 					</div>
 				<?php endif; ?>
 			</div>
