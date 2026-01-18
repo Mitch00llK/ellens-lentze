@@ -22,31 +22,31 @@ class Render_Functions {
 
 		?>
 		<footer class="footer mt-3xl ">
-            <div class="footer__container">
+            <div class="footer__container d-flex justify-between gap-3xl mx-auto w-full p-container-desktop">
                 
                 <!-- COL 1: Brand & Contact -->
-                <div class="footer__col footer__col--brand">
+                <div class="footer__col footer__col--brand d-flex flex-column gap-md shrink-0">
                     <div class="footer__logo-wrapper">
                         <?php echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'full', 'logo' ); ?>
                     </div>
                     
-                    <div class="footer__contact">
+                    <div class="footer__contact d-flex flex-column gap-sm">
                         <?php if ( ! empty( $address ) ) : ?>
-                            <div class="footer__contact-item">
+                            <div class="footer__contact-item d-flex items-center gap-sm">
                                 <i class="fas fa-map" aria-hidden="true"></i>
                                 <span><?php echo wp_kses_post( $address ); ?></span>
                             </div>
                         <?php endif; ?>
 
                         <?php if ( ! empty( $email ) ) : ?>
-                            <div class="footer__contact-item">
+                            <div class="footer__contact-item d-flex items-center gap-sm">
                                 <i class="fas fa-envelope" aria-hidden="true"></i>
                                 <a href="mailto:<?php echo esc_attr( $email ); ?>"><?php echo esc_html( $email ); ?></a>
                             </div>
                         <?php endif; ?>
 
                         <?php if ( ! empty( $phone ) ) : ?>
-                            <div class="footer__contact-item">
+                            <div class="footer__contact-item d-flex items-center gap-sm">
                                 <i class="fas fa-phone-alt" aria-hidden="true"></i>
                                 <a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $phone ) ); ?>"><?php echo esc_html( $phone ); ?></a>
                             </div>
@@ -59,7 +59,7 @@ class Render_Functions {
                     $title   = $settings[ $col_id . '_title' ];
                     $menu_id = isset( $settings[ $col_id . '_menu' ] ) ? $settings[ $col_id . '_menu' ] : false;
                 ?>
-                    <div class="footer__col footer__col--menu">
+                    <div class="footer__col footer__col--menu d-flex flex-column gap-md flex-1">
                         <?php if ( ! empty( $title ) ) : ?>
                             <h4 class="footer__title"><?php echo esc_html( $title ); ?></h4>
                         <?php endif; ?>
@@ -69,7 +69,7 @@ class Render_Functions {
                             $menu_items = wp_get_nav_menu_items( $menu_id );
                             
                             if ( ! empty( $menu_items ) && ! is_wp_error( $menu_items ) ) : ?>
-                                <ul class="footer__menu p-0 m-0">
+                                <ul class="footer__menu p-0 m-0 d-flex flex-column gap-sm">
                                     <?php foreach ( $menu_items as $item ) : 
                                         // Skip if not a valid object
                                         if ( empty( $item->url ) ) continue;

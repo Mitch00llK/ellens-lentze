@@ -14,10 +14,10 @@ class Render_Functions {
 
 		?>
 		<section class="dis-section">
-            <div class="dis-container">
+            <div class="dis-container d-flex items-start mx-auto gap-3xl w-full">
                 
                 <!-- Main Content Area -->
-                <div class="dis-content">
+                <div class="dis-content flex-1 d-flex flex-column gap-xl">
                     <?php 
                     $content_source = isset( $settings['content_source'] ) ? $settings['content_source'] : 'manual';
                     
@@ -45,7 +45,7 @@ class Render_Functions {
                 </div>
 
                 <!-- Sidebar Sidebar -->
-                <aside class="dis-sidebar">
+                <aside class="dis-sidebar w-30 shrink-0">
                     <div class="dis-card">
                         <!-- Card Image -->
                         <div class="dis-card__image">

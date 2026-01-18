@@ -2,15 +2,7 @@
     width: 100%;
 }
 
-.action-buttons__card {
-    background-color: var(--color-blue-700);
-    border-radius: var(--card-radius);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    position: relative;
-    overflow: hidden;
-}
+/* .action-buttons__card handled by utilities */
 
 .action-buttons__card--has-bg::before {
     content: '';
@@ -29,22 +21,12 @@
     pointer-events: none;
 }
 
+/* .action-buttons__header handled by utilities */
 .action-buttons__header {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    position: relative;
     z-index: 1;
 }
 
+/* .action-buttons__list handled by utilities */
 .action-buttons__list {
-    display: flex;
-    flex-wrap: wrap;
-    /* Allow wrapping */
-    gap: 1.5rem;
-    align-items: center;
-    width: 100%;
-    position: relative;
     z-index: 1;
 }

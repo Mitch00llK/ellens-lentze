@@ -12,12 +12,12 @@ class Render_Services_Grid {
 	public static function render( $settings ) {
 		// Output the widget styling
 		?>
-		<div class="ellens-services-grid pt-3xl pb-3xl">
+		<div class="ellens-services-grid pt-3xl pb-3xl w-full relative mx-auto">
             <?php if ( ! empty( $settings['section_title'] ) ) : ?>
                 <h2 class="ellens-services-grid__title"><?php echo esc_html( $settings['section_title'] ); ?></h2>
             <?php endif; ?>
 
-            <div class="ellens-services-grid__container">
+            <div class="ellens-services-grid__container d-grid gap-lg w-full">
                 <?php foreach ( $settings['cards_list'] as $card ) : ?>
                     <?php
                     // Skip hidden cards

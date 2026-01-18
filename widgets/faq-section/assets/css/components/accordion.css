@@ -23,10 +23,7 @@
 .faq-accordion__header {
     width: 100%;
     box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--spacing-sm);
+    /* display: flex; justify-between; align-center; gap-sm; handled by utilities */
     background-color: rgba(242, 247, 252, 0.5);
     border: none;
     border-radius: var(--border-radius-md);

@@ -21,18 +21,18 @@ class Render_Functions {
             $overlay_url = esc_url( $settings['graphic_overlay']['url'] );
         }
 
-        $widget->add_render_attribute( 'wrapper', 'class', 'action-buttons py-2xl' );
-        $widget->add_render_attribute( 'card', 'class', [ 'action-buttons__card', 'p-3xl' ] );
+        $widget->add_render_attribute( 'wrapper', 'class', 'action-buttons w-full py-2xl' );
+        $widget->add_render_attribute( 'card', 'class', [ 'action-buttons__card', 'd-flex', 'flex-column', 'gap-md', 'relative', 'overflow-hidden', 'p-3xl' ] );
         
         // Add background image style if graphic overlay is set
         if ( ! empty( $overlay_url ) ) {
             $widget->add_render_attribute( 'card', 'class', 'action-buttons__card--has-bg' );
             $widget->add_render_attribute( 'card', 'style', '--bg-image-url: url(' . $overlay_url . ');' );
         }
-        $widget->add_render_attribute( 'header', 'class', 'action-buttons__header' );
+        $widget->add_render_attribute( 'header', 'class', [ 'action-buttons__header', 'd-flex', 'flex-column', 'gap-md', 'w-full', 'relative' ] );
         $widget->add_render_attribute( 'title', 'class', [ 'action-buttons__title', 'm-0' ] );
         $widget->add_render_attribute( 'description', 'class', [ 'action-buttons__description', 'm-0' ] );
-        $widget->add_render_attribute( 'list', 'class', 'action-buttons__list' );
+        $widget->add_render_attribute( 'list', 'class', [ 'action-buttons__list', 'd-flex', 'flex-wrap', 'items-center', 'gap-lg', 'w-full', 'relative' ] );
 
 		?>
 		<div <?php $widget->print_render_attribute_string( 'wrapper' ); ?>>

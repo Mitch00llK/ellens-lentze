@@ -1,7 +1,9 @@
 /* Responsive Styles for Team Grid */
 
 /* Mobile (max-width: 767px) */
-@media (max-width: 767px) {
+@import '../../../../assets/css/globals/variables.css';
+@media (max-width: 1024px) {
+
     /* Adjust Card Styles for Mobile if needed */
     .team-grid .team-card {
         min-height: auto;

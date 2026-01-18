@@ -36,8 +36,6 @@
     /* Match hero__content padding */
     height: 100%;
     border-radius: var(--border-radius-sm);
-    display: flex;
-    flex-direction: column;
 }
 
 .hero__form-heading {
@@ -237,7 +235,7 @@ body .hero__form .gform_wrapper .gfield_error input,
 body .hero__form .gform_wrapper .gfield_error textarea,
 body .hero__form-container .gform_wrapper .gfield_error input,
 body .hero__form-container .gform_wrapper .gfield_error textarea {
-    border-color: #d32f2f !important;
+    border-color: var(--color-error) !important;
     background-color: var(--color-white) !important;
 }
 
@@ -254,7 +252,7 @@ body .hero__form-container .gform_wrapper .validation_message {
 
 body .hero__form .gform_wrapper .gfield_error .validation_message,
 body .hero__form-container .gform_wrapper .gfield_error .validation_message {
-    color: #d32f2f !important;
+    color: var(--color-error) !important;
 }
 
 /* Success/Error Messages */
@@ -274,7 +272,7 @@ body .hero__form .gform_wrapper .gform_confirmation_message {
 }
 
 body .hero__form .gform_wrapper .validation_error {
-    color: #d32f2f !important;
+    color: var(--color-error) !important;
     background-color: rgba(211, 47, 47, 0.1) !important;
     border: 1px solid rgba(211, 47, 47, 0.3) !important;
 }

@@ -1,27 +1,17 @@
+/* .services-cluster handled by utilities: d-flex justify-center items-center w-full p-2xl */
 .services-cluster {
     position: relative;
-    width: 100%;
     min-height: 800px;
     /* Force height for absolute positioning on desktop */
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
+/* .services-cluster__container handled by utilities: d-flex justify-center items-center relative w-full mx-auto flex-1 */
 .services-cluster__container {
-    position: relative;
-    width: 100%;
     max-width: var(--container-max-width);
-    margin: 0 auto;
-    flex-grow: 1;
-    /* Allow it to fill the flex parent */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* Center content */
 }
 
 /* Central Image Wrapper */
+/* .services-cluster__visuals handled by utilities: d-flex justify-center items-center */
 .services-cluster__visuals {
     position: absolute;
     top: 50%;
@@ -31,9 +21,6 @@
     max-width: 600px;
     z-index: 1;
     /* z-index-image */
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .services-cluster__mask-image {

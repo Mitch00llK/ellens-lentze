@@ -4,25 +4,11 @@
     padding: var(--section-spacing-py-large) 0;
 }
 
+/* .faq-container handled by utilities: d-flex items-start mx-auto gap-3xl */
 .faq-container {
     max-width: var(--container-max-width);
-    margin: 0 auto;
-    display: flex;
-    gap: 4.5rem;
-    align-items: flex-start;
 }
 
-.faq-content {
-    width: 30%;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
+/* .faq-content handled by utilities: d-flex flex-column gap-lg shrink-0 w-30 */
 
-.faq-accordion {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
+/* .faq-accordion handled by utilities */

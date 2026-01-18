@@ -8,5 +8,5 @@
 
 @import '../../../../assets/css/globals/variables.css';
 @import './layout/container.css';
-@import './components/content.css';
+/* @import './components/content.css'; - File missing */
 @import './responsive/tablet.css';

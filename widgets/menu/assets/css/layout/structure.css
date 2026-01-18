@@ -1,19 +1,11 @@
 /* Menu Layout Structure */
 
 .menu-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
     padding: 1.5rem var(--container-padding-desktop);
-    background: #fff;
-    gap: 2rem;
-    position: relative;
+    background-color: var(--color-white);
 }
 
-/* Sections */
+/* Sections - Flex properties removed (handled by utilities) */
 .menu__logo {
     flex-shrink: 0;
     max-width: 280px;
@@ -23,34 +15,6 @@
     height: 52px;
     width: auto;
     object-fit: contain;
-}
-
-.menu__utilities {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.menu__nav {
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.menu__nav-list {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.menu__actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-shrink: 0;
 }
 
 /* Responsive Layout Adjustments */

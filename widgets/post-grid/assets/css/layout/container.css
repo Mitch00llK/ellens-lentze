@@ -7,9 +7,6 @@
 
 /* Header */
 .ellens-post-grid-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     max-width: var(--container-max-width);
     margin-bottom: 3.75rem;
     /* approx 60px bottom margin? Grid gap is 40px but header spacing usually more */

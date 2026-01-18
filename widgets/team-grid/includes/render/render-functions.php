@@ -31,7 +31,7 @@ class Render_Functions {
         $description   = $settings['section_description'];
 
 		?>
-		<div class="ellens-team-grid-wrapper p-md pt-3xl pb-3xl">
+		<div class="ellens-team-grid-wrapper p-md pt-3xl pb-3xl mx-auto w-full">
             <!-- Header Section -->
             <div class="team-grid-header mb-lg">
                 <?php if ( ! empty( $section_title ) ) : ?>
@@ -44,7 +44,7 @@ class Render_Functions {
             </div>
 
             <!-- Grid -->
-            <div class="team-grid">
+            <div class="team-grid d-grid gap-md">
                 <?php while ( $team_query->have_posts() ) : $team_query->the_post(); 
                     $job_title = get_post_meta( get_the_ID(), '_ellens_team_function', true );
                     $image_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );

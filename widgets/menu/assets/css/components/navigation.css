@@ -15,13 +15,8 @@
     color: var(--color-secondary);
 }
 
-/* Dropdown Support */
-.menu__nav-item {
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
+/* Dropdown Support - Utilities used for nav-item layout */
+/* .menu__nav-item handled by utilities */
 
 .menu__nav-item--has-children .menu__nav-link {
     display: flex;
@@ -40,23 +35,19 @@
 
 /* Sub-menu (Desktop) */
 .menu__sub-menu {
-    position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     background: #ffffff;
     min-width: 220px;
     padding: 1rem;
-    border-radius: 12px;
+    border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-xl);
     /* Sleek shadow */
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
     z-index: 100;
     /* Prevent overflow on smaller screens */
     max-width: calc(100vw - 2rem);
@@ -140,6 +131,7 @@
 
 /* Tablet/Desktop Transition (below 1678px but above 1280px) */
 @media (min-width: 1280px) and (max-width: 1677px) {
+
     /* Ensure nav doesn't overflow */
     .menu__nav {
         flex-shrink: 1;

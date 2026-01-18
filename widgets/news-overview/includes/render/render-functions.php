@@ -58,7 +58,7 @@ class Render_Functions {
             
             <!-- FEATURED SECTION -->
             <?php if ( 'yes' === $settings['show_featured'] && $featured_query && $featured_query->have_posts() ) : ?>
-            <div class="news-overview__featured-grid">
+            <div class="news-overview__featured-grid d-grid gap-lg">
                 <?php while ( $featured_query->have_posts() ) : $featured_query->the_post(); 
                     $img_url = get_the_post_thumbnail_url( get_the_ID(), 'large' );
                     $cats = get_the_category();
@@ -132,7 +132,7 @@ class Render_Functions {
 
             <!-- MAIN GRID -->
             <?php if ( $query->have_posts() ) : ?>
-                <div class="news-overview__grid">
+                <div class="news-overview__grid d-grid gap-lg">
                     <?php while ( $query->have_posts() ) : $query->the_post(); 
                         $cats = get_the_category();
                         $cat_slugs = [];
