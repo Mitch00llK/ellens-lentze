@@ -13,7 +13,6 @@
     font-family: var(--font-family-serif);
     font-size: var(--h2-font-size);
     color: var(--color-white) !important;
-    margin: 0;
 }
 
 @media (max-width: 768px) {

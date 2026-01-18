@@ -125,3 +125,25 @@ function register_ellens_search_handler() {
 }
 add_action( 'init', 'register_ellens_search_handler' );
 
+/**
+ * Get Unused CSS Report
+ * 
+ * Helper function to get unused CSS report.
+ * 
+ * Usage:
+ *   $report = get_ellens_unused_css_report();
+ *   $report = get_ellens_unused_css_report(['output_format' => 'json']);
+ *   $report = get_ellens_unused_css_report(['css_paths' => ['assets/css/globals/utilities.css']]);
+ * 
+ * @param array $options Optional. Detection options:
+ *                      - 'css_paths' (array): Specific CSS files to check
+ *                      - 'scan_paths' (array): Paths to scan for usage
+ *                      - 'exclude_utilities' (bool): Exclude utility classes (default: true)
+ *                      - 'output_format' (string): 'array', 'json', 'html' (default: 'array')
+ * @return array|string Unused CSS report
+ */
+function get_ellens_unused_css_report( $options = [] ) {
+    require_once( __DIR__ . '/includes/assets/class-unused-css-detector.php' );
+    return \EllensLentze\Includes\Assets\Unused_CSS_Detector::get_report( $options );
+}
+

@@ -8,7 +8,6 @@
 
 /* Heading */
 .contact-info__heading {
-    margin: 0;
     font-family: var(--font-family-serif);
     font-size: 2rem;
     /* 32px */
@@ -22,7 +21,6 @@
 /* Description */
 .contact-info__description,
 .contact-info__description p {
-    margin: 0;
     font-family: var(--font-family-sans);
     font-size: 1.125rem;
     /* 18px */
@@ -35,13 +33,9 @@
 
 /* Contact Items */
 .contact-info__item {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--spacing-sm);
     color: var(--color-light-blue-500);
     width: 608px;
     /* Fixed width from Figma */
-    max-width: 100%;
 }
 
 .contact-info__item i {
@@ -67,7 +61,6 @@
     /* 32/18 */
     letter-spacing: 0.18px;
     color: var(--color-light-blue-500);
-    margin: 0;
     text-decoration: none;
     flex-grow: 1;
 }
@@ -79,18 +72,13 @@
 
 /* Opening Hours Container */
 .contact-info__hours-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     border: 1px solid var(--color-blue-400);
     border-radius: 8px;
     padding: var(--spacing-md) var(--spacing-lg);
     /* 16px 24px */
-    width: 100%;
 }
 
 .contact-info__hours-title {
-    margin: 0;
     font-family: var(--font-family-serif);
     font-size: 1.25rem;
     /* 20px */
@@ -102,19 +90,13 @@
 }
 
 .contact-info__hours-list {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
     margin-top: 0.5rem;
     /* Optical separation from title */
 }
 
 .contact-info__hours-item {
-    display: flex;
-    justify-content: flex-start;
-    /* Or space-between if width permits */
     gap: 1.5rem;
-    /* Just enough space */
+    /* Just enough space - custom gap, not standard spacing */
     color: var(--color-white-500);
     font-family: var(--font-family-sans);
     font-size: 1.125rem;
@@ -148,18 +130,11 @@
 
 /* Financial Details */
 .contact-info__financial {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-    margin-top: var(--spacing-md);
     width: 596px;
     /* Fixed width from Figma */
-    max-width: 100%;
 }
 
 .contact-info__financial-item {
-    display: flex;
-    flex-direction: column;
     gap: 0;
 }
 
@@ -172,7 +147,6 @@
     /* 36px */
     letter-spacing: 0.4px;
     color: var(--color-white-500);
-    margin: 0;
 }
 
 .contact-info__financial-value,
@@ -185,5 +159,4 @@
     /* 32px */
     letter-spacing: 0.18px;
     color: var(--color-white-500);
-    margin: 0;
 }

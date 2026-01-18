@@ -21,7 +21,7 @@ class Render_Functions {
             $overlay_url = esc_url( $settings['graphic_overlay']['url'] );
         }
 
-        $widget->add_render_attribute( 'wrapper', 'class', 'action-buttons p-md pt-2xl' );
+        $widget->add_render_attribute( 'wrapper', 'class', 'action-buttons py-2xl' );
         $widget->add_render_attribute( 'card', 'class', [ 'action-buttons__card', 'p-3xl' ] );
         
         // Add background image style if graphic overlay is set

@@ -12,8 +12,8 @@ class Render_Functions {
 	public static function render_widget( $widget ) {
 		$settings = $widget->get_settings_for_display();
 
-        $widget->add_render_attribute( 'wrapper', 'class', [ 'image-text-block', 'p-md', 'mb-xl' ] );
-        $widget->add_render_attribute( 'container', 'class', [ 'image-text-block__container', 'd-flex', 'flex-wrap', 'flex-row' ] );
+        $widget->add_render_attribute( 'wrapper', 'class', [ 'image-text-block', 'py-2xl', '' ] );
+        $widget->add_render_attribute( 'container', 'class', [ 'image-text-block__container', 'd-flex', 'flex-nowrap', 'flex-row', 'justify-center', 'align-items-center' ] );
 
         // Layout Switch
         if ( 'right' === $settings['image_position'] ) {
@@ -25,14 +25,24 @@ class Render_Functions {
             <div <?php $widget->print_render_attribute_string( 'container' ); ?>>
                 
                 <!-- Image Wrapper -->
-                <div class="image-text-block__image-wrapper">
-                    <?php if ( ! empty( $settings['image']['url'] ) ) : ?>
-                        <?php echo \Elementor\Group_Control_Image_Size::get_attachment_image_html( $settings, 'full', 'image' ); ?>
+                <div class="image-text-block__image-wrapper d-flex justify-center align-items-center max-w-50">
+                    <?php if ( ! empty( $settings['image']['id'] ) ) : 
+                        $image_id = $settings['image']['id'];
+                        $image_size = isset( $settings['image_size'] ) ? $settings['image_size'] : 'full';
+                    ?>
+                        <?php echo wp_get_attachment_image( 
+                            $image_id, 
+                            $image_size, 
+                            false, 
+                            [ 'class' => 'image-text-block__image' ] 
+                        ); ?>
+                    <?php elseif ( ! empty( $settings['image']['url'] ) ) : ?>
+                        <img src="<?php echo esc_url( $settings['image']['url'] ); ?>" alt="<?php echo esc_attr( \Elementor\Control_Media::get_image_alt( $settings['image'] ) ); ?>" class="image-text-block__image" />
                     <?php endif; ?>
                 </div>
 
                 <!-- Content Wrapper -->
-                <div class="image-text-block__content-wrapper p-2xl">
+                <div class="image-text-block__content-wrapper p-2xl d-flex flex-column justify-center gap-md" max-w-50>
                     <?php if ( ! empty( $settings['title'] ) ) : ?>
                         <h2 class="image-text-block__title m-0"><?php echo esc_html( $settings['title'] ); ?></h2>
                     <?php endif; ?>

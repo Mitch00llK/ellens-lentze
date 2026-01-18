@@ -8,7 +8,6 @@
 
 /* Container */
 .sidebar-faq-container {
-    width: 100%;
     max-width: var(--container-max-width);
     margin: 0 auto;
     display: flex;
@@ -28,7 +27,6 @@
     font-family: var(--font-family-serif);
     font-size: var(--h2-font-size);
     line-height: var(--h2-line-height);
-    margin: 0;
     color: var(--color-white);
     /* Enforce white */
 }

@@ -9,7 +9,6 @@
 
 /* Header Section */
 .team-grid-header {
-    margin-bottom: var(--spacing-lg);
     max-width: 800px;
     /* Optional: limit width for readability */
 }
@@ -24,7 +23,6 @@
     letter-spacing: 0.04em;
     /* 0.64px */
     color: var(--color-white);
-    margin-bottom: var(--spacing-sm);
 }
 
 .team-grid-header .section-description {
