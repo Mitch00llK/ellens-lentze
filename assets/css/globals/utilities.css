@@ -1633,11 +1633,73 @@
 }
 
 /* =========================================
-   Responsive Spacing Optimizations
+   Responsive Utility Optimizations
+   ========================================= 
+   
+   AUTO-RESPONSIVE UTILITIES:
+   These utilities automatically adapt on smaller screens, so you don't need
+   to add responsive variant classes (like -tablet or -mobile).
+   
+   Just use the base class in HTML:
+   - flex-row -> auto-stacks (column) on tablet/mobile
+   - max-w-50 -> auto full-width on tablet/mobile
+   - w-30/40/50/60/70/80/90 -> auto full-width on tablet/mobile
+   - Large spacing (xl, 2xl, 3xl) -> auto-reduces on tablet/mobile
+   - Large border-radius (xl, 2xl) -> auto-reduces on tablet/mobile
+   - gap-2xl/3xl -> auto-reduces on tablet/mobile
+   
+   Only add component-specific responsive CSS for unique behaviors that
+   can't be handled by these global responsive overrides.
    ========================================= */
 
 /* Tablet (max-width: 1024px) - Scale down larger spacing values */
 @media (max-width: 1024px) {
+
+    /* =========================================
+       Responsive Layout Overrides
+       Common patterns that automatically adapt
+       ========================================= */
+
+    /* Flex Direction - Auto-stack rows on smaller screens */
+    .flex-row {
+        flex-direction: column;
+    }
+
+    /* Max Width - Percentage widths become full width on smaller screens */
+    .max-w-30,
+    .max-w-40,
+    .max-w-50,
+    .max-w-60,
+    .max-w-70,
+    .max-w-80,
+    .max-w-90 {
+        max-width: 100% !important;
+    }
+
+    /* Width - Percentage widths become full width on smaller screens */
+    .w-30,
+    .w-40,
+    .w-50,
+    .w-60,
+    .w-70,
+    .w-80,
+    .w-90 {
+        width: 100% !important;
+    }
+
+    /* Gap - Reduce larger gaps on tablet */
+    .gap-2xl {
+        gap: 2rem !important;
+        /* 32px instead of 48px */
+    }
+
+    .gap-3xl {
+        gap: 2.5rem !important;
+        /* 40px instead of 64px */
+    }
+
+    /* Note: justify-between remains space-between on mobile.
+       Use flex-column utility if you need stacking behavior. */
 
     /* Large margins - reduce by ~25% */
     .m-2xl {
@@ -1817,6 +1879,31 @@
 
 /* Mobile (max-width: 768px) - Further reduce spacing for smaller screens */
 @media (max-width: 768px) {
+
+    /* =========================================
+       Mobile-Specific Layout Overrides
+       ========================================= */
+
+    /* Gap - Further reduce on mobile */
+    .gap-xl {
+        gap: 1rem !important;
+        /* 16px instead of 32px */
+    }
+
+    .gap-2xl {
+        gap: 1.5rem !important;
+        /* 24px instead of 48px */
+    }
+
+    .gap-3xl {
+        gap: 2rem !important;
+        /* 32px instead of 64px */
+    }
+
+    /* Flex-wrap - Ensure wrapping on mobile */
+    .flex-nowrap {
+        flex-wrap: wrap;
+    }
 
     /* Large margins - reduce by ~40-50% */
     .m-xl {

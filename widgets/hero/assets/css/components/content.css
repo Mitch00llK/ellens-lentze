@@ -27,3 +27,129 @@
     font-size: var(--body-font-size);
     line-height: var(--body-line-height);
 }
+
+/* Contact Form Container */
+.hero__form-container {
+    /* Utility classes: d-flex, flex-column */
+    position: relative;
+    z-index: 1;
+    padding: var(--card-padding-large);
+    /* Match hero__content padding */
+    height: 100%;
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    flex-direction: column;
+}
+
+.hero__form-heading {
+    font-family: var(--h3-font-family);
+    font-size: var(--h3-font-size);
+    font-weight: var(--h3-font-weight);
+    line-height: var(--h3-line-height);
+    color: var(--color-white);
+    margin: 0 0 var(--spacing-lg) 0;
+}
+
+/* Form Styling - High Specificity Overrides for Gravity Forms */
+.hero__form .gform_wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.hero__form .gform_heading {
+    display: none !important;
+}
+
+/* Inputs */
+.hero__form .gform_wrapper input[type="text"],
+.hero__form .gform_wrapper input[type="email"],
+.hero__form .gform_wrapper input[type="tel"],
+.hero__form .gform_wrapper input[type="number"],
+.hero__form .gform_wrapper input[type="url"],
+.hero__form .gform_wrapper textarea {
+    width: 100% !important;
+    padding: 12px 16px !important;
+    font-family: var(--body-font-family) !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: var(--color-black-500) !important;
+    background-color: var(--color-gray-100) !important;
+    border: 1px solid transparent !important;
+    border-radius: var(--border-radius-xs) !important;
+    box-shadow: none !important;
+}
+
+.hero__form .gform_wrapper textarea {
+    min-height: 120px !important;
+    resize: vertical !important;
+}
+
+/* Focus State */
+.hero__form .gform_wrapper input:focus,
+.hero__form .gform_wrapper textarea:focus {
+    border-color: var(--color-orange-500) !important;
+    outline: none !important;
+    background-color: var(--color-white) !important;
+}
+
+/* Labels */
+.hero__form .gform_wrapper .gfield_label {
+    display: block !important;
+    color: var(--color-white) !important;
+    font-family: var(--body-font-family) !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    margin-bottom: 8px !important;
+    float: none !important;
+}
+
+/* Required Asterisk */
+.hero__form .gform_wrapper .gfield_required {
+    color: var(--color-orange-500) !important;
+}
+
+/* Submit Button */
+.hero__form .gform_wrapper .gform_footer,
+.hero__form .gform_wrapper .gform_page_footer {
+    padding: 0 !important;
+    margin-top: var(--spacing-md) !important;
+    text-align: right !important;
+}
+
+.hero__form .gform_wrapper input[type="submit"],
+.hero__form .gform_wrapper button.gform_button {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: var(--spacing-sm) !important;
+    width: auto !important;
+    padding: 12px 32px !important;
+    font-family: var(--body-font-family) !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    text-transform: capitalize !important;
+    color: var(--color-white) !important;
+    background-color: var(--color-orange-500) !important;
+    border: none !important;
+    border-radius: var(--border-radius-full) !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.hero__form .gform_wrapper input[type="submit"]:hover,
+.hero__form .gform_wrapper button.gform_button:hover {
+    background-color: var(--color-orange-400) !important;
+}
+
+/* Validation Errors */
+.hero__form .gform_wrapper .gfield_error input,
+.hero__form .gform_wrapper .gfield_error textarea {
+    border-color: #d32f2f !important;
+}
+
+.hero__form .gform_wrapper .validation_message {
+    color: var(--color-orange-500) !important;
+    font-style: italic !important;
+    font-size: 13px !important;
+    margin-top: 4px !important;
+}

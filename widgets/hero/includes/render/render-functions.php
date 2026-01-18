@@ -77,42 +77,64 @@ class Render_Functions {
                  <?php endif; ?>
             </div>
 
-            <div class="hero__container">
+            <div class="hero__container d-flex items-center mx-auto">
                 <?php 
                 $show_card = isset( $settings['show_card_container'] ) ? $settings['show_card_container'] : 'yes';
                 if ( 'yes' === $show_card ) : 
                 ?>
-                <div class="hero__card">
+                <div class="hero__card d-flex flex-column rounded-lg">
                      <div class="hero__card-bg">
                         <?php if ( ! empty( $graphic_html ) ) echo $graphic_html; ?>
                      </div>
                      
-                     <div class="hero__content">
-                        <?php if ( ! empty( $subtitle ) ) : ?>
-                            <span <?php $widget->print_render_attribute_string( 'subtitle' ); ?>><?php echo esc_html( $subtitle ); ?></span>
-                        <?php endif; ?>
+                     <?php 
+                     $enable_contact_form = isset( $settings['enable_contact_form'] ) && 'yes' === $settings['enable_contact_form'];
+                     
+                     if ( $enable_contact_form ) :
+                         // Show form instead of content
+                         $form_heading = isset( $settings['form_heading'] ) ? $settings['form_heading'] : '';
+                         $gravity_form_shortcode = isset( $settings['gravity_form_shortcode'] ) ? $settings['gravity_form_shortcode'] : '';
+                     ?>
+                         <div class="hero__form-container rounded-lg">
+                             <?php if ( ! empty( $form_heading ) ) : ?>
+                                 <h3 class="hero__form-heading"><?php echo esc_html( $form_heading ); ?></h3>
+                             <?php endif; ?>
+                             
+                             <?php if ( ! empty( $gravity_form_shortcode ) ) : ?>
+                                 <div class="hero__form">
+                                     <?php echo do_shortcode( $gravity_form_shortcode ); ?>
+                                 </div>
+                             <?php endif; ?>
+                         </div>
+                     <?php else : ?>
+                         <!-- Default content (title, description, button) -->
+                         <div class="hero__content d-flex flex-column justify-center">
+                            <?php if ( ! empty( $subtitle ) ) : ?>
+                                <span <?php $widget->print_render_attribute_string( 'subtitle' ); ?>><?php echo esc_html( $subtitle ); ?></span>
+                            <?php endif; ?>
 
-                        <?php if ( ! empty( $title ) ) : ?>
-                            <h1 <?php $widget->print_render_attribute_string( 'title' ); ?>><?php echo wp_kses_post( $title ); ?></h1>
-                        <?php endif; ?>
+                            <?php if ( ! empty( $title ) ) : ?>
+                                <h1 <?php $widget->print_render_attribute_string( 'title' ); ?>><?php echo wp_kses_post( $title ); ?></h1>
+                            <?php endif; ?>
 
-                        <?php 
-                        $show_description = isset( $settings['show_description'] ) ? $settings['show_description'] : 'yes';
-                        if ( 'yes' === $show_description && ! empty( $description ) ) : ?>
-                            <div <?php $widget->print_render_attribute_string( 'description' ); ?>><?php echo wp_kses_post( $description ); ?></div>
-                        <?php endif; ?>
+                            <?php 
+                            $show_description = isset( $settings['show_description'] ) ? $settings['show_description'] : 'yes';
+                            if ( 'yes' === $show_description && ! empty( $description ) ) : ?>
+                                <div <?php $widget->print_render_attribute_string( 'description' ); ?>><?php echo wp_kses_post( $description ); ?></div>
+                            <?php endif; ?>
 
-                        <?php 
-                        $show_button = isset( $settings['show_button'] ) ? $settings['show_button'] : 'yes';
-                        if ( 'yes' === $show_button && ! empty( $button_text ) ) : ?>
-                            <a <?php $widget->print_render_attribute_string( 'button' ); ?>>
-                                <?php echo esc_html( $button_text ); ?>
-                                <span class="hero__button-icon" aria-hidden="true">
-                                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                                </span>
-                            </a>
-                        <?php endif; ?>
-                     </div>
+                            <?php 
+                            $show_button = isset( $settings['show_button'] ) ? $settings['show_button'] : 'yes';
+                            if ( 'yes' === $show_button && ! empty( $button_text ) ) : ?>
+                                <a <?php $widget->print_render_attribute_string( 'button' ); ?>>
+                                    <?php echo esc_html( $button_text ); ?>
+                                    <span class="hero__button-icon d-flex items-center justify-center" aria-hidden="true">
+                                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                    </span>
+                                </a>
+                            <?php endif; ?>
+                         </div>
+                     <?php endif; ?>
                 </div>
                 <?php endif; ?>
             </div>
@@ -123,47 +145,26 @@ class Render_Functions {
 
     /**
      * Render Full Width Blue Layout.
-     * Supports optional contact form on the right side when enabled.
      */
     public static function render_layout_full_width_blue( $widget, $settings ) {
         $subtitle = $settings['subtitle'];
         $title = $settings['title'];
         $description = $settings['description'];
         
-        // Check if contact form is enabled
-        $enable_contact_form = isset( $settings['enable_contact_form'] ) && 'yes' === $settings['enable_contact_form'];
-        
-        // Form Settings (only if form is enabled)
-        $form_heading = '';
-        $gravity_form_shortcode = '';
-        
-        if ( $enable_contact_form ) {
-            $form_heading = isset( $settings['form_heading'] ) ? $settings['form_heading'] : '';
-            $gravity_form_shortcode = isset( $settings['gravity_form_shortcode'] ) ? $settings['gravity_form_shortcode'] : '';
-        }
-        
         // Graphic Overlay (Building Pattern)
         if ( ! empty( $settings['graphic_overlay']['url'] ) ) {
             $overlay_url = esc_url( $settings['graphic_overlay']['url'] );
             $overlay_alt = \Elementor\Control_Media::get_image_alt( $settings['graphic_overlay'] );
-            $pattern_class = $enable_contact_form ? 'hero-fw__pattern hero-fw__pattern--contact' : 'hero-fw__pattern';
              $graphic_html = sprintf( 
-                '<img src="%s" class="%s" alt="%s" aria-hidden="true">',
+                '<img src="%s" class="hero-fw__pattern" alt="%s" aria-hidden="true">',
                  $overlay_url,
-                esc_attr( $pattern_class ),
                  esc_attr( $overlay_alt )
             );
         } else {
             $graphic_html = '';
         }
-
-        // Add modifier class if contact form is enabled
-        $wrapper_classes = [ 'hero', 'hero--template-full-width' ];
-        if ( $enable_contact_form ) {
-            $wrapper_classes[] = 'hero--template-full-width--with-form';
-        }
         
-        $widget->add_render_attribute( 'wrapper', 'class', $wrapper_classes );
+        $widget->add_render_attribute( 'wrapper', 'class', [ 'hero', 'hero--template-full-width' ] );
         $widget->add_render_attribute( 'title', 'class', 'hero-fw__title' );
         $widget->add_render_attribute( 'subtitle', 'class', 'hero-fw__subtitle' );
         $widget->add_render_attribute( 'description', 'class', 'hero-fw__description' );
@@ -178,46 +179,8 @@ class Render_Functions {
                  </div>
             </div>
 
-            <div class="hero-fw__container<?php echo $enable_contact_form ? ' hero-fw__container--with-form' : ''; ?>">
-                <?php if ( $enable_contact_form ) : ?>
-                    <!-- Two-column layout with contact form -->
-                    <div class="hero-fw__left">
-                        <div class="hero-fw__content">
-                            <?php if ( ! empty( $subtitle ) ) : ?>
-                                <p <?php $widget->print_render_attribute_string( 'subtitle' ); ?>><?php echo esc_html( $subtitle ); ?></p>
-                            <?php endif; ?>
-
-                            <?php if ( ! empty( $title ) ) : ?>
-                                <h1 <?php $widget->print_render_attribute_string( 'title' ); ?>><?php echo wp_kses_post( $title ); ?></h1>
-                            <?php endif; ?>
-
-                            <?php 
-                            $show_description = isset( $settings['show_description'] ) ? $settings['show_description'] : 'yes';
-                            if ( 'yes' === $show_description && ! empty( $description ) ) : ?>
-                                <div <?php $widget->print_render_attribute_string( 'description' ); ?>><?php echo wp_kses_post( $description ); ?></div>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-
-                    <!-- Right Column: Contact Form -->
-                    <div class="hero-fw__right">
-                        <div class="hero-fw__form-card">
-                            <?php if ( ! empty( $form_heading ) ) : ?>
-                                <h3 class="hero-fw__form-heading"><?php echo esc_html( $form_heading ); ?></h3>
-                            <?php endif; ?>
-                            
-                            <div class="hero-fw__form">
-                                <?php 
-                                if ( ! empty( $gravity_form_shortcode ) ) {
-                                    echo do_shortcode( $gravity_form_shortcode );
-                                }
-                                ?>
-                            </div>
-                        </div>
-                    </div>
-                <?php else : ?>
-                    <!-- Single column layout (original full width blue) -->
-                 <div class="hero-fw__content">
+            <div class="hero-fw__container d-flex items-center mx-auto px-md">
+                 <div class="hero-fw__content d-flex flex-column gap-md">
                     <?php if ( ! empty( $subtitle ) ) : ?>
                         <p <?php $widget->print_render_attribute_string( 'subtitle' ); ?>><?php echo esc_html( $subtitle ); ?></p>
                     <?php endif; ?>
@@ -252,7 +215,6 @@ class Render_Functions {
                             </a>
                         <?php endif; ?>
                  </div>
-                <?php endif; ?>
             </div>
 
         </section>
@@ -289,7 +251,7 @@ class Render_Functions {
             $graphic_html = '';
         }
 
-        $widget->add_render_attribute( 'wrapper', 'class', [ 'hero', 'hero--template-ioc mb-xl' ] );
+        $widget->add_render_attribute( 'wrapper', 'class', [ 'hero', 'hero--template-ioc', 'd-flex', 'items-center', 'mb-xl' ] );
         $widget->add_render_attribute( 'title', 'class', 'hero-ioc__title' );
         $widget->add_render_attribute( 'subtitle', 'class', 'hero-ioc__subtitle' );
         $widget->add_render_attribute( 'description', 'class', 'hero-ioc__description' );
@@ -307,11 +269,11 @@ class Render_Functions {
 
             <div class="hero-ioc__container">
                 <div class="hero-ioc__card">
-                    <div class="hero-ioc__card-bg">
+                    <div class="hero-ioc__card-bg rounded-lg">
                         <?php if ( ! empty( $graphic_html ) ) echo $graphic_html; ?>
                     </div>
                     
-                    <div class="hero-ioc__content">
+                    <div class="hero-ioc__content d-flex flex-column gap-sm">
                         <?php if ( ! empty( $subtitle ) ) : ?>
                             <p <?php $widget->print_render_attribute_string( 'subtitle' ); ?>><?php echo esc_html( $subtitle ); ?></p>
                         <?php endif; ?>

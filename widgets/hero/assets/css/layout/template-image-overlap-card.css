@@ -5,12 +5,11 @@
  */
 
 .hero--template-ioc {
+    /* Utility classes: d-flex, items-center */
     position: relative;
     width: 100%;
     min-height: 600px;
     overflow: visible;
-    display: flex;
-    align-items: center;
     margin-bottom: calc(var(--spacing-3xl) + 50px);
 }
 
@@ -86,13 +85,11 @@
 
 /* Content */
 .hero-ioc__content {
+    /* Utility classes: d-flex, flex-column, gap-sm */
     position: relative;
     z-index: 1;
     padding: var(--spacing-2xl) var(--spacing-xl);
     /* Internal padding */
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
 }
 
 .hero-ioc__subtitle {
