@@ -12,12 +12,12 @@ class Render_Functions {
 	public static function render_widget( $widget ) {
 		$settings = $widget->get_settings_for_display();
 
-        $widget->add_render_attribute( 'wrapper', 'class', 'image-text-block p-md' );
-        $widget->add_render_attribute( 'container', 'class', 'image-text-block__container' );
+        $widget->add_render_attribute( 'wrapper', 'class', [ 'image-text-block', 'p-md', 'mb-xl' ] );
+        $widget->add_render_attribute( 'container', 'class', [ 'image-text-block__container', 'd-flex', 'flex-wrap', 'flex-row' ] );
 
         // Layout Switch
         if ( 'right' === $settings['image_position'] ) {
-            $widget->add_render_attribute( 'container', 'class', 'image-text-block__container--reverse' );
+            $widget->add_render_attribute( 'container', 'class', 'flex-row-reverse' );
         }
 
 		?>

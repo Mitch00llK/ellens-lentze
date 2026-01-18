@@ -1,0 +1,12 @@
+.image-text-block {
+    width: 100%;
+}
+
+.image-text-block__container {
+    width: 100%;
+    border-radius: var(--ellens-itb-spacing-block-radius);
+    overflow: hidden;
+    min-height: 480px;
+    /* Based on design height */
+    position: relative;
+}
