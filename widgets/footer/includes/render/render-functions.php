@@ -69,7 +69,7 @@ class Render_Functions {
                             $menu_items = wp_get_nav_menu_items( $menu_id );
                             
                             if ( ! empty( $menu_items ) && ! is_wp_error( $menu_items ) ) : ?>
-                                <ul class="footer__menu">
+                                <ul class="footer__menu p-0 m-0">
                                     <?php foreach ( $menu_items as $item ) : 
                                         // Skip if not a valid object
                                         if ( empty( $item->url ) ) continue;

@@ -6,14 +6,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4rem 0;
 }
 
 .services-cluster__container {
     position: relative;
     width: 100%;
     max-width: var(--container-max-width);
-    min-height: 800px;
     margin: 0 auto;
     flex-grow: 1;
     /* Allow it to fill the flex parent */
@@ -30,7 +28,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 45vw;
-    height: 60vh;
     max-width: 600px;
     z-index: 1;
     /* z-index-image */

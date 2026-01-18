@@ -128,12 +128,6 @@
     color: var(--color-white-500);
 }
 
-/* Financial Details */
-.contact-info__financial {
-    width: 596px;
-    /* Fixed width from Figma */
-}
-
 .contact-info__financial-item {
     gap: 0;
 }

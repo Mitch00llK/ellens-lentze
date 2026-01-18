@@ -95,7 +95,7 @@ class Render_Functions {
                          $form_heading = isset( $settings['form_heading'] ) ? $settings['form_heading'] : '';
                          $gravity_form_shortcode = isset( $settings['gravity_form_shortcode'] ) ? $settings['gravity_form_shortcode'] : '';
                      ?>
-                         <div class="hero__form-container rounded-lg">
+                         <div class="hero__form-container rounded-lg py-3xl px-md">
                              <?php if ( ! empty( $form_heading ) ) : ?>
                                  <h3 class="hero__form-heading"><?php echo esc_html( $form_heading ); ?></h3>
                              <?php endif; ?>

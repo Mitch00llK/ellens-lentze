@@ -35,7 +35,6 @@
     font-family: var(--font-family-sans);
     font-size: var(--body-font-size);
     line-height: var(--body-line-height);
-    margin: 0;
     color: var(--color-white);
 }
 

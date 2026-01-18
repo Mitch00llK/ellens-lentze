@@ -20,6 +20,11 @@ class Render_Services_Grid {
             <div class="ellens-services-grid__container">
                 <?php foreach ( $settings['cards_list'] as $card ) : ?>
                     <?php
+                    // Skip hidden cards
+                    if ( ! empty( $card['card_hide'] ) && 'yes' === $card['card_hide'] ) {
+                        continue;
+                    }
+
                     $has_link = ! empty( $card['card_link']['url'] );
                     $link_tag = $has_link ? 'a' : 'div';
                     $link_attrs = '';

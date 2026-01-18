@@ -2,7 +2,6 @@
     .services-cluster {
         display: block;
         min-height: auto;
-        padding: 3rem 0;
     }
 
     .services-cluster__container {
@@ -18,10 +17,13 @@
         left: auto;
         transform: none;
         width: 100%;
-        height: 400px;
         /* approx */
         margin-bottom: 2rem;
         display: none;
+    }
+
+    .services-cluster__visuals--show-mobile {
+        display: block;
     }
 
     .services-cluster__cards {

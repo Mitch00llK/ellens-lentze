@@ -12,8 +12,14 @@ class Render_Functions {
 	public static function render_widget( $widget ) {
 		$settings = $widget->get_settings_for_display();
 
-        $widget->add_render_attribute( 'wrapper', 'class', 'services-cluster' );
+        $widget->add_render_attribute( 'wrapper', 'class', 'services-cluster p-2xl' );
         $widget->add_render_attribute( 'container', 'class', 'services-cluster__container' );
+
+        // Visuals visibility on mobile
+        $visuals_class = 'services-cluster__visuals';
+        if ( ! empty( $settings['show_visuals_on_mobile'] ) && 'yes' === $settings['show_visuals_on_mobile'] ) {
+            $visuals_class .= ' services-cluster__visuals--show-mobile';
+        }
 
         // Mask Style if provided
         $mask_style = '';
@@ -27,7 +33,7 @@ class Render_Functions {
             <div <?php $widget->print_render_attribute_string( 'container' ); ?>>
                 
                 <!-- Cluster Title -->
-                <?php if ( ! empty( $settings['cluster_title'] ) ) : ?>
+                <?php if ( ! empty( $settings['cluster_title'] ) && empty( $settings['hide_cluster_title'] ) ) : ?>
                     <div class="services-cluster__title-wrapper">
                         <?php
                         $title_tag = \Elementor\Utils::validate_html_tag( $settings['cluster_title_tag'] );
@@ -37,7 +43,7 @@ class Render_Functions {
                 <?php endif; ?>
 
                 <!-- Central Visuals -->
-                <div class="services-cluster__visuals">
+                <div class="<?php echo esc_attr( $visuals_class ); ?>">
                     <?php if ( ! empty( $settings['center_image']['url'] ) ) : ?>
                          <img src="<?php echo esc_url( $settings['center_image']['url'] ); ?>" 
                               alt="<?php echo esc_attr( \Elementor\Control_Media::get_image_alt( $settings['center_image'] ) ); ?>" 
@@ -51,6 +57,11 @@ class Render_Functions {
                     <?php 
                     if ( $settings['items'] ) {
                         foreach ( $settings['items'] as $index => $item ) {
+                            // Skip hidden items
+                            if ( ! empty( $item['hide'] ) && 'yes' === $item['hide'] ) {
+                                continue;
+                            }
+
                             $item_key = 'item_' . $index;
                             $descriptive_classes = [
                                 'services-cluster__card-wrapper',

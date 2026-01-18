@@ -13,7 +13,7 @@ class Render_Functions {
 		$settings = $widget->get_settings_for_display();
 
         $widget->add_render_attribute( 'wrapper', 'class', [ 'image-text-block', 'py-2xl', '' ] );
-        $widget->add_render_attribute( 'container', 'class', [ 'image-text-block__container', 'd-flex', 'flex-row', 'justify-center', 'align-items-center' ] );
+        $widget->add_render_attribute( 'container', 'class', [ 'image-text-block__container', 'd-flex', 'flex-row', 'justify-center', 'align-items-center', 'flex-wrap', 'p-md' ] );
 
         // Layout Switch
         if ( 'right' === $settings['image_position'] ) {

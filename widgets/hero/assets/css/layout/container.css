@@ -46,6 +46,8 @@
     margin-left: 50%;
     width: 35vw;
     /* Fluid width approx 33-35% of view */
+    max-width: min(50%, calc(var(--container-max-width) * 0.5));
+    /* Never exceed half of container or half of container max-width */
     min-height: 50vh;
     /* Fluid height */
     pointer-events: auto;
