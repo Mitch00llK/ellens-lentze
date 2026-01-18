@@ -225,7 +225,5 @@ class Assets_Config {
             [ 'ellens-global-variables', 'font-awesome-5', 'ellens-global-utilities' ],
             '1.0.0'
         );
-=======
->>>>>>> parent of 90032fb (Merge pull request #5 from Mitch00llK/component-image-text-block)
     }
 }

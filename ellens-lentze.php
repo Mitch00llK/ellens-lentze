@@ -61,8 +61,6 @@ function register_ellens_hero_widget( $widgets_manager ) {
 
     require_once( __DIR__ . '/widgets/contact-info/contact-info-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\Contact_Info_Widget() );
-=======
->>>>>>> parent of 90032fb (Merge pull request #5 from Mitch00llK/component-image-text-block)
 }
 add_action( 'elementor/widgets/register', 'register_ellens_hero_widget' );
 
