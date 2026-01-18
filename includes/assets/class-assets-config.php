@@ -202,6 +202,14 @@ class Assets_Config {
             true
         );
 
+        wp_register_script(
+            'menu-search-handler',
+            plugins_url( 'widgets/menu/assets/js/menu-search.js', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [ 'elementor-frontend' ], 
+            '1.0.0',
+            true
+        );
+
         /* Footer Widget Assets */
         wp_register_style(
             'ellens-footer',

@@ -26,14 +26,14 @@
     /* 3. Style Utility Buttons (Circular, Icon Only) */
     .menu__utility-btn {
         /* Ensure perfectly round button */
-        width: 48px !important;
-        height: 48px !important;
-        min-width: 48px !important;
-        min-height: 48px !important;
-        max-width: 48px !important;
-        max-height: 48px !important;
-        border-radius: 50% !important;
-        padding: 0 !important;
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        min-height: 48px;
+        max-width: 48px;
+        max-height: 48px;
+        border-radius: 50%;
+        padding: 0;
         justify-content: center;
         align-items: center;
         background-color: var(--color-blue-50);
@@ -78,6 +78,6 @@
     /* Hide others definitely */
     .menu__nav,
     .menu__actions {
-        display: none !important;
+        display: none;
     }
 }

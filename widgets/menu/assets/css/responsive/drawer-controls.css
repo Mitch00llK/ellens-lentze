@@ -1,0 +1,89 @@
+/* Mobile Controls & Toggles */
+
+/* Main Mobile Toggle Button */
+.menu__toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    cursor: pointer;
+    z-index: 1002;
+    /* Above drawer */
+    position: relative;
+}
+
+@media (max-width: 1280px) {
+    .menu__toggle {
+        display: block;
+    }
+}
+
+/* Submenu Toggle Button */
+.menu__mobile-toggle {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: var(--color-primary);
+    transition: transform 0.3s ease, color 0.3s ease;
+    flex-shrink: 0;
+    /* Prevent shrinking */
+    position: relative;
+    z-index: 1;
+    /* Ensure button is above other elements */
+    min-width: 44px;
+    /* Better touch target */
+    min-height: 44px;
+}
+
+.menu__mobile-toggle:hover,
+.menu__mobile-toggle:focus {
+    color: var(--color-secondary);
+    outline: none;
+}
+
+.menu__mobile-item--has-children.is-open .menu__mobile-toggle {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Icon */
+.menu__mobile-dropdown-icon {
+    font-size: 0.875rem;
+    opacity: 0.6;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    margin-left: 0.5rem;
+}
+
+.menu__mobile-item--has-children.is-open .menu__mobile-dropdown-icon {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+/* Mobile Language Switcher */
+@media (max-width: 1280px) {
+    .menu__lang-switcher--mobile {
+        align-self: flex-start;
+        margin-top: auto;
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        opacity: 0;
+        transform: translateY(20px);
+        /* Initial state for animation */
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        transition-delay: 0.5s;
+        /* Animate after menu items */
+    }
+
+    .menu__lang-switcher--mobile.animate-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .menu__lang-switcher--mobile .menu__lang-btn {
+        transition: all 0.3s ease;
+    }
+
+    .menu__lang-switcher--mobile .menu__lang-btn:hover {
+        transform: scale(1.05);
+    }
+}

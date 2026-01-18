@@ -8,6 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Image Text Block Widget Wrapper.
  *
+ * @package EllensLentze\Widgets\Image_Text_Block
  * @since 1.0.0
  */
 class Image_Text_Block_Wrapper {

@@ -26,7 +26,7 @@
 }
 
 .dis-content__text h2 {
-    font-family: var(--font-family-serif) !important;
+    font-family: var(--font-family-serif);
     font-size: var(--h2-font-size);
     line-height: var(--h2-line-height);
     letter-spacing: var(--h2-letter-spacing);
@@ -34,7 +34,7 @@
 }
 
 .dis-content__text h3 {
-    font-family: var(--font-family-serif) !important;
+    font-family: var(--font-family-serif);
     font-size: var(--h3-font-size);
     line-height: var(--h3-line-height);
     letter-spacing: var(--h3-letter-spacing);
@@ -42,7 +42,7 @@
 }
 
 .dis-content__text h4 {
-    font-family: var(--font-family-serif) !important;
+    font-family: var(--font-family-serif);
     font-size: var(--h4-font-size);
     line-height: var(--h4-line-height);
     letter-spacing: var(--h4-letter-spacing);
@@ -73,7 +73,7 @@
 }
 
 .dis-content__post-content h2 {
-    font-family: var(--font-family-serif) !important;
+    font-family: var(--font-family-serif);
     font-size: var(--h2-font-size);
     line-height: var(--h2-line-height);
     letter-spacing: var(--h2-letter-spacing);
@@ -81,7 +81,7 @@
 }
 
 .dis-content__post-content h3 {
-    font-family: var(--font-family-serif) !important;
+    font-family: var(--font-family-serif);
     font-size: var(--h3-font-size);
     line-height: var(--h3-line-height);
     letter-spacing: var(--h3-letter-spacing);
@@ -89,7 +89,7 @@
 }
 
 .dis-content__post-content h4 {
-    font-family: var(--font-family-serif) !important;
+    font-family: var(--font-family-serif);
     font-size: var(--h4-font-size);
     line-height: var(--h4-line-height);
     letter-spacing: var(--h4-letter-spacing);

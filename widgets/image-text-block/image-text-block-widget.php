@@ -12,6 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Elementor widget that displays an image and content side-by-side with switchable layout.
  *
+ * @package EllensLentze\Widgets\Image_Text_Block
  * @since 1.0.0
  */
 class Image_Text_Block_Widget extends Widget_Base {

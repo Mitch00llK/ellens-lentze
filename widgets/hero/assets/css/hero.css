@@ -17,6 +17,7 @@
 
 /* Component styles */
 @import './components/content.css';
+@import './components/form.css';
 
 /* Responsive styles */
 @import './responsive/tablet.css';

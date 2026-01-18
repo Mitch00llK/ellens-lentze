@@ -12,6 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Elementor widget that displays a main content area and a sidebar card.
  *
+ * @package EllensLentze\Widgets\Detailed_Info_Section
  * @since 1.0.0
  */
 class Detailed_Info_Section_Widget extends Widget_Base {

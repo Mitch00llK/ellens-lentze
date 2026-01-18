@@ -14,4 +14,6 @@
 
 /* Responsive */
 @import './responsive/drawer.css';
+@import './responsive/drawer-navigation.css';
+@import './responsive/drawer-controls.css';
 @import './responsive/mobile-header.css';

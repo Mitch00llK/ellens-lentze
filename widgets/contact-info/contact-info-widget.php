@@ -12,6 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Elementor widget that displays contact information with icons.
  *
+ * @package EllensLentze\Widgets\Contact_Info
  * @since 1.0.0
  */
 class Contact_Info_Widget extends Widget_Base {

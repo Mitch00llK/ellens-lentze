@@ -15,6 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Elementor widget that displays the site footer with 4 columns:
  * Brand/Contact, Specialismes, Adviesgebieden, and Information.
  *
+ * @package EllensLentze\Widgets\Footer
  * @since 1.0.0
  */
 class Footer_Widget extends Widget_Base {

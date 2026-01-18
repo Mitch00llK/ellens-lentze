@@ -8,6 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Action Buttons Widget Wrapper.
  *
+ * @package EllensLentze\Widgets\Action_Buttons
  * @since 1.0.0
  */
 class Action_Buttons_Wrapper {

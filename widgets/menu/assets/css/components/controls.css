@@ -84,14 +84,14 @@
 
     .menu__utility-btn {
         /* Make button perfectly round when icon-only */
-        width: 40px !important;
-        height: 40px !important;
-        min-width: 40px !important;
-        min-height: 40px !important;
-        max-width: 40px !important;
-        max-height: 40px !important;
-        padding: 0 !important;
-        border-radius: 50% !important;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        max-width: 40px;
+        max-height: 40px;
+        padding: 0;
+        border-radius: 50%;
         justify-content: center;
         align-items: center;
         box-sizing: border-box;

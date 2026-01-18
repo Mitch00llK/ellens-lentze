@@ -1,0 +1,254 @@
+/* =========================================
+   Gravity Forms Style Overrides
+   ========================================= */
+
+/* Use a high specificity ID or data attribute selector if possible, 
+   otherwise rely on the class chain. Removing !important where possible. */
+
+/* Wrapper & Structure */
+body .hero__form .gform_wrapper,
+body .hero__form-container .gform_wrapper {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    width: 100%;
+}
+
+body .hero__form .gform_wrapper form,
+body .hero__form-container .gform_wrapper form {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+body .hero__form .gform_wrapper .gform_body,
+body .hero__form-container .gform_wrapper .gform_body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+body .hero__form .gform_heading,
+body .hero__form-container .gform_heading {
+    display: none;
+}
+
+/* Field Container */
+body .hero__form .gform_wrapper .gfield,
+body .hero__form-container .gform_wrapper .gfield {
+    margin: 0;
+    padding: 0;
+}
+
+/* Labels */
+body .hero__form .gform_wrapper .gfield_label,
+body .hero__form-container .gform_wrapper .gfield_label {
+    display: block;
+    color: var(--color-white);
+    font-family: var(--body-font-family);
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    padding: 0;
+    float: none;
+    line-height: 1.5;
+}
+
+/* Required Asterisk */
+body .hero__form .gform_wrapper .gfield_required,
+body .hero__form-container .gform_wrapper .gfield_required {
+    color: var(--color-orange-500);
+    margin-left: 4px;
+}
+
+/* Input Fields - All Types */
+body .hero__form .gform_wrapper input[type="text"],
+body .hero__form .gform_wrapper input[type="email"],
+body .hero__form .gform_wrapper input[type="tel"],
+body .hero__form .gform_wrapper input[type="number"],
+body .hero__form .gform_wrapper input[type="url"],
+body .hero__form .gform_wrapper input[type="password"],
+body .hero__form .gform_wrapper input[type="date"],
+body .hero__form .gform_wrapper input[type="time"],
+body .hero__form .gform_wrapper textarea,
+body .hero__form .gform_wrapper select,
+body .hero__form-container .gform_wrapper input[type="text"],
+body .hero__form-container .gform_wrapper input[type="email"],
+body .hero__form-container .gform_wrapper input[type="tel"],
+body .hero__form-container .gform_wrapper input[type="number"],
+body .hero__form-container .gform_wrapper input[type="url"],
+body .hero__form-container .gform_wrapper input[type="password"],
+body .hero__form-container .gform_wrapper input[type="date"],
+body .hero__form-container .gform_wrapper input[type="time"],
+body .hero__form-container .gform_wrapper textarea,
+body .hero__form-container .gform_wrapper select {
+    width: 100%;
+    padding: 12px 16px;
+    font-family: var(--body-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-black-500);
+    background-color: var(--color-white);
+    border: 1px solid transparent;
+    border-radius: var(--border-radius-sm);
+    box-shadow: none;
+    margin: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Textarea Specific */
+body .hero__form .gform_wrapper textarea,
+body .hero__form-container .gform_wrapper textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Focus States */
+body .hero__form .gform_wrapper input:focus,
+body .hero__form .gform_wrapper textarea:focus,
+body .hero__form .gform_wrapper select:focus,
+body .hero__form-container .gform_wrapper input:focus,
+body .hero__form-container .gform_wrapper textarea:focus,
+body .hero__form-container .gform_wrapper select:focus {
+    border-color: var(--color-orange-500);
+    outline: none;
+    background-color: var(--color-white);
+    box-shadow: 0 0 0 2px rgba(239, 138, 0, 0.1);
+}
+
+/* Submit Button */
+body .hero__form .gform_wrapper .gform_footer,
+body .hero__form .gform_wrapper .gform_page_footer,
+body .hero__form-container .gform_wrapper .gform_footer,
+body .hero__form-container .gform_wrapper .gform_page_footer {
+    padding: 0;
+    margin: 0;
+    margin-top: var(--spacing-md);
+    text-align: right;
+    border: none;
+}
+
+body .hero__form .gform_wrapper input[type="submit"],
+body .hero__form .gform_wrapper button.gform_button,
+body .hero__form-container .gform_wrapper input[type="submit"],
+body .hero__form-container .gform_wrapper button.gform_button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    width: auto;
+    min-width: auto;
+    max-width: none;
+    padding: 12px 32px;
+    font-family: var(--body-font-family);
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: var(--color-white);
+    background-color: var(--color-orange-500);
+    border: none;
+    border-radius: var(--border-radius-full);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+body .hero__form .gform_wrapper input[type="submit"]:hover,
+body .hero__form .gform_wrapper button.gform_button:hover,
+body .hero__form-container .gform_wrapper input[type="submit"]:hover,
+body .hero__form-container .gform_wrapper button.gform_button:hover {
+    background-color: var(--color-orange-400);
+    transform: translateY(-1px);
+}
+
+/* Validation Errors */
+body .hero__form .gform_wrapper .gfield_error,
+body .hero__form-container .gform_wrapper .gfield_error {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+body .hero__form .gform_wrapper .gfield_error input,
+body .hero__form .gform_wrapper .gfield_error textarea,
+body .hero__form-container .gform_wrapper .gfield_error input,
+body .hero__form-container .gform_wrapper .gfield_error textarea {
+    border-color: var(--color-error);
+    background-color: var(--color-white);
+}
+
+body .hero__form .gform_wrapper .validation_message,
+body .hero__form-container .gform_wrapper .validation_message {
+    color: var(--color-orange-500);
+    font-style: italic;
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 4px;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+body .hero__form .gform_wrapper .gfield_error .validation_message,
+body .hero__form-container .gform_wrapper .gfield_error .validation_message {
+    color: var(--color-error);
+}
+
+/* Success/Error Messages */
+body .hero__form .gform_wrapper .gform_confirmation_message,
+body .hero__form .gform_wrapper .validation_error,
+body .hero__form-container .gform_wrapper .gform_confirmation_message,
+body .hero__form-container .gform_wrapper .validation_error {
+    margin: var(--spacing-md) 0;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-xs);
+}
+
+body .hero__form .gform_wrapper .gform_confirmation_message {
+    color: var(--color-white);
+    background-color: rgba(0, 128, 0, 0.1);
+    border: 1px solid rgba(0, 128, 0, 0.3);
+}
+
+body .hero__form .gform_wrapper .validation_error {
+    color: var(--color-error);
+    background-color: rgba(211, 47, 47, 0.1);
+    border: 1px solid rgba(211, 47, 47, 0.3);
+}
+
+/* Hide Gravity Forms default description */
+body .hero__form .gform_wrapper .gform_description,
+body .hero__form-container .gform_wrapper .gform_description {
+    display: none;
+}
+
+/* Field Descriptions */
+body .hero__form .gform_wrapper .gfield_description,
+body .hero__form-container .gform_wrapper .gfield_description {
+    color: var(--color-white);
+    font-size: 12px;
+    margin-top: 4px;
+    opacity: 0.8;
+}
+
+/* Remove default list styles from GF */
+body .hero__form .gform_wrapper ul,
+body .hero__form .gform_wrapper ol,
+body .hero__form .gform_wrapper li,
+body .hero__form-container .gform_wrapper ul,
+body .hero__form-container .gform_wrapper ol,
+body .hero__form-container .gform_wrapper li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
