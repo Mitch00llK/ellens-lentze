@@ -32,13 +32,13 @@ class Render_Functions {
                 </div>
 
                 <!-- Content Wrapper -->
-                <div class="image-text-block__content-wrapper">
+                <div class="image-text-block__content-wrapper p-2xl">
                     <?php if ( ! empty( $settings['title'] ) ) : ?>
-                        <h2 class="image-text-block__title"><?php echo esc_html( $settings['title'] ); ?></h2>
+                        <h2 class="image-text-block__title m-0"><?php echo esc_html( $settings['title'] ); ?></h2>
                     <?php endif; ?>
 
                     <?php if ( ! empty( $settings['description'] ) ) : ?>
-                        <div class="image-text-block__description"><?php echo wp_kses_post( $settings['description'] ); ?></div>
+                        <div class="image-text-block__description m-0"><?php echo wp_kses_post( $settings['description'] ); ?></div>
                     <?php endif; ?>
 
                     <div class="image-text-block__actions">

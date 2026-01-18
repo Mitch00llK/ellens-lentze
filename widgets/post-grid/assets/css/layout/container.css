@@ -11,7 +11,7 @@
     justify-content: space-between;
     align-items: center;
     max-width: var(--container-max-width);
-    margin: 0 auto 3.75rem;
+    margin-bottom: 3.75rem;
     /* approx 60px bottom margin? Grid gap is 40px but header spacing usually more */
     padding: 0 var(--container-padding-desktop);
 }
@@ -38,7 +38,6 @@
     /* Default to 3 columns behavior */
     grid-template-columns: repeat(3, 1fr);
     max-width: var(--container-max-width);
-    margin: 0 auto;
     gap: 1rem;
 }
 

@@ -47,9 +47,9 @@ class Render_Functions {
 		?>
 		<div <?php $widget->print_render_attribute_string( 'wrapper' ); ?>>
             <!-- Header -->
-            <div class="ellens-post-grid-header">
+            <div class="ellens-post-grid-header mx-auto">
                 <?php if ( ! empty( $title ) ) : ?>
-                    <h2 class="section-title"><?php echo esc_html( $title ); ?></h2>
+                    <h2 class="section-title m-0"><?php echo esc_html( $title ); ?></h2>
                 <?php endif; ?>
 
                 <?php if ( ! empty( $btn_text ) ) : ?>
@@ -69,7 +69,7 @@ class Render_Functions {
                 $grid_class .= ' ellens-grid-cols-' . min( $post_count, 3 ); // Cap at 3 for class logic
             }
             ?>
-            <div class="<?php echo esc_attr( $grid_class ); ?>">
+            <div class="<?php echo esc_attr( $grid_class ); ?> mx-auto">
                 <?php if ( $query->have_posts() ) : ?>
                     <?php while ( $query->have_posts() ) : $query->the_post(); 
                         $categories = get_the_category();

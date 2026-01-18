@@ -37,19 +37,19 @@ class Render_Services_Grid {
                         $link_attrs = ' href="' . esc_url( $link_url ) . '"' . $link_target . $link_nofollow;
                     }
                     ?>
-                    <<?php echo $link_tag; ?> class="<?php echo esc_attr( $card_classes ); ?>"<?php echo $link_attrs; ?>>
+                    <<?php echo $link_tag; ?> class="<?php echo esc_attr( $card_classes ); ?> p-xl"<?php echo $link_attrs; ?>>
                         <?php if ( $is_featured && ! empty( $card['card_bg_graphic']['url'] ) ) : ?>
                             <div class="ellens-service-card__bg-graphic">
                                 <img src="<?php echo esc_url( $card['card_bg_graphic']['url'] ); ?>" alt="" aria-hidden="true" />
                             </div>
                         <?php endif; ?>
 
-                        <div class="ellens-service-card__icon">
+                        <div class="ellens-service-card__icon mb-sm">
                             <?php Icons_Manager::render_icon( $card['card_icon'], [ 'aria-hidden' => 'true' ] ); ?>
                         </div>
                         <div class="ellens-service-card__content">
                             <?php if ( ! empty( $card['card_title'] ) ) : ?>
-                                <h3 class="ellens-service-card__title"><?php echo esc_html( $card['card_title'] ); ?></h3>
+                                <h3 class="ellens-service-card__title m-0"><?php echo esc_html( $card['card_title'] ); ?></h3>
                             <?php endif; ?>
 
                             <?php if ( ! empty( $card['card_description'] ) ) : ?>

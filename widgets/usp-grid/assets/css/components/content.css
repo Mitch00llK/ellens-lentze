@@ -11,7 +11,6 @@
     /* roughly 50px */
     height: 3rem;
     /* 48px */
-    margin-bottom: 0.5rem;
 }
 
 .usp-grid__icon svg {
@@ -42,7 +41,6 @@
     font-size: var(--h2-font-size);
     line-height: var(--h3-line-height);
     font-weight: var(--h3-font-weight);
-    margin: 0;
 }
 
 /* Description */
@@ -53,5 +51,4 @@
     line-height: 1.7;
     /* 32px/18px approx */
     letter-spacing: 0.01em;
-    margin: 0;
 }

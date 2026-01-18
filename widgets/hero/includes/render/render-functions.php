@@ -52,8 +52,8 @@ class Render_Functions {
         }
 
         $widget->add_render_attribute( 'wrapper', 'class', 'hero' );
-        $widget->add_render_attribute( 'title', 'class', 'hero__title' );
-        $widget->add_render_attribute( 'subtitle', 'class', 'hero__subtitle' );
+        $widget->add_render_attribute( 'title', 'class', [ 'hero__title', 'mb-lg' ] );
+        $widget->add_render_attribute( 'subtitle', 'class', [ 'hero__subtitle', 'mb-xl' ] );
         $widget->add_render_attribute( 'description', 'class', 'hero__description' );
         
         // Button Attributes

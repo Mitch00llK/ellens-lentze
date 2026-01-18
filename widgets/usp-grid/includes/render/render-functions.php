@@ -26,18 +26,18 @@ class Render_Functions {
                         ?>
                         <div <?php $widget->print_render_attribute_string( $item_key ); ?>>
                             <?php if ( ! empty( $item['icon']['value'] ) ) : ?>
-                                <div class="usp-grid__icon">
+                                <div class="usp-grid__icon mb-sm">
                                     <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
                                 </div>
                             <?php endif; ?>
                             
                             <div class="usp-grid__content">
                                 <?php if ( ! empty( $item['title'] ) ) : ?>
-                                    <h3 class="usp-grid__title"><?php echo esc_html( $item['title'] ); ?></h3>
+                                    <h3 class="usp-grid__title m-0"><?php echo esc_html( $item['title'] ); ?></h3>
                                 <?php endif; ?>
 
                                 <?php if ( ! empty( $item['description'] ) ) : ?>
-                                    <div class="usp-grid__description"><?php echo wp_kses_post( $item['description'] ); ?></div>
+                                    <div class="usp-grid__description m-0"><?php echo wp_kses_post( $item['description'] ); ?></div>
                                 <?php endif; ?>
                             </div>
                         </div>

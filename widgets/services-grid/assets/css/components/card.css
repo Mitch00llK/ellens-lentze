@@ -1,6 +1,5 @@
 .ellens-service-card {
     background-color: var(--color-blue-700) !important;
-    padding: var(--card-padding);
     border-radius: 8px;
     display: flex;
     display: flex;
@@ -21,7 +20,6 @@
 .ellens-service-card__icon {
     width: 48px;
     height: 48px;
-    margin-bottom: 0.5rem;
     color: var(--icon-color-primary);
 }
 
@@ -57,7 +55,6 @@
     font-weight: 400;
     line-height: 1.2;
     color: var(--color-white);
-    margin: 0;
 }
 
 .ellens-service-card__description {

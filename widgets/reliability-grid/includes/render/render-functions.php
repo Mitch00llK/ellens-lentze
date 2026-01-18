@@ -62,14 +62,14 @@ class Render_Functions {
 				<?php Icons_Manager::render_icon( $item['feature_icon'], [ 'aria-hidden' => 'true' ] ); ?>
 			</div>
 			<div class="ellens-rg-feature__content">
-				<h3 class="ellens-rg-feature__title">
+				<h3 class="ellens-rg-feature__title m-0">
 					<span class="ellens-rg-feature__title-text"><?php echo esc_html( $item['feature_title'] ); ?></span>
 					<?php if ( ! empty( $item['feature_subtitle'] ) ) : ?>
 						<span class="ellens-rg-feature__subtitle"><?php echo esc_html( $item['feature_subtitle'] ); ?></span>
 					<?php endif; ?>
 				</h3>
 				<?php if ( ! empty( $item['feature_description'] ) ) : ?>
-					<p class="ellens-rg-feature__desc"><?php echo esc_html( $item['feature_description'] ); ?></p>
+					<p class="ellens-rg-feature__desc m-0"><?php echo esc_html( $item['feature_description'] ); ?></p>
 				<?php endif; ?>
 			</div>
 		</div>

@@ -31,7 +31,7 @@ class Render_Functions {
                     <div class="services-cluster__title-wrapper">
                         <?php
                         $title_tag = \Elementor\Utils::validate_html_tag( $settings['cluster_title_tag'] );
-                        printf( '<%1$s class="services-cluster__main-title">%2$s</%1$s>', $title_tag, esc_html( $settings['cluster_title'] ) );
+                        printf( '<%1$s class="services-cluster__main-title m-0">%2$s</%1$s>', $title_tag, esc_html( $settings['cluster_title'] ) );
                         ?>
                     </div>
                 <?php endif; ?>
@@ -74,10 +74,10 @@ class Render_Functions {
                             }
                             ?>
                             <div <?php $widget->print_render_attribute_string( $item_key ); ?>>
-                                <<?php echo $link_tag; ?> class="services-cluster__card">
-                                    <div class="services-cluster__header">
+                                <<?php echo $link_tag; ?> class="services-cluster__card p-xl">
+                                    <div class="services-cluster__header mb-sm">
                                         <?php if ( ! empty( $item['icon']['value'] ) ) : ?>
-                                            <div class="services-cluster__icon">
+                                            <div class="services-cluster__icon m-0">
                                                 <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
                                             </div>
                                         <?php endif; ?>
@@ -86,7 +86,7 @@ class Render_Functions {
                                     </div>
                                     
                                     <?php if ( ! empty( $item['description'] ) ) : ?>
-                                        <div class="services-cluster__description"><?php echo wp_kses_post( $item['description'] ); ?></div>
+                                        <div class="services-cluster__description m-0"><?php echo wp_kses_post( $item['description'] ); ?></div>
                                     <?php endif; ?>
                                 </<?php echo $link_tag; ?>>
                             </div>

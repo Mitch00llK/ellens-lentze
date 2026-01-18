@@ -5,7 +5,6 @@
 .action-buttons__card {
     background-color: var(--color-blue-700);
     border-radius: var(--card-radius);
-    padding: 4rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;

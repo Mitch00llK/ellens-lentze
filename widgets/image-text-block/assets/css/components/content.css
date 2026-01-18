@@ -16,7 +16,6 @@
 /* Content Wrapper */
 .image-text-block__content-wrapper {
     flex: 1 1 50%;
-    padding: var(--card-padding-large);
     background-color: var(--color-blue-700);
     display: flex;
     flex-direction: column;
@@ -30,7 +29,6 @@
     font-family: var(--h2-font-family);
     font-size: var(--h2-font-size);
     line-height: var(--h2-line-height);
-    margin: 0;
 }
 
 .image-text-block__description {
@@ -38,7 +36,6 @@
     font-size: clamp(1rem, 1.125vw, 1.125rem);
     /* 16px -> 18px */
     line-height: 1.6;
-    margin: 0;
 }
 
 /* Buttons - Inherits from .btn */
