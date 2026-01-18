@@ -10,6 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Ensures the widget class is loaded safely.
  *
+ * @package EllensLentze\Widgets\Hero
  * @since 1.0.0
  */
 class Hero_Wrapper {

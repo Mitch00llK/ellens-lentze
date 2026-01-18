@@ -12,6 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * Elementor widget that displays a title, description, and a list of action buttons.
  *
+ * @package EllensLentze\Widgets\Action_Buttons
  * @since 1.0.0
  */
 class Action_Buttons_Widget extends Widget_Base {

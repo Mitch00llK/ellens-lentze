@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Menu Widget.
  *
+ * @package EllensLentze\Widgets\Menu
  * @since 1.0.0
  */
 class Menu_Widget extends Widget_Base {
@@ -34,7 +35,7 @@ class Menu_Widget extends Widget_Base {
 	}
 
     public function get_script_depends() {
-		return [ 'menu-handler' ];
+		return [ 'menu-handler', 'menu-search-handler' ];
 	}
 
 	public function get_style_depends() {

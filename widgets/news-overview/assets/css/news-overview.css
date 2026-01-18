@@ -3,6 +3,7 @@
 @import './layout/grid.css';
 @import './components/filter.css';
 @import './components/card.css';
+@import './components/card-featured.css';
 
 /**
  * News Overview Widget Styles
