@@ -23,9 +23,6 @@ function register_ellens_hero_widget( $widgets_manager ) {
     require_once( __DIR__ . '/widgets/usp-grid/usp-grid-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\USP_Grid_Widget() );
 
-    require_once( __DIR__ . '/widgets/image-text-block/image-text-block-widget.php' );
-	$widgets_manager->register( new \EllensLentze\Widgets\Image_Text_Block_Widget() );
-
     require_once( __DIR__ . '/widgets/services-cluster/services-cluster-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\Services_Cluster_Widget() );
 
@@ -64,6 +61,8 @@ function register_ellens_hero_widget( $widgets_manager ) {
 
     require_once( __DIR__ . '/widgets/contact-info/contact-info-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\Contact_Info_Widget() );
+=======
+>>>>>>> parent of 90032fb (Merge pull request #5 from Mitch00llK/component-image-text-block)
 }
 add_action( 'elementor/widgets/register', 'register_ellens_hero_widget' );
 

@@ -71,15 +71,6 @@ class Assets_Config {
             '1.0.0'
         );
 
-        /* Image Text Block Widget Assets (Consolidated) */
-        wp_register_style(
-            'ellens-image-text-block',
-            plugins_url( 'widgets/image-text-block/assets/css/image-text-block.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ],
-            '1.0.0'
-        );
-
-
         /* Services Cluster Widget Assets (Consolidated) */
         wp_register_style(
             'ellens-services-cluster',
@@ -234,5 +225,7 @@ class Assets_Config {
             [ 'ellens-global-variables', 'font-awesome-5', 'ellens-global-utilities' ],
             '1.0.0'
         );
+=======
+>>>>>>> parent of 90032fb (Merge pull request #5 from Mitch00llK/component-image-text-block)
     }
 }
