@@ -46,7 +46,7 @@ class Render_Functions {
                     <?php foreach ( $settings['utility_buttons'] as $item ) : 
                         $link_key = 'utility_link_' . $item['_id'];
                         $widget->add_link_attributes( $link_key, $item['link'] );
-                        $widget->add_render_attribute( $link_key, 'class', 'menu__utility-btn' );
+                        $widget->add_render_attribute( $link_key, 'class', [ 'menu__utility-btn', 'd-inline-flex', 'items-center', 'justify-center', 'gap-sm', 'rounded-full', 'py-xs', 'px-md' ] );
                     ?>
                         <a <?php $widget->print_render_attribute_string( $link_key ); ?>>
                             <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
@@ -101,7 +101,7 @@ class Render_Functions {
             <div class="menu__actions">
                 <!-- Search -->
                  <?php if ( 'yes' === $settings['search_enabled'] ) : ?>
-                    <button class="menu__search-btn js-menu-search-toggle" aria-label="<?php echo esc_attr__( 'Search', 'ellens-lentze' ); ?>">
+                    <button class="menu__search-btn js-menu-search-toggle d-flex items-center justify-center rounded-full" aria-label="<?php echo esc_attr__( 'Search', 'ellens-lentze' ); ?>">
                         <i class="fas fa-search"></i>
                     </button>
                     
@@ -136,10 +136,10 @@ class Render_Functions {
                  <?php if ( 'yes' === $settings['show_language_switcher'] ) : ?>
                     <div class="menu__lang-switcher">
                          <!-- Simplified visual representation -->
-                        <button class="menu__lang-btn <?php echo ( 'nl' === $settings['current_lang'] ) ? 'is-active' : ''; ?>">
+                        <button class="menu__lang-btn d-flex items-center rounded-full <?php echo ( 'nl' === $settings['current_lang'] ) ? 'is-active' : ''; ?>">
                              <span class="menu__flag">🇳🇱</span> NL
                         </button>
-                        <button class="menu__lang-btn <?php echo ( 'en' === $settings['current_lang'] ) ? 'is-active' : ''; ?>">
+                        <button class="menu__lang-btn d-flex items-center rounded-full <?php echo ( 'en' === $settings['current_lang'] ) ? 'is-active' : ''; ?>">
                              <span class="menu__flag">🇬🇧</span> EN
                         </button>
                     </div>
@@ -226,7 +226,7 @@ class Render_Functions {
                             <?php foreach ( $settings['utility_buttons'] as $item ) : 
                                 $link_key = 'mobile_utility_' . $item['_id'];
                                 $widget->add_link_attributes( $link_key, $item['link'] );
-                                $widget->add_render_attribute( $link_key, 'class', 'menu__utility-btn' );
+                                $widget->add_render_attribute( $link_key, 'class', [ 'menu__utility-btn', 'd-inline-flex', 'items-center', 'justify-center', 'gap-sm', 'rounded-full', 'py-xs', 'px-md' ] );
                             ?>
                                 <a <?php $widget->print_render_attribute_string( $link_key ); ?>>
                                     <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
@@ -239,10 +239,10 @@ class Render_Functions {
                     <!-- Mobile Language Switcher - Bottom of Menu -->
                     <?php if ( 'yes' === $settings['show_language_switcher'] ) : ?>
                         <div class="menu__lang-switcher menu__lang-switcher--mobile">
-                            <button class="menu__lang-btn <?php echo ( 'nl' === $settings['current_lang'] ) ? 'is-active' : ''; ?>">
+                            <button class="menu__lang-btn d-flex items-center rounded-full <?php echo ( 'nl' === $settings['current_lang'] ) ? 'is-active' : ''; ?>">
                                  <span class="menu__flag">🇳🇱</span> NL
                             </button>
-                            <button class="menu__lang-btn <?php echo ( 'en' === $settings['current_lang'] ) ? 'is-active' : ''; ?>">
+                            <button class="menu__lang-btn d-flex items-center rounded-full <?php echo ( 'en' === $settings['current_lang'] ) ? 'is-active' : ''; ?>">
                                  <span class="menu__flag">🇬🇧</span> EN
                             </button>
                         </div>

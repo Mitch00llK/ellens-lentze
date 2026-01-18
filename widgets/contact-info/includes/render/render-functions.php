@@ -18,8 +18,8 @@ class Render_Functions {
 		$email   = isset( $settings['email'] ) ? $settings['email'] : '';
 		$phone   = isset( $settings['phone'] ) ? $settings['phone'] : '';
 
-		$widget->add_render_attribute( 'wrapper', 'class', 'contact-info d-flex flex-row flex-wrap items-start gap-md w-full' );
-		$widget->add_render_attribute( 'primary', 'class', 'contact-info__primary d-flex flex-column gap-md' );
+		$widget->add_render_attribute( 'wrapper', 'class', 'contact-info d-flex flex-row flex-wrap items-start gap-md w-full py-2xl gap-xl' );
+		$widget->add_render_attribute( 'primary', 'class', 'contact-info__primary d-flex flex-column gap-md max-w-50' );
 		$widget->add_render_attribute( 'header', 'class', 'contact-info__header d-flex flex-column items-start gap-md w-full flex-shrink-0' );
 		$widget->add_render_attribute( 'heading', 'class', 'contact-info__heading m-0' );
 		$widget->add_render_attribute( 'description', 'class', 'contact-info__description m-0' );

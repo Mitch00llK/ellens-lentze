@@ -1,11 +1,12 @@
 @media (max-width: 900px) {
+    /* Flex direction handled by utility class: flex-row-tablet (activates at 1024px) */
     .image-text-block__container {
-        flex-direction: column !important;
-        /* Stack vertically */
+        /* Utility class handles: flex-direction: column on tablet/mobile */
     }
 
     .image-text-block__image-wrapper,
     .image-text-block__content-wrapper {
+        /* Max-width handled by utility class: max-w-50-tablet (activates at 1024px) */
         flex: 1 1 auto;
         width: 100%;
     }

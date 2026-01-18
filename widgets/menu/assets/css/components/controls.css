@@ -2,15 +2,9 @@
 
 /* Utility Buttons (Phone/Email) */
 .menu__utility-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+    /* Utility classes: d-inline-flex, items-center, justify-center, gap-sm, rounded-full, py-xs px-md */
     background-color: var(--color-blue-50);
     border: 1px solid var(--color-blue-700);
-    border-radius: 9999px;
-    /* Pill */
-    padding: 0.25rem 1rem;
     text-decoration: none;
     color: var(--color-primary);
     font-family: var(--font-family-sans);
@@ -37,14 +31,11 @@
 
 /* Search Button */
 .menu__search-btn {
+    /* Utility classes: d-flex, items-center, justify-center, rounded-full */
     background: transparent;
     border: 1px solid var(--color-blue-700);
-    border-radius: 50%;
     width: 40px;
     height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: var(--color-primary);
     cursor: pointer;
     transition: all 0.3s ease;
@@ -67,17 +58,15 @@
 }
 
 .menu__lang-btn {
+    /* Utility classes: d-flex, items-center, rounded-full */
     background: none;
     border: none;
-    display: flex;
-    align-items: center;
     gap: 0.25rem;
     font-family: var(--font-family-sans);
     font-size: 0.875rem;
     color: var(--color-black-500);
     cursor: pointer;
     padding: 0.25rem 0.5rem;
-    border-radius: 9999px;
     transition: all 0.3s ease;
 }
 

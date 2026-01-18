@@ -15,7 +15,7 @@
     }
 
     .ellens-post-grid-header .btn {
-        align-self: flex-start;
+        /* Utility class: self-start */
     }
 
     /* Grid Single Col */

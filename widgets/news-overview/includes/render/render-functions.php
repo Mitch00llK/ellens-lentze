@@ -75,7 +75,7 @@ class Render_Functions {
                                 <?php endif; ?>
                                 <h3 class="news-overview__featured-title"><?php the_title(); ?></h3>
                                 
-                                <div class="news-overview__featured-btn btn btn--light">
+                                <div class="news-overview__featured-btn btn btn--light mt-auto d-flex items-center gap-sm py-sm px-lg rounded-full">
                                     <?php esc_html_e( 'Lees meer', 'ellens-lentze' ); ?>
                                     <i class="fas fa-arrow-right" aria-hidden="true"></i>
                                 </div>
@@ -104,7 +104,7 @@ class Render_Functions {
                     // Automatic Category Filtering
                     // "All" Button
                     ?>
-                    <button class="news-overview__filter-btn active" data-filter="*">
+                    <button class="news-overview__filter-btn active rounded-full py-sm px-lg d-flex items-center gap-sm" data-filter="*">
                         <?php esc_html_e( 'Alle berichten', 'ellens-lentze' ); ?>
                         <i class="fas fa-arrow-right"></i>
                     </button>
@@ -121,7 +121,7 @@ class Render_Functions {
                         // Skip Uncategorized if needed? usually ID 1.
                         if ( $category->slug === 'uncategorized' ) continue; 
                         ?>
-                        <button class="news-overview__filter-btn" data-filter="<?php echo esc_attr( $category->slug ); ?>">
+                        <button class="news-overview__filter-btn rounded-full py-sm px-lg d-flex items-center gap-sm" data-filter="<?php echo esc_attr( $category->slug ); ?>">
                             <?php echo esc_html( $category->name ); ?>
                             <i class="fas fa-arrow-right"></i>
                         </button>

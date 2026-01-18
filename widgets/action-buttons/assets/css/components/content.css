@@ -21,8 +21,7 @@
 }
 
 .action-buttons__icon {
-    display: flex;
-    align-items: center;
+    /* Utility classes: d-flex, items-center */
     font-size: 0.875rem;
     /* 14px */
 }

@@ -166,13 +166,18 @@
 }
 
 .hero-fw__form-heading {
-    font-family: var(--h3-font-family);
-    font-size: var(--h3-font-size);
+    font-family: var(--h2-font-family);
+    /* Use h2 for larger, more prominent heading */
+    font-size: var(--h2-font-size);
+    /* 24px (mobile) -> 32px (desktop) */
     font-weight: 700;
     /* Bold */
-    line-height: 1.2;
+    line-height: var(--h2-line-height);
+    /* 1.2 */
     color: var(--color-white);
     margin-bottom: var(--spacing-lg);
+    /* Ensure left alignment */
+    text-align: left;
 }
 
 /* Form Styling - High Specificity Overrides */

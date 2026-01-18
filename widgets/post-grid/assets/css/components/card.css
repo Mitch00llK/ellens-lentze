@@ -85,13 +85,9 @@
 }
 
 .post-read-more-btn {
-    margin-top: auto;
-    gap: 1rem;
-    border-radius: 100px;
+    /* Utility classes: mt-auto, gap-md, rounded-full, d-inline-flex, items-center */
     font-size: 1.125rem;
     font-weight: 400;
-    display: inline-flex;
-    align-items: center;
     transition: background-color 0.3s ease;
 }
 

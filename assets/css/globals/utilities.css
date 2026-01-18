@@ -1639,6 +1639,20 @@
 /* Tablet (max-width: 1024px) - Scale down larger spacing values */
 @media (max-width: 1024px) {
 
+    /* Responsive Flex Direction - Override to column on tablet/mobile */
+    .flex-row-tablet {
+        flex-direction: column !important;
+    }
+
+    .flex-row-reverse-tablet {
+        flex-direction: column !important;
+    }
+
+    /* Responsive Max Width - Change max-w-50 to max-w-100 on tablet/mobile */
+    .max-w-50-tablet {
+        max-width: 100% !important;
+    }
+
     /* Large margins - reduce by ~25% */
     .m-2xl {
         margin: 2.25rem !important;
@@ -1817,6 +1831,15 @@
 
 /* Mobile (max-width: 768px) - Further reduce spacing for smaller screens */
 @media (max-width: 768px) {
+
+    /* Responsive Flex Direction - Override to column on mobile */
+    .flex-row-mobile {
+        flex-direction: column !important;
+    }
+
+    .flex-row-reverse-mobile {
+        flex-direction: column !important;
+    }
 
     /* Large margins - reduce by ~40-50% */
     .m-xl {

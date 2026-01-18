@@ -78,12 +78,7 @@
 }
 
 .news-overview__featured-btn {
-    margin-top: auto;
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-sm) var(--spacing-lg);
-    border-radius: 9999px;
+    /* Utility classes: mt-auto, d-flex, items-center, gap-sm, py-sm px-lg, rounded-full */
     font-family: var(--font-family-sans);
     /* Animation Removed */
     background: var(--color-white);
