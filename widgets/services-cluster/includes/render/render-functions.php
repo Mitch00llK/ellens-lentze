@@ -12,8 +12,8 @@ class Render_Functions {
 	public static function render_widget( $widget ) {
 		$settings = $widget->get_settings_for_display();
 
-        $widget->add_render_attribute( 'wrapper', 'class', [ 'services-cluster', 'p-2xl', 'd-flex', 'justify-center', 'items-center', 'w-full' ] );
-        $widget->add_render_attribute( 'container', 'class', [ 'services-cluster__container', 'd-flex', 'justify-center', 'items-center', 'relative', 'w-full', 'mx-auto', 'flex-1' ] );
+        $widget->add_render_attribute( 'wrapper', 'class', [ 'services-cluster', 'p-2xl', 'd-flex', 'justify-center', 'w-full' ] );
+        $widget->add_render_attribute( 'container', 'class', [ 'services-cluster__container', 'relative', 'w-full', 'mx-auto', 'flex-1' ] );
 
         // Visuals visibility on mobile
         $visuals_class = 'services-cluster__visuals';
@@ -33,7 +33,7 @@ class Render_Functions {
             <div <?php $widget->print_render_attribute_string( 'container' ); ?>>
                 
                 <?php if ( ! empty( $settings['cluster_title'] ) && empty( $settings['hide_cluster_title'] ) ) : ?>
-                    <div class="services-cluster__title-wrapper absolute top-0 left-0">
+                    <div class="services-cluster__title-wrapper">
                         <?php
                         $title_tag = \Elementor\Utils::validate_html_tag( $settings['cluster_title_tag'] );
                         printf( '<%1$s class="services-cluster__main-title m-0">%2$s</%1$s>', $title_tag, esc_html( $settings['cluster_title'] ) );

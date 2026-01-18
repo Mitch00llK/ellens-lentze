@@ -109,8 +109,8 @@
     }
 }
 
-/* Medium Desktop (1280px - 1677px) - Compact navigation */
-@media (min-width: 1280px) and (max-width: 1677px) {
+/* Medium Desktop (1367px - 1677px) - Compact navigation */
+@media (min-width: 1367px) and (max-width: 1677px) {
     .menu__nav-list {
         gap: 1.5rem;
         /* Reduce gap for tighter spacing */
@@ -129,18 +129,22 @@
     }
 }
 
-/* Tablet/Desktop Transition (below 1678px but above 1280px) */
-@media (min-width: 1280px) and (max-width: 1677px) {
+/* Tablet/Desktop Transition (below 1678px but above 1366px) */
+@media (min-width: 1367px) and (max-width: 1677px) {
 
     /* Ensure nav doesn't overflow */
     .menu__nav {
         flex-shrink: 1;
         min-width: 0;
         /* Allow flex shrinking */
+        width: 100%;
+        /* Ensure full width usage */
     }
 
     .menu__nav-list {
         flex-wrap: nowrap;
         /* Prevent wrapping */
+        justify-content: flex-end;
+        /* Keep align right */
     }
 }

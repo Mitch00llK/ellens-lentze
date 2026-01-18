@@ -13,7 +13,7 @@
     position: relative;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1366px) {
     .menu__toggle {
         display: block;
     }
@@ -61,7 +61,7 @@
 }
 
 /* Mobile Language Switcher */
-@media (max-width: 1280px) {
+@media (max-width: 1366px) {
     .menu__lang-switcher--mobile {
         align-self: flex-start;
         margin-top: auto;

@@ -32,8 +32,8 @@
     }
 }
 
-/* Medium Desktop (1280px - 1677px) */
-@media (min-width: 1280px) and (max-width: 1677px) {
+/* Medium Desktop (1367px - 1677px) */
+@media (min-width: 1367px) and (max-width: 1677px) {
     .menu-wrapper {
         gap: 1rem;
         padding-left: clamp(1rem, 2vw, var(--container-padding-desktop));

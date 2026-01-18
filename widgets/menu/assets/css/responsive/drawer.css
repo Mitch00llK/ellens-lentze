@@ -2,14 +2,14 @@
 
 .menu__drawer {
     position: fixed;
-    top: 0;
+    top: 85px;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 85px);
     background: var(--color-white);
     z-index: 1001;
     /* Below toggle */
-    padding: 1.5rem;
+    padding: 1rem;
     /* Refined padding */
     transform: translateX(100%);
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -21,18 +21,9 @@
 }
 
 /* Backdrop overlay */
+/* Backdrop overlay removed as per request */
 .menu-wrapper.is-open::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1000;
-    opacity: 1;
-    transition: opacity 0.4s ease;
-    pointer-events: all;
+    display: none !important;
 }
 
 /* Open State */
@@ -42,15 +33,14 @@
 }
 
 .menu__drawer-inner {
-    min-height: calc(100vh - 3rem);
+    min-height: 100%;
     /* Account for padding */
     max-width: 100%;
 }
 
 /* Mobile Logo in Drawer (Same position as mobile header) */
 .menu__logo--mobile {
-    margin-right: auto;
-    margin-bottom: 0;
+    display: none !important;
 }
 
 .menu__logo--mobile img {
@@ -59,11 +49,10 @@
 }
 
 /* Responsive Breakpoints */
-@media (max-width: 1280px) {
+@media (max-width: 1366px) {
 
-    .menu__utilities,
     .menu__nav,
     .menu__actions {
-        display: none;
+        display: none !important;
     }
 }

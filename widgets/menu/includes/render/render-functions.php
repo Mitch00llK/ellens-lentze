@@ -46,11 +46,19 @@ class Render_Functions {
                     <?php foreach ( $settings['utility_buttons'] as $item ) : 
                         $link_key = 'utility_link_' . $item['_id'];
                         $widget->add_link_attributes( $link_key, $item['link'] );
-                        $widget->add_render_attribute( $link_key, 'class', 'menu__utility-btn inline-flex items-center justify-center gap-sm rounded-full whitespace-nowrap' );
+                        $widget->add_render_attribute( $link_key, 'class', 'menu__utility-btn btn--animated inline-flex items-center justify-center gap-sm rounded-full whitespace-nowrap' );
                     ?>
                         <a <?php $widget->print_render_attribute_string( $link_key ); ?>>
-                            <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
-                            <span><?php echo esc_html( $item['text'] ); ?></span>
+                            <!-- Visible Content -->
+                            <div class="btn__content">
+                                <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                                <span><?php echo esc_html( $item['text'] ); ?></span>
+                            </div>
+                            <!-- Hover Content (Duplicate) -->
+                             <div class="btn__hover-content">
+                                <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
+                                <span><?php echo esc_html( $item['text'] ); ?></span>
+                             </div>
                         </a>
                     <?php endforeach; ?>
                 <?php endif; ?>

@@ -12,8 +12,12 @@ class Render_Functions {
 	public static function render_widget( $widget ) {
 		$settings = $widget->get_settings_for_display();
 
+        // Calculate columns based on item count (max 4)
+        $item_count = ! empty( $settings['usps'] ) ? count( $settings['usps'] ) : 0;
+        $columns = ( $item_count > 0 ) ? min( $item_count, 4 ) : 3;
+
         $widget->add_render_attribute( 'wrapper', 'class', 'usp-grid py-2xl w-full' );
-        $widget->add_render_attribute( 'container', 'class', [ 'usp-grid__container', 'd-grid', 'grid-cols-3', 'mobile:grid-cols-1', 'gap-lg', 'w-full', 'items-start' ] );
+        $widget->add_render_attribute( 'container', 'class', [ 'usp-grid__container', 'd-grid', 'grid-cols-' . $columns, 'mobile:grid-cols-1', 'gap-lg', 'w-full', 'items-start' ] );
 
 		?>
 		<div <?php $widget->print_render_attribute_string( 'wrapper' ); ?>>

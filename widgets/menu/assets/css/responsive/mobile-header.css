@@ -1,5 +1,5 @@
 /* Mobile Header Styles (Tablet/Mobile) */
-@media (max-width: 1280px) {
+@media (max-width: 1366px) {
 
     /* 1. Layout Overrides */
     .menu-wrapper {
@@ -67,8 +67,7 @@
         background-color: var(--color-blue-500);
         /* Dark Blue */
         border: 1px solid var(--color-blue-500);
-        color: var(--color-white);
-        margin-left: 0.5rem;
+        color: var(--color-white)
     }
 
     .menu__toggle i {
@@ -78,6 +77,6 @@
     /* Hide others definitely */
     .menu__nav,
     .menu__actions {
-        display: none;
+        display: none !important;
     }
 }
