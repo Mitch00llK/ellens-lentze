@@ -48,7 +48,7 @@ class Render_Functions {
             <!-- Header Section -->
             <div class="team-slider-header">
                 <?php if ( ! empty( $section_title ) ) : ?>
-                    <h2 class="section-title"><?php echo esc_html( $section_title ); ?></h2>
+                    <h2 class="section-title m-0"><?php echo esc_html( $section_title ); ?></h2>
                 <?php endif; ?>
 
                 <?php if ( ! empty( $button_text ) && ! empty( $button_link ) ) :
@@ -78,9 +78,9 @@ class Render_Functions {
                                         </div>
                                     <?php endif; ?>
                                     <div class="team-info">
-                                        <h3 class="team-name"><?php the_title(); ?></h3>
+                                        <h3 class="team-name mb-xs"><?php the_title(); ?></h3>
                                         <?php if ( $job_title ) : ?>
-                                            <p class="team-job"><?php echo esc_html( $job_title ); ?></p>
+                                            <p class="team-job m-0"><?php echo esc_html( $job_title ); ?></p>
                                         <?php endif; ?>
                                         <!-- Arrow Button -->
                                         <a href="<?php the_permalink(); ?>" class="team-arrow" aria-label="<?php esc_attr_e( 'View profile', 'ellens-lentze' ); ?>">

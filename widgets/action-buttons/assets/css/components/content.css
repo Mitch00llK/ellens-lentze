@@ -5,12 +5,10 @@
     line-height: var(--h2-line-height);
     letter-spacing: var(--h2-letter-spacing);
     font-weight: var(--h2-font-weight);
-    margin: 0;
 }
 
 /* Description */
 .action-buttons__description {
-    margin: 0;
 }
 
 /* Button - Inherits from .btn */

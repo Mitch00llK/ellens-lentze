@@ -21,7 +21,7 @@ class Render_Functions {
 				<!-- Left Content -->
 				<div class="faq-content">
 					<?php if ( ! empty( $settings['title'] ) ) : ?>
-						<h2 class="faq-content__title"><?php echo esc_html( $settings['title'] ); ?></h2>
+						<h2 class="faq-content__title m-0"><?php echo esc_html( $settings['title'] ); ?></h2>
 					<?php endif; ?>
 
 					<?php if ( ! empty( $settings['description'] ) ) : ?>
@@ -47,12 +47,12 @@ class Render_Functions {
 							$id = 'faq-item-' . $index . '-' . $widget->get_id();
 						?>
 							<div class="faq-accordion__item" id="<?php echo esc_attr( $id ); ?>" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-								<button class="faq-accordion__header" aria-expanded="false" aria-controls="<?php echo esc_attr( $id ); ?>-content">
-									<span class="faq-accordion__title" itemprop="name"><?php echo esc_html( $item['question'] ); ?></span>
+								<button class="faq-accordion__header p-md" aria-expanded="false" aria-controls="<?php echo esc_attr( $id ); ?>-content">
+									<span class="faq-accordion__title m-0" itemprop="name"><?php echo esc_html( $item['question'] ); ?></span>
 									<span class="faq-accordion__icon"><i class="fas fa-chevron-down" aria-hidden="true"></i></span>
 								</button>
 								<div class="faq-accordion__content" id="<?php echo esc_attr( $id ); ?>-content" hidden itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-									<div class="faq-accordion__inner" itemprop="text">
+									<div class="faq-accordion__inner p-lg" itemprop="text">
 										<?php echo wp_kses_post( $item['answer'] ); ?>
 									</div>
 								</div>

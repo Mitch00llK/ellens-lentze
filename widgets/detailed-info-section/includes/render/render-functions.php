@@ -22,7 +22,7 @@ class Render_Functions {
                         <?php foreach ( $settings['content_blocks'] as $block ) : ?>
                             <div class="dis-content__block">
                                 <?php if ( ! empty( $block['block_title'] ) ) : ?>
-                                    <h2 class="dis-content__title"><?php echo esc_html( $block['block_title'] ); ?></h2>
+                                    <h2 class="dis-content__title m-0"><?php echo esc_html( $block['block_title'] ); ?></h2>
                                 <?php endif; ?>
                                 <?php if ( ! empty( $block['block_content'] ) ) : ?>
                                     <div class="dis-content__text"><?php echo wp_kses_post( $block['block_content'] ); ?></div>
@@ -43,12 +43,12 @@ class Render_Functions {
                         </div>
 
                         <!-- CTA Box -->
-                        <div class="dis-card__cta">
+                        <div class="dis-card__cta p-lg">
                             <?php if ( ! empty( $settings['card_title'] ) ) : ?>
-                                <h3 class="dis-card__title"><?php echo esc_html( $settings['card_title'] ); ?></h3>
+                                <h3 class="dis-card__title m-0"><?php echo esc_html( $settings['card_title'] ); ?></h3>
                             <?php endif; ?>
                             <?php if ( ! empty( $settings['card_description'] ) ) : ?>
-                                <p class="dis-card__description"><?php echo esc_html( $settings['card_description'] ); ?></p>
+                                <p class="dis-card__description m-0"><?php echo esc_html( $settings['card_description'] ); ?></p>
                             <?php endif; ?>
                             
                             <?php if ( ! empty( $settings['card_btn_text'] ) ) : 
@@ -65,7 +65,7 @@ class Render_Functions {
 
                         <!-- USPs -->
                         <?php if ( ! empty( $settings['usps'] ) ) : ?>
-                            <ul class="dis-card__usps">
+                            <ul class="dis-card__usps p-lg m-0">
                                 <?php foreach ( $settings['usps'] as $usp ) : ?>
                                     <li class="dis-card__usp-item">
                                         <i class="fas fa-check" aria-hidden="true"></i>
