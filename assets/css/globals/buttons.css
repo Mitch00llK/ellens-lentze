@@ -97,3 +97,51 @@
     color: var(--color-primary);
     opacity: 1;
 }
+
+/* 
+ * Hover Animation (Vertical Flip) 
+ * Adapted from: https://codepen.io/codeskills-dev/pen/eYQQVGX
+ * Requires: 
+ * <a class="btn btn--animated">
+ *   <div class="btn__content">Icon + Text</div>
+ *   <div class="btn__hover-content">Icon + Text</div>
+ * </a>
+ */
+.btn--animated {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn__content,
+.btn__hover-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    /* Match gap-sm */
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn__content {
+    transform: translateY(0%);
+}
+
+.btn__hover-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+    /* Starts below */
+}
+
+.btn--animated:hover .btn__content {
+    transform: translateY(-100%);
+    /* Slides up out */
+}
+
+.btn--animated:hover .btn__hover-content {
+    transform: translateY(0%);
+    /* Slides up in */
+}
