@@ -1,0 +1,57 @@
+/**
+ * Sidebar FAQ Widget Styles
+ *
+ * Main import file that consolidates all sidebar faq widget CSS.
+ *
+ * @since 1.0.0
+ */
+
+@import './layout/container.css';
+@import './components/accordion.css';
+@import './components/card.css';
+@import './responsive/tablet.css';
+
+/* Sidebar Navigation */
+.sidebar-faq__nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+    /* Space from CTA/USPs */
+}
+
+.sidebar-faq__nav-item {
+    display: flex;
+}
+
+.sidebar-faq__nav-link {
+    font-family: var(--font-family-sans);
+    font-size: var(--body-font-size);
+    color: var(--color-white);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: var(--spacing-xs);
+    transition: opacity 0.3s ease;
+}
+
+.sidebar-faq__nav-link:hover {
+    opacity: 0.8;
+}
+
+/* Content Section Header */
+.sidebar-faq__section-header {
+    font-family: var(--font-family-serif);
+    font-size: var(--h3-font-size);
+    color: var(--color-white);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    line-height: var(--h3-line-height);
+}
+
+/* Ensure first header doesn't have huge top margin if it's first */
+.faq-accordion>h3:first-child {
+    margin-top: 0;
+}

@@ -1,0 +1,83 @@
+/* Mobile Header Styles (Tablet/Mobile) */
+@media (max-width: 1280px) {
+
+    /* 1. Layout Overrides */
+    .menu-wrapper {
+        padding: 1rem 1rem;
+        /* Smaller padding */
+        gap: 0.5rem;
+    }
+
+    .menu__logo {
+        margin-right: auto;
+    }
+
+    .menu__logo img {
+        height: 52px;
+        /* Smaller logo */
+    }
+
+    /* 2. Show Utilities (Hidden by default in drawer.css) */
+    .menu__utilities {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    /* 3. Style Utility Buttons (Circular, Icon Only) */
+    .menu__utility-btn {
+        /* Ensure perfectly round button */
+        width: 48px !important;
+        height: 48px !important;
+        min-width: 48px !important;
+        min-height: 48px !important;
+        max-width: 48px !important;
+        max-height: 48px !important;
+        border-radius: 50% !important;
+        padding: 0 !important;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-blue-50);
+        border: 1px solid var(--color-blue-100);
+        box-sizing: border-box;
+        /* Ensure border is included in dimensions */
+    }
+
+    .menu__utility-btn span {
+        display: none;
+        /* Hide text */
+    }
+
+    .menu__utility-btn i,
+    .menu__utility-btn svg {
+        font-size: 1rem;
+        width: 1em;
+        height: 1em;
+        color: var(--color-blue-500);
+        /* Ensure icons are properly sized and centered */
+    }
+
+    /* 4. Menu Toggle (Circular) */
+    .menu__toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-color: var(--color-blue-500);
+        /* Dark Blue */
+        border: 1px solid var(--color-blue-500);
+        color: var(--color-white);
+        margin-left: 0.5rem;
+    }
+
+    .menu__toggle i {
+        font-size: 1rem;
+    }
+
+    /* Hide others definitely */
+    .menu__nav,
+    .menu__actions {
+        display: none !important;
+    }
+}

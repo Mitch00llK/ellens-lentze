@@ -1,0 +1,116 @@
+/* SocialLane Reset CSS - Overriding Elementor Default Styles */
+
+/* 1. Box Sizing & Defaults */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 2. Remove default margins/paddings */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+    padding: 0;
+}
+
+/* 3. List Styles */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 4. Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 5. Form Elements */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+/* 6. Button Reset */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* 7. Links */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+/* ELEMENTOR SPECIFIC OVERRIDES */
+
+/* Remove Elementor's default container padding if interfering */
+.elementor-column-gap-default>.elementor-column>.elementor-element-populated {
+    padding: 0;
+    /* Be careful with this one, maybe too aggressive */
+}
+
+/* Headings colors/weights - Ensure they use our vars */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-text);
+    font-family: var(--font-family-serif);
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* Paragraphs */
+p {
+    color: var(--color-text);
+    font-family: var(--font-family-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+/* Force our variables on Elementor global text settings if possible */
+.elementor-widget-heading .elementor-heading-title {
+    color: inherit;
+    font-family: inherit;
+}
+
+.elementor-widget-text-editor {
+    color: var(--color-text);
+    font-family: var(--font-family-body);
+}
+
+/* Remove default focus outlines if using custom focus styles (Accessibility caution) */
+/* :focus { outline: 2px solid var(--color-primary); outline-offset: 2px; } */

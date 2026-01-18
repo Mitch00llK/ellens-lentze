@@ -47,22 +47,14 @@
     font-weight: var(--h3-font-weight);
     color: var(--color-primary);
     display: block;
-    /* Ensure it behaves as a block for text */
     flex: 1;
     min-width: 0;
-    /* Unblocks flex shrink */
     width: 100%;
-    /* Ensure it tries to fill */
     max-width: 100%;
-
-    /* Aggressive wrapping */
     white-space: normal;
     overflow-wrap: break-word;
-    /* Standard */
     word-wrap: break-word;
-    /* Legacy */
     word-break: break-word;
-    /* Webkit */
     hyphens: auto;
 }
 

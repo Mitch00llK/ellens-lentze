@@ -1,0 +1,19 @@
+@media (max-width: 1024px) {
+    .sidebar-faq-container {
+        flex-direction: column;
+        padding: 0 var(--container-padding-desktop);
+    }
+
+    .sidebar-faq-sidebar {
+        width: 100%;
+        margin-top: 2rem;
+        position: static;
+        /* Reset negative margin on tablet/mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar-faq-container {
+        padding: 0 var(--container-padding-mobile);
+    }
+}

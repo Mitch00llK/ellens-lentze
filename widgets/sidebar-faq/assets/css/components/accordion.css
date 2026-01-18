@@ -1,0 +1,79 @@
+/* Accordion Styles */
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.faq-accordion__item {
+    background-color: var(--color-blue-50);
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.faq-accordion__header {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg) var(--spacing-lg);
+    /* Inner padding */
+    background: none;
+    border: var(--border-radius-md);
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.3s ease;
+}
+
+.faq-accordion__title {
+    font-family: var(--faq-font-family);
+    font-size: var(--faq-font-size);
+    font-weight: var(--faq-font-weight);
+    color: var(--color-blue-500);
+    line-height: var(--faq-line-height);
+    flex: 1;
+}
+
+.faq-accordion__icon {
+    margin-left: var(--spacing-md);
+    color: var(--color-blue-500);
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--spacing-lg);
+    height: var(--spacing-lg);
+    font-size: var(--button-font-size);
+}
+
+.faq-accordion__content {
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+/* Inner content wrapper handles padding to avoid jumpy animation */
+.faq-accordion__inner {
+    padding: 0 var(--spacing-lg) var(--spacing-lg) var(--spacing-lg);
+    border-top: var(--border-width-thin) solid rgba(0, 0, 0, 0.05);
+    /* Separator inside */
+    padding-top: var(--spacing-md);
+    color: var(--color-black-400);
+    font-family: var(--font-family-sans);
+    font-size: var(--button-font-size);
+    line-height: 1.6;
+}
+
+.faq-accordion__content[hidden] {
+    display: none;
+}
+
+/* Active State */
+.faq-accordion__item.is-active .faq-accordion__icon {
+    transform: rotate(180deg);
+}
+
+.faq-accordion__item.is-active .faq-accordion__header {
+    color: var(--color-blue-500);
+}

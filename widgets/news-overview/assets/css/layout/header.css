@@ -1,0 +1,23 @@
+/* Layout: Header */
+.news-overview__header {
+    margin-bottom: var(--spacing-lg);
+    /* No flex needed for single child, or keep flex for future but reset justify */
+    display: block;
+}
+
+.news-overview__main-title-wrapper {
+    margin-bottom: var(--spacing-xl);
+}
+
+.news-overview__title {
+    font-family: var(--font-family-serif);
+    font-size: var(--h2-font-size);
+    color: var(--color-white) !important;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .news-overview__header {
+        margin-bottom: var(--spacing-md);
+    }
+}

@@ -46,10 +46,6 @@
 
 /* Responsive */
 @media (max-width: 1280px) {
-    .footer {
-        padding: 4rem 0 6rem 0;
-        /* Add bottom padding for CTA */
-    }
 
     .footer__cta-wrapper {
         bottom: 2rem;

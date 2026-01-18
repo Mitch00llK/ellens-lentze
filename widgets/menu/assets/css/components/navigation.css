@@ -4,10 +4,10 @@
 .menu__nav-link {
     text-decoration: none;
     color: var(--color-primary);
-    font-family: var(--font-family-sans);
-    font-size: 1.125rem;
+    font-family: var(--nav-font-family);
+    font-size: var(--nav-font-size);
     /* 18px */
-    font-weight: 400;
+    font-weight: var(--nav-font-weight);
     transition: color 0.3s ease;
 }
 
@@ -58,6 +58,29 @@
     flex-direction: column;
     gap: 0.5rem;
     z-index: 100;
+    /* Prevent overflow on smaller screens */
+    max-width: calc(100vw - 2rem);
+}
+
+/* Ensure sub-menu doesn't overflow on smaller desktop screens */
+@media (max-width: 1677px) {
+    .menu__sub-menu {
+        min-width: 200px;
+        padding: 0.875rem;
+    }
+
+    /* Adjust position for rightmost items */
+    .menu__nav-item:last-child .menu__sub-menu,
+    .menu__nav-item:nth-last-child(2) .menu__sub-menu {
+        left: auto;
+        right: 0;
+        transform: translateX(0) translateY(10px);
+    }
+
+    .menu__nav-item:last-child:hover .menu__sub-menu,
+    .menu__nav-item:nth-last-child(2):hover .menu__sub-menu {
+        transform: translateX(0) translateY(0);
+    }
 }
 
 .menu__nav-item:hover .menu__sub-menu {
@@ -80,4 +103,52 @@
 .menu__sub-menu-link:hover {
     background-color: var(--color-blue-50);
     color: var(--color-secondary);
+}
+
+/* Responsive Navigation Scaling */
+/* Large Desktop (1678px and above) - Full navigation */
+@media (min-width: 1678px) {
+    .menu__nav-list {
+        gap: 1rem;
+    }
+
+    .menu__nav-link {
+        font-size: 1rem;
+        /* 18px */
+    }
+}
+
+/* Medium Desktop (1280px - 1677px) - Compact navigation */
+@media (min-width: 1280px) and (max-width: 1677px) {
+    .menu__nav-list {
+        gap: 1.5rem;
+        /* Reduce gap for tighter spacing */
+    }
+
+    .menu__nav-link {
+        font-size: 1rem;
+        /* 16px - slightly smaller */
+        white-space: nowrap;
+        /* Prevent wrapping */
+    }
+
+    .menu-wrapper {
+        gap: 1rem;
+        /* Reduce overall gap */
+    }
+}
+
+/* Tablet/Desktop Transition (below 1678px but above 1280px) */
+@media (min-width: 1280px) and (max-width: 1677px) {
+    /* Ensure nav doesn't overflow */
+    .menu__nav {
+        flex-shrink: 1;
+        min-width: 0;
+        /* Allow flex shrinking */
+    }
+
+    .menu__nav-list {
+        flex-wrap: nowrap;
+        /* Prevent wrapping */
+    }
 }

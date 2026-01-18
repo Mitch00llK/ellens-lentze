@@ -1,0 +1,19 @@
+/* Responsive Styles for Team Grid */
+
+/* Mobile (max-width: 767px) */
+@media (max-width: 767px) {
+    /* Adjust Card Styles for Mobile if needed */
+    .team-grid .team-card {
+        min-height: auto;
+        /* Allow height to adjust */
+        aspect-ratio: auto;
+    }
+
+    .team-grid-header .section-title {
+        font-size: 1.75rem;
+        /* Slightly smaller title */
+    }
+}
+
+/* Note: Column count is now controlled via Elementor responsive controls */
+/* Desktop, Tablet, and Mobile column counts are set in the widget settings */

@@ -1,0 +1,20 @@
+/**
+ * Contact Info Widget Styles
+ *
+ * Main import file that consolidates all contact info widget CSS.
+ * Imports global design tokens and widget-specific styles.
+ *
+ * @since 1.0.0
+ */
+
+/* Global design tokens */
+@import '../../../../assets/css/globals/variables.css';
+
+/* Layout styles */
+@import './layout/layout.css';
+
+/* Component styles */
+@import './components/content.css';
+
+/* Responsive styles */
+@import './responsive/responsive.css';

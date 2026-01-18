@@ -1,0 +1,65 @@
+.dis-card {
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.dis-card__image {
+    width: 100%;
+    height: 300px;
+}
+
+.dis-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.dis-card__cta {
+    padding: var(--spacing-lg);
+    background-color: var(--color-blue-700);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.dis-card__title {
+    font-family: var(--font-family-serif);
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-line-height);
+    margin: 0;
+    color: var(--color-white);
+}
+
+.dis-card__description {
+    font-family: var(--font-family-sans);
+    font-size: var(--body-font-size);
+    line-height: var(--body-line-height);
+    margin: 0;
+    color: var(--color-white);
+}
+
+.dis-card__usps {
+    list-style: none;
+    padding: var(--spacing-lg);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.dis-card__usp-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-family: var(--font-family-sans);
+    font-size: 1rem;
+    color: var(--color-white);
+}
+
+.dis-card__usp-item i {
+    color: var(--color-orange-500);
+    font-size: 0.875rem;
+}

@@ -27,7 +27,23 @@ class Content_Controls {
                 'options' => [
                     'default'         => esc_html__( 'Floating Card (Default)', 'ellens-lentze' ),
                     'full_width_blue' => esc_html__( 'Full Width Blue', 'ellens-lentze' ),
+                    'image_overlap_card' => esc_html__( 'Image Overlap Card', 'ellens-lentze' ),
                 ],
+            ]
+        );
+        $widget->add_control(
+            'enable_contact_form',
+            [
+                'label' => esc_html__( 'Enable Contact Form', 'ellens-lentze' ),
+                'type' => Controls_Manager::SWITCHER,
+                'label_on' => esc_html__( 'Yes', 'ellens-lentze' ),
+                'label_off' => esc_html__( 'No', 'ellens-lentze' ),
+                'return_value' => 'yes',
+                'default' => 'no',
+                'condition' => [
+                    'layout_template' => 'full_width_blue',
+                ],
+                'description' => esc_html__( 'Adds a 50% width contact form on the right side that overflows into the container below.', 'ellens-lentze' ),
             ]
         );
         $widget->add_control(
@@ -50,6 +66,9 @@ class Content_Controls {
 				'default' => esc_html__( 'ELLENS & LENTZE', 'ellens-lentze' ),
 				'placeholder' => esc_html__( 'Type your subtitle here', 'ellens-lentze' ),
                 'label_block' => true,
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
@@ -60,6 +79,22 @@ class Content_Controls {
 				'type' => Controls_Manager::TEXTAREA,
 				'default' => esc_html__( 'Wij zijn er voor alle belangrijke gebeurtenissen in uw leven.', 'ellens-lentze' ),
 				'placeholder' => esc_html__( 'Type your title here', 'ellens-lentze' ),
+				'dynamic' => [
+					'active' => true,
+				],
+			]
+		);
+
+        $widget->add_control(
+			'show_description',
+			[
+				'label' => esc_html__( 'Show Description', 'ellens-lentze' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'ellens-lentze' ),
+				'label_off' => esc_html__( 'Hide', 'ellens-lentze' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+				'separator' => 'before',
 			]
 		);
 
@@ -70,6 +105,25 @@ class Content_Controls {
 				'type' => Controls_Manager::WYSIWYG,
 				'default' => esc_html__( 'Wij zijn er voor alle belangrijke gebeurtenissen in uw leven.', 'ellens-lentze' ),
 				'placeholder' => esc_html__( 'Type your description here', 'ellens-lentze' ),
+				'condition' => [
+					'show_description' => 'yes',
+				],
+				'dynamic' => [
+					'active' => true,
+				],
+			]
+		);
+
+        $widget->add_control(
+			'show_button',
+			[
+				'label' => esc_html__( 'Show Button', 'ellens-lentze' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Show', 'ellens-lentze' ),
+				'label_off' => esc_html__( 'Hide', 'ellens-lentze' ),
+				'return_value' => 'yes',
+				'default' => 'yes',
+				'separator' => 'before',
 			]
 		);
 
@@ -79,6 +133,12 @@ class Content_Controls {
 				'label' => esc_html__( 'Link Text', 'ellens-lentze' ),
 				'type' => Controls_Manager::TEXT,
 				'default' => esc_html__( 'Onze expertises', 'ellens-lentze' ),
+				'condition' => [
+					'show_button' => 'yes',
+				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
@@ -90,6 +150,12 @@ class Content_Controls {
 				'placeholder' => esc_html__( 'https://your-link.com', 'ellens-lentze' ),
 				'default' => [
 					'url' => '#',
+				],
+				'condition' => [
+					'show_button' => 'yes',
+				],
+				'dynamic' => [
+					'active' => true,
 				],
 			]
 		);
@@ -105,6 +171,9 @@ class Content_Controls {
 					'secondary' => esc_html__( 'Secondary (Orange)', 'ellens-lentze' ),
 					'ghost' => esc_html__( 'Ghost', 'ellens-lentze' ),
 					'outline' => esc_html__( 'Outline', 'ellens-lentze' ),
+				],
+				'condition' => [
+					'show_button' => 'yes',
 				],
 			]
 		);
@@ -127,6 +196,9 @@ class Content_Controls {
 				'default' => [
 					'url' => \Elementor\Utils::get_placeholder_image_src(),
 				],
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 
@@ -136,8 +208,49 @@ class Content_Controls {
 				'label' => esc_html__( 'Graphic Overlay', 'ellens-lentze' ),
 				'type' => Controls_Manager::MEDIA,
                 'description' => esc_html__( 'Upload the SVG graphic overlay.', 'ellens-lentze' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
+
+        $widget->end_controls_section();
+
+        // Contact Form Fields Section
+        $widget->start_controls_section(
+            'section_contact_form',
+            [
+                'label' => esc_html__( 'Contact Form', 'ellens-lentze' ),
+                'tab' => Controls_Manager::TAB_CONTENT,
+                'condition' => [
+                    'layout_template' => 'full_width_blue',
+                    'enable_contact_form' => 'yes',
+                ],
+            ]
+        );
+
+        $widget->add_control(
+            'form_heading',
+            [
+                'label' => esc_html__( 'Form Heading', 'ellens-lentze' ),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__( 'Vragen of opmerkingen?', 'ellens-lentze' ),
+                'label_block' => true,
+            ]
+        );
+
+        $widget->add_control(
+            'gravity_form_shortcode',
+            [
+                'label' => esc_html__( 'Gravity Forms Shortcode', 'ellens-lentze' ),
+                'type' => Controls_Manager::TEXT,
+                'default' => '[gravityform id="1" title="false" description="false"]',
+                'placeholder' => '[gravityform id="1" title="false" description="false"]',
+                'description' => esc_html__( 'Enter your Gravity Forms shortcode. Example: [gravityform id="1" title="false" description="false"]', 'ellens-lentze' ),
+                'label_block' => true,
+            ]
+        );
+
 
         $widget->end_controls_section();
 	}

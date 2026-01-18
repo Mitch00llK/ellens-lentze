@@ -1,0 +1,18 @@
+/* Services Grid Responsive Styles */
+
+@media (max-width: 1024px) {
+    .ellens-services-grid__container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 768px) {
+    .ellens-services-grid__container {
+        grid-template-columns: 1fr;
+    }
+
+    .ellens-services-grid {
+        padding: var(--spacing-md);
+    }
+}

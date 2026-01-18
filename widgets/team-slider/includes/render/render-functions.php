@@ -44,7 +44,7 @@ class Render_Functions {
         }
 
 		?>
-		<div class="ellens-team-slider-wrapper">
+		<div class="ellens-team-slider-wrapper p-md mt-md mb-md">
             <!-- Header Section -->
             <div class="team-slider-header">
                 <?php if ( ! empty( $section_title ) ) : ?>

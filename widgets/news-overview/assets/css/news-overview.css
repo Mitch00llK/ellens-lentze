@@ -1,0 +1,14 @@
+@import '../../../../assets/css/globals/variables.css';
+@import './layout/header.css';
+@import './layout/grid.css';
+@import './components/filter.css';
+@import './components/card.css';
+
+/**
+ * News Overview Widget Styles
+ */
+
+.news-overview {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+}

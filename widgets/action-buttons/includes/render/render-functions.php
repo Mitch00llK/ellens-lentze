@@ -15,17 +15,20 @@ class Render_Functions {
         $title = $settings['title'];
         $description = $settings['description'];
         
-        // Background Pattern
-        if ( ! empty( $settings['bg_pattern']['url'] ) ) {
-             $pattern_html = \Elementor\Group_Control_Image_Size::get_attachment_image_html( $settings, 'full', 'bg_pattern' );
-             // Add class to image
-             $pattern_html = str_replace( 'class="', 'class="action-buttons__bg-pattern ', $pattern_html );
-        } else {
-             $pattern_html = '';
+        // Graphic Overlay - Set as background image
+        $overlay_url = '';
+        if ( ! empty( $settings['graphic_overlay']['url'] ) ) {
+            $overlay_url = esc_url( $settings['graphic_overlay']['url'] );
         }
 
-        $widget->add_render_attribute( 'wrapper', 'class', 'action-buttons' );
+        $widget->add_render_attribute( 'wrapper', 'class', 'action-buttons p-md pt-2xl' );
         $widget->add_render_attribute( 'card', 'class', [ 'action-buttons__card', 'p-3xl' ] );
+        
+        // Add background image style if graphic overlay is set
+        if ( ! empty( $overlay_url ) ) {
+            $widget->add_render_attribute( 'card', 'class', 'action-buttons__card--has-bg' );
+            $widget->add_render_attribute( 'card', 'style', '--bg-image-url: url(' . $overlay_url . ');' );
+        }
         $widget->add_render_attribute( 'header', 'class', 'action-buttons__header' );
         $widget->add_render_attribute( 'title', 'class', [ 'action-buttons__title', 'm-0' ] );
         $widget->add_render_attribute( 'description', 'class', [ 'action-buttons__description', 'm-0' ] );
@@ -34,8 +37,6 @@ class Render_Functions {
 		?>
 		<div <?php $widget->print_render_attribute_string( 'wrapper' ); ?>>
             <div <?php $widget->print_render_attribute_string( 'card' ); ?>>
-                <?php if ( ! empty( $pattern_html ) ) echo $pattern_html; ?>
-                
                 <div <?php $widget->print_render_attribute_string( 'header' ); ?>>
                     <?php if ( ! empty( $title ) ) : ?>
                         <h2 <?php $widget->print_render_attribute_string( 'title' ); ?>><?php echo wp_kses_post( $title ); ?></h2>

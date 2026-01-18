@@ -52,3 +52,54 @@
     gap: 1rem;
     flex-shrink: 0;
 }
+
+/* Responsive Layout Adjustments */
+/* Large Desktop */
+@media (min-width: 1678px) {
+    .menu-wrapper {
+        gap: 2rem;
+        padding-left: var(--container-padding-desktop);
+        padding-right: var(--container-padding-desktop);
+    }
+
+    .menu__nav {
+        flex-grow: 1;
+        justify-content: flex-end;
+    }
+}
+
+/* Medium Desktop (1280px - 1677px) */
+@media (min-width: 1280px) and (max-width: 1677px) {
+    .menu-wrapper {
+        gap: 1rem;
+        padding-left: clamp(1rem, 2vw, var(--container-padding-desktop));
+        padding-right: clamp(1rem, 2vw, var(--container-padding-desktop));
+    }
+
+    .menu__logo {
+        max-width: 240px;
+        /* Slightly smaller logo */
+    }
+
+    .menu__logo img {
+        height: clamp(40px, 4vw, 52px);
+        /* Fluid logo size */
+    }
+
+    .menu__nav {
+        flex-grow: 1;
+        min-width: 0;
+        /* Allow shrinking */
+    }
+}
+
+/* Ensure smooth transitions between breakpoints */
+@media (max-width: 1677px) {
+    .menu__logo {
+        transition: max-width 0.3s ease;
+    }
+
+    .menu__nav-list {
+        transition: gap 0.3s ease;
+    }
+}

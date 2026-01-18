@@ -1,0 +1,29 @@
+/* Layout: Grid */
+.news-overview__featured-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.news-overview__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+
+    .news-overview__featured-grid,
+    .news-overview__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .news-overview__featured-grid,
+    .news-overview__grid {
+        grid-template-columns: 1fr;
+    }
+}

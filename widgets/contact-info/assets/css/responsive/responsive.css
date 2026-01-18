@@ -1,0 +1,21 @@
+/**
+ * Contact Info Responsive Styles
+ *
+ * Responsive adjustments for the contact info widget.
+ *
+ * @since 1.0.0
+ */
+
+@media (max-width: 768px) {
+    .contact-info__container {
+        gap: var(--spacing-sm);
+    }
+
+    .contact-info__item {
+        gap: var(--spacing-sm);
+    }
+
+    .contact-info__item i {
+        margin-top: 0.125rem;
+    }
+}

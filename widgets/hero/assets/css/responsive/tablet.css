@@ -76,4 +76,26 @@
         justify-content: center;
     }
 
+    /* Contact Form Layout - Mobile */
+    .hero-cf__container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-cf__left {
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    .hero-cf__right {
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    .hero-cf__form-card {
+        padding: var(--spacing-xl);
+    }
+
+    .hero-cf__pattern-container {
+        width: 70%;
+        right: -20%;
+    }
+
 }

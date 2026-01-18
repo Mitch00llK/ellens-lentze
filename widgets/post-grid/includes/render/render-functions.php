@@ -33,7 +33,7 @@ class Render_Functions {
         $query = new \WP_Query( $args );
 
         // Attributes
-        $widget->add_render_attribute( 'wrapper', 'class', 'ellens-post-grid-wrapper' );
+        $widget->add_render_attribute( 'wrapper', 'class', 'ellens-post-grid-wrapper p-md pt-3xl pb-3xl' );
         
         if ( ! empty( $btn_text ) ) {
             $button_style = isset( $settings['button_style'] ) ? $settings['button_style'] : 'primary';

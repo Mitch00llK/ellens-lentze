@@ -23,14 +23,14 @@ function register_ellens_hero_widget( $widgets_manager ) {
     require_once( __DIR__ . '/widgets/usp-grid/usp-grid-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\USP_Grid_Widget() );
 
-    require_once( __DIR__ . '/widgets/image-text-block/image-text-block-widget.php' );
-	$widgets_manager->register( new \EllensLentze\Widgets\Image_Text_Block_Widget() );
-
     require_once( __DIR__ . '/widgets/services-cluster/services-cluster-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\Services_Cluster_Widget() );
 
     require_once( __DIR__ . '/widgets/team-slider/team-slider-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\Team_Slider_Widget() );
+
+    require_once( __DIR__ . '/widgets/team-grid/team-grid.php' );
+	$widgets_manager->register( new \EllensLentze\Widgets\Team_Grid_Widget() );
 
     require_once( __DIR__ . '/widgets/post-grid/ellens-post-grid.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\Post_Grid\Ellens_Post_Grid() );
@@ -44,6 +44,9 @@ function register_ellens_hero_widget( $widgets_manager ) {
     require_once( __DIR__ . '/widgets/faq-section/faq-section-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\FAQ_Section_Widget() );
 
+    require_once( __DIR__ . '/widgets/sidebar-faq/sidebar-faq-widget.php' );
+	$widgets_manager->register( new \EllensLentze\Widgets\Sidebar_FAQ_Widget() );
+
     require_once( __DIR__ . '/widgets/reliability-grid/reliability-grid-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\Reliability_Grid_Widget() );
 
@@ -52,6 +55,12 @@ function register_ellens_hero_widget( $widgets_manager ) {
 
     require_once( __DIR__ . '/widgets/footer/footer-widget.php' );
 	$widgets_manager->register( new \EllensLentze\Widgets\Footer_Widget() );
+
+    require_once( __DIR__ . '/widgets/news-overview/news-overview-widget.php' );
+	$widgets_manager->register( new \EllensLentze\Widgets\News_Overview\Widget_News_Overview() );
+
+    require_once( __DIR__ . '/widgets/contact-info/contact-info-widget.php' );
+	$widgets_manager->register( new \EllensLentze\Widgets\Contact_Info_Widget() );
 }
 add_action( 'elementor/widgets/register', 'register_ellens_hero_widget' );
 
@@ -76,6 +85,10 @@ add_action( 'elementor/elements/categories_registered', 'register_ellens_widget_
 function register_ellens_assets() {
     require_once( __DIR__ . '/includes/assets/class-assets-config.php' );
     \EllensLentze\Includes\Assets\Assets_Config::register();
+
+    // Enqueue Global Styles
+    wp_enqueue_style( 'ellens-reset-css' );
+    wp_enqueue_style( 'ellens-global-variables' );
 }
 add_action( 'wp_enqueue_scripts', 'register_ellens_assets' );
 // Also register for Elementor frontend
@@ -99,4 +112,13 @@ function init_ellens_kit_integration() {
     \EllensLentze\Includes\Services\Elementor_Kit_Integration::init();
 }
 add_action( 'plugins_loaded', 'init_ellens_kit_integration' );
+
+/**
+ * Register Search Handler.
+ */
+function register_ellens_search_handler() {
+    require_once( __DIR__ . '/includes/search/class-search-handler.php' );
+    \EllensLentze\Includes\Search\Search_Handler::register();
+}
+add_action( 'init', 'register_ellens_search_handler' );
 

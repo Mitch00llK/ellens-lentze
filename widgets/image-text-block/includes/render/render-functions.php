@@ -12,7 +12,7 @@ class Render_Functions {
 	public static function render_widget( $widget ) {
 		$settings = $widget->get_settings_for_display();
 
-        $widget->add_render_attribute( 'wrapper', 'class', 'image-text-block' );
+        $widget->add_render_attribute( 'wrapper', 'class', 'image-text-block p-md' );
         $widget->add_render_attribute( 'container', 'class', 'image-text-block__container' );
 
         // Layout Switch
@@ -41,7 +41,7 @@ class Render_Functions {
                         <div class="image-text-block__description m-0"><?php echo wp_kses_post( $settings['description'] ); ?></div>
                     <?php endif; ?>
 
-                    <div class="image-text-block__actions">
+                    <div class="image-text-block__actions pb-2xl">
                         <!-- Primary Button -->
                         <?php if ( ! empty( $settings['btn_primary_text'] ) ) : 
                             $btn_primary_style = isset( $settings['btn_primary_style'] ) ? $settings['btn_primary_style'] : 'primary';

@@ -90,11 +90,14 @@ class Content_Controls {
 		);
 
         $widget->add_control(
-			'bg_pattern',
+			'graphic_overlay',
 			[
-				'label' => esc_html__( 'Background Pattern', 'ellens-lentze' ),
+				'label' => esc_html__( 'Graphic Overlay', 'ellens-lentze' ),
 				'type' => Controls_Manager::MEDIA,
-                'description' => esc_html__( 'Upload the SVG background pattern.', 'ellens-lentze' ),
+                'description' => esc_html__( 'Upload the SVG graphic overlay.', 'ellens-lentze' ),
+				'dynamic' => [
+					'active' => true,
+				],
 			]
 		);
 

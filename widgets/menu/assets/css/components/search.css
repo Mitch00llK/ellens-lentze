@@ -1,0 +1,138 @@
+/* Search Overlay - Slide out from icon */
+
+/* Ensure parent is relative for positioning */
+.menu__actions {
+    position: relative;
+}
+
+.menu__search-overlay {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 50px;
+    background-color: var(--color-blue);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease;
+    border-radius: 30px;
+}
+
+.menu__search-overlay.is-active {
+    width: 450px;
+    /* Expanded width */
+    padding: 0 var(--spacing-sm);
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-white);
+    z-index: 1;
+    color: var(--color-blue-700);
+}
+
+/* Close Button (Hidden as main toggle is now close button) */
+.menu__search-close {
+    display: none;
+}
+
+/* Icon Animation */
+.menu__search-btn i {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Search Container inside overlay */
+.menu__search-container {
+    flex-grow: 1;
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.2s ease 0.1s;
+    display: flex;
+    align-items: center;
+}
+
+.menu__search-overlay.is-active .menu__search-container {
+    opacity: 1;
+}
+
+/* Form */
+.menu__search-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.menu__search-field {
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--color-blue-900);
+    font-size: 1rem;
+    font-family: var(--font-family-body);
+    outline: none;
+    padding: 5px 0;
+}
+
+.menu__search-field::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Submit Button */
+.menu__search-submit {
+    background: none;
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+/* Live Results */
+.menu__search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-white);
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 10px;
+    display: none;
+    /* Hidden by default */
+    padding: 10px 0;
+}
+
+.menu__search-overlay.is-active .menu__search-results:not(:empty) {
+    display: block;
+}
+
+.menu__result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 15px;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: background 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.menu__result-item:hover {
+    background-color: var(--color-bg-light);
+}
+
+.menu__result-title {
+    font-weight: 500;
+}
+
+.menu__result-type {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--color-text-light);
+    background: var(--color-bg-light);
+    padding: 2px 5px;
+    border-radius: 3px;
+}

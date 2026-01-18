@@ -94,24 +94,43 @@ class Render_Functions {
                             </li>
                         <?php endforeach; ?>
                     <?php endif; ?>
-
-                     <!-- Portal Link (Appended) -->
-                    <?php if ( ! empty( $settings['portal_link_text'] ) ) : ?>
-                         <li class="menu__nav-item menu__nav-item--portal">
-                            <a href="<?php echo esc_url( $settings['portal_link_url']['url'] ); ?>" class="menu__nav-link">
-                                <?php echo esc_html( $settings['portal_link_text'] ); ?>
-                            </a>
-                        </li>
-                    <?php endif; ?>
                 </ul>
             </nav>
 
             <!-- 4. Right Actions (Search, Lang) -->
             <div class="menu__actions">
-                <!-- Search (Static for now) -->
-                <button class="menu__search-btn" aria-label="Search">
-                    <i class="fas fa-search"></i>
-                </button>
+                <!-- Search -->
+                 <?php if ( 'yes' === $settings['search_enabled'] ) : ?>
+                    <button class="menu__search-btn js-menu-search-toggle" aria-label="<?php echo esc_attr__( 'Search', 'ellens-lentze' ); ?>">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    
+                    <div class="menu__search-overlay">
+                        <button class="menu__search-close js-menu-search-close" aria-label="<?php echo esc_attr__( 'Close Search', 'ellens-lentze' ); ?>">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <div class="menu__search-container">
+                            <form role="search" method="get" class="menu__search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                                <label>
+                                    <span class="screen-reader-text"><?php echo esc_html__( 'Search for:', 'ellens-lentze' ); ?></span>
+                                    <input type="search" class="menu__search-field" placeholder="<?php echo esc_attr__( 'Search', 'ellens-lentze' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+                                </label>
+                                
+                                <!-- Post Types -->
+                                <?php if ( ! empty( $settings['search_post_types'] ) ) : ?>
+                                    <?php foreach ( $settings['search_post_types'] as $pt ) : ?>
+                                        <input type="hidden" name="post_type[]" value="<?php echo esc_attr( $pt ); ?>" />
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+
+                                <button type="submit" class="menu__search-submit">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </form>
+                            <div class="menu__search-results"></div>
+                        </div>
+                    </div>
+                 <?php endif; ?>
 
                 <!-- Language Switcher -->
                  <?php if ( 'yes' === $settings['show_language_switcher'] ) : ?>
@@ -135,6 +154,21 @@ class Render_Functions {
             <!-- Mobile Drawer -->
             <div class="menu__drawer">
                 <div class="menu__drawer-inner">
+                    <!-- Mobile Logo (Same position as mobile header) -->
+                    <div class="menu__logo menu__logo--mobile">
+                        <?php
+                        if ( ! empty( $settings['logo_image']['url'] ) ) {
+                            $logo_html = Group_Control_Image_Size::get_attachment_image_html( $settings, 'full', 'logo_image' );
+                            $logo_link = $settings['logo_link']['url'];
+                            if ( ! empty( $logo_link ) ) {
+                                echo '<a href="' . esc_url( $logo_link ) . '">' . $logo_html . '</a>';
+                            } else {
+                                echo $logo_html;
+                            }
+                        }
+                        ?>
+                    </div>
+
                     <!-- Mobile Nav -->
                     <nav class="menu__mobile-nav">
                         <ul class="menu__mobile-list">
@@ -150,12 +184,16 @@ class Render_Functions {
                                     $has_children = isset( $hierarchy[ $item->ID ] );
                                 ?>
                                     <li class="menu__mobile-item <?php echo $has_children ? 'menu__mobile-item--has-children' : ''; ?>">
-                                        <a href="<?php echo esc_url( $item->url ); ?>" class="menu__mobile-link">
-                                            <?php echo esc_html( $item->title ); ?>
+                                        <div class="menu__mobile-link-wrapper">
+                                            <a href="<?php echo esc_url( $item->url ); ?>" class="menu__mobile-link">
+                                                <?php echo esc_html( $item->title ); ?>
+                                            </a>
                                             <?php if ( $has_children ) : ?>
-                                                <i class="fas fa-chevron-down menu__mobile-dropdown-icon"></i>
+                                                <button type="button" class="menu__mobile-toggle" aria-label="<?php echo esc_attr__( 'Toggle submenu', 'ellens-lentze' ); ?>" aria-expanded="false">
+                                                    <i class="fas fa-chevron-down menu__mobile-dropdown-icon"></i>
+                                                </button>
                                             <?php endif; ?>
-                                        </a>
+                                        </div>
                                         <?php if ( $has_children ) : ?>
                                             <ul class="menu__mobile-sub-menu">
                                                 <?php foreach ( $hierarchy[ $item->ID ] as $child ) : ?>
@@ -196,19 +234,19 @@ class Render_Functions {
                                 </a>
                             <?php endforeach; ?>
                         <?php endif; ?>
-
-                        <!-- Mobile Language Switcher -->
-                         <?php if ( 'yes' === $settings['show_language_switcher'] ) : ?>
-                            <div class="menu__lang-switcher menu__lang-switcher--mobile">
-                                <button class="menu__lang-btn <?php echo ( 'nl' === $settings['current_lang'] ) ? 'is-active' : ''; ?>">
-                                     <span class="menu__flag">🇳🇱</span> NL
-                                </button>
-                                <button class="menu__lang-btn <?php echo ( 'en' === $settings['current_lang'] ) ? 'is-active' : ''; ?>">
-                                     <span class="menu__flag">🇬🇧</span> EN
-                                </button>
-                            </div>
-                         <?php endif; ?>
                     </div>
+
+                    <!-- Mobile Language Switcher - Bottom of Menu -->
+                    <?php if ( 'yes' === $settings['show_language_switcher'] ) : ?>
+                        <div class="menu__lang-switcher menu__lang-switcher--mobile">
+                            <button class="menu__lang-btn <?php echo ( 'nl' === $settings['current_lang'] ) ? 'is-active' : ''; ?>">
+                                 <span class="menu__flag">🇳🇱</span> NL
+                            </button>
+                            <button class="menu__lang-btn <?php echo ( 'en' === $settings['current_lang'] ) ? 'is-active' : ''; ?>">
+                                 <span class="menu__flag">🇬🇧</span> EN
+                            </button>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
 

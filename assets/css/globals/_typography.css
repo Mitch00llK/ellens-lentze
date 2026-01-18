@@ -7,48 +7,80 @@
     --font-family-serif: 'DM Serif Display', Georgia, 'Times New Roman', serif;
     --font-family-mono: 'Courier New', Courier, monospace;
 
-    /* Headings (Strict) */
+    /* Font Weights */
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Text Transforms */
+    --text-transform-uppercase: uppercase;
+    --text-transform-capitalize: capitalize;
+    --text-transform-none: none;
+
+    /* Utility Sizes */
+    --font-size-xs: clamp(0.75rem, 0.5vw + 0.7rem, 0.875rem);
+    /* 12px -> 14px (fluid) */
+    --line-height-xs: 1.5;
+
+    /* Headings (Strict & Fluid) */
     --h1-font-family: var(--font-family-serif);
-    --h1-font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
-    /* 40px -> 64px */
+    --h1-font-size: clamp(2rem, 4vw + 1rem, 4rem);
+    /* 32px (mobile) -> 64px (desktop) - optimized for tablet */
     --h1-line-height: 1.1;
     --h1-font-weight: 400;
 
     --h2-font-family: var(--font-family-serif);
-    --h2-font-size: clamp(1.75rem, 3vw + 1rem, 2rem);
-    /* 28px -> 32px */
+    --h2-font-size: clamp(1.5rem, 2.5vw + 0.8rem, 2rem);
+    /* 24px (mobile) -> 32px (desktop) - optimized for tablet */
     --h2-line-height: 1.2;
     --h2-font-weight: 400;
 
     --h3-font-family: var(--font-family-serif);
-    --h3-font-size: clamp(1.25rem, 2vw + 1rem, 1.5rem);
-    /* 20px -> 24px */
+    --h3-font-size: clamp(1.125rem, 1.5vw + 0.8rem, 1.25rem);
+    /* 18px (mobile) -> 20px (desktop) - optimized for tablet */
     --h3-line-height: 1.4;
     --h3-font-weight: 400;
 
     --h4-font-family: var(--font-family-serif);
-    --h4-font-size: clamp(1.125rem, 1.5vw + 0.8rem, 1.25rem);
-    /* 18px -> 20px */
+    --h4-font-size: clamp(1rem, 1vw + 0.8rem, 1.25rem);
+    /* 16px (mobile) -> 20px (desktop) - optimized for tablet */
     --h4-line-height: 1.5;
     --h4-font-weight: 400;
 
-    /* tag */
-
+    /* Tag (Fluid) */
     --tag-font-family: var(--font-family-sans);
-    --tag-font-size: clamp(1rem, 1vw + 0.8rem, 1.125rem);
+    --tag-font-size: clamp(0.875rem, 0.8vw + 0.7rem, 1.125rem);
+    /* 14px (mobile) -> 18px (desktop) - optimized for tablet */
     --tag-line-height: 1.6;
     --tag-font-weight: 300;
 
-    /* Body & UI (Strict) */
+    /* Body & UI (Strict & Fluid) */
     --body-font-family: var(--font-family-sans);
-    --body-font-size: clamp(1rem, 1vw);
-    /* 16px -> 18px */
+    --body-font-size: clamp(0.9375rem, 0.5vw + 0.85rem, 1.125rem);
+    /* 15px (mobile) -> 18px (desktop) - optimized for tablet */
     --body-line-height: 1.6;
     --body-font-weight: 300;
 
     --button-font-family: var(--font-family-sans);
-    --button-font-size: 1rem;
-    /* 16px */
+    --button-font-size: clamp(0.9375rem, 0.3vw + 0.85rem, 1rem);
+    /* 15px (mobile) -> 16px (desktop) - optimized for tablet */
     --button-line-height: 1.5;
     --button-font-weight: 400;
+
+    --faq-font-family: var(--font-family-serif);
+    --faq-font-size: clamp(1.25rem, 1.5vw + 0.9rem, 1.5rem);
+    /* 20px (mobile) -> 24px (desktop) - optimized for tablet */
+    --faq-line-height: clamp(1.875rem, 2vw + 1.3rem, 2.25rem);
+    /* 30px (mobile) -> 36px (desktop) - fluid line-height */
+    --faq-font-weight: 400;
+
+    /* Nav (Fluid) */
+    --nav-font-family: var(--font-family-sans);
+    --nav-font-size: clamp(0.9375rem, 0.3vw + 0.85rem, 1rem);
+    /* 15px (mobile) -> 16px (desktop) - optimized for tablet */
+    --nav-line-height: 1.5;
+    --nav-font-weight: 400;
 }
