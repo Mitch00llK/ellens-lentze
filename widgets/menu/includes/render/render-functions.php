@@ -20,7 +20,7 @@ class Render_Functions {
         }
 
         // Attributes
-        $widget->add_render_attribute( 'wrapper', 'class', 'menu-wrapper' );
+        $widget->add_render_attribute( 'wrapper', 'class', [ 'menu-wrapper', 'd-flex', 'items-center', 'justify-between', 'w-full', 'mx-auto', 'relative', 'gap-xl' ] );
         
 		?>
 		<div <?php $widget->print_render_attribute_string( 'wrapper' ); ?>>
@@ -41,12 +41,12 @@ class Render_Functions {
             </div>
 
             <!-- 2. Desktop Utils (Phone/Email) -->
-            <div class="menu__utilities">
+            <div class="menu__utilities d-flex items-center gap-sm">
                 <?php if ( ! empty( $settings['utility_buttons'] ) ) : ?>
                     <?php foreach ( $settings['utility_buttons'] as $item ) : 
                         $link_key = 'utility_link_' . $item['_id'];
                         $widget->add_link_attributes( $link_key, $item['link'] );
-                        $widget->add_render_attribute( $link_key, 'class', 'menu__utility-btn' );
+                        $widget->add_render_attribute( $link_key, 'class', 'menu__utility-btn inline-flex items-center justify-center gap-sm rounded-full whitespace-nowrap' );
                     ?>
                         <a <?php $widget->print_render_attribute_string( $link_key ); ?>>
                             <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>
@@ -57,8 +57,8 @@ class Render_Functions {
             </div>
 
             <!-- 3. Desktop Menu -->
-            <nav class="menu__nav">
-                <ul class="menu__nav-list">
+            <nav class="menu__nav d-flex justify-end flex-grow">
+                <ul class="menu__nav-list d-flex items-center gap-xl">
                     <?php 
                     if ( ! empty( $menu_items ) ) : 
                         $hierarchy = [];
@@ -68,20 +68,20 @@ class Render_Functions {
 
                         foreach ( $hierarchy[0] as $item ) : 
                             $has_children = isset( $hierarchy[ $item->ID ] );
-                            $item_class = 'menu__nav-item';
+                            $item_class = 'menu__nav-item relative d-flex items-center h-full';
                             if ( $has_children ) {
                                 $item_class .= ' menu__nav-item--has-children';
                             }
                         ?>
                             <li class="<?php echo esc_attr( $item_class ); ?>">
-                                <a href="<?php echo esc_url( $item->url ); ?>" class="menu__nav-link">
+                                <a href="<?php echo esc_url( $item->url ); ?>" class="menu__nav-link d-flex items-center gap-sm">
                                     <?php echo esc_html( $item->title ); ?>
                                     <?php if ( $has_children ) : ?>
                                         <i class="fas fa-chevron-down menu__dropdown-icon"></i>
                                     <?php endif; ?>
                                 </a>
                                 <?php if ( $has_children ) : ?>
-                                    <ul class="menu__sub-menu">
+                                    <ul class="menu__sub-menu absolute flex-column gap-sm">
                                         <?php foreach ( $hierarchy[ $item->ID ] as $child ) : ?>
                                             <li class="menu__sub-menu-item">
                                                 <a href="<?php echo esc_url( $child->url ); ?>" class="menu__sub-menu-link">
@@ -98,10 +98,10 @@ class Render_Functions {
             </nav>
 
             <!-- 4. Right Actions (Search, Lang) -->
-            <div class="menu__actions">
+            <div class="menu__actions d-flex items-center gap-md flex-shrink-0">
                 <!-- Search -->
                  <?php if ( 'yes' === $settings['search_enabled'] ) : ?>
-                    <button class="menu__search-btn js-menu-search-toggle" aria-label="<?php echo esc_attr__( 'Search', 'ellens-lentze' ); ?>">
+                    <button class="menu__search-btn js-menu-search-toggle flex items-center justify-center rounded-full" aria-label="<?php echo esc_attr__( 'Search', 'ellens-lentze' ); ?>">
                         <i class="fas fa-search"></i>
                     </button>
                     
@@ -134,12 +134,12 @@ class Render_Functions {
 
                 <!-- Language Switcher -->
                  <?php if ( 'yes' === $settings['show_language_switcher'] ) : ?>
-                    <div class="menu__lang-switcher">
+                    <div class="menu__lang-switcher d-flex items-center gap-xs rounded-full">
                          <!-- Simplified visual representation -->
-                        <button class="menu__lang-btn <?php echo ( 'nl' === $settings['current_lang'] ) ? 'is-active' : ''; ?>">
+                        <button class="menu__lang-btn d-flex items-center gap-xs rounded-full <?php echo ( 'nl' === $settings['current_lang'] ) ? 'is-active' : ''; ?>">
                              <span class="menu__flag">🇳🇱</span> NL
                         </button>
-                        <button class="menu__lang-btn <?php echo ( 'en' === $settings['current_lang'] ) ? 'is-active' : ''; ?>">
+                        <button class="menu__lang-btn d-flex items-center gap-xs rounded-full <?php echo ( 'en' === $settings['current_lang'] ) ? 'is-active' : ''; ?>">
                              <span class="menu__flag">🇬🇧</span> EN
                         </button>
                     </div>
@@ -153,7 +153,7 @@ class Render_Functions {
 
             <!-- Mobile Drawer -->
             <div class="menu__drawer">
-                <div class="menu__drawer-inner">
+                <div class="menu__drawer-inner d-flex flex-column gap-xl">
                     <!-- Mobile Logo (Same position as mobile header) -->
                     <div class="menu__logo menu__logo--mobile">
                         <?php
@@ -171,7 +171,7 @@ class Render_Functions {
 
                     <!-- Mobile Nav -->
                     <nav class="menu__mobile-nav">
-                        <ul class="menu__mobile-list">
+                        <ul class="menu__mobile-list d-flex flex-column">
                             <?php 
                             if ( ! empty( $menu_items ) ) : 
                                 // Re-use hierarchy if possible, but localized scope here
@@ -184,12 +184,12 @@ class Render_Functions {
                                     $has_children = isset( $hierarchy[ $item->ID ] );
                                 ?>
                                     <li class="menu__mobile-item <?php echo $has_children ? 'menu__mobile-item--has-children' : ''; ?>">
-                                        <div class="menu__mobile-link-wrapper">
+                                        <div class="menu__mobile-link-wrapper d-flex items-center justify-between gap-md">
                                             <a href="<?php echo esc_url( $item->url ); ?>" class="menu__mobile-link">
                                                 <?php echo esc_html( $item->title ); ?>
                                             </a>
                                             <?php if ( $has_children ) : ?>
-                                                <button type="button" class="menu__mobile-toggle" aria-label="<?php echo esc_attr__( 'Toggle submenu', 'ellens-lentze' ); ?>" aria-expanded="false">
+                                                <button type="button" class="menu__mobile-toggle flex items-center justify-center" aria-label="<?php echo esc_attr__( 'Toggle submenu', 'ellens-lentze' ); ?>" aria-expanded="false">
                                                     <i class="fas fa-chevron-down menu__mobile-dropdown-icon"></i>
                                                 </button>
                                             <?php endif; ?>
@@ -221,12 +221,12 @@ class Render_Functions {
                     </nav>
 
                     <!-- Mobile Utilities -->
-                    <div class="menu__mobile-utilities">
+                    <div class="menu__mobile-utilities d-flex flex-column gap-md items-start">
                          <?php if ( ! empty( $settings['utility_buttons'] ) ) : ?>
                             <?php foreach ( $settings['utility_buttons'] as $item ) : 
                                 $link_key = 'mobile_utility_' . $item['_id'];
                                 $widget->add_link_attributes( $link_key, $item['link'] );
-                                $widget->add_render_attribute( $link_key, 'class', 'menu__utility-btn' );
+                                $widget->add_render_attribute( $link_key, 'class', 'menu__utility-btn inline-flex items-center justify-center gap-sm rounded-full' );
                             ?>
                                 <a <?php $widget->print_render_attribute_string( $link_key ); ?>>
                                     <?php \Elementor\Icons_Manager::render_icon( $item['icon'], [ 'aria-hidden' => 'true' ] ); ?>

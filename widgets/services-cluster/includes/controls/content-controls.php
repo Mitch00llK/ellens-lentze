@@ -42,6 +42,19 @@ class Content_Controls {
 		);
 
         $widget->add_control(
+			'show_visuals_on_mobile',
+			[
+				'label' => esc_html__( 'Show Visuals on Mobile', 'ellens-lentze' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'ellens-lentze' ),
+				'label_off' => esc_html__( 'No', 'ellens-lentze' ),
+				'return_value' => 'yes',
+				'default' => '',
+				'description' => esc_html__( 'Display the center image on mobile devices.', 'ellens-lentze' ),
+			]
+		);
+
+        $widget->add_control(
 			'cluster_title',
 			[
 				'label' => esc_html__( 'Cluster Title', 'ellens-lentze' ),
@@ -68,6 +81,18 @@ class Content_Controls {
 					'p' => 'p',
 				],
 				'default' => 'h2',
+			]
+		);
+
+        $widget->add_control(
+			'hide_cluster_title',
+			[
+				'label' => esc_html__( 'Hide Title', 'ellens-lentze' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'ellens-lentze' ),
+				'label_off' => esc_html__( 'No', 'ellens-lentze' ),
+				'return_value' => 'yes',
+				'default' => '',
 			]
 		);
 
@@ -121,6 +146,18 @@ class Content_Controls {
 				'label' => esc_html__( 'Link', 'ellens-lentze' ),
 				'type' => Controls_Manager::URL,
 				'placeholder' => esc_html__( 'https://your-link.com', 'ellens-lentze' ),
+			]
+		);
+
+        $repeater->add_control(
+			'hide',
+			[
+				'label' => esc_html__( 'Hide Service', 'ellens-lentze' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'ellens-lentze' ),
+				'label_off' => esc_html__( 'No', 'ellens-lentze' ),
+				'return_value' => 'yes',
+				'default' => '',
 			]
 		);
 

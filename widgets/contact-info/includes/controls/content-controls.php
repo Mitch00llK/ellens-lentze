@@ -33,6 +33,18 @@ class Content_Controls {
 		);
 
 		$widget->add_control(
+			'hide_heading',
+			[
+				'label' => esc_html__( 'Hide Heading', 'ellens-lentze' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'ellens-lentze' ),
+				'label_off' => esc_html__( 'No', 'ellens-lentze' ),
+				'return_value' => 'yes',
+				'default' => '',
+			]
+		);
+
+		$widget->add_control(
 			'description',
 			[
 				'label' => esc_html__( 'Description', 'ellens-lentze' ),
@@ -42,6 +54,18 @@ class Content_Controls {
 				'dynamic' => [
 					'active' => true,
 				],
+			]
+		);
+
+		$widget->add_control(
+			'hide_description',
+			[
+				'label' => esc_html__( 'Hide Description', 'ellens-lentze' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'ellens-lentze' ),
+				'label_off' => esc_html__( 'No', 'ellens-lentze' ),
+				'return_value' => 'yes',
+				'default' => '',
 			]
 		);
 
@@ -58,6 +82,18 @@ class Content_Controls {
 			]
 		);
 
+		$widget->add_control(
+			'hide_address',
+			[
+				'label' => esc_html__( 'Hide Address', 'ellens-lentze' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'ellens-lentze' ),
+				'label_off' => esc_html__( 'No', 'ellens-lentze' ),
+				'return_value' => 'yes',
+				'default' => '',
+			]
+		);
+
         $widget->add_control(
 			'email',
 			[
@@ -70,6 +106,18 @@ class Content_Controls {
 			]
 		);
 
+		$widget->add_control(
+			'hide_email',
+			[
+				'label' => esc_html__( 'Hide Email', 'ellens-lentze' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'ellens-lentze' ),
+				'label_off' => esc_html__( 'No', 'ellens-lentze' ),
+				'return_value' => 'yes',
+				'default' => '',
+			]
+		);
+
         $widget->add_control(
 			'phone',
 			[
@@ -79,6 +127,18 @@ class Content_Controls {
 			'dynamic' => [
 					'active' => true,
 				],
+			]
+		);
+
+		$widget->add_control(
+			'hide_phone',
+			[
+				'label' => esc_html__( 'Hide Phone', 'ellens-lentze' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'ellens-lentze' ),
+				'label_off' => esc_html__( 'No', 'ellens-lentze' ),
+				'return_value' => 'yes',
+				'default' => '',
 			]
 		);
 
@@ -103,6 +163,18 @@ class Content_Controls {
 				'dynamic' => [
 					'active' => true,
 				],
+			]
+		);
+
+		$widget->add_control(
+			'hide_opening_hours_title',
+			[
+				'label' => esc_html__( 'Hide Opening Hours Title', 'ellens-lentze' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'ellens-lentze' ),
+				'label_off' => esc_html__( 'No', 'ellens-lentze' ),
+				'return_value' => 'yes',
+				'default' => '',
 			]
 		);
 
@@ -170,6 +242,31 @@ class Content_Controls {
 			]
 		);
 
+		$widget->add_control(
+			'hide_opening_hours_footer',
+			[
+				'label' => esc_html__( 'Hide Opening Hours Footer', 'ellens-lentze' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'ellens-lentze' ),
+				'label_off' => esc_html__( 'No', 'ellens-lentze' ),
+				'return_value' => 'yes',
+				'default' => '',
+			]
+		);
+
+		$widget->add_control(
+			'hide_opening_hours_section',
+			[
+				'label' => esc_html__( 'Hide Opening Hours Section', 'ellens-lentze' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'ellens-lentze' ),
+				'label_off' => esc_html__( 'No', 'ellens-lentze' ),
+				'return_value' => 'yes',
+				'default' => '',
+				'description' => esc_html__( 'Hide the entire opening hours section (title, list, and footer).', 'ellens-lentze' ),
+			]
+		);
+
 		$widget->end_controls_section();
 
 		$widget->start_controls_section(
@@ -194,6 +291,18 @@ class Content_Controls {
 		);
 
 		$widget->add_control(
+			'hide_btw_number',
+			[
+				'label' => esc_html__( 'Hide BTW Number', 'ellens-lentze' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'ellens-lentze' ),
+				'label_off' => esc_html__( 'No', 'ellens-lentze' ),
+				'return_value' => 'yes',
+				'default' => '',
+			]
+		);
+
+		$widget->add_control(
 			'bank_account_label',
 			[
 				'label' => esc_html__( 'Bank Account Label', 'ellens-lentze' ),
@@ -207,6 +316,18 @@ class Content_Controls {
 		);
 
 		$widget->add_control(
+			'hide_bank_account_label',
+			[
+				'label' => esc_html__( 'Hide Bank Account Label', 'ellens-lentze' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'ellens-lentze' ),
+				'label_off' => esc_html__( 'No', 'ellens-lentze' ),
+				'return_value' => 'yes',
+				'default' => '',
+			]
+		);
+
+		$widget->add_control(
 			'bank_account_details',
 			[
 				'label' => esc_html__( 'Bank Account Details', 'ellens-lentze' ),
@@ -215,6 +336,18 @@ class Content_Controls {
 				'dynamic' => [
 					'active' => true,
 				],
+			]
+		);
+
+		$widget->add_control(
+			'hide_bank_account_details',
+			[
+				'label' => esc_html__( 'Hide Bank Account Details', 'ellens-lentze' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'ellens-lentze' ),
+				'label_off' => esc_html__( 'No', 'ellens-lentze' ),
+				'return_value' => 'yes',
+				'default' => '',
 			]
 		);
 	}

@@ -14,10 +14,10 @@ class Render_Functions {
 
 		?>
 		<section class="sidebar-faq-section">
-            <div class="sidebar-faq-container">
+            <div class="sidebar-faq-container d-flex items-start mx-auto gap-3xl">
                 
                 <!-- Sidebar Sidebar (Moved to Left) -->
-                <aside class="sidebar-faq-sidebar">
+                <aside class="sidebar-faq-sidebar w-30 shrink-0">
                     <div class="dis-card">
                         <!-- Card Image -->
                         <?php if ( isset( $settings['show_card_image'] ) && 'yes' === $settings['show_card_image'] ) : ?>
@@ -61,7 +61,7 @@ class Render_Functions {
                         
                         if ( ! empty( $sections ) ) : ?>
                             <nav class="sidebar-faq__nav">
-                                <ul class="sidebar-faq__nav-list">
+                                <ul class="sidebar-faq__nav-list d-flex flex-column gap-sm">
                                     <?php foreach ( $sections as $section ) : 
                                         $sec_id = ! empty( $section['section_id'] ) ? $section['section_id'] : sanitize_title( $section['section_title'] );
                                     ?>
@@ -78,7 +78,7 @@ class Render_Functions {
                 </aside>
 
                 <!-- FAQ Content Area (Right) -->
-                <div class="sidebar-faq-content">
+                <div class="sidebar-faq-content flex-1">
                     <?php if ( ! empty( $settings['title'] ) ) : ?>
                         <h2 class="sidebar-faq-title"><?php echo esc_html( $settings['title'] ); ?></h2>
                     <?php endif; ?>

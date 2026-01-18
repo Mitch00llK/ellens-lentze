@@ -1,7 +1,9 @@
 @media (max-width: 1024px) {
     .hero__card {
         margin-left: 5vw;
-        width: 100vw;
+        width: calc(100vw - 10vw);
+        max-width: 100%;
+        /* Ensure it never exceeds container width */
         min-height: auto;
     }
 }
@@ -36,6 +38,7 @@
 
     .hero__card {
         width: 100%;
+        max-width: 100%;
         margin-left: 0;
         -ms-flex-order: 1;
     }

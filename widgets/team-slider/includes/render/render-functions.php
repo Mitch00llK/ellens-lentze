@@ -44,9 +44,9 @@ class Render_Functions {
         }
 
 		?>
-		<div class="ellens-team-slider-wrapper p-md mt-md mb-md">
+		<div class="ellens-team-slider-wrapper p-md mt-md mb-md mx-auto w-full">
             <!-- Header Section -->
-            <div class="team-slider-header">
+            <div class="team-slider-header d-flex justify-between items-center mb-xl">
                 <?php if ( ! empty( $section_title ) ) : ?>
                     <h2 class="section-title m-0"><?php echo esc_html( $section_title ); ?></h2>
                 <?php endif; ?>

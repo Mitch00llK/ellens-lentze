@@ -16,10 +16,10 @@ class Render_Functions {
 
 		?>
 		<section class="faq-section" itemscope itemtype="https://schema.org/FAQPage">
-			<div class="faq-container">
+			<div class="faq-container d-flex items-start mx-auto gap-3xl">
 				
 				<!-- Left Content -->
-				<div class="faq-content">
+				<div class="faq-content d-flex flex-column gap-lg shrink-0 w-30">
 					<?php if ( ! empty( $settings['title'] ) ) : ?>
 						<h2 class="faq-content__title m-0"><?php echo esc_html( $settings['title'] ); ?></h2>
 					<?php endif; ?>
@@ -41,13 +41,13 @@ class Render_Functions {
 				</div>
 
 				<!-- Right Accordion -->
-				<div class="faq-accordion">
+				<div class="faq-accordion d-flex flex-column gap-md flex-1">
 					<?php if ( ! empty( $settings['faq_items'] ) ) : ?>
 						<?php foreach ( $settings['faq_items'] as $index => $item ) : 
 							$id = 'faq-item-' . $index . '-' . $widget->get_id();
 						?>
 							<div class="faq-accordion__item" id="<?php echo esc_attr( $id ); ?>" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-								<button class="faq-accordion__header p-md" aria-expanded="false" aria-controls="<?php echo esc_attr( $id ); ?>-content">
+								<button class="faq-accordion__header d-flex items-center justify-between w-full p-md gap-sm" aria-expanded="false" aria-controls="<?php echo esc_attr( $id ); ?>-content">
 									<span class="faq-accordion__title m-0" itemprop="name"><?php echo esc_html( $item['question'] ); ?></span>
 									<span class="faq-accordion__icon"><i class="fas fa-chevron-down" aria-hidden="true"></i></span>
 								</button>

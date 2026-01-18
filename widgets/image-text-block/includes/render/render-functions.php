@@ -13,7 +13,7 @@ class Render_Functions {
 		$settings = $widget->get_settings_for_display();
 
         $widget->add_render_attribute( 'wrapper', 'class', [ 'image-text-block', 'py-2xl', '' ] );
-        $widget->add_render_attribute( 'container', 'class', [ 'image-text-block__container', 'd-flex', 'flex-row', 'justify-center', 'align-items-center' ] );
+        $widget->add_render_attribute( 'container', 'class', [ 'image-text-block__container', 'd-flex', 'flex-row', 'justify-center', 'align-items-center', 'flex-wrap', 'p-md' ] );
 
         // Layout Switch
         if ( 'right' === $settings['image_position'] ) {
@@ -25,7 +25,7 @@ class Render_Functions {
             <div <?php $widget->print_render_attribute_string( 'container' ); ?>>
                 
                 <!-- Image Wrapper -->
-                <div class="image-text-block__image-wrapper d-flex justify-center align-items-center max-w-50">
+                <div class="image-text-block__image-wrapper d-flex justify-center align-items-center w-50 shrink-0">
                     <?php if ( ! empty( $settings['image']['id'] ) ) : 
                         $image_id = $settings['image']['id'];
                         $image_size = isset( $settings['image_size'] ) ? $settings['image_size'] : 'full';
@@ -42,7 +42,7 @@ class Render_Functions {
                 </div>
 
                 <!-- Content Wrapper -->
-                <div class="image-text-block__content-wrapper p-2xl d-flex flex-column justify-center gap-md max-w-50">
+                <div class="image-text-block__content-wrapper p-2xl d-flex flex-column justify-center gap-md w-50 shrink-0">
                     <?php if ( ! empty( $settings['title'] ) ) : ?>
                         <h2 class="image-text-block__title m-0"><?php echo esc_html( $settings['title'] ); ?></h2>
                     <?php endif; ?>

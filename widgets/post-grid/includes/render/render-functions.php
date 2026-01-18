@@ -47,7 +47,7 @@ class Render_Functions {
 		?>
 		<div <?php $widget->print_render_attribute_string( 'wrapper' ); ?>>
             <!-- Header -->
-            <div class="ellens-post-grid-header mx-auto">
+            <div class="ellens-post-grid-header d-flex items-center justify-between w-full mx-auto">
                 <?php if ( ! empty( $title ) ) : ?>
                     <h2 class="section-title m-0"><?php echo esc_html( $title ); ?></h2>
                 <?php endif; ?>

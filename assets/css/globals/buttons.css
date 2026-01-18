@@ -12,6 +12,8 @@
     transition: all 0.3s ease;
     background: transparent;
     cursor: pointer;
+    width: auto;
+    max-width: fit-content;
 }
 
 .btn:hover {

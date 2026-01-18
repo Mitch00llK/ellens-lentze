@@ -1,6 +1,6 @@
+/* .feature-grid handled by utilities: mx-auto w-full p-md */
 .feature-grid {
     max-width: var(--container-max-width);
-    margin: 0 auto;
 }
 
 .feature-grid__title {
@@ -11,18 +11,13 @@
     color: var(--color-white);
 }
 
+/* .feature-grid__container: d-grid items-center gap-2xl */
 .feature-grid__container {
-    display: grid;
     grid-template-columns: 1fr 25rem 1fr;
-    gap: var(--section-spacing-gap);
-    align-items: center;
+    /* gap, align-items handled by utilities? Note: grid-template-columns is custom */
 }
 
-.feature-grid__column {
-    display: flex;
-    flex-direction: column;
-    gap: var(--section-spacing-gap);
-}
+/* .feature-grid__column handled by utilities: d-flex flex-column gap-2xl */
 
 .feature-grid__image-wrapper img {
     width: 100%;

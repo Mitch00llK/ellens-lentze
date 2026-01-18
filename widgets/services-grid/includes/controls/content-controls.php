@@ -114,6 +114,18 @@ class Content_Controls {
 			]
 		);
 
+        $repeater->add_control(
+			'card_hide',
+			[
+				'label' => esc_html__( 'Hide Card', 'ellens-lentze' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'ellens-lentze' ),
+				'label_off' => esc_html__( 'No', 'ellens-lentze' ),
+				'return_value' => 'yes',
+				'default' => '',
+			]
+		);
+
 		$widget->add_control(
 			'cards_list',
 			[

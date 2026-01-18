@@ -2,10 +2,7 @@
 
 @import "components/card.css";
 
-.ellens-team-grid-wrapper {
-    width: 100%;
-    margin: 0 auto;
-}
+/* .ellens-team-grid-wrapper handled by utilities: w-full mx-auto */
 
 /* Header Section */
 .team-grid-header {
@@ -39,12 +36,15 @@
 }
 
 /* Grid Layout */
+/* Grid Layout - utilities: d-grid gap-md */
 .team-grid {
     display: grid;
-    gap: var(--spacing-md);
+    /* gap handled by gap-md */
 }
 
 /* Responsive */
+@import '../../../../assets/css/globals/variables.css';
+@import './layout/container.css';
 @import "responsive.css";
 
 /* Card Overrides if needed for grid context */

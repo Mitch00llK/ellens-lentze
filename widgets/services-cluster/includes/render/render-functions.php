@@ -12,8 +12,14 @@ class Render_Functions {
 	public static function render_widget( $widget ) {
 		$settings = $widget->get_settings_for_display();
 
-        $widget->add_render_attribute( 'wrapper', 'class', 'services-cluster' );
-        $widget->add_render_attribute( 'container', 'class', 'services-cluster__container' );
+        $widget->add_render_attribute( 'wrapper', 'class', [ 'services-cluster', 'p-2xl', 'd-flex', 'justify-center', 'items-center', 'w-full' ] );
+        $widget->add_render_attribute( 'container', 'class', [ 'services-cluster__container', 'd-flex', 'justify-center', 'items-center', 'relative', 'w-full', 'mx-auto', 'flex-1' ] );
+
+        // Visuals visibility on mobile
+        $visuals_class = 'services-cluster__visuals';
+        if ( ! empty( $settings['show_visuals_on_mobile'] ) && 'yes' === $settings['show_visuals_on_mobile'] ) {
+            $visuals_class .= ' services-cluster__visuals--show-mobile';
+        }
 
         // Mask Style if provided
         $mask_style = '';
@@ -26,9 +32,8 @@ class Render_Functions {
 		<div <?php $widget->print_render_attribute_string( 'wrapper' ); ?>>
             <div <?php $widget->print_render_attribute_string( 'container' ); ?>>
                 
-                <!-- Cluster Title -->
-                <?php if ( ! empty( $settings['cluster_title'] ) ) : ?>
-                    <div class="services-cluster__title-wrapper">
+                <?php if ( ! empty( $settings['cluster_title'] ) && empty( $settings['hide_cluster_title'] ) ) : ?>
+                    <div class="services-cluster__title-wrapper absolute top-0 left-0">
                         <?php
                         $title_tag = \Elementor\Utils::validate_html_tag( $settings['cluster_title_tag'] );
                         printf( '<%1$s class="services-cluster__main-title m-0">%2$s</%1$s>', $title_tag, esc_html( $settings['cluster_title'] ) );
@@ -37,7 +42,7 @@ class Render_Functions {
                 <?php endif; ?>
 
                 <!-- Central Visuals -->
-                <div class="services-cluster__visuals">
+                <div class="<?php echo esc_attr( $visuals_class ); ?> d-flex justify-center items-center">
                     <?php if ( ! empty( $settings['center_image']['url'] ) ) : ?>
                          <img src="<?php echo esc_url( $settings['center_image']['url'] ); ?>" 
                               alt="<?php echo esc_attr( \Elementor\Control_Media::get_image_alt( $settings['center_image'] ) ); ?>" 
@@ -51,6 +56,11 @@ class Render_Functions {
                     <?php 
                     if ( $settings['items'] ) {
                         foreach ( $settings['items'] as $index => $item ) {
+                            // Skip hidden items
+                            if ( ! empty( $item['hide'] ) && 'yes' === $item['hide'] ) {
+                                continue;
+                            }
+
                             $item_key = 'item_' . $index;
                             $descriptive_classes = [
                                 'services-cluster__card-wrapper',

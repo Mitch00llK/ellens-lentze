@@ -12,8 +12,8 @@ class Render_Functions {
 	public static function render_widget( $widget ) {
 		$settings = $widget->get_settings_for_display();
 
-        $widget->add_render_attribute( 'wrapper', 'class', 'usp-grid py-2xl' );
-        $widget->add_render_attribute( 'container', 'class', 'usp-grid__container' );
+        $widget->add_render_attribute( 'wrapper', 'class', 'usp-grid py-2xl w-full' );
+        $widget->add_render_attribute( 'container', 'class', [ 'usp-grid__container', 'd-grid', 'grid-cols-3', 'mobile:grid-cols-1', 'gap-lg', 'w-full', 'items-start' ] );
 
 		?>
 		<div <?php $widget->print_render_attribute_string( 'wrapper' ); ?>>
@@ -22,7 +22,7 @@ class Render_Functions {
                 if ( $settings['usps'] ) {
                     foreach ( $settings['usps'] as $item ) {
                          $item_key = 'item_' . $item['_id'];
-                         $widget->add_render_attribute( $item_key, 'class', 'usp-grid__item' );
+                         $widget->add_render_attribute( $item_key, 'class', [ 'usp-grid__item', 'd-flex', 'flex-column', 'items-start', 'gap-md', 'h-full', 'w-full' ] );
                         ?>
                         <div <?php $widget->print_render_attribute_string( $item_key ); ?>>
                             <?php if ( ! empty( $item['icon']['value'] ) ) : ?>

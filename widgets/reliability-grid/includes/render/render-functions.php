@@ -21,21 +21,21 @@ class Render_Functions {
 		$right_features = array_slice( $features, 2 );
 		?>
 
-		<div class="feature-grid p-md">
+		<div class="feature-grid p-md mx-auto w-full">
 			<?php if ( ! empty( $settings['main_title'] ) ) : ?>
 				<h2 class="feature-grid__title"><?php echo esc_html( $settings['main_title'] ); ?></h2>
 			<?php endif; ?>
 
-			<div class="feature-grid__container">
+			<div class="feature-grid__container d-grid items-center gap-2xl">
 				<!-- Left Features -->
-				<div class="feature-grid__column feature-grid__column--left">
+				<div class="feature-grid__column feature-grid__column--left d-flex flex-column gap-2xl">
 					<?php foreach ( $left_features as $index => $item ) : ?>
 						<?php self::render_feature_item( $item ); ?>
 					<?php endforeach; ?>
 				</div>
 
 				<!-- Center Image -->
-				<div class="feature-grid__column feature-grid__column--center">
+				<div class="feature-grid__column feature-grid__column--center d-flex flex-column gap-2xl">
 					<?php if ( ! empty( $settings['center_image']['url'] ) ) : ?>
 						<div class="feature-grid__image-wrapper">
 							<?php echo \Elementor\Group_Control_Image_Size::get_attachment_image_html( $settings, 'center_image', 'center_image' ); ?>
@@ -44,7 +44,7 @@ class Render_Functions {
 				</div>
 
 				<!-- Right Features -->
-				<div class="feature-grid__column feature-grid__column--right">
+				<div class="feature-grid__column feature-grid__column--right d-flex flex-column gap-2xl">
 					<?php foreach ( $right_features as $index => $item ) : ?>
 						<?php self::render_feature_item( $item ); ?>
 					<?php endforeach; ?>

@@ -15,7 +15,6 @@
     line-height: var(--h2-line-height);
     letter-spacing: var(--h2-letter-spacing);
     color: var(--color-white);
-    margin: 0;
 }
 
 .dis-content__text {

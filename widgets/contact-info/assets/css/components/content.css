@@ -73,7 +73,7 @@
 /* Opening Hours Container */
 .contact-info__hours-container {
     border: 1px solid var(--color-blue-400);
-    border-radius: 8px;
+    border-radius: var(--border-radius-sm);
     padding: var(--spacing-md) var(--spacing-lg);
     /* 16px 24px */
 }
@@ -126,12 +126,6 @@
     /* 32px */
     letter-spacing: 0.18px;
     color: var(--color-white-500);
-}
-
-/* Financial Details */
-.contact-info__financial {
-    width: 596px;
-    /* Fixed width from Figma */
 }
 
 .contact-info__financial-item {

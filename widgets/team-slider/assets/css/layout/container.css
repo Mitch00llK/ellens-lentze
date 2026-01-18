@@ -1,15 +1,13 @@
 /* Layout - Figma Matched */
+/* .ellens-team-slider-wrapper handled by utilities */
 .ellens-team-slider-wrapper {
     background-color: var(--color-dark-blue);
     overflow: hidden;
-    width: 100%;
 }
 
 /* Header Section */
+/* Header Section - utilities */
 .team-slider-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: left;
     max-width: var(--container-max-width);
     margin: 0 auto 3.5rem;
 }

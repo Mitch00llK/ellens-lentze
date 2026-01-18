@@ -1,9 +1,4 @@
-.ellens-services-grid {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    position: relative;
-}
+/* .ellens-services-grid handled by utilities: w-full mx-auto relative */
 
 .ellens-services-grid__title {
     font-family: var(--font-family-serif);
@@ -14,11 +9,9 @@
     text-align: left;
 }
 
+/* .ellens-services-grid__container handled by utilities: d-grid gap-lg w-full */
 .ellens-services-grid__container {
-    display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-    width: 100%;
 }
 
 @media (min-width: 768px) {

@@ -2,67 +2,68 @@
  * Color Tokens
  */
 :root {
-    /* =========================================
+   /* =========================================
        1. Primitive Scales (From Image)
        ========================================= */
 
-    /* Blue Scale */
-    --color-blue-1000: rgba(0, 7, 14, 1);
-    --color-blue-900: rgba(0, 14, 29, 1);
-    --color-blue-800: rgba(0, 28, 58, 1);
-    --color-blue-700: rgba(0, 41, 86, 1);
-    --color-blue-600: rgba(0, 55, 115, 1);
-    --color-blue-500: rgba(0, 69, 144, 1);
-    --color-blue-400: rgba(51, 106, 166, 1);
-    --color-blue-300: rgba(102, 143, 188, 1);
-    --color-blue-200: rgba(153, 181, 211, 1);
-    --color-blue-100: rgba(204, 218, 233, 1);
-    --color-blue-50: rgba(229, 236, 244, 1);
+   /* Blue Scale */
+   --color-blue-1000: rgba(0, 7, 14, 1);
+   --color-blue-900: rgba(0, 14, 29, 1);
+   --color-blue-800: rgba(0, 28, 58, 1);
+   --color-blue-700: rgba(0, 41, 86, 1);
+   --color-blue-600: rgba(0, 55, 115, 1);
+   --color-blue-500: rgba(0, 69, 144, 1);
+   --color-blue-400: rgba(51, 106, 166, 1);
+   --color-blue-300: rgba(102, 143, 188, 1);
+   --color-blue-200: rgba(153, 181, 211, 1);
+   --color-blue-100: rgba(204, 218, 233, 1);
+   --color-blue-50: rgba(229, 236, 244, 1);
 
-    /* Orange Scale */
-    --color-orange-500: rgba(239, 138, 0, 1);
-    --color-orange-400: rgba(242, 161, 51, 1);
-    --color-orange-300: rgba(245, 185, 102, 1);
-    --color-orange-200: rgba(249, 208, 153, 1);
-    --color-orange-100: rgba(252, 232, 204, 1);
-    --color-orange-50: rgba(253, 243, 229, 1);
+   /* Orange Scale */
+   --color-orange-500: rgba(239, 138, 0, 1);
+   --color-orange-400: rgba(242, 161, 51, 1);
+   --color-orange-300: rgba(245, 185, 102, 1);
+   --color-orange-200: rgba(249, 208, 153, 1);
+   --color-orange-100: rgba(252, 232, 204, 1);
+   --color-orange-50: rgba(253, 243, 229, 1);
 
-    /* Black Scale */
-    --color-black-500: rgba(23, 23, 23, 1);
-    --color-black-400: rgba(69, 69, 69, 1);
-    --color-black-300: rgba(116, 116, 116, 1);
-    --color-black-200: rgba(162, 162, 162, 1);
-    --color-black-100: rgba(209, 209, 209, 1);
-    --color-black-50: rgba(232, 232, 232, 1);
+   /* Black Scale */
+   --color-black-500: rgba(23, 23, 23, 1);
+   --color-black-400: rgba(69, 69, 69, 1);
+   --color-black-300: rgba(116, 116, 116, 1);
+   --color-black-200: rgba(162, 162, 162, 1);
+   --color-black-100: rgba(209, 209, 209, 1);
+   --color-black-50: rgba(232, 232, 232, 1);
 
-    /* Micellaneous */
-    --color-light-blue-500: rgba(237, 245, 252, 1);
-    --color-white-500: rgba(254, 254, 254, 1);
+   /* Micellaneous */
+   --color-light-blue-500: rgba(237, 245, 252, 1);
+   --color-white-500: rgba(254, 254, 254, 1);
 
-    /* =========================================
+   /* =========================================
        2. Semantic Aliases (Project Globals)
        ========================================= */
 
-    /* Brand Colors */
-    --color-primary: var(--color-blue-800);
-    /* Dark Blue Main */
-    --color-secondary: var(--color-orange-500);
-    /* Orange Main */
+   /* Brand Colors */
+   --color-primary: var(--color-blue-800);
+   /* Dark Blue Main */
+   --color-secondary: var(--color-orange-500);
+   /* Orange Main */
 
-    /* Functional Colors */
-    --color-dark-blue: var(--color-blue-800);
-    --color-light-blue: var(--color-blue-100);
-    --color-white: var(--color-white-500);
-    --color-neutral-dark: var(--color-black-500);
-    --color-neutral-light: var(--color-black-50);
-    /* Light Gray */
+   /* Functional Colors */
+   --color-dark-blue: var(--color-blue-800);
+   --color-light-blue: var(--color-blue-100);
+   --color-white: var(--color-white-500);
+   --color-neutral-dark: var(--color-black-500);
+   --color-neutral-light: var(--color-black-50);
+   /* Light Gray */
+   --color-error: rgba(211, 47, 47, 1);
 
-    /* Legacy/Component Mapping (For backward compatibility) */
-    --color-primary-100: var(--color-blue-700);
-    /* Was 0, 41, 86 */
-    --color-primary-80: rgba(0, 69, 144, 0.8);
-    --color-primary-70: var(--color-blue-700);
-    --color-primary-50: var(--color-blue-50);
+   /* Legacy/Component Mapping (For backward compatibility) */
+   --color-primary-100: var(--color-blue-700);
+   /* Was 0, 41, 86 */
+   --color-primary-80: rgba(0, 69, 144, 0.8);
+   --color-primary-70: var(--color-blue-700);
+   --color-primary-50: var(--color-blue-50);
 
-    --color-secondary-100: var(--color-orange-500);
+   --color-secondary-100: var(--color-orange-500);
 }

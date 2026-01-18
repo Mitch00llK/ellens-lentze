@@ -1,14 +1,12 @@
 /* Layout: Grid */
+/* .news-overview__featured-grid handled by utilities: d-grid gap-lg */
 .news-overview__featured-grid {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-lg);
 }
 
+/* .news-overview__grid handled by utilities: d-grid gap-lg */
 .news-overview__grid {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-lg);
 }
 
 /* Responsive */

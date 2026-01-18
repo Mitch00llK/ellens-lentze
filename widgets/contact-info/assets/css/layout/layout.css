@@ -13,7 +13,7 @@
 .contact-info__primary {
     padding: 1.5rem 0rem 0.875rem 0rem;
     /* pt-24px pb-14px - custom padding, not using standard spacing */
-    border-radius: 8px;
+    border-radius: var(--border-radius-sm);
     overflow: hidden;
     width: 70%;
 }

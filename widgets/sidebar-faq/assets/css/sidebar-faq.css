@@ -6,19 +6,18 @@
  * @since 1.0.0
  */
 
+@import '../../../../assets/css/globals/variables.css';
 @import './layout/container.css';
 @import './components/accordion.css';
 @import './components/card.css';
 @import './responsive/tablet.css';
 
 /* Sidebar Navigation */
+/* .sidebar-faq__nav-list handled by utilities */
 .sidebar-faq__nav-list {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
     margin-top: var(--spacing-lg);
     /* Space from CTA/USPs */
 }
