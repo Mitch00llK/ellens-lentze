@@ -1,12 +1,15 @@
 .image-text-block {
     width: 100%;
+    clear: both;
+    /* Ensure widget clears previous elements and participates in normal flow */
 }
 
 .image-text-block__container {
+    max-width: var(--container-max-width);
     width: 100%;
+    margin: 0 auto;
     border-radius: var(--ellens-itb-spacing-block-radius);
     overflow: hidden;
-    position: relative;
 }
 
 /* .image-text-block__image-wrapper handled by utilities: w-50 shrink-0 */

@@ -92,6 +92,9 @@ function register_ellens_assets() {
     // Enqueue Global Styles
     wp_enqueue_style( 'ellens-reset-css' );
     wp_enqueue_style( 'ellens-global-variables' );
+    
+    // Enqueue Button Animations Script
+    wp_enqueue_script( 'ellens-button-animations' );
 }
 add_action( 'wp_enqueue_scripts', 'register_ellens_assets' );
 // Also register for Elementor frontend

@@ -1913,6 +1913,15 @@
         flex-wrap: wrap;
     }
 
+    /* Order - Mobile-specific order utilities */
+    .order-mobile-first {
+        order: -1 !important;
+    }
+
+    .order-mobile-last {
+        order: 9999 !important;
+    }
+
     /* Large margins - reduce by ~40-50% */
     .m-xl {
         margin: 1.5rem !important;

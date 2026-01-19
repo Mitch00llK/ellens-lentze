@@ -27,7 +27,6 @@ class Content_Controls {
                 'options' => [
                     'default'         => esc_html__( 'Floating Card (Default)', 'ellens-lentze' ),
                     'full_width_blue' => esc_html__( 'Full Width Blue', 'ellens-lentze' ),
-                    'image_overlap_card' => esc_html__( 'Image Overlap Card', 'ellens-lentze' ),
                 ],
             ]
         );
@@ -40,6 +39,30 @@ class Content_Controls {
 				'label_off' => esc_html__( 'Hide', 'ellens-lentze' ),
 				'return_value' => 'yes',
 				'default' => 'yes',
+			]
+		);
+
+        $widget->add_control(
+			'card_alignment',
+			[
+				'label' => esc_html__( 'Card Alignment', 'ellens-lentze' ),
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'left' => [
+						'title' => esc_html__( 'Left', 'ellens-lentze' ),
+						'icon' => 'eicon-text-align-left',
+					],
+					'right' => [
+						'title' => esc_html__( 'Right', 'ellens-lentze' ),
+						'icon' => 'eicon-text-align-right',
+					],
+				],
+				'default' => 'right',
+				'condition' => [
+					'layout_template' => 'default',
+					'show_card_container' => 'yes',
+				],
+				'toggle' => true,
 			]
 		);
 

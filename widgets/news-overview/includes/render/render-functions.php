@@ -160,7 +160,12 @@ class Render_Functions {
                                 </div>
                                 <h4 class="news-overview__item-title"><?php the_title(); ?></h4>
                                 <div class="news-overview__item-read-more">
-                                    <i class="fas fa-arrow-right"></i>
+                                    <div class="news-overview__item-read-more-content">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                    <div class="news-overview__item-read-more-hover">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
                                 </div>
                             </div>
                         </a>

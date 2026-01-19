@@ -36,6 +36,32 @@ class Content_Controls {
 		$repeater = new Repeater();
 
         $repeater->add_control(
+			'card_show_as_image',
+			[
+				'label' => esc_html__( 'Show as Image', 'ellens-lentze' ),
+				'type' => Controls_Manager::SWITCHER,
+				'label_on' => esc_html__( 'Yes', 'ellens-lentze' ),
+				'label_off' => esc_html__( 'No', 'ellens-lentze' ),
+				'return_value' => 'yes',
+				'default' => '',
+			]
+		);
+
+        $repeater->add_control(
+			'card_image',
+			[
+				'label' => esc_html__( 'Image', 'ellens-lentze' ),
+				'type' => Controls_Manager::MEDIA,
+				'default' => [
+					'url' => '',
+				],
+                'condition' => [
+                    'card_show_as_image' => 'yes',
+                ],
+			]
+		);
+
+        $repeater->add_control(
 			'card_icon',
 			[
 				'label' => esc_html__( 'Icon', 'ellens-lentze' ),
@@ -44,6 +70,9 @@ class Content_Controls {
 					'value' => 'fas fa-star',
 					'library' => 'fa-solid',
 				],
+                'condition' => [
+                    'card_show_as_image!' => 'yes',
+                ],
 			]
 		);
 
@@ -57,6 +86,9 @@ class Content_Controls {
                 'dynamic' => [
 					'active' => true,
 				],
+                'condition' => [
+                    'card_show_as_image!' => 'yes',
+                ],
 			]
 		);
 
@@ -70,6 +102,9 @@ class Content_Controls {
                 'dynamic' => [
 					'active' => true,
 				],
+                'condition' => [
+                    'card_show_as_image!' => 'yes',
+                ],
 			]
 		);
 
