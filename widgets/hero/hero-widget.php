@@ -114,6 +114,20 @@ class Hero_Widget extends Widget_Base {
         return [ 'ellens-hero' ];
     }
 
+    /**
+     * Get script dependencies.
+     *
+     * Retrieve the list of script dependencies the widget requires.
+     *
+     * @since 1.0.0
+     * @access public
+     *
+     * @return array Widget scripts dependencies.
+     */
+    public function get_script_depends() {
+        return [ 'ellens-hero-card-position' ];
+    }
+
 	/**
 	 * Register hero widget controls.
 	 *

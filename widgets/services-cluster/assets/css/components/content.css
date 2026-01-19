@@ -4,7 +4,6 @@
     border-radius: var(--card-radius);
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
     color: var(--card-text-primary);
 }
 
@@ -16,7 +15,7 @@
 
 .services-cluster__icon {
     font-size: var(--icon-size-md);
-    color: var(--icon-color-primary);
+    color: var(--color-orange-500);
     margin-top: 4px;
     /* Optical alignment with text */
 }
@@ -24,7 +23,8 @@
 .services-cluster__icon svg {
     height: var(--icon-size-md);
     width: auto;
-    color: var(--icon-color-primary);
+    color: var(--color-orange-500);
+    fill: var(--color-orange-500);
 }
 
 .services-cluster__title {

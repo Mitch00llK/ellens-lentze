@@ -86,11 +86,44 @@
     color: var(--color-white);
     font-size: 1.25rem;
     transition: background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.ellens-service-card__arrow-content,
+.ellens-service-card__arrow-hover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ellens-service-card__arrow-content {
+    transform: translateX(0%);
+}
+
+.ellens-service-card__arrow-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    /* Starts to the left */
 }
 
 .ellens-service-card:hover .ellens-service-card__arrow {
     background-color: var(--color-dark-blue);
-    /* Transform animation removed */
+}
+
+.ellens-service-card:hover .ellens-service-card__arrow-content {
+    transform: translateX(100%);
+    /* Slides right out */
+}
+
+.ellens-service-card:hover .ellens-service-card__arrow-hover {
+    transform: translateX(0%);
+    /* Slides right in */
 }
 
 .ellens-service-card__bg-graphic {
@@ -117,4 +150,37 @@
 .ellens-service-card__action {
     position: relative;
     z-index: 1;
+}
+
+/* Image mode styles */
+.ellens-service-card--image {
+    padding: 0 !important;
+    background-color: transparent !important;
+    display: block;
+    overflow: hidden;
+    height: 100%;
+    min-height: 100%;
+}
+
+.ellens-service-card__image-wrapper {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.ellens-service-card__image {
+    width: 100%;
+    height: 100% !Important;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.ellens-service-card--image:hover .ellens-service-card__image {
+    transform: scale(1.05);
 }

@@ -30,6 +30,32 @@ class Render_Functions {
                             echo apply_filters( 'the_content', $content ); 
                             ?>
                         </div>
+                    <?php elseif ( 'team_member' === $content_source ) : ?>
+                        <?php
+                        // Check if we're on a team member single post page
+                        $current_post_id = get_the_ID();
+                        $current_post = get_post( $current_post_id );
+                        
+                        // Use active post ID if it's a team member, otherwise use selected team_member_id
+                        if ( $current_post && 'ellens_team' === $current_post->post_type ) {
+                            $team_member_id = $current_post_id;
+                        } elseif ( ! empty( $settings['team_member_id'] ) ) {
+                            $team_member_id = $settings['team_member_id'];
+                        } else {
+                            $team_member_id = null;
+                        }
+                        
+                        if ( $team_member_id ) :
+                            $team_post = get_post( $team_member_id );
+                            
+                            if ( $team_post && 'ellens_team' === $team_post->post_type ) :
+                                $team_content = get_post_field( 'post_content', $team_member_id );
+                                ?>
+                                <div class="dis-content__block dis-content__post-content">
+                                    <?php echo apply_filters( 'the_content', $team_content ); ?>
+                                </div>
+                            <?php endif; ?>
+                        <?php endif; ?>
                     <?php elseif ( ! empty( $settings['content_blocks'] ) ) : ?>
                         <?php foreach ( $settings['content_blocks'] as $block ) : ?>
                             <div class="dis-content__block">

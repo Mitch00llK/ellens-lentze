@@ -30,6 +30,38 @@ class Content_Controls {
 				'options' => [
 					'manual' => esc_html__( 'Manual Content', 'ellens-lentze' ),
 					'current_post' => esc_html__( 'Current Post', 'ellens-lentze' ),
+					'team_member' => esc_html__( 'Team Member', 'ellens-lentze' ),
+				],
+			]
+		);
+
+        // Get default team member ID (current post if it's a team member)
+        $default_team_member_id = '';
+        $current_post_id = get_the_ID();
+        if ( $current_post_id ) {
+            $current_post = get_post( $current_post_id );
+            if ( $current_post && 'ellens_team' === $current_post->post_type ) {
+                $default_team_member_id = $current_post_id;
+            }
+        }
+
+        $widget->add_control(
+			'team_member_id',
+			[
+				'label' => esc_html__( 'Select Team Member', 'ellens-lentze' ),
+				'type' => Controls_Manager::SELECT2,
+				'options' => self::get_team_members_options(),
+				'default' => $default_team_member_id,
+				'label_block' => true,
+				'multiple' => false,
+				'condition' => [
+					'content_source' => 'team_member',
+				],
+				'dynamic' => [
+					'active' => true,
+					'categories' => [
+						\Elementor\Modules\DynamicTags\Module::POST_META_CATEGORY,
+					],
 				],
 			]
 		);
@@ -285,5 +317,27 @@ class Content_Controls {
 		);
 
         $widget->end_controls_section();
+	}
+
+	/**
+	 * Get team members options for select control.
+	 *
+	 * @return array Array of team member ID => Name pairs.
+	 */
+	private static function get_team_members_options() {
+		$team_members = get_posts( [
+			'post_type'      => 'ellens_team',
+			'posts_per_page' => -1,
+			'post_status'    => 'publish',
+			'orderby'        => 'title',
+			'order'          => 'ASC',
+		] );
+
+		$options = [];
+		foreach ( $team_members as $member ) {
+			$options[ $member->ID ] = $member->post_title;
+		}
+
+		return $options;
 	}
 }

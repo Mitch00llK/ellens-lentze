@@ -46,12 +46,29 @@ class Assets_Config {
             '1.0.0'
         );
 
+        // Button Animations Script
+        wp_register_script(
+            'ellens-button-animations',
+            plugins_url( 'assets/js/button-animations.js', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [],
+            '1.0.0',
+            true
+        );
+
          /* Hero Widget Assets (Consolidated) */
         wp_register_style(
             'ellens-hero',
             plugins_url( 'widgets/hero/assets/css/hero.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
             [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ],
             '1.0.0'
+        );
+
+        wp_register_script(
+            'ellens-hero-card-position',
+            plugins_url( 'widgets/hero/assets/js/hero-card-position.js', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            [],
+            '1.0.0',
+            true
         );
 
 

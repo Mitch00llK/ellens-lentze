@@ -13,7 +13,6 @@
 /* Layout styles */
 @import './layout/container.css';
 @import './layout/template-full-width.css';
-@import './layout/template-image-overlap-card.css';
 
 /* Component styles */
 @import './components/content.css';

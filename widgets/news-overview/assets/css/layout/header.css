@@ -12,7 +12,7 @@
 .news-overview__title {
     font-family: var(--font-family-serif);
     font-size: var(--h2-font-size);
-    color: var(--color-white);
+    color: var(--color-white) !important;
 }
 
 @media (max-width: 768px) {
