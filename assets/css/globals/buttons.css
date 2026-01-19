@@ -55,12 +55,13 @@
     background-color: transparent;
     border: none;
     color: var(--color-primary);
+    border: 1px solid var(--color-dark-blue);
     padding: var(--spacing-button-md);
 }
 
 .btn--ghost:hover {
-    background-color: rgba(0, 69, 144, 0.1);
     color: var(--color-dark-blue);
+    border: 1px solid var(--color-dark-blue);
     opacity: 1;
 }
 
@@ -73,7 +74,7 @@
 
 .btn--outline:hover {
     background-color: var(--color-primary);
-    border-color: var(--color-primary);
+    border-color: var(--color-white);
     color: var(--color-white);
     opacity: 1;
 }
