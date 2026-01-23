@@ -3,7 +3,6 @@
 @import 'components/search.css';
 
 /* Global design tokens */
-@import '../../../../assets/css/globals/variables.css';
 
 /* Layout */
 @import './layout/structure.css';

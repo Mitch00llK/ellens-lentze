@@ -8,7 +8,6 @@
  */
 
 /* Global design tokens */
-@import '../../../../assets/css/globals/variables.css';
 
 /* Layout styles */
 @import './layout/container.css';

@@ -123,7 +123,38 @@ class Vite_Loader {
         }
     }
 
-      /**
+    private function get_manifest_entry( $entry_key ) {
+        if ( ! $this->manifest || ! isset( $this->manifest[ $entry_key ] ) ) {
+            return null;
+        }
+        return $this->manifest[ $entry_key ];
+    }
+
+    /**
+     * Register a style that is generated/extracted from a JS entry (e.g. imported CSS).
+     */
+    public static function register_style_from_js_entry( $handle, $entry_key, $deps = [], $ver = '1.0.0', $media = 'all' ) {
+         $instance = self::get_instance();
+         
+         if ( $instance->is_dev ) {
+             // In dev mode, CSS is injected by JS. We register a placeholder handle so dependencies don't break.
+             wp_register_style( $handle, false, $deps, $ver, $media );
+             return;
+         }
+         
+         $entry = $instance->get_manifest_entry( $entry_key );
+         if ( $entry && ! empty( $entry['css'] ) ) {
+             // Register the first CSS file found
+             $css_file = $entry['css'][0];
+             $css_url = $instance->dist_url . '/' . $css_file;
+             wp_register_style( $handle, $css_url, $deps, $instance->is_dev ? time() : $ver, $media );
+         } else {
+             // Fallback if no CSS found (prevent broken deps)
+             wp_register_style( $handle, false, $deps, $ver, $media );
+         }
+    }
+
+    /**
      * Register a script via Vite
      */
     public static function register_script( $handle, $entry_key, $deps = [], $ver = '1.0.0', $args = [] ) {
@@ -139,6 +170,9 @@ class Vite_Loader {
              $args['strategy'] = 'defer';
              $args['in_footer'] = true;
         }
+
+        // Note: CSS dependencies from Manifest are now handled explicitly via register_style_from_js_entry
+        // avoiding invalid script dependencies.
 
         $url = $instance->get_asset_url( $entry_key, 'js' );
         if ( $url ) {
@@ -160,48 +194,6 @@ class Vite_Loader {
 
     private function get_asset_url( $entry_key, $type = 'js' ) {
         if ( $this->is_dev ) {
-            // In dev, we simply point to localhost:5173/path/to/file
-            // We need to know the relative path from root. 
-            // The user passes the entry key which in our vite config we mapped to strict paths.
-            // But here we need to map back the 'entry_key' (like 'hero') to the actual file path relative to project root?
-            // Or simpler: We should change how we call this. Pass the relative path to the file.
-            
-            // Wait, in vite.config.js inputs:
-            // 'hero': path.resolve(__dirname, 'widgets/hero/assets/css/hero.css')
-            // If I request 'hero', I want Vite to serve it.
-            // Vite dev server serves files by path.
-            // But if I use the alias, does it work? No, Dev server requests need real paths usually.
-            
-            // Let's refine the input. It's better if the user passes the real relative path.
-            // But our vite config uses aliases.
-            
-            // ACTUALLY: The best way for WP + Vite is to just pass the relative path to file as the ID.
-            
-            // Let's try to find the path based on the aliases I defined in vite.config.js? No I can't parse JS easily here.
-            
-            // ALTERNATIVE:
-            // Update vite.config.js to NOT use aliases for input, but just use an array or object with paths.
-            // And here we pass the path.
-            
-            // Let's stick to the aliases plan but we need a mapping because I defined them in JS.
-            // Checking my vite.config.js again...
-            // 'hero': .../hero.css
-            
-            // If I am in dev mode:
-            // I should point to http://localhost:5173/widgets/hero/assets/css/hero.css
-            
-            // So my PHP should receive 'widgets/hero/assets/css/hero.css' instead of 'hero'.
-            // AND my vite.config.js input should probably trigger based on that?
-            // Actually, if I pass 'hero', I can't easily know the path unless I duplicate the map.
-            
-            // DECISION: I will duplicate the map here for simplicity, OR I will change arguments to accept the Relative Path.
-            // Relative path is safer and more "Vite-like".
-            
-            // But for `manifest.json` lookups (Production), the key IS the relative path (usually) or the name.
-            // "widgets/hero/assets/css/hero.css": { "file": "assets/hero-....css", ... }
-            
-            // So, I should definitely use Relative Paths as keys in PHP.
-            // And in vite.config.js, I should probably just let Vite discover them or explicitly list them but the Manifest keys will be the relative paths.
             
             return 'http://localhost:5173/' . $entry_key;
         }

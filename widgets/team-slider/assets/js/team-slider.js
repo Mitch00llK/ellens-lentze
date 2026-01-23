@@ -1,3 +1,6 @@
+import Splide from '@splidejs/splide';
+import '@splidejs/splide/css';
+
 /**
  * Team Slider - Splide.js Initialization
  *
@@ -15,11 +18,8 @@
                 return;
             }
 
-            // Check Splide availability
-            if (typeof Splide === 'undefined') {
-                console.error('[Team Slider] Splide is not defined.');
-                return;
-            }
+            // Check Splide availability - Removed as we import it
+
 
             var settings = $el.data('settings') || {};
 

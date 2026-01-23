@@ -98,36 +98,24 @@ class Assets_Config {
             [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ]
         );
 
-        /* Team Slider Assets */
-        // Splide CSS (from CDN)
-        wp_register_style(
-            'splide-core',
-            'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide-core.min.css',
-            [],
-            '4.1.4'
+        // Team Slider Bundled CSS (Splide from JS)
+        Vite_Loader::register_style_from_js_entry(
+            'ellens-team-slider-bundled',
+            'widgets/team-slider/assets/js/team-slider.js'
         );
 
         // Team Slider Consolidated CSS
         Vite_Loader::register_style(
             'ellens-team-slider',
             'widgets/team-slider/assets/css/team-slider.css',
-            [ 'ellens-global-variables', 'ellens-global-buttons', 'splide-core' ]
-        );
-
-        // Splide JS (from CDN)
-        wp_register_script(
-            'splide-core',
-            'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js',
-            [],
-            '4.1.4',
-            true
+            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-team-slider-bundled' ]
         );
 
         // Team Slider Script
         Vite_Loader::register_script(
             'ellens-team-slider',
             'widgets/team-slider/assets/js/team-slider.js',
-            [ 'jquery', 'splide-core' ],
+            [ 'jquery' ],
             '1.0.0',
             true
         );

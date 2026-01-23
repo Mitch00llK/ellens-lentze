@@ -1,4 +1,3 @@
-@import '../../../../assets/css/globals/variables.css';
 @import './layout/header.css';
 @import './layout/grid.css';
 @import './components/filter.css';
