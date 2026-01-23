@@ -82,9 +82,29 @@ class Vite_Loader {
     /**
      * Enqueue a script via Vite
      */
-    public static function enqueue_script( $handle, $entry_key, $deps = [], $ver = '1.0.0', $in_footer = true ) {
+    /**
+     * Enqueue a script via Vite
+     * 
+     * @param string $handle
+     * @param string $entry_key relative path to file
+     * @param array $deps
+     * @param string $ver
+     * @param array|bool $args Script arguments (in_footer bool or array with strategy)
+     */
+    public static function enqueue_script( $handle, $entry_key, $deps = [], $ver = '1.0.0', $args = [] ) {
         $instance = self::get_instance();
         
+        // Backwards compatibility for bool $args
+        if ( is_bool( $args ) ) {
+            $args = [ 'in_footer' => $args ];
+        }
+        
+        // Default to defer if not specified
+        if ( ! isset( $args['strategy'] ) && ! isset( $args['in_footer'] ) ) {
+             $args['strategy'] = 'defer';
+             $args['in_footer'] = true;
+        }
+
         if ( $instance->is_dev ) {
             // In dev mode, we need to enqueue the client first if not already done
             if ( ! wp_script_is( 'vite-client', 'enqueued' ) ) {
@@ -94,7 +114,7 @@ class Vite_Loader {
 
         $url = $instance->get_asset_url( $entry_key, 'js' );
         if ( $url ) {
-            wp_enqueue_script( $handle, $url, $deps, $instance->is_dev ? time() : $ver, $in_footer );
+            wp_enqueue_script( $handle, $url, $deps, $instance->is_dev ? time() : $ver, $args );
             
              // If we are in dev mode, we need to treat it as a module
             if ( $instance->is_dev ) {
@@ -106,15 +126,23 @@ class Vite_Loader {
       /**
      * Register a script via Vite
      */
-    public static function register_script( $handle, $entry_key, $deps = [], $ver = '1.0.0', $in_footer = true ) {
+    public static function register_script( $handle, $entry_key, $deps = [], $ver = '1.0.0', $args = [] ) {
         $instance = self::get_instance();
 
-        // Note: For register_script to work with Vite Dev Server (ES modules), we might need to verify if WP supports type="module" easily during registration only.
-        // Usually we enqueue. But let's support register.
-        
+        // Backwards compatibility for bool $args
+        if ( is_bool( $args ) ) {
+            $args = [ 'in_footer' => $args ];
+        }
+
+        // Default to defer if not specified
+        if ( ! isset( $args['strategy'] ) && ! isset( $args['in_footer'] ) ) {
+             $args['strategy'] = 'defer';
+             $args['in_footer'] = true;
+        }
+
         $url = $instance->get_asset_url( $entry_key, 'js' );
         if ( $url ) {
-            wp_register_script( $handle, $url, $deps, $instance->is_dev ? time() : $ver, $in_footer );
+            wp_register_script( $handle, $url, $deps, $instance->is_dev ? time() : $ver, $args );
              if ( $instance->is_dev ) {
                 add_filter( 'script_loader_tag', [ $instance, 'filter_script_loader_tag' ], 10, 3 );
             }
@@ -124,7 +152,8 @@ class Vite_Loader {
 
     public function filter_script_loader_tag( $tag, $handle, $src ) {
         if ( strpos( $src, 'localhost:5173' ) !== false ) {
-            return '<script type="module" src="' . esc_url( $src ) . '"></script>';
+            // Add type="module"
+            $tag = str_replace( '<script ', '<script type="module" ', $tag );
         }
         return $tag;
     }

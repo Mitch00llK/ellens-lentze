@@ -31,22 +31,49 @@ class Render_Functions {
         $button_text = $settings['link_text'];
         $button_url = $settings['link_url'];
         
-        // Background Image
+        // Background Image - Force Eager Loading (likely LCP)
         if ( ! empty( $settings['image']['url'] ) ) {
-            $image_html = Group_Control_Image_Size::get_attachment_image_html( $settings, 'full', 'image' );
+            $settings['image_custom_dimension'] = isset($settings['image_custom_dimension']) ? $settings['image_custom_dimension'] : []; // Avoid notice if custom size used
+            
+            // We need to inject the loading attribute. 
+            // Group_Control_Image_Size doesn't easily accept attributes in the get_attachment_image_html call directly for 'loading' override IF relying on WP default.
+            // WP 5.5+ handles it. But we want EAGER.
+            // Best way: Use the 'elementor/widget/render_content' filter or modify the output? No, that's heavy.
+            // Alternative: Use wp_get_attachment_image directly if we have an ID and Size.
+            
+            if ( ! empty( $settings['image']['id'] ) ) {
+                $size = isset( $settings['image_size'] ) ? $settings['image_size'] : 'full';
+                if( 'custom' === $size ) {
+                     $image_html = Group_Control_Image_Size::get_attachment_image_html( $settings, 'image_custom_dimension', 'image' );
+                } else {
+                     $image_html = wp_get_attachment_image( $settings['image']['id'], $size, false, ['loading' => 'eager'] );
+                }
+            } else {
+                // Fallback for URL only
+                $image_html = '<img src="' . esc_url( $settings['image']['url'] ) . '" alt="" loading="eager">';
+            }
 		} else {
             $image_html = '';
         }
 
         // Graphic Overlay
         if ( ! empty( $settings['graphic_overlay']['url'] ) ) {
-            $overlay_url = esc_url( $settings['graphic_overlay']['url'] );
-            $overlay_alt = \Elementor\Control_Media::get_image_alt( $settings['graphic_overlay'] );
-             $graphic_html = sprintf( 
-                 '<img src="%s" class="hero__card-pattern hero__svg-overlay" alt="%s" aria-hidden="true">',
-                 $overlay_url,
-                 esc_attr( $overlay_alt )
-            );
+            if ( ! empty( $settings['graphic_overlay']['id'] ) ) {
+                 $graphic_html = wp_get_attachment_image( 
+                    $settings['graphic_overlay']['id'], 
+                    'full', 
+                    false, 
+                    [ 'class' => 'hero__card-pattern hero__svg-overlay', 'aria-hidden' => 'true' ] 
+                );
+            } else {
+                $overlay_url = esc_url( $settings['graphic_overlay']['url'] );
+                $overlay_alt = \Elementor\Control_Media::get_image_alt( $settings['graphic_overlay'] );
+                $graphic_html = sprintf( 
+                     '<img src="%s" class="hero__card-pattern hero__svg-overlay" alt="%s" aria-hidden="true" loading="lazy">',
+                     $overlay_url,
+                     esc_attr( $overlay_alt )
+                );
+            }
         } else {
             $graphic_html = '';
         }

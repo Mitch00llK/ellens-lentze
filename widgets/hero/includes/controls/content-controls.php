@@ -268,6 +268,14 @@ class Content_Controls {
 			]
 		);
 
+        $widget->add_group_control(
+			\Elementor\Group_Control_Image_Size::get_type(),
+			[
+				'name' => 'image',
+				'default' => 'large',
+			]
+		);
+
         $widget->add_control(
 			'graphic_overlay',
 			[
