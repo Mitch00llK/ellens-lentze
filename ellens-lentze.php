@@ -102,6 +102,19 @@ add_action( 'elementor/frontend/after_register_scripts', 'register_ellens_assets
 add_action( 'elementor/frontend/after_register_styles', 'register_ellens_assets' );
 
 /**
+ * Localize menu search script with AJAX URL.
+ */
+function localize_ellens_menu_search() {
+    if ( wp_script_is( 'menu-search-handler', 'enqueued' ) || wp_script_is( 'menu-search-handler', 'registered' ) ) {
+        wp_localize_script( 'menu-search-handler', 'ellensMenuSearch', [
+            'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+        ] );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'localize_ellens_menu_search', 20 );
+add_action( 'elementor/frontend/after_enqueue_scripts', 'localize_ellens_menu_search' );
+
+/**
  * Register Custom Post Types.
  */
 function register_ellens_cpt() {

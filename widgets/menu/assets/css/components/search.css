@@ -23,13 +23,14 @@
 }
 
 .menu__search-overlay.is-active {
-    width: 450px;
+    width: 500px;
     /* Expanded width */
-    padding: 0 var(--spacing-sm);
+    padding: var(--spacing-sm);
     box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
     background-color: var(--color-white);
-    z-index: 1;
+    z-index: 1000;
     color: var(--color-blue-700);
+    min-height: 60px;
 }
 
 /* Close Button (Hidden as main toggle is now close button) */
@@ -49,7 +50,8 @@
     opacity: 0;
     transition: opacity 0.2s ease 0.1s;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .menu__search-overlay.is-active .menu__search-container {
@@ -61,7 +63,8 @@
     display: flex;
     align-items: center;
     width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
 }
 
 .menu__search-field {
@@ -72,41 +75,59 @@
     font-size: 1rem;
     font-family: var(--font-family-body);
     outline: none;
-    padding: 5px 0;
+    padding: 8px 0;
+    flex: 1;
 }
 
 .menu__search-field::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(0, 0, 0, 0.4);
 }
 
 /* Submit Button */
 .menu__search-submit {
     background: none;
     border: none;
-    color: var(--color-white);
+    color: var(--color-blue-700);
     cursor: pointer;
-    padding: 0 5px;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Live Results */
 .menu__search-results {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 5px);
     left: 0;
     width: 100%;
     background-color: var(--color-white);
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    max-height: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    max-height: 400px;
     overflow-y: auto;
-    margin-top: 10px;
+    margin-top: 0;
     display: none;
     /* Hidden by default */
-    padding: 10px 0;
+    padding: 8px 0;
+    z-index: 1001;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.menu__search-overlay.is-active .menu__search-results:not(:empty) {
+.menu__search-overlay.is-active .menu__search-results:not(:empty),
+.menu__search-overlay.is-active .menu__search-results.is-loading {
     display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu__search-results.is-loading {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .menu__result-item {
@@ -118,14 +139,27 @@
     text-decoration: none;
     transition: background 0.2s ease;
     font-size: 0.9rem;
+    cursor: pointer;
 }
 
-.menu__result-item:hover {
+.menu__result-item:hover,
+.menu__result-item.is-selected {
     background-color: var(--color-bg-light);
+}
+
+.menu__result-item.is-selected {
+    background-color: rgba(var(--color-blue-rgb, 0, 123, 255), 0.1);
 }
 
 .menu__result-title {
     font-weight: 500;
+}
+
+.menu__result-highlight {
+    background-color: rgba(var(--color-blue-rgb, 0, 123, 255), 0.2);
+    font-weight: 600;
+    padding: 0 2px;
+    border-radius: 2px;
 }
 
 .menu__result-type {
@@ -135,4 +169,40 @@
     background: var(--color-bg-light);
     padding: 2px 5px;
     border-radius: 3px;
+}
+
+.menu__search-no-results {
+    padding: 20px 15px;
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.menu__search-loading {
+    padding: 20px 15px;
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.menu__search-loading::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--color-text-light);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }

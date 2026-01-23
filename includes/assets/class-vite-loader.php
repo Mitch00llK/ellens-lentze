@@ -14,22 +14,47 @@ class Vite_Loader {
     private $dist_url;
 
     public function __construct() {
-        $this->dist_path = dirname( dirname( __DIR__ ) ) . '/assets/dist';
-        $this->dist_url = plugins_url( 'assets/dist', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' );
+        $base_path = dirname( dirname( __DIR__ ) );
+        $this->dist_path = $base_path . '/assets/dist';
+        $this->dist_url = plugins_url( 'assets/dist', $base_path . '/ellens-lentze.php' );
         
-        // rudimentary dev check: if dist folder doesn't exist or we have a flag, assume dev.
-        // Better: check if port 5173 is accessible or use a simpler WP_DEBUG check for now + check for absence of manifest.
-        // For this implementation, we'll try to load manifest. If it fails or if specific constant is set, we use dev.
-        
-        if ( defined( 'VITE_DEV_MODE' ) && VITE_DEV_MODE ) {
-            $this->is_dev = true;
-        } elseif ( ! file_exists( $this->dist_path . '/.vite/manifest.json' ) && ! file_exists( $this->dist_path . '/manifest.json' )  ) {
-             // If no manifest, likely in dev mode or fresh clone
-            $this->is_dev = true;
+        // Normalize path (resolve any relative paths) - only if path exists
+        $resolved_path = realpath( $this->dist_path );
+        if ( $resolved_path !== false ) {
+            $this->dist_path = $resolved_path;
         }
         
-        if ( ! $this->is_dev ) {
-             $this->load_manifest();
+        // Check for explicit dev mode flag
+        if ( defined( 'VITE_DEV_MODE' ) && VITE_DEV_MODE ) {
+            $this->is_dev = true;
+            return;
+        }
+        
+        // Check if manifest exists - if it does, we're in production mode
+        $manifest_path_vite = $this->dist_path . '/.vite/manifest.json';
+        $manifest_path_root = $this->dist_path . '/manifest.json';
+        
+        $manifest_vite_exists = file_exists( $manifest_path_vite );
+        $manifest_root_exists = file_exists( $manifest_path_root );
+        
+        if ( $manifest_vite_exists || $manifest_root_exists ) {
+            // Manifest exists, we're in production mode
+            $this->is_dev = false;
+            $this->load_manifest();
+            
+            // Double-check: if manifest failed to load, fall back to dev mode
+            if ( ! $this->manifest ) {
+                if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+                    error_log( 'Vite Loader: Manifest file exists but failed to load. Falling back to dev mode. Path: ' . ( $manifest_vite_exists ? $manifest_path_vite : $manifest_path_root ) );
+                }
+                $this->is_dev = true;
+            }
+        } else {
+            // No manifest found, assume dev mode
+            if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+                error_log( 'Vite Loader: No manifest found. Checked: ' . $manifest_path_vite . ' and ' . $manifest_path_root . '. Using dev mode.' );
+            }
+            $this->is_dev = true;
         }
     }
 
@@ -47,7 +72,16 @@ class Vite_Loader {
         }
 
         if ( file_exists( $manifest_path ) ) {
-            $this->manifest = json_decode( file_get_contents( $manifest_path ), true );
+            $manifest_content = file_get_contents( $manifest_path );
+            $this->manifest = json_decode( $manifest_content, true );
+            
+            // Check if JSON decode failed
+            if ( json_last_error() !== JSON_ERROR_NONE ) {
+                error_log( 'Vite Loader: Failed to parse manifest.json - ' . json_last_error_msg() );
+                $this->manifest = null;
+            }
+        } else {
+            error_log( 'Vite Loader: Manifest file not found at ' . $manifest_path );
         }
     }
 
@@ -194,23 +228,34 @@ class Vite_Loader {
 
     private function get_asset_url( $entry_key, $type = 'js' ) {
         if ( $this->is_dev ) {
-            
             return 'http://localhost:5173/' . $entry_key;
         }
 
-        // Production
+        // Production mode - must have manifest
         if ( ! $this->manifest ) {
+            if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+                error_log( 'Vite Loader: get_asset_url called in production mode but manifest is null. Entry: ' . $entry_key );
+            }
             return null;
         }
 
+        // Check if entry exists in manifest
         if ( isset( $this->manifest[ $entry_key ] ) ) {
-            $file = $this->manifest[ $entry_key ]['file']; // e.g., 'assets/hero.12345.css'
-            return $this->dist_url . '/' . $file;
+            $entry = $this->manifest[ $entry_key ];
+            $file = $entry['file']; // e.g., 'assets/hero.12345.css'
+            $url = $this->dist_url . '/' . $file;
+            
+            if ( defined( 'WP_DEBUG' ) && WP_DEBUG && defined( 'WP_DEBUG_LOG' ) && WP_DEBUG_LOG ) {
+                error_log( 'Vite Loader: Resolved ' . $entry_key . ' to ' . $url );
+            }
+            
+            return $url;
         }
         
-        // Sometimes CSS is inside a JS entry in manifest? 
-        // If requesting CSS but key points to JS? 
-        // For now assume direct mapping.
+        // Entry not found in manifest
+        if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+            error_log( 'Vite Loader: Entry "' . $entry_key . '" not found in manifest. Available keys: ' . implode( ', ', array_keys( $this->manifest ) ) );
+        }
         
         return null; 
     }
