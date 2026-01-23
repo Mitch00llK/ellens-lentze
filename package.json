@@ -1,0 +1,18 @@
+{
+  "name": "ellens-lentze",
+  "version": "1.0.0",
+  "description": "SocialLane Components",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "Mitch",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "vite-plugin-live-reload": "^3.0.0",
+    "sass": "^1.70.0",
+    "path": "^0.12.7"
+  }
+}

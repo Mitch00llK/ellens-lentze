@@ -1,6 +1,8 @@
 /* Team Grid Styles */
 
+@import '../../../../assets/css/globals/variables.css';
 @import "components/card.css";
+@import "responsive.css";
 
 /* .ellens-team-grid-wrapper handled by utilities: w-full mx-auto */
 
@@ -43,9 +45,8 @@
 }
 
 /* Responsive */
-@import '../../../../assets/css/globals/variables.css';
-@import './layout/container.css';
-@import "responsive.css";
+
+/* Card Overrides if needed for grid context */
 
 /* Card Overrides if needed for grid context */
 .team-grid .team-card {

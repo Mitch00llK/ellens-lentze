@@ -8,7 +8,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Assets_Config {
 
     public static function register() {
-         // FontAwesome
+         // Initialize Vite Loader
+         require_once( dirname( __DIR__ ) . '/assets/class-vite-loader.php' );
+
+         // FontAwesome (External - Keep as is)
          wp_register_style(
             'font-awesome-5',
             'https://use.fontawesome.com/releases/v5.15.4/css/all.css',
@@ -17,55 +20,50 @@ class Assets_Config {
         );
 
          // Reset CSS (Override Elementor Defaults)
-         wp_register_style(
+         Vite_Loader::register_style(
             'ellens-reset-css',
-            plugins_url( 'assets/css/globals/reset.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'elementor-frontend' ],
-            '1.0.0'
+            'assets/css/globals/reset.css', // Entry key (relative path)
+            [ 'elementor-frontend' ]
         );
 
          // Global Assets
-         wp_register_style(
+         Vite_Loader::register_style(
             'ellens-global-variables',
-            plugins_url( 'assets/css/globals/variables.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-reset-css' ],
-            '1.0.0'
+            'assets/css/globals/variables.css',
+            [ 'ellens-reset-css' ]
         );
 
-         wp_register_style(
+         Vite_Loader::register_style(
             'ellens-global-utilities',
-            plugins_url( 'assets/css/globals/utilities.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-global-variables' ],
-            '1.0.0'
+            'assets/css/globals/utilities.css',
+            [ 'ellens-global-variables' ]
         );
 
-         wp_register_style(
+         Vite_Loader::register_style(
             'ellens-global-buttons',
-            plugins_url( 'assets/css/globals/buttons.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-global-variables' ],
-            '1.0.0'
+            'assets/css/globals/buttons.css',
+            [ 'ellens-global-variables' ]
         );
 
         // Button Animations Script
-        wp_register_script(
+        Vite_Loader::register_script(
             'ellens-button-animations',
-            plugins_url( 'assets/js/button-animations.js', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            'assets/js/button-animations.js',
             [],
             '1.0.0',
             true
         );
 
          /* Hero Widget Assets (Consolidated) */
-        wp_register_style(
+        Vite_Loader::register_style(
             'ellens-hero',
-            plugins_url( 'widgets/hero/assets/css/hero.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ],
-            '1.0.0'
+            'widgets/hero/assets/css/hero.css',
+            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ]
         );
 
-        wp_register_script(
+        Vite_Loader::register_script(
             'ellens-hero-card-position',
-            plugins_url( 'widgets/hero/assets/js/hero-card-position.js', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            'widgets/hero/assets/js/hero-card-position.js',
             [],
             '1.0.0',
             true
@@ -73,35 +71,31 @@ class Assets_Config {
 
 
         /* Action Buttons Widget Assets (Consolidated) */
-        wp_register_style(
+        Vite_Loader::register_style(
             'ellens-action-buttons',
-            plugins_url( 'widgets/action-buttons/assets/css/action-buttons.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ],
-            '1.0.0'
+            'widgets/action-buttons/assets/css/action-buttons.css',
+            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ]
         );
 
         /* USP Grid Widget Assets (Consolidated) */
-        wp_register_style(
+        Vite_Loader::register_style(
             'ellens-usp-grid',
-            plugins_url( 'widgets/usp-grid/assets/css/usp-grid.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ],
-            '1.0.0'
+            'widgets/usp-grid/assets/css/usp-grid.css',
+            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ]
         );
 
         /* Image Text Block Widget Assets (Consolidated) */
-        wp_register_style(
+        Vite_Loader::register_style(
             'ellens-image-text-block',
-            plugins_url( 'widgets/image-text-block/assets/css/image-text-block.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ],
-            '1.0.0'
+            'widgets/image-text-block/assets/css/image-text-block.css',
+            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ]
         );
 
         /* Services Cluster Widget Assets (Consolidated) */
-        wp_register_style(
+        Vite_Loader::register_style(
             'ellens-services-cluster',
-            plugins_url( 'widgets/services-cluster/assets/css/services-cluster.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ],
-            '1.0.0'
+            'widgets/services-cluster/assets/css/services-cluster.css',
+            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ]
         );
 
         /* Team Slider Assets */
@@ -114,11 +108,10 @@ class Assets_Config {
         );
 
         // Team Slider Consolidated CSS
-        wp_register_style(
+        Vite_Loader::register_style(
             'ellens-team-slider',
-            plugins_url( 'widgets/team-slider/assets/css/team-slider.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-global-variables', 'ellens-global-buttons', 'splide-core' ],
-            '1.0.0'
+            'widgets/team-slider/assets/css/team-slider.css',
+            [ 'ellens-global-variables', 'ellens-global-buttons', 'splide-core' ]
         );
 
         // Splide JS (from CDN)
@@ -131,132 +124,121 @@ class Assets_Config {
         );
 
         // Team Slider Script
-        wp_register_script(
+        Vite_Loader::register_script(
             'ellens-team-slider',
-            plugins_url( 'widgets/team-slider/assets/js/team-slider.js', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            'widgets/team-slider/assets/js/team-slider.js',
             [ 'jquery', 'splide-core' ],
             '1.0.0',
             true
         );
 
         /* Team Grid Widget Assets (Consolidated) */
-        wp_register_style(
+        Vite_Loader::register_style(
             'ellens-team-grid',
-            plugins_url( 'widgets/team-grid/assets/css/team-grid.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-global-variables', 'ellens-global-buttons', 'font-awesome-5', 'ellens-global-utilities' ],
-            '1.0.0'
+            'widgets/team-grid/assets/css/team-grid.css',
+            [ 'ellens-global-variables', 'ellens-global-buttons', 'font-awesome-5', 'ellens-global-utilities' ]
         );
 
         /* Post Grid Widget Assets (Consolidated) */
-        wp_register_style(
+        Vite_Loader::register_style(
             'ellens-post-grid',
-            plugins_url( 'widgets/post-grid/assets/css/post-grid.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ],
-            '1.0.0'
+            'widgets/post-grid/assets/css/post-grid.css',
+            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ]
         );
 
         /* Services Grid Widget Assets (Consolidated) */
-        wp_register_style(
+        Vite_Loader::register_style(
             'ellens-services-grid',
-            plugins_url( 'widgets/services-grid/assets/css/services-grid.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ],
-            '1.0.0'
+            'widgets/services-grid/assets/css/services-grid.css',
+            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ]
         );
 
         /* Detailed Info Section Widget Assets (Consolidated) */
-        wp_register_style(
+        Vite_Loader::register_style(
             'ellens-detailed-info-section',
-            plugins_url( 'widgets/detailed-info-section/assets/css/detailed-info-section.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ],
-            '1.0.0'
+            'widgets/detailed-info-section/assets/css/detailed-info-section.css',
+            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ]
         );
 
         /* FAQ Section Widget Assets (Consolidated) */
-        wp_register_style(
+        Vite_Loader::register_style(
             'ellens-faq-section',
-            plugins_url( 'widgets/faq-section/assets/css/faq-section.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ],
-            '1.0.0'
+            'widgets/faq-section/assets/css/faq-section.css',
+            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ]
         );
 
         /* Sidebar FAQ Widget Assets (Consolidated) */
-        wp_register_style(
+        Vite_Loader::register_style(
             'ellens-sidebar-faq-v2',
-            plugins_url( 'widgets/sidebar-faq/assets/css/sidebar-faq.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ],
-            '1.0.0'
+            'widgets/sidebar-faq/assets/css/sidebar-faq.css',
+            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ]
         );
 
         // FAQ Script
-        wp_register_script(
+        Vite_Loader::register_script(
             'ellens-faq-section',
-            plugins_url( 'widgets/faq-section/assets/js/faq-accordion.js', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            'widgets/faq-section/assets/js/faq-accordion.js',
             [],
             '1.0.0',
             true
         );
         /* Reliability Grid Widget Assets (Consolidated) */
-        wp_register_style(
+        Vite_Loader::register_style(
             'ellens-reliability-grid',
-            plugins_url( 'widgets/reliability-grid/assets/css/reliability-grid.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ],
-            '1.0.0'
+            'widgets/reliability-grid/assets/css/reliability-grid.css',
+            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ]
         );
 
         /* Menu Widget Assets */
-        wp_register_style(
+        Vite_Loader::register_style(
             'menu-styles',
-            plugins_url( 'widgets/menu/assets/css/menu.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-global-variables', 'ellens-global-buttons', 'font-awesome-5', 'ellens-global-utilities' ],
-            '1.0.0'
+            'widgets/menu/assets/css/menu.css',
+            [ 'ellens-global-variables', 'ellens-global-buttons', 'font-awesome-5', 'ellens-global-utilities' ]
         );
 
-        wp_register_script(
+        Vite_Loader::register_script(
             'menu-handler',
-            plugins_url( 'widgets/menu/assets/js/menu-handler.js', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            'widgets/menu/assets/js/menu-handler.js',
             [ 'elementor-frontend' ], 
             '1.0.0',
             true
         );
 
-        wp_register_script(
+        Vite_Loader::register_script(
             'menu-search-handler',
-            plugins_url( 'widgets/menu/assets/js/menu-search.js', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            'widgets/menu/assets/js/menu-search.js',
             [ 'elementor-frontend' ], 
             '1.0.0',
             true
         );
 
         /* Footer Widget Assets */
-        wp_register_style(
+        Vite_Loader::register_style(
             'ellens-footer',
-            plugins_url( 'widgets/footer/assets/css/footer.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ],
-            '1.0.0'
+            'widgets/footer/assets/css/footer.css',
+            [ 'ellens-global-variables', 'ellens-global-buttons', 'ellens-global-utilities' ]
         );
 
         /* News Overview Widget Assets */
-        wp_register_style(
+        Vite_Loader::register_style(
             'news-overview-style',
-            plugins_url( 'widgets/news-overview/assets/css/news-overview.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-global-variables', 'ellens-global-buttons', 'font-awesome-5', 'ellens-global-utilities' ],
-            '1.0.0'
+            'widgets/news-overview/assets/css/news-overview.css',
+            [ 'ellens-global-variables', 'ellens-global-buttons', 'font-awesome-5', 'ellens-global-utilities' ]
         );
 
-        wp_register_script(
+        Vite_Loader::register_script(
             'news-overview-script',
-            plugins_url( 'widgets/news-overview/assets/js/news-overview.js', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
+            'widgets/news-overview/assets/js/news-overview.js',
             [], // No specific deps other than DOM
             '1.0.0',
             true
         );
 
         /* Contact Info Widget Assets */
-        wp_register_style(
+        Vite_Loader::register_style(
             'ellens-contact-info',
-            plugins_url( 'widgets/contact-info/assets/css/contact-info.css', dirname( dirname( __DIR__ ) ) . '/ellens-lentze.php' ),
-            [ 'ellens-global-variables', 'font-awesome-5', 'ellens-global-utilities' ],
-            '1.0.0'
+            'widgets/contact-info/assets/css/contact-info.css',
+            [ 'ellens-global-variables', 'font-awesome-5', 'ellens-global-utilities' ]
         );
     }
 }
