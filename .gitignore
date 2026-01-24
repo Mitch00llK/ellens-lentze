@@ -23,3 +23,15 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+
+# Python / Chatbot API
+chatbot-api/venv/
+chatbot-api/__pycache__/
+chatbot-api/*.pyc
+chatbot-api/*.pkl
+chatbot-api/.env
+chatbot-api/.env.local
+chatbot-api/chatbot_index.pkl
+
+# Standalone chatbot plugin (if not needed in main repo)
+ellens-chatbot/
